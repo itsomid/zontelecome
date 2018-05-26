@@ -311,16 +311,9 @@
                                 <div class="form-group">
                                     <label for="payment">Payment</label>
                                     @if($order->by_admin == true)
-                                        <input id="payment" type="text" class="form-control" value="created by admin"
-                                               disabled>
+                                        <input id="payment" type="text" class="form-control" value="created by admin" disabled>
                                     @else
-                                        @foreach($order->payment as $payment)
-                                            @if($payment->status == 'successful')
-                                                <input id="payment" type="text" class="form-control"
-                                                       value="{{$payment->reference}}" disabled>
-
-                                            @endif
-                                        @endforeach
+                                        <input id="payment" type="text" class="form-control" value="{{$order->payment['reference']}}" disabled>
                                     @endif
 
                                 </div>
@@ -461,6 +454,84 @@
             </div>
         </div>
     </form>
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Order Log</h5>
+            </div>
+            <div class="ibox-content">
+
+                <table class="footable table table-stripped toggle-arrow-tiny no-paging footable-loaded">
+                    <thead>
+                    <tr>
+
+                        <th data-toggle="true" class="footable-sortable text-left">Datetime<span class="footable-sort-indicator"></span></th>
+                        <th class="footable-sortable text-center">Status<span class="footable-sort-indicator"></span></th>
+                        <th class="footable-sortable text-left">via<span class="footable-sort-indicator"></span></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr style="" class="footable-even">
+                        <td><span class="footable-toggle"></span>1</td>
+                        <td>physical</td>
+                        <td>stripe</td>
+                    </tr>
+                    <tr style="" class="footable-even">
+                        <td><span class="footable-toggle"></span>2</td>
+                        <td>physical</td>
+                        <td>stripe</td>
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Payment Log</h5>
+            </div>
+            <div class="ibox-content">
+
+                <table class="footable table table-stripped toggle-arrow-tiny no-paging footable-loaded">
+                    <thead>
+                    <tr>
+
+                        <th data-toggle="true" class="footable-sortable text-left">Datetime<span class="footable-sort-indicator"></span></th>
+                        <th data-toggle="true" class="footable-sortable text-left">Payment ref.<span class="footable-sort-indicator"></span></th>
+                        <th class="footable-sortable text-center">Status<span class="footable-sort-indicator"></span></th>
+                        <th class="footable-sortable text-left">via<span class="footable-sort-indicator"></span></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr style="" class="footable-even">
+                        <td><span class="footable-toggle"></span>1</td>
+                        <td>asffgwt34545yhfghgd</td>
+                        <td>physical</td>
+                        <td>stripe</td>
+                    </tr>
+                    <tr style="" class="footable-even">
+                        <td><span class="footable-toggle"></span>2</td>
+                        <td>dfhghhgjkerefwgth</td>
+                        <td>physical</td>
+                        <td>stripe</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        </div>
+    </div>
 @endsection
 @section('script')
 

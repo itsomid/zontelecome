@@ -482,8 +482,9 @@
                 end_price[id] = parseFloat({{$products[0]->price}});
 
                 $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
-                var final_price = parseFloat(end_price.reduce(getSum)).toFixed(2)+ parseFloat(tax);
-                $('#final_price strong').text('$ ' + final_price);
+                var final_price = parseFloat(end_price.reduce(getSum)) + parseFloat(tax);
+                alert(final_price);
+                $('#final_price strong').text('$ ' + final_price.toFixed(2));
 
                 $('#myTable tbody').append('' +
                     '<tr id='+id+'>' +
@@ -537,8 +538,9 @@
 
                         $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
 
-                        var final_price = parseFloat(end_price.reduce(getSum)).toFixed(2)+ parseFloat(tax);
-                        $('#final_price strong').text('$ ' + final_price);
+                        var final_price = parseFloat(end_price.reduce(getSum))+ parseFloat(tax);
+                        alert(final_price);
+                        $('#final_price strong').text('$ ' + final_price.toFixed(2));
                     }
 
                 });
@@ -560,8 +562,8 @@
 
                 $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
 
-                var final_price = parseFloat(end_price.reduce(getSum)).toFixed(2)+ parseFloat(tax);
-                $('#final_price strong').text('$ ' + final_price);
+                var final_price = parseFloat(end_price.reduce(getSum))+ parseFloat(tax);
+                $('#final_price strong').text('$ ' + final_price.toFixed(2));
 
             });
 

@@ -28,20 +28,11 @@
                 <div class="ibox-title">
 
                     <fieldset class="form-horizontal">
-                        <div class="col-md-1">
-                            <a class="btn btn__ btn__table" id="add_btn">All orders</a>
-                        </div>
-                        <div class="col-md-1">
-                            <a class="btn btn__ btn__table" id="add_btn">Open orders</a>
-                        </div>
-                        <div class="col-md-1">
-                            <a class="btn btn__ btn__table" id="add_btn">Done orders</a>
-                        </div>
 
+                        <a class="btn btn__ btn__table active" id="all_order">All orders</a>
+                        <a class="btn btn__ btn__table" id="open_order">Open orders</a>
+                        <a class="btn btn__ btn__table" id="done_order">Done orders</a>
 
-                        <div class="col-md-2 pull-right text-right">
-                            <a href="{{route('panel/get/neworder')}}" class="btn btn__ btn__package" id="add_btn"> <i class="fa fa-plus" style="font-size: 12px"></i>Add New Order</a>
-                        </div>
                     </fieldset>
 
 
@@ -133,7 +124,25 @@
 
     <script>
         $(document).ready(function () {
+            $('.btn__table').click(function () {
+                $('.btn__table').removeClass('active');
+                $('#' + this.id).addClass('active');
+            });
 
+            $('#all_order').click(function () {
+                $('.label').parent().parent().css('display','');
+            });
+            $('#done_order').click(function () {
+                $('.label').parent().parent().css('display','');
+                $('.label-danger').parent().parent().css('display','none');
+                $('.label-warning').parent().parent().css('display','none');
+
+            });
+            $('#open_order').click(function () {
+                $('.label').parent().parent().css('display','');
+                $('.label-primary').parent().parent().css('display','none');
+                $('.label-success').parent().parent().css('display','none');
+            });
             $('.footable').footable();
             $('.footable2').footable();
 

@@ -22,7 +22,7 @@ class OrderController extends Controller
     public function getOrder($uid)
     {
        $id = Order::realId($uid);
-       $order = Order::whereId($id)->with('products')->first();
+        $order = Order::whereId($id)->with('products')->first();
 
         return view('panel.order_edit',['order'=>$order]);
     }

@@ -28,19 +28,14 @@
                 <div class="ibox-title">
 
                     <fieldset class="form-horizontal">
-                        <div class="col-md-1">
-                            <a class="btn btn__ btn__table" id="add_btn">All orders</a>
-                        </div>
-                        <div class="col-md-1">
-                            <a class="btn btn__ btn__table" id="add_btn">Open orders</a>
-                        </div>
-                        <div class="col-md-1">
-                            <a class="btn btn__ btn__table" id="add_btn">Done orders</a>
-                        </div>
 
+                        <a class="btn btn__ btn__table active" id="all_order">All orders</a>
+                        <a class="btn btn__ btn__table" id="open_order">Open orders</a>
+                        <a class="btn btn__ btn__table" id="done_order">Done orders</a>
 
                         <div class="col-md-2 pull-right text-right">
-                            <a href="{{route('panel/get/neworder')}}" class="btn btn__ btn__package" id="add_btn"> <i class="fa fa-plus" style="font-size: 12px"></i>Add New Order</a>
+                            <a href="{{route('panel/get/neworder')}}" class="btn btn__ btn__package" id="add_btn"> <i
+                                        class="fa fa-plus" style="font-size: 12px"></i>Add New Order</a>
                         </div>
                     </fieldset>
 
@@ -62,7 +57,7 @@
                             <th>Datetime</th>
                             <th>Status</th>
                             <th data-hide="all"></th>
-                            <th data-hide="all"></th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -86,21 +81,25 @@
                                     @if($order->status == 'payed')
                                         <span class="label label-primary">Payed</span>
                                     @elseif($order->status == 'processing')
-                                        <span class="label label-danger">Processing</span>
+                                        <span class="label label-danger" >Processing</span>
                                     @elseif($order->status == 'initializing')
-                                        <span class="label label-danger">initializing</span>
+                                        <span class="label label-danger" >initializing</span>
                                     @elseif($order->status == 'canceled')
-                                        <span class="label label-warning">Canceled</span>
+                                        <span class="label label-warning" >Canceled</span>
                                     @elseif($order->status == 'ready to deliver')
-                                        <span class="label label-success">Ready</span>
+                                        <span class="label label-success" >Ready</span>
                                     @elseif($order->status == 'delivering')
-                                        <span class="label label-success">Delivering</span>
+                                        <span class="label label-success" >Delivering</span>
                                     @elseif($order->status == 'delivered')
-                                        <span class="label label-success">Delivered</span>
+                                        <span class="label label-success" >Delivered</span>
                                     @endif
                                 </td>
                                 <td>
                                     <div class="container">
+                                        <div class="text-right pull-right">
+                                            <a href="{{route('panel/get/order', ['uid'=>$order->uid]) }}"
+                                               class="btn btn__ btn__light" id="add_btn">Edit Order</a>
+                                        </div>
                                         <div class="table-responsive invoice-table">
                                             <table class="table invoice-table">
                                                 <thead>
@@ -111,6 +110,7 @@
                                                     <th>Description</th>
                                                     <th>Price</th>
                                                     <th>Total Price</th>
+
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -138,7 +138,8 @@
                                                 </tr>
                                                 <tr>
                                                     <td><strong>Taxes :</strong></td>
-                                                    <td id="total_price_lb">${{number_format((float)$tax, 2, '.', ',')}}</td>
+                                                    <td id="total_price_lb">
+                                                        ${{number_format((float)$tax, 2, '.', ',')}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td><strong>Discount :</strong></td>
@@ -146,7 +147,9 @@
                                                 </tr>
                                                 <tr>
                                                     <td><strong>Final Price :</strong></td>
-                                                    <td>${{number_format((float)$order->total_price + $tax, 2, '.', ',')}}</td>
+                                                    <td>
+                                                        ${{number_format((float)$order->total_price + $tax, 2, '.', ',')}}</td>
+
                                                 </tr>
 
                                                 </tbody>
@@ -155,11 +158,7 @@
                                     </div>
 
                                 </td>
-                                <td>
-                                    <div class="col-md-2 pull-right text-right">
-                                        <a href="{{route('panel/get/order', ['uid'=>$order->uid]) }}" class="btn btn__ btn__light" id="add_btn">Edit Order</a>
-                                    </div>
-                                </td>
+
                             </tr>
                         @endforeach
                         </tbody>
@@ -187,7 +186,25 @@
 
     <script>
         $(document).ready(function () {
+            $('.btn__table').click(function () {
+                $('.btn__table').removeClass('active');
+                $('#' + this.id).addClass('active');
+            });
 
+            $('#all_order').click(function () {
+                $('.label').parent().parent().css('display','');
+            });
+            $('#done_order').click(function () {
+                $('.label').parent().parent().css('display','');
+                $('.label-danger').parent().parent().css('display','none');
+                $('.label-warning').parent().parent().css('display','none');
+
+            });
+            $('#open_order').click(function () {
+                $('.label').parent().parent().css('display','');
+                $('.label-primary').parent().parent().css('display','none');
+                $('.label-success').parent().parent().css('display','none');
+            });
             $('.footable').footable();
             $('.footable2').footable();
 
