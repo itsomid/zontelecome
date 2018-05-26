@@ -440,7 +440,7 @@
                                         </tr>
                                         <tr>
                                             <td><strong>Final Price</strong></td>
-                                            <td>
+                                            <td id="final_price">
                                                 <strong>$ {{number_format((float)$tax + 10.00,2,'.',',')}}</strong>
                                             </td>
                                         </tr>
@@ -469,16 +469,22 @@
         var id = 1;
 
         var end_price = [];
-        end_price[1] = parseFloat({{$products[0]->price}}).toFixed(2);
+        end_price[1] = parseFloat({{$products[0]->price}});
+        var tax = parseFloat({{$tax}});
+
         $(document).ready(function () {
             $('#p_quantity').val(quantity);
             $('#status').val(status);
+
             $('#add_btn').click(function () {
 
                 id = id + 1;
-                end_price[id] = parseFloat({{$products[0]->price}}).toFixed(2);
-                alert(end_price);
+                end_price[id] = parseFloat({{$products[0]->price}});
+
                 $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
+                var final_price = parseFloat(end_price.reduce(getSum)).toFixed(2)+ parseFloat(tax);
+                $('#final_price strong').text('$ ' + final_price);
+
                 $('#myTable tbody').append('' +
                     '<tr id='+id+'>' +
                         '<td>'+id+'</td>' +
@@ -528,8 +534,11 @@
                         $('#p_quantity_'+id).val(1);
                         $('#p_total_price_'+id).text(data + "$");
                         end_price[id] = data;
-                        alert(end_price);
+
                         $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
+
+                        var final_price = parseFloat(end_price.reduce(getSum)).toFixed(2)+ parseFloat(tax);
+                        $('#final_price strong').text('$ ' + final_price);
                     }
 
                 });
@@ -549,9 +558,11 @@
 
                 end_price[id] =parseFloat(total_price).toFixed(2);
 
-
-                alert(end_price);
                 $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
+
+                var final_price = parseFloat(end_price.reduce(getSum)).toFixed(2)+ parseFloat(tax);
+                $('#final_price strong').text('$ ' + final_price);
+
             });
 
 
@@ -559,6 +570,10 @@
             $('#order').addClass('active');
         });
         function getSum(total, num) {
+          return  parseFloat(total) + parseFloat(num);
+
+        }
+        function getSumTax(total, num) {
           return  parseFloat(total) + parseFloat(num);
 
         }
