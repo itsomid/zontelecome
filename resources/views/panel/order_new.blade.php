@@ -436,7 +436,7 @@
                                         </tr>
                                         <tr>
                                             <td><strong>Discount</strong></td>
-                                            <td><strong>$ 0.00</strong></td>
+                                            <td><input type="text" name="discount" id="discount" style="width: 40px"></td>
                                         </tr>
                                         <tr>
                                             <td><strong>Final Price</strong></td>
@@ -483,7 +483,7 @@
 
                 $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
                 var final_price = parseFloat(end_price.reduce(getSum)) + parseFloat(tax);
-                alert(final_price);
+
                 $('#final_price strong').text('$ ' + final_price.toFixed(2));
 
                 $('#myTable tbody').append('' +
@@ -539,7 +539,7 @@
                         $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
 
                         var final_price = parseFloat(end_price.reduce(getSum))+ parseFloat(tax);
-                        alert(final_price);
+
                         $('#final_price strong').text('$ ' + final_price.toFixed(2));
                     }
 

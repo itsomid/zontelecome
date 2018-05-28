@@ -57,6 +57,33 @@
     font-weight: bold;
     text-rendering: optimizeLegibility;
 }
+@font-face {
+    font-family: 'icomoon';
+    src:  url('/fonts/icomoon.eot?c7utis');
+    src:  url('/fonts/icomoon.eot?c7utis#iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?c7utis') format('truetype'),
+    url('/fonts/icomoon.woff?c7utis') format('woff'),
+    url('/fonts/icomoon.svg?c7utis#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+}
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
 
 .body__bg{
    background-image: url('/img/bg.jpg');
@@ -183,11 +210,15 @@
     text-align: center;
 
 }
+
 tr > td > select{
     font-family: 'MoskNormal';
 }
 .table > thead > tr > th{
     text-align: center;
+}
+.log > tbody > tr > td, .log > thead > tr > th{
+    text-align: left;
 }
 .ibox-title h5{
     font-family: BloggerSans-Bold;
@@ -206,3 +237,56 @@ thead{
 tbody{
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.icon-:before {
+    content: "\e900";
+    color: #979797;
+}
+.icon-box:before {
+    content: "\e901";
+    color: #949494;
+}
+.icon-Combined-Shape:before {
+    content: "\e902";
+    color: #979797;
+}
+.icon-dashboard:before {
+    content: "\e903";
+    color: #949494;
+}
+.icon-Group-3:before {
+    content: "\e904";
+    color: #949494;
+}
+.icon-Shape:before {
+    content: "\e905";
+    color: #979797;
+}
+.nav > li.active > a i:before{
+    color: #F8CD46;
+}
+/*.icon-:before:active {*/
+    /*content: "\e900";*/
+    /*color: #F8CD46;*/
+/*}*/
+/*.icon-box:before:active {*/
+    /*content: "\e901";*/
+    /*color: #F8CD46;*/
+/*}*/
+/*.icon-Combined-Shape:active {*/
+    /*content: "\e902";*/
+    /*color: #F8CD46;*/
+/*}*/
+/*.icon-dashboard:active {*/
+    /*content: "\e903";*/
+    /*color: #F8CD46;*/
+/*}*/
+/*.icon-Group-3:active {*/
+    /*content: "\e904";*/
+    /*color: #F8CD46;*/
+/*}*/
+/*.icon-Shape:active {*/
+    /*content: "\e905";*/
+    /*color: #F8CD46;*/
+/*}*/
+

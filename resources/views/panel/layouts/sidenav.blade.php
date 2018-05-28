@@ -30,22 +30,22 @@
 
         <ul class="nav metismenu" id="side-menu" style="padding-left:0px;">
             <li id="home" class="active">
-                <a href="{{route('panel')}} "><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span> </a>
+                <a href="{{route('panel')}} "><i class="icon-dashboard"></i> <span class="nav-label">Dashboard</span> </a>
             </li>
             <li id="product">
-                <a href="{{route('panel/product')}}"><i class="fa fa-align-justify"></i> <span class="nav-label">Products</span> </a>
+                <a href="{{route('panel/product')}}"><i class="icon-Group-3"></i> <span class="nav-label">Products</span> </a>
             </li>
             <li id="order">
-                <a href="{{route('panel/get/allorder')}}"><i class="fa fa-align-justify"></i> <span class="nav-label">Orders</span> </a>
+                <a href="{{route('panel/get/allorder')}}"><i class="icon-box"></i> <span class="nav-label">Orders</span> </a>
             </li>
             <li id="refill">
-                <a href="{{route('panel/refill')}}"><i class="fa fa-align-justify"></i> <span class="nav-label">Refill</span> </a>
+                <a href="{{route('panel/refill')}}"><i class="icon-Shape"></i> <span class="nav-label">Refill</span> </a>
             </li>
             <li id="payment">
-                <a href="{{route('panel/payment')}}"><i class="fa fa-align-justify"></i> <span class="nav-label">Payments</span> </a>
+                <a href="{{route('panel/payment')}}"><i class="icon-"></i> <span class="nav-label">Payments</span> </a>
             </li>
             <li id="setting">
-                <a href="{{route('panel/setting')}}"><i class="fa fa-align-justify"></i> <span class="nav-label">Settings</span> </a>
+                <a href="{{route('panel/setting')}}"><i class="icon-Combined-Shape"></i> <span class="nav-label">Settings</span> </a>
             </li>
 
         </ul>

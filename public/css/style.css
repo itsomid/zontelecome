@@ -217,8 +217,7 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
 }
 .main_product{
     position: absolute;
-    top: 120px;
-
+    transform: rotate(-3deg);
     z-index: 2;
 
 }

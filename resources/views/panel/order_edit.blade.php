@@ -462,24 +462,22 @@
             </div>
             <div class="ibox-content">
 
-                <table class="footable table table-stripped toggle-arrow-tiny no-paging footable-loaded">
+                <table class="footable table table-stripped toggle-arrow-tiny no-paging footable-loaded log">
                     <thead>
                     <tr>
-
-                        <th data-toggle="true" class="footable-sortable text-left">Datetime<span class="footable-sort-indicator"></span></th>
-                        <th class="footable-sortable text-center">Status<span class="footable-sort-indicator"></span></th>
-                        <th class="footable-sortable text-left">via<span class="footable-sort-indicator"></span></th>
-
+                        <th data-toggle="true" class="footable-sortable text-left">Datetime</th>
+                        <th class="footable-sortable text-center">Status</th>
+                        <th class="footable-sortable text-left">via</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr style="" class="footable-even">
-                        <td><span class="footable-toggle"></span>1</td>
-                        <td>physical</td>
-                        <td>stripe</td>
+                    <tr >
+                        <td width="40%">03/05/2018 at 12:52:23</td>
+                        <td width="40%">physical</td>
+                        <td width="10%">stripe</td>
                     </tr>
-                    <tr style="" class="footable-even">
-                        <td><span class="footable-toggle"></span>2</td>
+                    <tr>
+                        <td>03/05/2018 at 12:52:23</td>
                         <td>physical</td>
                         <td>stripe</td>
                     </tr>
@@ -500,23 +498,23 @@
             </div>
             <div class="ibox-content">
 
-                <table class="footable table table-stripped toggle-arrow-tiny no-paging footable-loaded">
+                <table class="footable table table-stripped toggle-arrow-tiny no-paging footable-loaded log">
                     <thead>
                     <tr>
 
-                        <th data-toggle="true" class="footable-sortable text-left">Datetime<span class="footable-sort-indicator"></span></th>
-                        <th data-toggle="true" class="footable-sortable text-left">Payment ref.<span class="footable-sort-indicator"></span></th>
-                        <th class="footable-sortable text-center">Status<span class="footable-sort-indicator"></span></th>
-                        <th class="footable-sortable text-left">via<span class="footable-sort-indicator"></span></th>
+                        <th data-toggle="true" class="footable-sortable text-left">Datetime</th>
+                        <th data-toggle="true" class="footable-sortable text-left">Payment ref.</th>
+                        <th class="footable-sortable text-center">Status</th>
+                        <th class="footable-sortable text-left">via</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     <tr style="" class="footable-even">
-                        <td><span class="footable-toggle"></span>1</td>
-                        <td>asffgwt34545yhfghgd</td>
-                        <td>physical</td>
-                        <td>stripe</td>
+                        <td width="30%">1</td>
+                        <td width="30%">asffgwt34545yhfghgd</td>
+                        <td width="30%">physical</td>
+                        <td width="10%">stripe</td>
                     </tr>
                     <tr style="" class="footable-even">
                         <td><span class="footable-toggle"></span>2</td>

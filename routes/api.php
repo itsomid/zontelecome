@@ -20,5 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix'=>'org'],function (){
    Route::get('/info','API\RefillController@info');
-   Route::get('/device','API\RefillController@getDeviceInfo');
+   Route::get('/device/{device_id}','API\RefillController@getDeviceInfo');
 });

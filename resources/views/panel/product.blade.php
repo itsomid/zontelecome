@@ -1,15 +1,17 @@
-@extends('layouts.app')
-@section('breadcrumbs')
-    @include('inspinia::layouts.main-panel.breadcrumbs', [
-      'breadcrumbs' => [
-        (object) [ 'title' => 'Home', 'url' => route('panel') ],
-        (object) [ 'title' => 'Product List', 'url' => route('panel/product') ]
-      ]
-    ])
-@endsection
-@section('content-title')
+@extends('panel.layouts.main')
+
+@section('title')
     Product List
-    @endsection
+@endsection
+@section('breadtitle')
+    Product List
+@endsection
+@section('breadmenu')
+    <li><a href="{{route('panel')}}">Home</a></li>
+
+    <li class="active"><strong>Product List</strong></li>
+@endsection
+
 @section('content')
 
     <div class="wrapper wrapper-content animated fadeInRight">
