@@ -21,8 +21,10 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '1234567892',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '10',
-                'status' => 'payed',
+                'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -35,6 +37,8 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '3456789033',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '12',
                 'status' => 'initializing',
                 'by_admin' => 0,
@@ -49,6 +53,8 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '1234567892',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '23',
                 'status' => 'canceled',
                 'by_admin' => 0,
@@ -63,6 +69,8 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '1234567892',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '43',
                 'status' => 'processing',
                 'by_admin' => 0,
@@ -77,8 +85,10 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '1234567892',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '83',
-                'status' => 'payed',
+                'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -91,8 +101,10 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '1234567892',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '28',
-                'status' => 'payed',
+                'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -105,6 +117,8 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '657453534',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '40',
                 'status' => 'ready to deliver',
                 'by_admin' => 1,
@@ -119,6 +133,8 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '657453534',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '40',
                 'status' => 'ready to deliver',
                 'by_admin' => 0,
@@ -132,6 +148,8 @@ class OrderTableSeeder extends Seeder
                 'c_city' => 'tehran',
                 'c_country' => 'Bermuda',
                 'c_zip' => '657453534',
+                'tax' => '2.00',
+                'delivery_fee'=>'3.00',
                 'total_price' => '40',
                 'status' => 'ready to deliver',
                 'by_admin' => 0,
@@ -144,6 +162,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 1,
                 'product_id' => '1',
                 'order_id' => '1',
+                'device_id'=> null,
                 'description'=>'dec 2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -151,6 +170,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 2,
                 'product_id' => '1',
                 'order_id' => '2',
+                'device_id'=> null,
                 'description'=>'dec 2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -158,6 +178,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 4,
                 'product_id' => '3',
                 'order_id' => '2',
+                'device_id'=> null,
                 'description'=>'dec 2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -165,6 +186,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 1,
                 'product_id' => '2',
                 'order_id' => '3',
+                'device_id'=> null,
                 'description'=>'dec 2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -172,6 +194,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 4,
                 'product_id' => '3',
                 'order_id' => '4',
+                'device_id'=> null,
                 'description'=>'dec 2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -179,6 +202,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 1,
                 'product_id' => '3',
                 'order_id' => '5',
+                'device_id'=> null,
                 'description'=>'dec 2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -186,6 +210,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 1,
                 'product_id' => '2',
                 'order_id' => '6',
+                'device_id'=> null,
                 'description'=>'dec 2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -193,6 +218,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 5,
                 'product_id' => '1',
                 'order_id' => '6',
+                'device_id'=> null,
                 'description'=>'dec 2',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -200,6 +226,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 4,
                 'product_id' => '3',
                 'order_id' => '7',
+                'device_id'=> null,
                 'description'=>'dec create by admin',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -207,6 +234,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 1,
                 'product_id' => '4',
                 'order_id' => '8',
+                'device_id'=> 'KF022496',
                 'description'=>'data package',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -214,6 +242,7 @@ class OrderTableSeeder extends Seeder
                 'quantity' => 1,
                 'product_id' => '5',
                 'order_id' => '9',
+                'device_id'=> 'KF022496',
                 'description'=>'package',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ]

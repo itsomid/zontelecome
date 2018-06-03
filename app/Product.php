@@ -21,7 +21,7 @@ use Vinkla\Hashids\Facades\Hashids;
 class Product extends Model
 {
     protected $fillable = [ 'title', 'slug', 'type','price','status','description' ];
-
+    protected $hidden = ['id'];
     public function cart()
     {
         return $this->hasMany('App\Cart')->with('order');

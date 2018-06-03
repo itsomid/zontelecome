@@ -339,7 +339,7 @@
                                     <select name="status" id="status" class="form-control">
                                         <option value="initializing">Initializing</option>
                                         <option value="canceled">Canceled</option>
-                                        <option value="payed">Payed</option>
+                                        <option value="paid">Paid</option>
                                         <option value="processing">Processing</option>
                                         <option value="ready to deliver">Ready to Deliver</option>
                                         <option value="delivering">Delivering</option>

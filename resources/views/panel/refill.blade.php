@@ -78,8 +78,8 @@
 
 
                                 <td>
-                                    @if($order->status == 'payed')
-                                        <span class="label label-primary">Payed</span>
+                                    @if($order->status == 'paid')
+                                        <span class="label label-primary">Paid</span>
                                     @elseif($order->status == 'processing')
                                         <span class="label label-danger">Processing</span>
                                     @elseif($order->status == 'initializing')

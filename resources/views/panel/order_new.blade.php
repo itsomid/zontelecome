@@ -332,7 +332,7 @@
                                     <select name="status" id="status" class="form-control">
                                         <option value="initializing">Initializing</option>
                                         <option value="canceled">Canceled</option>
-                                        <option value="payed">Payed</option>
+                                        <option value="paid">Paid</option>
                                         <option value="processing">Processing</option>
                                         <option value="ready to deliver">Ready to Deliver</option>
                                         <option value="delivering">Delivering</option>
@@ -403,7 +403,7 @@
                                     <td id="p_total_price_1">{{$products[0]->price}}$</td>
 
                                     <td style="font-family: 'MoskNormal';">
-                                        <input id="p_description_1" name="p_description[0]" type="text"
+                                        <input id="p_description_1" name="item_description[0]" type="text"
                                                class="form-control inp__description" value="">
                                     </td>
                                 </tr>
@@ -418,7 +418,7 @@
                                 <div class="col-md-9">
                                     <div class="form-group">
                                         <label for="title">Order description (for client)</label>
-                                        <textarea id="add_product" type="text" class="form-control"></textarea>
+                                        <textarea id="add_product" type="text" name="p_description" class="form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
@@ -432,11 +432,11 @@
                                         </tr>
                                         <tr>
                                             <td><strong>Taxes</strong></td>
-                                            <td><strong>$ {{number_format((float)$tax,2,'.',',')}}</strong></td>
+                                            <td id="tax"><strong></strong></td>
                                         </tr>
                                         <tr>
                                             <td><strong>Discount</strong></td>
-                                            <td><input type="text" name="discount" id="discount" style="width: 40px"></td>
+                                            <td><strong>$ <input type="text" name="discount" id="discount" value="0.00" style="width: 35px"></strong></td>
                                         </tr>
                                         <tr>
                                             <td><strong>Final Price</strong></td>
@@ -469,22 +469,32 @@
         var id = 1;
 
         var end_price = [];
+        end_price[0] = 0.00;
         end_price[1] = parseFloat({{$products[0]->price}});
-        var tax = parseFloat({{$tax}});
+        var tax_perc = parseFloat({{$tax}});
 
         $(document).ready(function () {
             $('#p_quantity').val(quantity);
             $('#status').val(status);
+        
+            var final_price = finalPrice(end_price.reduce(getSum),tax_perc);
+            $('#final_price strong').text('$ ' + final_price.toFixed(2));
+
+            var tax_price = taxPrice(end_price.reduce(getSum),tax_perc);
+            $('#tax strong').text('$ ' + tax_price.toFixed(2));
 
             $('#add_btn').click(function () {
 
                 id = id + 1;
                 end_price[id] = parseFloat({{$products[0]->price}});
-
+                $('#discount').val('0.00');
                 $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
-                var final_price = parseFloat(end_price.reduce(getSum)) + parseFloat(tax);
 
+                var final_price = finalPrice(end_price.reduce(getSum),tax_perc);
                 $('#final_price strong').text('$ ' + final_price.toFixed(2));
+
+                var tax_price = taxPrice(end_price.reduce(getSum),tax_perc);
+                $('#tax strong').text('$ ' + tax_price.toFixed(2));
 
                 $('#myTable tbody').append('' +
                     '<tr id='+id+'>' +
@@ -507,7 +517,7 @@
                         '<td id="p_total_price_'+id+'">{{$products[0]->price}}$</td>'+
 
                         '<td style="font-family: MoskNormal;">'+
-                            '<input id="p_description" name="p_description[]" type="text" class="form-control inp__description" value="">'+
+                            '<input id="p_description" name="item_description[]" type="text" class="form-control inp__description" value="">'+
                         '</td>'+
                     '</tr>');
             });
@@ -535,12 +545,14 @@
                         $('#p_quantity_'+id).val(1);
                         $('#p_total_price_'+id).text(data + "$");
                         end_price[id] = data;
-
+                        $('#discount').val('0.00');
                         $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
 
-                        var final_price = parseFloat(end_price.reduce(getSum))+ parseFloat(tax);
-
+                        var final_price = finalPrice(end_price.reduce(getSum),tax_perc);
                         $('#final_price strong').text('$ ' + final_price.toFixed(2));
+
+                        var tax_price = taxPrice(end_price.reduce(getSum),tax_perc);
+                        $('#tax strong').text('$ ' + tax_price.toFixed(2));
                     }
 
                 });
@@ -552,21 +564,50 @@
 
                 var quantity = $(this).val();
                 var id = $(this).parent().parent().attr('id');
-                console.log(id);
                 var txt_price = $('#p_price_'+id).text();
                 var price = Number(txt_price.replace("$",""));
                 var total_price = quantity * price;
                 $('#p_total_price_'+id).text(parseFloat(total_price).toFixed(2)+'$');
 
-                end_price[id] =parseFloat(total_price).toFixed(2);
-
+                end_price[id] = parseFloat(total_price).toFixed(2);
+                $('#discount').val('0.00');
                 $('#end_price strong').text('$ ' + parseFloat(end_price.reduce(getSum)).toFixed(2));
 
-                var final_price = parseFloat(end_price.reduce(getSum))+ parseFloat(tax);
+                var final_price = finalPrice(end_price.reduce(getSum),tax_perc);
                 $('#final_price strong').text('$ ' + final_price.toFixed(2));
+
+                var tax_price = taxPrice(end_price.reduce(getSum),tax_perc);
+                $('#tax strong').text('$ ' + tax_price.toFixed(2));
 
             });
 
+            $("#discount").keydown(function (e) {
+
+
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                    // Allow: Ctrl/cmd+A
+                    (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    // Allow: Ctrl/cmd+C
+                    (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    // Allow: Ctrl/cmd+X
+                    (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    // Allow: home, end, left, right
+                    (e.keyCode >= 35 && e.keyCode <= 39)) {
+                    // let it happen, don't do anything
+                    return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+
+            });
+
+            $('#discount').change(function () {
+
+                var final_price = finalPrice(end_price.reduce(getSum),tax_perc);
+                $('#final_price strong').text('$ ' + final_price.toFixed(2));
+            });
 
             $(".metismenu li").removeClass("active");
             $('#order').addClass('active');
@@ -575,10 +616,18 @@
           return  parseFloat(total) + parseFloat(num);
 
         }
-        function getSumTax(total, num) {
-          return  parseFloat(total) + parseFloat(num);
-
+        
+        function finalPrice(price,tax_perc) {
+            var  tax = price * (tax_perc/100);
+            var discount = $('#discount').val();
+            var  final_price = tax + price - discount;
+            return final_price;
         }
+        function taxPrice(price,tax_perc) {
+            var  tax = price * (tax_perc/100);
+            return tax;
+        }
+        
 
 
     </script>

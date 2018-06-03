@@ -11,9 +11,9 @@ class SettingTableSeeder extends Seeder
      */
     public function run()
     {
-       $setting =[
+       $setting = [
            'tax_fee'     => 6.00,
-           'delivery_fee'    => 12.00,
+           'delivery_fee'    => 2.00,
            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
        ];
         DB::table('setting')->insert($setting);

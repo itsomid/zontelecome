@@ -23,7 +23,10 @@ class CreateOrdersTable extends Migration
             $table->string('c_country')->nullable();
             $table->string('c_zip')->nullable();
             $table->float('total_price')->nullable();
-            $table->enum('status',['initializing','canceled','payed','processing','ready to deliver','delivering','delivered']);
+            $table->float('tax')->nullable();
+            $table->float('delivery_fee')->nullable();
+            $table->float('discount')->default('0');
+            $table->enum('status',['initializing','canceled','paid','processing','ready to deliver','delivering','delivered']);
             $table->boolean('by_admin')->default(false);
             $table->text('description')->nullable();
 

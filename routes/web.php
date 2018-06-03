@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/product', 'ProductController@index')->name('website/product');
+Route::get('/cart', 'ProductController@cart')->name('website/cart');
+Route::group(['prefix'=>'refill'],function (){
+    Route::get('/', 'RefillController@index')->name('website/refill');
+});
+Route::get('/order/track','OrderController@index')->name('website/order/track');
+
+
 
 
 Route::group(['prefix' => 'panel', 'middleware' => ['auth']], function () {

@@ -78,8 +78,8 @@
                                 </td>
                                 <td>{{$order->created_at->format('Y-m-d H:i:s')}}</td>
                                 <td>
-                                    @if($order->status == 'payed')
-                                        <span class="label label-primary">Payed</span>
+                                    @if($order->status == 'paid')
+                                        <span class="label label-primary">Paid</span>
                                     @elseif($order->status == 'processing')
                                         <span class="label label-danger" >Processing</span>
                                     @elseif($order->status == 'initializing')
@@ -95,7 +95,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <div class="container">
+                                    <div class="">
                                         <div class="text-right pull-right">
                                             <a href="{{route('panel/get/order', ['uid'=>$order->uid]) }}"
                                                class="btn btn__ btn__light" id="add_btn">Edit Order</a>
@@ -119,7 +119,7 @@
                                                         <td>{{$key + 1}}</td>
                                                         <td>{{$product->title}}</td>
                                                         <td>{{$product->pivot->quantity}}</td>
-                                                        <td>{{$product->description}}</td>
+                                                        <td>{{$product->pivot->description}}</td>
                                                         <td>{{$product->price}}$</td>
                                                         <td>{{number_format((float)$product->pivot->quantity * $product->price, 2, '.', ',')}}
                                                             $

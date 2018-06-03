@@ -67,6 +67,7 @@ class Order extends Model
     {
         return Cart::where('order_id',$this->id)->sum('quantity');
     }
+    
     public function payment()
     {
         return $this->hasOne('App\Payment')->where('status','successful');

@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
+    public $delivary = false;
+
     public function index()
     {
         $orders = Order::with('products')->get();
@@ -22,9 +24,10 @@ class OrderController extends Controller
     public function getOrder($uid)
     {
        $id = Order::realId($uid);
-        $order = Order::whereId($id)->with('products')->first();
+       $order = Order::whereId($id)->with('products','cart')->first();
 
-        return view('panel.order_edit',['order'=>$order]);
+        $item = Cart::whereOrderId($order->id)->get();
+        return view('panel.order_edit',['order'=>$order,'item'=>$item]);
     }
 
     public function editOrder(Request $request,$uid)
@@ -42,11 +45,13 @@ class OrderController extends Controller
         $order->description = $request->input('order_description');
 
         $order->save();
-        foreach ($order->products as $product)
+
+         $items = Cart::whereOrderId($order->id)->get();
+        foreach ($items as $item)
         {
 
-            $product->description = $request->p_description[$product->id];
-            $product->save();
+            $item->description = $request->p_description[$item->product_id];
+            $item->save();
         }
 
         return \Redirect::back();
@@ -61,6 +66,8 @@ class OrderController extends Controller
 
     public function addnewOrder(Request $request)
     {
+
+        $total_price = 0;
         $order = new Order;
         $order->by_admin = true;
         $order->c_mail = $request->c_mail;
@@ -70,31 +77,59 @@ class OrderController extends Controller
         $order->c_city = $request->city;
         $order->c_country = $request->c_country;
         $order->c_zip = $request->zipcode;
-        $order->total_price = $request->c_country;
-        $order->description = $request->c_country;
+
+//        $order->description = $request->p_description;
         $order->status = "ready to deliver";
+        foreach ($request->p_name as $key=>$item)
+        {
+            $price = Product::whereSlug($item)->first()->price;
+            $quantity = $request->p_quantity[$key];
+            $total_price += $price * $quantity;
+        }
+         $delivery_fee =  \DB::table('setting')->first()->delivery_fee;
+        if($delivery_fee == -1){
+            ///do somethings
+        }
+        else{
+            $order->delivery_fee = $delivery_fee;
+        }
+        $final_price = $this->finalPrice($total_price,$request->discount,$delivery_fee);
+        $order->tax = $this->taxCalculate($total_price);
+        $order->discount = $request->discount;
+        $order->total_price = $final_price;
 
         if($order->save()) {
-//
             $insertedId = $order->id;
-
         }
 
         foreach ($request->p_name as $key=>$item){
 
-
             $cart = new Cart;
-
             $product = Product::whereSlug($item)->first();
             $cart->product_id = $product->id;
             $cart->quantity = $request->p_quantity[$key];
-            $cart->description = $request->p_description[$key];
+            $cart->description = $request->item_description[$key];
             $cart->order_id = $insertedId;
             $cart->save();
 
         }
         return \Redirect::back();
 
+    }
+
+    public function finalPrice($total_price,$discount,$delivery_fee)
+    {
+        $tax_percentage =  \DB::table('setting')->first()->tax_fee;
+        $tax = $total_price * ($tax_percentage/100);
+        $final_price = $total_price + $tax + $delivery_fee  - $discount;
+        return $final_price;
+    }
+
+    public function taxCalculate($total_price)
+    {
+        $tax_percentage =  \DB::table('setting')->first()->tax_fee;
+        $tax = $total_price * ($tax_percentage/100);
+        return $tax;
     }
 
 
