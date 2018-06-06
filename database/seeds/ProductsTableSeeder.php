@@ -79,7 +79,7 @@ class ProductsTableSeeder extends Seeder
                 'slug' => null,
                 'type' => 'virtual',
                 'price' => '2.00',
-                'related_product' => 2,
+                'related_product' => 1,
                 'status' => '1',
                 'description' => 'package 4',
                 'main_image_url'=>''

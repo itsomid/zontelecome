@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 class Order extends Model
 {
     protected $hidden = ['id'];
-    protected $appends = ['uid','total_quantity'];
+    protected $appends = ['uid','total_quantity','tax_price','final_price'];
 
     public static function realId($uid) {
         $id = \Hashids::connection('main')->decode($uid);
@@ -75,5 +75,16 @@ class Order extends Model
     public function allPayments()
     {
         return $this->hasMany('App\Payment');
+    }
+
+    public function getFinalPriceAttribute()
+    {
+        $tax = $this->total_price * ($this->tax/100);
+        return (float)number_format($this->total_price + $tax + $this->delivery_fee - $this->discount,'2');
+    }
+
+    public function getTaxPriceAttribute()
+    {
+        return $this->total_price * ($this->tax/100);
     }
 }

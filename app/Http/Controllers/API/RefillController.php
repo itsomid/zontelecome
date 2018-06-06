@@ -15,13 +15,13 @@ class RefillController extends Controller
     public function getDeviceInfo(Request $request, $device_id)
     {
 
-
 //        $device_id = "KF022496";
 //        $icc_id = "kf300977";
         $client = new Client(['base_uri' => 'https://org.sdgtelecom.com/api/']);
 ////
 //         $r = $client->request('GET', 'org/9179e3d4c94a51f780f4b4ef91eba8b2/devices', ['headers' => \Config::get('keepgo.data')]);
-//        return $r->getBody();
+        //        return $r->getBody();
+
         $r = $client->request('GET', "org/9179e3d4c94a51f780f4b4ef91eba8b2/devices?common_filter=$device_id", ['headers' => \Config::get('keepgo.data')]);
 
         $info = json_decode($r->getBody());
@@ -51,14 +51,6 @@ class RefillController extends Controller
 
     public function refillHistory($device_id)
     {
-//        $client = new Client(['base_uri' => 'https://org.sdgtelecom.com/api/']);
-//////
-//        $r = $client->request('GET', "org/9179e3d4c94a51f780f4b4ef91eba8b2/devices?common_filter=$device_id", ['headers' => \Config::get('keepgo.data')]);
-//        $r->getBody();
-//
-//        $info = json_decode($r->getBody());
-//        if (empty($info->data))
-//            return abort(404);
 
         $refill_history = Cart::with('insideOrder', 'insideProduct')->whereDeviceId($device_id)->get();
 
@@ -81,10 +73,22 @@ class RefillController extends Controller
 
         if ($info->data[0]->hardware_model->prefix == "KF") {
 
-           return $plan = Product::whereRelatedProduct('1')->get();
-
+           return $plan = Product::whereRelatedProduct('1')->get()->makeVisible('id');
 
         }
          return abort(404);
+    }
+
+    public function getLastRefillDate($device_id)
+    {
+
+         $last_refill = Cart::whereDeviceId($device_id)->orderBy('created_at', 'desc')->first();
+        if (empty($last_refill))
+            return abort(404);
+        $last_refill_date = [
+            'last_refill_date' => $last_refill->order->created_at->toDateTimeString(),
+            'last_refill' => $last_refill->order->created_at->diffForHumans(Carbon::now())
+        ];
+        return response()->json($last_refill_date);
     }
 }

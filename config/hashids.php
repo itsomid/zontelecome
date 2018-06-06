@@ -40,7 +40,12 @@ return [
     'connections' => [
 
         'main' => [
-            'salt' => 'hxhtnmlwtrhtyhe45dfcdx',
+            'salt' => 'abcdefghijklmnopqrstuvwxyz1234567890',
+            'length' => 10,
+            'alphabet' => 'abcdefghijklmnopqrstuvwxyz0123456789',
+        ],
+        'payment' => [
+            'salt' => 'wfji243idfig94',
             'length' => 10,
         ],
 

@@ -19,9 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::group(['prefix'=>'org'],function (){
-   Route::get('/info','API\RefillController@info');
+
    Route::get('/device/{device_id}','API\RefillController@getDeviceInfo');
    Route::get('/refill/history/{device_id}','API\RefillController@refillHistory');
+   Route::get('/refill/date/{device_id}','API\RefillController@getLastRefillDate');
+
    Route::get('/plan/{device_id}','API\RefillController@getDataPlan');
 
 //   Route::post('/pay/')

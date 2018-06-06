@@ -40,7 +40,7 @@ class OrderTableSeeder extends Seeder
                 'tax' => '2.00',
                 'delivery_fee'=>'3.00',
                 'total_price' => '12',
-                'status' => 'initializing',
+                'status' => 'ready to deliver',
                 'by_admin' => 0,
                 'description' => 'okey',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -136,7 +136,7 @@ class OrderTableSeeder extends Seeder
                 'tax' => '2.00',
                 'delivery_fee'=>'3.00',
                 'total_price' => '40',
-                'status' => 'ready to deliver',
+                'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
@@ -151,7 +151,7 @@ class OrderTableSeeder extends Seeder
                 'tax' => '2.00',
                 'delivery_fee'=>'3.00',
                 'total_price' => '40',
-                'status' => 'ready to deliver',
+                'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')

@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique()->nullable();
             $table->enum('type',['virtual','physical'])->default('physical');
-            $table->decimal('price');
+            $table->float('price');
             $table->integer('related_product');
             $table->enum('status',[0,1])->default(0);
             $table->text('description')->nullable();

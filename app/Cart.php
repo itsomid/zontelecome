@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @mixin \Eloquent
  * @property string $device_id
+ *  * @property string $id
  *  @property-read \Illuminate\Database\Eloquent\Collection|\App\Order[] $order
  *  @mixin \Illuminate\Database\Eloquent\Builder
  *  @mixin \Illuminate\Database\Eloquent\Builder
@@ -33,4 +34,5 @@ class Cart extends Model
     {
         return $this->belongsTo('App\Product', 'product_id')->select(['id','title','price','description']);
     }
+
 }

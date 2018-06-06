@@ -10,8 +10,16 @@ class TrackController extends Controller
 {
     public function getOrder($uid)
     {
+
         $id = Order::realId($uid);
-        return $order = Order::whereId($id)->with('products')->first();
+        if (empty($id))
+            return abort(404);
+       $order = Order::whereId($id)->with('products','payment')->first()->makeHidden('tax');
+       if($order->status != 'initializing' && $order->status != 'canceled')
+            return $order;
+        else
+            return abort(404);
+
 
     }
 
