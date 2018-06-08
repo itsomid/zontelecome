@@ -1,7 +1,7 @@
 @extends('landing.main')
 @section('content')
 
-    @include('landing.main_topnav')
+    @include('landing.topnav')
     <div class=" main-body">
         <section class="flex-container-main justify-content-center max_width">
             <div class="flex-item-main-1">
@@ -152,16 +152,16 @@
                 <div class="row main-color col_row_2_padd">
                     <p class="product__cart ">$ 2.99</p>
                     <p class="product__cart__sub">Place Your Order Now</p>
-                    <button type="button" class="btn__ btn__product">
+                    <a class="btn btn__product addbtn">
                         <i class="fa fa-plus" style="font-size: 12px"></i>
                         Add to Cart
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
 
 
-        <section class="sec__padding">
+        <section class="sec__padding third-color">
             <div class="text-center">
                 <div class="row"></div>
                 <div class="row">

@@ -83,6 +83,51 @@ class ProductsTableSeeder extends Seeder
                 'status' => '1',
                 'description' => 'package 4',
                 'main_image_url'=>''
+            ],[
+                'title' => '5 GB',
+                'slug' => null,
+                'type' => 'virtual',
+                'price' => '12.30',
+                'related_product' => 1,
+                'status' => '1',
+                'description' => 'packaewrge 4',
+                'main_image_url'=>''
+            ],[
+                'title' => '6 GB',
+                'slug' => null,
+                'type' => 'virtual',
+                'price' => '5.00',
+                'related_product' => 1,
+                'status' => '1',
+                'description' => 'packautkge 4',
+                'main_image_url'=>''
+            ],[
+                'title' => '7 GB',
+                'slug' => null,
+                'type' => 'virtual',
+                'price' => '2.34',
+                'related_product' => 1,
+                'status' => '1',
+                'description' => 'pacfdgkage 4',
+                'main_image_url'=>''
+            ],[
+                'title' => '8 GB',
+                'slug' => null,
+                'type' => 'virtual',
+                'price' => '2.50',
+                'related_product' => 1,
+                'status' => '1',
+                'description' => 'packagereet 4',
+                'main_image_url'=>''
+            ],[
+                'title' => '9 GB',
+                'slug' => null,
+                'type' => 'virtual',
+                'price' => '3.00',
+                'related_product' => 1,
+                'status' => '1',
+                'description' => 'package sgd',
+                'main_image_url'=>''
             ],
 
         ];

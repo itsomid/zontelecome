@@ -45,6 +45,7 @@
     font-style: normal;
     font-weight: bold;
     text-rendering: optimizeLegibility;
+
 }
 /* Webfont: BloggerSans-Bold */@font-face {
     font-family: 'BloggerSans-Bold';
@@ -58,13 +59,15 @@
     text-rendering: optimizeLegibility;
 }
 
-
+html,body{
+    height: 100%;
+}
 body {
     font-family: BloggerSans;
     background-color: #242424;
 }
 .main-body{
-
+    height: 100%;
     padding-top: 100px;
     position: relative;
     background-color: #C9C9C9;
@@ -101,7 +104,7 @@ padding: 7rem 0;
     padding-left: 150px;
     z-index: 2;
 }
-.flex-conteiner {
+.flex-container {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -257,6 +260,7 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
 .title__feature{
     font-size: 24px;
 }
+
 .context__feature{
     font-size: 18px;
 }
@@ -349,7 +353,7 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
     font-family: BloggerSans-Bold;
     font-size: 14px;
     background-color: rgba(76, 175, 80, 0);
-    color: #949494;
+    color: #949494 !important;
     padding: 12px 0px 3px 0px;
     width: 125px;
     border: 2px solid #979797;
@@ -359,10 +363,12 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
 .btn__product{
     font-family: BloggerSans-Medium;
     font-size: 24px;
-    border-radius: 40px;
     background-color: #FFCC00;
-    padding: 12px 0px 3px 0px;
+    border-radius: 40px;
     color: #454545;
+    padding: 20px 0px 3px 0px;
+    width: 142px;
+    min-height: 63px;
     border: none;
     min-width: 200px;
 }
@@ -477,6 +483,30 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
     font-family: BloggerSans-Medium;
     font-size: 24px;
     color: #E3E3E3;
+}
+.success__title__1 {
+    font-family: BloggerSans;
+    font-size: 20px;
+    color: white;
+}
+.success__title__2{
+    font-family: BloggerSans;
+    font-size: 24px;
+    color: #FFCC00;
+}
+.success__box{
+    border: 2px dashed #FFCC00;
+    border-radius: 4px;
+    padding: 50px 40px 15px 40px;
+    font-size: 48px;
+    font-family: BloggerSans-medium;
+    color: white;
+}
+.success__date{
+    font-family: BloggerSans;
+    font-size: 15px;
+    color: #FFFFFF;
+
 }
 .main-color{
     background-color: #242424;

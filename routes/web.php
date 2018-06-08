@@ -11,19 +11,24 @@
 |
 */
 Auth::routes();
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/','HomeViewController@index')->name('website/home');
+
 Route::get('/product', 'ProductController@index')->name('website/product');
 Route::get('/cart', 'ProductController@cart')->name('website/cart');
 Route::group(['prefix'=>'refill'],function (){
     Route::get('/', 'RefillController@index')->name('website/refill');
 });
 Route::get('/order/track','OrderController@index')->name('website/order/track');
+Route::get('/order/cart/item','OrderController@getCartItem')->name('website/order/cart/item');
+Route::post('/order/cart/item','OrderController@getCartItem')->name('website/order/cart/item');
+
+Route::get('/payment/result','PaymentController@squareup')->name('website/payment/result');
 
 
 
 
+//panel
 Route::group(['prefix' => 'panel', 'middleware' => ['auth']], function () {
     Route::get('/', 'Panel\DashboardController@index')->name('panel');
     Route::group(['prefix' => 'product'], function() {

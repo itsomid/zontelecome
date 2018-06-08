@@ -111,7 +111,7 @@
 
                 $(refElement).find('button').css('opacity', opacity);
                 $(this).find('.circle_product').css('opacity', opacity2);
-                console.log("opacity" + $(this).find('.circle_product').css('opacity'));
+                // console.log("opacity" + $(this).find('.circle_product').css('opacity'));
                 if ($(this).find('.circle_product').css('opacity') >= 0.01) {
 
                     $(this).find('.menu_title').css('color', '#FFC506');
@@ -126,17 +126,17 @@
 
                 var s = $(document).scrollTop() - $(refElement).find('.main_product').offset().top;
 
-                console.log("s === " + s);
+                // console.log("s === " + s);
 
 
-                console.log("VARED" + refElement.attr("id"));
+                // console.log("VARED" + refElement.attr("id"));
 
             } else if (offset > 0 && offset <= windowHeight) {
                 //section leaving the viewport
 
                 opacity = (1 - (offset / (windowHeight)));
                 opacity2 = (1 - (offset / (windowHeight - 700)));
-                console.log("kharej" + refElement.attr("id"), opacity);
+                // console.log("kharej" + refElement.attr("id"), opacity);
                 $(refElement).find('.product_description').css('opacity', opacity);
                 $(refElement).find('button').css('opacity', opacity);
                 if ($(this).find('.circle_product').css('opacity') <= 0.01) {

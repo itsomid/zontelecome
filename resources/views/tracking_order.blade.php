@@ -1,10 +1,10 @@
 @extends('landing.main')
 @section('content')
 
-    @include('landing.main_topnav')
-    <div class="main-body fifth-color">
+    @include('landing.topnav')
+    <div class="main-body fifth-color d-flex justify-content-center align-items-center pt-0">
 
-        <section class="sec__padding ">
+        <section class="w-100 ">
             <div class="container text-center sec__bg__half sixth-color" style="background-size: 50%">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6">

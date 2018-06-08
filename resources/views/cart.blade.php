@@ -1,7 +1,7 @@
 @extends('landing.main')
 @section('content')
 
-    @include('landing.main_topnav')
+    @include('landing.topnav')
     <div class="main-body fifth-color">
 
         <section class="flex-container-main  justify-content-center sec__padding">
