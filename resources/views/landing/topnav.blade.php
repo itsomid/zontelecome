@@ -1,7 +1,7 @@
 
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light main-topbar">
-    <a class="navbar-brand p-2" href="" target="_blank">
+    <a class="navbar-brand p-2" href="{{route('website/home')}}">
         <img src="/img/logo.svg">
     </a>
 

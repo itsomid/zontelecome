@@ -131,7 +131,7 @@ padding: 7rem 0;
 .flex-item-2{
 width: 50%;
 background: url('/img/world-wide-black.svg') top right no-repeat;
-
+z-index: -1;
 
 }
 .flex-item-3{
@@ -333,7 +333,7 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
 }
 .btn__more{
     background-color: rgba(97, 97, 97, 0);
-    color: #949494;
+    color: #949494 !important;
     border: 1px solid #979797;
     border-radius: 15px;
    padding: 9px 21px 0px 21px;
@@ -392,6 +392,7 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
     font-family: MoskNormal;
     font-size: 52px;
     color: #FFCC00;
+    white-space: nowrap;
 
 }
 .Product_subtitle{
@@ -405,6 +406,7 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
     font-family: MoskNormal;
     font-size: 52px;
     color: #181818;
+    white-space: nowrap;
 }
 .Product_subtitle_main{
     font-family: MoskNormal;
@@ -619,16 +621,22 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
     text-align: right;
     width: 100%;
     float: left;
+    cursor: pointer;
+
 }
 .cart_item_ar:hover{
     text-decoration: none;
-    color: #949494;
+    color: #FFCC00 !important;
 }
 .cart_item_ar i{
     font-size: 25px;
     vertical-align: middle;
     padding-left: 5px;
     color: #FFCC00;
+
+}
+.cart_item_ar:hover i{
+
 }
 .cart_item_final{
     display: flex;
@@ -655,7 +663,13 @@ background: url('/img/world-wide-black.svg') top right no-repeat;
 .cart_item_table td:nth-child(2){
     text-align: right;
 }
-
+.cart_item_remove{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 22px;
+    cursor: pointer;
+}
 .tick_icon{
     color: #FFCC00;
     font-size: 30px !important;

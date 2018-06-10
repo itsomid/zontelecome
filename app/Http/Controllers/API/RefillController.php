@@ -32,6 +32,11 @@ class RefillController extends Controller
         $product_id = Cart::whereDeviceId($device_id)->first()->product_id;
         $product_name = Product::whereId(Product::whereId($product_id)->first()->related_product)->first();
 
+        ////Get Last Refill
+        $last_refill = Cart::whereDeviceId($device_id)->orderBy('created_at', 'desc')->first();
+        if (empty($last_refill))
+            return abort(404);
+
         if ($info->data[0]->hardware_model->prefix == "KF") {
             $image_url = $product_name->main_image_url;
             $product_title = $product_name->title;
@@ -44,6 +49,8 @@ class RefillController extends Controller
             'allowance_usage' => $info->data[0]->allowance_balance,
             'balance' => $balance,
             'image_url' => $image_url,
+            'last_refill_date' => $last_refill->order->created_at->toDateTimeString(),
+            'last_refill' => $last_refill->order->created_at->diffForHumans(Carbon::now())
         );
 
         return response()->json($device_info);
@@ -78,17 +85,5 @@ class RefillController extends Controller
         }
          return abort(404);
     }
-
-    public function getLastRefillDate($device_id)
-    {
-
-         $last_refill = Cart::whereDeviceId($device_id)->orderBy('created_at', 'desc')->first();
-        if (empty($last_refill))
-            return abort(404);
-        $last_refill_date = [
-            'last_refill_date' => $last_refill->order->created_at->toDateTimeString(),
-            'last_refill' => $last_refill->order->created_at->diffForHumans(Carbon::now())
-        ];
-        return response()->json($last_refill_date);
-    }
+    
 }

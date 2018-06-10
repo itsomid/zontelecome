@@ -23,9 +23,9 @@
 
                     </span>
                             </div>
-                            <button type="button" class="btn btn__more">
+                            <a href="{{route('website/product',['slug'=>$product->slug])}}" class="btn btn__more ">
                                 Read More
-                            </button>
+                            </a>
                         </div>
                         <div class="flex-item-2">
                             <div style="position: relative;margin-top: 110px;    margin-left: 100px;">
@@ -43,9 +43,9 @@
                             <a class="btn btn__light addbtn" id="{{$product->slug}}">
                                 <i class="fa fa-plus"></i> Add to cart
                             </a>
-                            <button type="button" class="btn btn__primary">
+                            <a href="{{route('website/cart')}}" class="btn btn__primary addbtn" id="{{$product->slug}}">
                                 Buy Now
-                            </button>
+                            </a>
                         </div>
 
                     </section>

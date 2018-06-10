@@ -14,14 +14,24 @@ Auth::routes();
 
 Route::get('/','HomeViewController@index')->name('website/home');
 
-Route::get('/product', 'ProductController@index')->name('website/product');
-Route::get('/cart', 'ProductController@cart')->name('website/cart');
+Route::get('/product/{slug}', 'ProductController@getProduct')->name('website/product');
+
+
 Route::group(['prefix'=>'refill'],function (){
     Route::get('/', 'RefillController@index')->name('website/refill');
 });
-Route::get('/order/track','OrderController@index')->name('website/order/track');
-Route::get('/order/cart/item','OrderController@getCartItem')->name('website/order/cart/item');
-Route::post('/order/cart/item','OrderController@getCartItem')->name('website/order/cart/item');
+Route::group(['prefix'=>'order'],function () {
+    Route::get('/track', 'OrderController@index')->name('website/order/track');
+    Route::get('/cart', 'OrderController@getCart')->name('website/cart');
+    Route::get('/cart/item', 'OrderController@cartItem')->name('website/order/cart/item');
+    Route::post('/cart/item', 'OrderController@cartItem')->name('website/order/cart/item');
+
+    Route::group(['prefix'=>'remove/product'],function (){
+        Route::post('/','OrderController@removeProductFromCart')->name('website/remove/product');
+        Route::post('/item','OrderController@removeItemFromCart')->name('website/remove/product/item');
+    });
+    Route::post('add/product/item','OrderController@addItemToCart')->name('website/add/product/item');
+});
 
 Route::get('/payment/result','PaymentController@squareup')->name('website/payment/result');
 
