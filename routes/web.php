@@ -22,15 +22,19 @@ Route::group(['prefix'=>'refill'],function (){
 });
 Route::group(['prefix'=>'order'],function () {
     Route::get('/track', 'OrderController@index')->name('website/order/track');
-    Route::get('/cart', 'OrderController@getCart')->name('website/cart');
-    Route::get('/cart/item', 'OrderController@cartItem')->name('website/order/cart/item');
-    Route::post('/cart/item', 'OrderController@cartItem')->name('website/order/cart/item');
+
+    Route::group(['prefix'=>'cart'],function (){
+        Route::get('/', 'CartController@getCart')->name('website/cart');
+        Route::get('/item', 'CartController@cartItem')->name('website/order/cart/item');
+        Route::post('/item', 'CartController@cartItem')->name('website/order/cart/item');
+    });
+
 
     Route::group(['prefix'=>'remove/product'],function (){
-        Route::post('/','OrderController@removeProductFromCart')->name('website/remove/product');
-        Route::post('/item','OrderController@removeItemFromCart')->name('website/remove/product/item');
+        Route::post('/','CartController@removeProductFromCart')->name('website/remove/product');
+        Route::post('/item','CartController@removeItemFromCart')->name('website/remove/product/item');
     });
-    Route::post('add/product/item','OrderController@addItemToCart')->name('website/add/product/item');
+    Route::post('add/product/item','CartController@addItemToCart')->name('website/add/product/item');
 });
 
 Route::get('/payment/result','PaymentController@squareup')->name('website/payment/result');

@@ -12,7 +12,7 @@ class SettingTableSeeder extends Seeder
     public function run()
     {
        $setting = [
-           'tax_fee'     => 6.00,
+           'tax_fee'     => 5.5,
            'delivery_fee'    => 2.00,
            'created_at' => Carbon::now()->format('Y-m-d H:i:s')
        ];

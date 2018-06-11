@@ -27,7 +27,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'c_mail' => 'sepid@yahoo.com',
@@ -43,7 +44,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'ready to deliver',
                 'by_admin' => 0,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'c_mail' => 'o.shabani@hotmail.com',
@@ -59,7 +61,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'canceled',
                 'by_admin' => 0,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::yesterday()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'c_mail' => 'sh@ya.com',
@@ -75,7 +78,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'processing',
                 'by_admin' => 0,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::yesterday()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'c_mail' => 'omid@gm.com',
@@ -91,7 +95,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'c_mail' => 'o.js@hotmail.com',
@@ -107,7 +112,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'c_mail' => 'admin@zontelecom.com',
@@ -123,7 +129,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'ready to deliver',
                 'by_admin' => 1,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'c_mail' => 'o.shabani@hotmail.com',
@@ -139,7 +146,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],[
                 'c_mail' => 'o.shabani@hotmail.com',
                 'c_name' => 'admin',
@@ -154,7 +162,8 @@ class OrderTableSeeder extends Seeder
                 'status' => 'paid',
                 'by_admin' => 0,
                 'description' => 'okey',
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+                'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
         ];
         $cart = [

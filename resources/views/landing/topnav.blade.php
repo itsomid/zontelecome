@@ -13,7 +13,11 @@
                 <a  class="shopping__cart" href="{{route('website/cart')}}">
                     <img src="/img/shopping_circle.svg" width="40" height="40" style="">
                     <img src="/img/shopping-cart.svg" width="21" height="24" style="position: absolute;left: 9px; top: -15px;">
-                    <span></span>
+                    @if(!empty(session('cart.item')))
+                        <span>{{count(session('cart.item'))}}</span>
+                    @else
+                        <span>0</span>
+                    @endif
                 </a>
             </li>
             <li class="nav-item p-2">
@@ -33,15 +37,7 @@
 <script>
 
     $(document).ready(function () {
-        $.ajax({
-            url: "{{route('website/order/cart/item')}}",
-            type: "GET",
-            success: function (data) {
-                $('.nav-item span').text(data);
-            }
-        });
-        $('.nav-item span').text();
-        {{--console.log({{session()->get('cart')}});--}}
+
 
         $('.addbtn').click(function () {
 

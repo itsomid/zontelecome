@@ -683,6 +683,11 @@ z-index: -1;
     font-family: MoskNormal;
     border-radius: 2px;
 }
+.form-group select {
+    font-family: MoskNormal;
+    border-radius: 2px;
+}
+
 .payment__text{
     font-family: BloggerSans;
     font-size: 20px;
