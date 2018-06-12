@@ -14,7 +14,7 @@ class ProductsTableSeeder extends Seeder
         $products = [
             [
                 'title' => 'ZoneFi Global Modem',
-                'slug' => 'zone-global-modem',
+                'slug' => 'zonefi-global-modem',
                 'type' => 'physical',
                 'price' => '10.00',
                 'related_product' => 0,
@@ -25,7 +25,7 @@ class ProductsTableSeeder extends Seeder
 
             [
                 'title' => 'ZoneTel EU Sim',
-                'slug' => 'zonetel-modem',
+                'slug' => 'zonetel-eu-sim',
                 'type' => 'physical',
                 'price' => '12.00',
                 'related_product' => 0,
@@ -35,7 +35,7 @@ class ProductsTableSeeder extends Seeder
             ],
             [
                 'title' => 'ZoneFi Global Sim',
-                'slug' => 'zonefi-global-modem',
+                'slug' => 'zonefi-global-sim',
                 'type' => 'physical',
                 'price' => '14.00',
                 'related_product' => 0,

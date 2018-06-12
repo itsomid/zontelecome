@@ -20,8 +20,8 @@ class CreatePaymentsTable extends Migration
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->float('amount')->default(0);
             $table->enum('status', ['initializing', 'failed', 'pending', 'successful', 'canceled'])->default('initializing');
-            $table->enum('via',['stripe','IPG']);
-            $table->string('reference');
+            $table->enum('via',['IPG','squerup'])->default('squerup');
+            $table->string('reference')->nullable();
             $table->timestamps();
         });
     }

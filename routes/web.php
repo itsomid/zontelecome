@@ -21,7 +21,7 @@ Route::group(['prefix'=>'refill'],function (){
     Route::get('/', 'RefillController@index')->name('website/refill');
 });
 Route::group(['prefix'=>'order'],function () {
-    Route::get('/track', 'OrderController@index')->name('website/order/track');
+    Route::get('/track', 'OrderController@trackOrder')->name('website/order/track');
 
     Route::group(['prefix'=>'cart'],function (){
         Route::get('/', 'CartController@getCart')->name('website/cart');
@@ -30,14 +30,16 @@ Route::group(['prefix'=>'order'],function () {
     });
 
 
-    Route::group(['prefix'=>'remove/product'],function (){
-        Route::post('/','CartController@removeProductFromCart')->name('website/remove/product');
-        Route::post('/item','CartController@removeItemFromCart')->name('website/remove/product/item');
+    Route::group(['prefix'=>'product'],function (){
+        Route::post('remove/','CartController@removeProductFromCart')->name('website/remove/product');
+        Route::post('remove/item','CartController@removeItemFromCart')->name('website/remove/product/item');
+        Route::post('add/item','CartController@addItemToCart')->name('website/add/product/item');
     });
-    Route::post('add/product/item','CartController@addItemToCart')->name('website/add/product/item');
-});
 
-Route::get('/payment/result','PaymentController@squareup')->name('website/payment/result');
+
+});
+Route::post('/payment/createpayment','PaymentController@create')->name('website/payment/create');
+Route::get('/payment/result','PaymentController@result')->name('website/payment/result');
 
 
 

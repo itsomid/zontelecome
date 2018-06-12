@@ -74,7 +74,7 @@
                                         <td>
                                             <div>Discount</div>
                                         </td>
-                                        <td id="dis">$0</td>
+                                        <td id="dis">$0.00</td>
                                     </tr>
 
 
@@ -100,35 +100,36 @@
                 </div>
                 <div class="row mt-4">
                     <div class="col-md-12">
-                        <form class="d-flex flex-wrap">
+                        <form action="{{route('website/payment/create')}}" method="POST" class="d-flex flex-wrap">
+                            {{csrf_field()}}
                             <div class="col-md-7">
 
                                 <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label">Full Name</label>
+                                    <label for="txt_name" class="col-sm-3 col-form-label">Full Name</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword">
+                                        <input type="text" class="form-control" id="c_name" name="c_name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label">Email</label>
+                                    <label for="txt_email" class="col-sm-3 col-form-label">Email</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword">
+                                        <input type="email" class="form-control" id="c_mail" name="c_mail">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label">Address</label>
+                                    <label for="address" class="col-sm-3 col-form-label">Address</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword">
+                                        <input type="text" class="form-control" id="c_address" name="c_address">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label">City</label>
+                                    <label for="city" class="col-sm-3 col-form-label">City</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPassword">
+                                        <input type="text" class="form-control" id="c_city" name="c_city" >
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label">Country</label>
+                                    <label for="c_country" class="col-sm-3 col-form-label">Country</label>
                                     <div class="col-sm-9">
                                         <select name="c_country" id="c_country" class="form-control">
                                             <option value="United States">United States</option>
@@ -401,13 +402,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-3 col-form-label">State</label>
+                                    <label for="c_state" class="col-sm-3 col-form-label">State</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control" id="inputPassword">
+                                        <input type="text" class="form-control" id="c_state" name="c_state">
                                     </div>
-                                    <label for="inputPassword" class="col-sm-2 col-form-label text-right pr-0 pl-0">Zip Code</label>
+                                    <label for="c_zipcode" class="col-sm-2 col-form-label text-right pr-0 pl-0">Zip Code</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="inputPassword">
+                                        <input type="text" class="form-control" id="c_zipcode" name="c_zipcode">
                                     </div>
                                 </div>
 

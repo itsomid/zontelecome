@@ -17,6 +17,7 @@ class CreateSettingTable extends Migration
             $table->increments('id');
             $table->float('tax_fee');
             $table->float('delivery_fee');
+            $table->boolean('pay_method');
             $table->timestamps();
         });
     }
