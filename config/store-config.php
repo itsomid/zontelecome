@@ -38,12 +38,9 @@ if ($GLOBALS['STORE_NAME'] == null) {
  * location ID and returns an Api object ready for communicating with Square's
  * various API endpoints
  ******************************************************************************/
-function initApiClient()
-{
+function initApiClient() {
     // If we've already set the API client, we don't need to do it again
-    if ($GLOBALS['API_CLIENT_SET']) {
-        return;
-    }
+    if ($GLOBALS['API_CLIENT_SET']) { return; }
     // Create and configure a new Configuration object
     $configuration = new \SquareConnect\Configuration();
     \SquareConnect\Configuration::getDefaultConfiguration()->setAccessToken($GLOBALS['ACCESS_TOKEN']);
@@ -51,16 +48,13 @@ function initApiClient()
     $locationsApi = new \SquareConnect\Api\LocationsApi();
     // Grab the location key for the configured store
     try {
-
         $apiResponse = $locationsApi->listLocations()->getLocations();
-
         // There may be more than one location associated with the account (e.g,. a
         // brick-and-mortar store and an online store), so we need to run through
         // the response and pull the right location ID
-//        dd( $apiResponse[0]);
+
 
         foreach ($apiResponse as $location) {
-
             if ($GLOBALS['STORE_NAME'] == $location->getName()) {
                 $GLOBALS['LOCATION_ID'] = $location['id'];
                 if (!in_array('CREDIT_CARD_PROCESSING', $location->getCapabilities())) {
@@ -72,7 +66,6 @@ function initApiClient()
                 }
             }
         }
-
         if ($GLOBALS['LOCATION_ID'] == null) {
             print(
                 "[ERROR] LOCATION ID NOT SET. A location ID for " .
@@ -90,5 +83,4 @@ function initApiClient()
         exit;
     }
 }
-
 ?>

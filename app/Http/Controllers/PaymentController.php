@@ -23,8 +23,8 @@ class PaymentController extends Controller
         }
 //        $cart_item = array_count_values($cart_items);
 //        return $cart_item['zonefi-global-modem'];
-       $squerup = new SquerupController();
-        return $squerup->squerup();
+       $squerup = new SquarupController();
+        return $squerup->squarup();
 
         $order = new Order;
         $order->by_admin = false;
