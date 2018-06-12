@@ -48,7 +48,7 @@ class SquarupController extends Controller
         $square = array(
             "idempotency_key" => uniqid(),
             "order" => array(
-                "reference_id" => (string)'23',
+                "reference_id" => (string)'24',
 
                 "line_items" => array(
                     // List each item in the order as an individual line item
