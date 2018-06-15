@@ -49,7 +49,7 @@ class SquarupController extends Controller
     }
     public function square_json($order_id){
 
-        return 1;
+    
         $cart_item = Cart::with('product')->where('order_id',$order_id)->get();
 
 
