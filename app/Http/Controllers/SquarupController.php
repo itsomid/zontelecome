@@ -32,7 +32,7 @@ class SquarupController extends Controller
                 $orderArray
             );
 
-
+//            return $apiResponse;
             // Grab the redirect url and checkout ID sent back
             $checkoutUrl = $apiResponse['checkout']['checkout_page_url'];
             $checkoutID = $apiResponse['checkout']['id'];
@@ -49,7 +49,7 @@ class SquarupController extends Controller
     }
     public function square_json($order_id){
 
-        $cart_item = Cart::with('product')->where('order_id',$order_id)->get();
+        return $cart_item = Cart::with('product')->where('order_id',$order_id)->get();
 
 
         foreach ($cart_item as $key=>$item) {
