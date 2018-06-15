@@ -13,7 +13,7 @@ class PaymentController extends Controller
 
     public function create(Request $request)
     {
-        return 1;
+ 
         $total_price = 0;
         $discount = 0;
         $cart_items = session()->get('cart.item');
