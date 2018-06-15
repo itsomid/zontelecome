@@ -10,7 +10,7 @@
 $autoload = base_path('vendor/autoload.php');
 require_once($autoload);
 // API initialization - Configure your online store information
-$GLOBALS['ACCESS_TOKEN'] = "sq0atp-hZpKUyzN-PkksH4XTlsWCg";
+$GLOBALS['ACCESS_TOKEN'] = "sandbox-sq0atb-QIiG04LrVACLdYqc0w_E_g";
 $GLOBALS['STORE_NAME'] = "ZonTelecom";
 $GLOBALS['LOCATION_ID'] = "DB2Q51ANC8DDS"; // We'll set this in a moment
 $GLOBALS['API_CLIENT_SET'] = false;
