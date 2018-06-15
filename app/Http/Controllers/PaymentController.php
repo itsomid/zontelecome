@@ -15,7 +15,7 @@ class PaymentController extends Controller
     {
         $total_price = 0;
         $discount = 0;
-         $cart_items = session()->get('cart.item');
+        $cart_items = session()->get('cart.item');
 
 
         foreach ($cart_items as $item){
@@ -23,8 +23,8 @@ class PaymentController extends Controller
         }
 //        $cart_item = array_count_values($cart_items);
 //        return $cart_item['zonefi-global-modem'];
-       $squerup = new SquarupController();
-        return $squerup->squarup();
+
+
 
         $order = new Order;
         $order->by_admin = false;
@@ -79,6 +79,9 @@ class PaymentController extends Controller
         else{
             $payment->via = "zpal";
         }
+        $squerup = new SquarupController();
+        return $squerup->squarup($insertedId);
+
 
         return 1;
 

@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
+use App\Order;
 use Illuminate\Http\Request;
 
 class SquarupController extends Controller
 {
-    public function squarup()
+    public function squarup($order_id)
     {
 
 //
 // HELPER FUNCTION: Repackage the order information as an array
-         $orderArray = $this->square_json();
+
+
+         $orderArray = $this->square_json($order_id);
 
 //        return $GLOBALS['LOCATION_ID'];
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
@@ -43,32 +47,29 @@ class SquarupController extends Controller
 // Redirect the customer to Square Checkout
         header("Location: $checkoutUrl");
     }
-    public function square_json(){
+    public function square_json($order_id){
+
+        $cart_item = Cart::with('product')->where('order_id',$order_id)->get();
+
+
+        foreach ($cart_item as $key=>$item) {
+            $list_item[$key] = [
+                "name" => $item->product->title,
+                "quantity"=> $item->quantity,
+                "base_price_money" =>[
+                    "amount" => $item->product->price,
+                    "currency" => "CAD"
+                ]
+            ];
+        }
+
 
         $square = array(
             "idempotency_key" => uniqid(),
             "order" => array(
                 "reference_id" => (string)'24',
 
-                "line_items" => array(
-                    // List each item in the order as an individual line item
-                    array(
-                        "name" => "Item Name",
-                        "quantity" => "3",
-                        "base_price_money" => array(
-                            "amount" => 5,
-                            "currency" => "CAD"
-                        ),
-                    ),
-                    array(
-                        "name" => "Item Name 2",
-                        "quantity" => "21",
-                        "base_price_money" => array(
-                            "amount" => 6,
-                            "currency" => "CAD"
-                        ),
-                    ),
-                )
+                "line_items" =>  $list_item
             )
         );
         //$json = json_encode($square);
