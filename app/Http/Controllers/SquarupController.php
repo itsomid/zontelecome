@@ -55,7 +55,7 @@ class SquarupController extends Controller
         foreach ($cart_item as $key=>$item) {
             $list_item[$key] = [
                 "name" => $item->product->title,
-                "quantity"=> $item->quantity,
+                "quantity"=> (string)$item->quantity,
                 "base_price_money" =>[
                     "amount" => $item->product->price,
                     "currency" => "CAD"
