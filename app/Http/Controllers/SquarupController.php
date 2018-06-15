@@ -57,7 +57,7 @@ class SquarupController extends Controller
                 "name" => $item->product->title,
                 "quantity"=> (string)$item->quantity,
                 "base_price_money" =>[
-                    "amount" => $item->product->price,
+                    "amount" => $item->product->price * 100,
                     "currency" => "CAD"
                 ]
             ];
