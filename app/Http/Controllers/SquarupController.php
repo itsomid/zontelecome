@@ -14,7 +14,8 @@ class SquarupController extends Controller
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
-
+        $payment->reference = "omid";
+        return $payment->save;
          $orderArray = $this->square_json($payment->order_id);
 
 //        return $GLOBALS['LOCATION_ID'];
