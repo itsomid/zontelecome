@@ -31,7 +31,7 @@ class SquarupController extends Controller
                 $GLOBALS['LOCATION_ID'],
                 $orderArray
             );
-     
+
 
             // Grab the redirect url and checkout ID sent back
             $checkoutUrl = $apiResponse['checkout']['checkout_page_url'];
@@ -40,6 +40,7 @@ class SquarupController extends Controller
             // transaction after payment processing
             $payment->reference = $checkoutID;
             $payment->save();
+
 //            saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
         } catch (Exception $e) {
             echo "The SquareConnect\Configuration object threw an exception while " .
@@ -69,6 +70,7 @@ class SquarupController extends Controller
 
 
         $square = array(
+            "redirect_url" => route('website/payment/result'),
             "idempotency_key" => uniqid(),
             "order" => array(
                 "reference_id" => (string) $cart_item[0]->uid,
