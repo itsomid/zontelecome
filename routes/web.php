@@ -39,7 +39,7 @@ Route::group(['prefix'=>'order'],function () {
 
 });
 Route::post('/payment/createpayment','PaymentController@create')->name('website/payment/create');
-Route::get('/payment/result','PaymentController@result')->name('website/payment/result');
+Route::get('/payment/result/{uid}','PaymentController@result')->name('website/payment/result');
 
 
 
