@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $id
  *  @mixin \Illuminate\Database\Eloquent\Builder
  *  @mixin \Illuminate\Database\Eloquent\Builder
+ * @property-read \App\Order|null $order
  */
 
 class Payment extends Model
