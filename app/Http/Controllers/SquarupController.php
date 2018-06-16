@@ -31,7 +31,7 @@ class SquarupController extends Controller
                 $GLOBALS['LOCATION_ID'],
                 $orderArray
             );
-
+           return $apiResponse;
 
             // Grab the redirect url and checkout ID sent back
             $checkoutUrl = $apiResponse['checkout']['checkout_page_url'];
