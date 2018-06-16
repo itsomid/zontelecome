@@ -10,7 +10,7 @@ class SquarupController extends Controller
 {
     public function squarup($payment)
     {
-        return $payment;
+        return $payment->order_id;
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
