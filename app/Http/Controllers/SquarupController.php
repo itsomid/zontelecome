@@ -47,6 +47,7 @@ class SquarupController extends Controller
             exit();
         }
 // Redirect the customer to Square Checkout
+
         header("Location: $checkoutUrl");
     }
     public function square_json($order_id){

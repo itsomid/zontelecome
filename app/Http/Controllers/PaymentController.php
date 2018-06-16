@@ -81,7 +81,7 @@ class PaymentController extends Controller
             $payment->via = "zpal";
         }
         $squerup = new SquarupController();
-        return redirect()->away( $squerup->squarup($payment));
+        return $squerup->squarup($payment);
 
 
         return ;
