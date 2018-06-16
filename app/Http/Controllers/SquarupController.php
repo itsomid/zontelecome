@@ -40,7 +40,7 @@ class SquarupController extends Controller
             // transaction after payment processing
             $payment->reference = $checkoutID;
             $payment->save;
-            saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
+//            saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
         } catch (Exception $e) {
             echo "The SquareConnect\Configuration object threw an exception while " .
                 "calling CheckoutApi->createCheckout: ", $e->getMessage(), PHP_EOL;
