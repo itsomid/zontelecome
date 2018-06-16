@@ -35,10 +35,10 @@ class SquarupController extends Controller
 
             // Grab the redirect url and checkout ID sent back
             $checkoutUrl = $apiResponse['checkout']['checkout_page_url'];
-            $checkoutID = $apiResponse['checkout']['id'];
+           return $checkoutID = $apiResponse['checkout']['id'];
             // HELPER FUNCTION: save the checkoutID so it can be used to confirm the
             // transaction after payment processing
-//            saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
+            saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
         } catch (Exception $e) {
             echo "The SquareConnect\Configuration object threw an exception while " .
                 "calling CheckoutApi->createCheckout: ", $e->getMessage(), PHP_EOL;
