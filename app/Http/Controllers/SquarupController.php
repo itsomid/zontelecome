@@ -14,8 +14,7 @@ class SquarupController extends Controller
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
-        $payment->reference = "omid";
-        return $payment->save;
+
          $orderArray = $this->square_json($payment->order_id);
 
 //        return $GLOBALS['LOCATION_ID'];
@@ -39,8 +38,8 @@ class SquarupController extends Controller
             $checkoutID = $apiResponse['checkout']['id'];
             // HELPER FUNCTION: save the checkoutID so it can be used to confirm the
             // transaction after payment processing
-            $payment->reference = "omid";
-            $payment->save;
+            $payment->reference = $checkoutID;
+            $payment->save();
 //            saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
         } catch (Exception $e) {
             echo "The SquareConnect\Configuration object threw an exception while " .
