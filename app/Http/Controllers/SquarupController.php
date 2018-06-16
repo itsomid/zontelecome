@@ -70,13 +70,14 @@ class SquarupController extends Controller
 
 
         $square = array(
-            "redirect_url" => route('website/payment/result'),
+
             "idempotency_key" => uniqid(),
             "order" => array(
                 "reference_id" => (string) $cart_item[0]->uid,
 
                 "line_items" =>  $list_item
-            )
+            ),
+            "redirect_url" => route('website/payment/result'),
         );
         //$json = json_encode($square);
         return $square;
