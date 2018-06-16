@@ -84,11 +84,12 @@ class PaymentController extends Controller
         return $squerup->squarup($insertedId);
 
 
-        return 1;
+        return ;
 
     }
-    public function result()
+    public function result(Request $request)
     {
+        return $request->all();
         return view('payment_result');
     }
     public function finalPrice($total_price,$discount,$delivery_fee)
