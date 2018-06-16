@@ -38,7 +38,7 @@ class Payment extends Model
     }
     public function order()
     {
-        return $this->belongsTo('App\Payment');
+        return $this->belongsTo('App\Order');
     }
 //    public function product()
 //    {
@@ -49,9 +49,11 @@ class Payment extends Model
 
     public function setPaid()
     {
+
         $this->status = 'successful';
         $this->save();
         /** @var Order $order */
+
         $order = $this->order;
         $order->status = 'paid';
         $order->save();
