@@ -95,7 +95,7 @@ class PaymentController extends Controller
        $transaction_id =  $request->input('transactionId');
         $payment->reference = $checkout_id;
         $payment->save();
-        return view('payment_result',['order_uid',$order_uid]);
+        return view('payment_result',['order_uid'=>$order_uid]);
     }
     public function finalPrice($total_price,$discount,$delivery_fee)
     {
