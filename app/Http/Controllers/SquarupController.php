@@ -15,7 +15,7 @@ class SquarupController extends Controller
 // HELPER FUNCTION: Repackage the order information as an array
 
 
-         $orderArray = $this->square_json($payment->order_id);
+         $orderArray = $this->square_json($payment);
 
 //        return $GLOBALS['LOCATION_ID'];
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
@@ -38,8 +38,7 @@ class SquarupController extends Controller
             $checkoutID = $apiResponse['checkout']['id'];
             // HELPER FUNCTION: save the checkoutID so it can be used to confirm the
             // transaction after payment processing
-            $payment->reference = $checkoutID;
-            $payment->save();
+
 
 //            saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
         } catch (Exception $e) {
@@ -51,10 +50,10 @@ class SquarupController extends Controller
 
         header("Location: $checkoutUrl");
     }
-    public function square_json($order_id){
+    public function square_json($payment){
 
 
-        $cart_item = Cart::with('product')->where('order_id',$order_id)->get();
+        $cart_item = Cart::with('product')->where('order_id',$payment->order_id)->get();
 
 
         foreach ($cart_item as $key=>$item) {
@@ -77,7 +76,7 @@ class SquarupController extends Controller
 
                 "line_items" =>  $list_item
             ),
-            "redirect_url" => route('website/payment/result'),
+            "redirect_url" => route('website/payment/result',['payment'=>$payment->uid]),
         );
         //$json = json_encode($square);
         return $square;

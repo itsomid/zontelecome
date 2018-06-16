@@ -87,10 +87,15 @@ class PaymentController extends Controller
         return ;
 
     }
-    public function result(Request $request)
+    public function result(Request $request,$payment_uid)
     {
-        return $request->all();
-        return view('payment_result');
+      $payment =  Payment::where('id',Payment::realId($payment_uid))->first();
+       $checkout_id =  $request->input('checkoutId');
+       $order_uid =  $request->input('referenceId');
+       $transaction_id =  $request->input('transactionId');
+        $payment->reference = $checkout_id;
+        $payment->save();
+        return view('payment_result',['order_uid',$order_uid]);
     }
     public function finalPrice($total_price,$discount,$delivery_fee)
     {
