@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class SquarupController extends Controller
 {
-    public function squarup($order_id)
+    public function squarup($payment)
     {
-
+        return $payment;
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
 
-         $orderArray = $this->square_json($order_id);
+         $orderArray = $this->square_json($payment->order_id);
 
 //        return $GLOBALS['LOCATION_ID'];
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
@@ -35,9 +35,10 @@ class SquarupController extends Controller
 
             // Grab the redirect url and checkout ID sent back
             $checkoutUrl = $apiResponse['checkout']['checkout_page_url'];
-           return $checkoutID = $apiResponse['checkout']['id'];
+            $checkoutID = $apiResponse['checkout']['id'];
             // HELPER FUNCTION: save the checkoutID so it can be used to confirm the
             // transaction after payment processing
+
             saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
         } catch (Exception $e) {
             echo "The SquareConnect\Configuration object threw an exception while " .
