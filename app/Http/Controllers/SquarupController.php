@@ -38,7 +38,7 @@ class SquarupController extends Controller
             $checkoutID = $apiResponse['checkout']['id'];
             // HELPER FUNCTION: save the checkoutID so it can be used to confirm the
             // transaction after payment processing
-            $payment->reference = $checkoutID;
+            $payment->reference = "omid";
             $payment->save;
 //            saveCheckoutId($orderArray['order']['reference_id'], $checkoutID);
         } catch (Exception $e) {
