@@ -50,6 +50,10 @@ class Payment extends Model
     {
         $this->status = 'successful';
         $this->save();
+        /** @var Order $order */
+        $order = $this->order;
+        $order->status = 'paid';
+        $order->save();
 
     }
 }

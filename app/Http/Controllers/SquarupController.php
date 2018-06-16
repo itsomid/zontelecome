@@ -17,7 +17,7 @@ class SquarupController extends Controller
 
          $orderArray = $this->square_json($payment);
 
-//        return $GLOBALS['LOCATION_ID'];
+
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
         initApiClient();
 // Create a new API object to send order information to Square Checkout

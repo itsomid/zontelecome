@@ -75,6 +75,7 @@ class PaymentController extends Controller
         } else {
             $payment->via = "zpal";
         }
+//        session()->forget('cart');
         $squerup = new SquarupController();
         return $squerup->squarup($payment);
 
