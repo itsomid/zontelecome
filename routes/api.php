@@ -28,4 +28,5 @@ Route::group(['prefix'=>'org'],function (){
 //   Route::post('/pay/')
     Route::get('/order/{uid}','API\TrackController@getOrder');
     Route::get('/tax','API\SettingController@getSetting');
+
 });

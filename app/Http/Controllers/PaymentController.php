@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class PaymentController extends Controller
 {
 
-    public function create(Request $request)
+    public function createPaymentForProduct(Request $request)
     {
 
         $total_price = 0;
@@ -82,6 +82,53 @@ class PaymentController extends Controller
 
     }
 
+    public function createPaymentForData(Request $request)
+    {
+        $plan_id = $request->plan;
+        $device_id = $request->device_id;
+        $plan = Product::whereId($plan_id)->first();
+        $total_price = $plan->price;
+
+
+        $order = new Order;
+        $order->by_admin = false;
+        $order->status = "initializing";
+        $order->delivery_fee = 0;
+        $order->discount = 0;
+        $final_price = $this->finalPrice($total_price, 0, 0);
+        $order->total_price = $final_price;
+        $order->tax = $this->taxCalculate($total_price);
+
+        if ($order->save()) {
+            $insertedId = $order->id;
+        }
+        $cart = new Cart;
+        $cart->order_id = $insertedId;
+        $cart->product_id = $plan_id;
+        $cart->quantity = 1;
+        $cart->device_id = $device_id;
+        $cart->save();
+
+        $payment = new Payment;
+        $payment->order_id = $insertedId;
+        $payment->status = "initializing";
+        $pay_method = \DB::table('setting')->first()->pay_method;
+        if (!$pay_method) {
+            $payment->amount = $final_price;
+            $payment->via = "squerup";
+            $payment->setDetails(['scheme' => 'ZonTelecom']);
+            $payment->save();
+
+        } else {
+            $payment->via = "zpal";
+        }
+
+        $squerup = new SquarupController();
+        return $squerup->squarup($payment);
+
+
+
+    }
     public function result(Request $request, $payment_uid)
     {
         $payment = Payment::where('id', Payment::realId($payment_uid))->first();

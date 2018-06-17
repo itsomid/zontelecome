@@ -26,9 +26,9 @@
                 </button>
             </li>
             <li class="nav-item p-2">
-                <button type="button" class="btn btn__primary">
+                <a href="{{route('website/refill')}}" class="btn btn__primary">
                     <i class="fa fa-plus"></i> Refill Balance
-                </button>
+                </a>
             </li>
         </ul>
     </div>

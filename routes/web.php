@@ -19,6 +19,11 @@ Route::get('/product/{slug}', 'ProductController@getProduct')->name('website/pro
 
 Route::group(['prefix'=>'refill'],function (){
     Route::get('/', 'RefillController@index')->name('website/refill');
+    Route::get('/balance', 'RefillController@refillBalance')->name('website/refill/balance');
+    Route::post('/balance', 'RefillController@refillBalance')->name('website/refill/balance');
+    Route::get('/plan/{slug}', 'RefillController@dataPlan')->name('website/refill/plan');
+    Route::post('/plan/payment', 'RefillController@dataPlan')->name('website/refill/plan');
+
 });
 Route::group(['prefix'=>'order'],function () {
     Route::get('/track', 'OrderController@trackOrder')->name('website/order/track');
@@ -38,9 +43,11 @@ Route::group(['prefix'=>'order'],function () {
 
 
 });
-Route::post('/payment/createpayment','PaymentController@create')->name('website/payment/create');
-Route::get('/payment/result/{uid}','PaymentController@result')->name('website/payment/result');
-
+Route::group(['prefix'=>'payment'],function () {
+    Route::post('/product/createpayment', 'PaymentController@createPaymentForProduct')->name('website/product/payment/create');
+    Route::post('/data/createpayment', 'PaymentController@createPaymentForData')->name('website/data/payment/create');
+    Route::get('/result/{uid}', 'PaymentController@result')->name('website/payment/result');
+});
 
 
 

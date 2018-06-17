@@ -1,0 +1,46 @@
+
+.chart-text {
+    font: 16px/1.4em "Montserrat", Arial, sans-serif;
+
+    -moz-transform: translateY(0.25em);
+    -ms-transform: translateY(0.25em);
+    -webkit-transform: translateY(0.25em);
+    transform: translateY(0.25em);
+}
+
+.chart-number {
+    font-family: BloggerSans-Bold;
+    font-size: 8px;
+    fill: #FFCC00;
+    line-height: 1;
+    text-anchor: middle;
+    -moz-transform: translateY(-0.25em);
+    -ms-transform: translateY(-0.25em);
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+}
+.chart-number-text{
+    font-family: BloggerSans-Bold;
+    font-size: 2px;
+    fill: #FFCC00;
+    line-height: 1;
+    text-anchor: middle;
+
+}
+
+.chart-label {
+    font-family: BloggerSans-Light;
+    font-size: 2.5px;
+    fill:  #E3E3E3;
+    text-align: left;
+    text-anchor: middle;
+    -moz-transform: translateY(0.7em);
+    -ms-transform: translateY(0.7em);
+    -webkit-transform: translateY(0.7em);
+    transform: translateY(0.7em);
+}
+.chart-label-text{
+    font-family: BloggerSans;
+    font-size: 2.5px;
+    fill:  #E3E3E3;
+}

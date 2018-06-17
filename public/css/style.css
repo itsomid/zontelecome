@@ -308,7 +308,6 @@ z-index: -1;
     position: absolute;
     transform: rotate(-3deg);
     z-index: 2;
-
 }
 
 
@@ -389,7 +388,36 @@ z-index: -1;
     color: #242424;
     min-width: 140px;
 }
-
+.btn__refill{
+    font-family: BloggerSans-Bold;
+    font-size: 20px;
+    background-color: #FFCC00;
+    color: #242424;
+    border-radius: 40px;
+    padding: 20px 0px 3px 0px;
+    width: 142px;
+    border: none;
+    min-width: 200px;
+}
+.btn__contact{
+    font-family: BloggerSans-Bold;
+    font-size: 14px;
+    color: #FFFFFF !important;
+    background: #454545;
+    border-radius: 58px;
+    padding: 13px 0px 3px 0px;
+    min-width: 140px;
+}
+.btn__pay{
+    font-family: BloggerSans;
+    font-size: 25px;
+    color: #121212;
+    line-height: 27px;
+    background: #FFCC00;
+    border-radius: 100px;
+    padding: 20px 0px 3px 0px;
+    min-width: 290px;
+}
 .product_name{
     position: absolute;
     left: 50px;
@@ -706,7 +734,58 @@ z-index: -1;
     font-size: 36px;
     color: #949494;
 }
+.device_id{
+    font-family: BloggerSans-Bold;
+    font-size: 24px;
+    color: #FFCC00;
+}
+.table-border-bottom td{
+    font-family: BloggerSans-Light;
+    font-size: 20px;
+    color: #E3E3E3;
+    text-align: justify;
+    border-bottom: 2px solid #242424; !important;
+}
+.data__plan{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    flex-direction: row;
+    padding: 50px 10%;
 
+
+}
+.data__plan > div{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background: #242424;
+    border-radius: 18px;
+    min-width: 22.5%;
+    cursor: pointer;
+
+}
+.plan__size{
+    font-family: BloggerSans-Bold;
+    font-size: 40px;
+    color: #FFCC00;
+
+}
+.plan__month{
+    font-family: BloggerSans;
+    font-size: 25px;
+    color: #FFCC00;
+
+}
+.plan__price{
+    font-family: BloggerSans;
+    font-size: 30px;
+    color: #FFFFFF;
+}
 @media screen and  (min-width: 576px) {
     .wid_mr_l div:nth-child(2){
         margin-left: 0px;

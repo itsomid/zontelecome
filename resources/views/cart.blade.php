@@ -100,7 +100,7 @@
                 </div>
                 <div class="row mt-4">
                     <div class="col-md-12">
-                        <form action="{{route('website/payment/create')}}" method="POST" class="d-flex flex-wrap">
+                        <form action="{{route('website/product/payment/create')}}" method="POST" class="d-flex flex-wrap">
                             {{csrf_field()}}
                             <div class="col-md-7">
 
