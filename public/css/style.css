@@ -13,6 +13,13 @@
     font-weight: 700;
     src: url('/fonts/Mosk-bold-700.tff');
 }
+@font-face {
+    font-family: 'FabFeltScript';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/fabfeltscript-bold.tff');
+    src: url('/fonts/fabfeltscript-bold.otf');
+}
 /* Webfont: BloggerSans */@font-face {
     font-family: 'BloggerSans';
     src: url('/fonts/BloggerSans.eot'); /* IE9 Compat Modes */
@@ -63,6 +70,7 @@ html,body{
     height: 100%;
 }
 body {
+    -webkit-font-smoothing: antialiased;
     font-family: BloggerSans;
     background-color: #242424;
 }
@@ -691,6 +699,11 @@ z-index: -1;
 .payment__text{
     font-family: BloggerSans;
     font-size: 20px;
+    color: #949494;
+}
+.fabfelt{
+    font-family: FabFeltScript;
+    font-size: 36px;
     color: #949494;
 }
 

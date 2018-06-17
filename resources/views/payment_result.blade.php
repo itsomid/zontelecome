@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-md-8 text-left pl-5">
                         <div class="row pb-4">
-                            <h2>Thank You For Your Purchase</h2>
+                            <h2 class="fabfelt">Thank You For Your Purchase</h2>
                             <p class="success__title__1">Please keep <span style="font-family: BloggerSans-Bold;">this number</span> for tracking your order</p>
                         </div>
                         <div class="row">
