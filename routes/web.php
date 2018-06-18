@@ -22,7 +22,6 @@ Route::group(['prefix'=>'refill'],function (){
     Route::get('/balance', 'RefillController@refillBalance')->name('website/refill/balance');
     Route::post('/balance', 'RefillController@refillBalance')->name('website/refill/balance');
     Route::get('/plan/{slug}', 'RefillController@dataPlan')->name('website/refill/plan');
-    Route::post('/plan/payment', 'RefillController@dataPlan')->name('website/refill/plan');
 
 });
 Route::group(['prefix'=>'order'],function () {

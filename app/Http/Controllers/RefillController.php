@@ -23,7 +23,7 @@ class RefillController extends Controller
     {
         if ($request->isMethod('get'))
             return redirect()->route('website/refill');
-        $device_id = $request->device_id;
+         $device_id = $request->device_id;
         if (empty($device_id))
             return \Redirect::back()->with('message', "Device not Exist!");
 
@@ -34,9 +34,11 @@ class RefillController extends Controller
 
         if (empty($info->data))
             return \Redirect::back()->with('message', "Device not Exist!");
+
+
         $balance = $info->data[0]->allowance_balance - $info->data[0]->usage->product;
         $allowance_usage = $info->data[0]->allowance_balance;
-        $product_id = Cart::whereDeviceId($device_id)->first()->product_id;
+        $product_id = Cart::whereDeviceId($device_id)->firstOrFail()->product_id;
         $product = Product::whereId(Product::whereId($product_id)->first()->related_product)->first();
 
         $balance_perc = ($balance * 100) / $allowance_usage;
