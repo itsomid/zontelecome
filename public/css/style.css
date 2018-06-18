@@ -70,12 +70,13 @@ html,body{
     height: 100%;
 }
 body {
+    height: 100%;
     -webkit-font-smoothing: antialiased;
     font-family: BloggerSans;
     background-color: #242424;
 }
 .main-body{
-
+    min-height: 100%;
     padding-top: 100px;
     position: relative;
     background-color: #C9C9C9;
