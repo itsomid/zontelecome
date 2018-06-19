@@ -368,7 +368,7 @@ class OrderTableSeeder extends Seeder
                     'total_price' => '300000',
                     'status' => 'ready to deliver',
                     'by_admin' => 0,
-                    'description' => 'okey',
+                    'description' => 'حله',
                     'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
@@ -385,7 +385,7 @@ class OrderTableSeeder extends Seeder
                     'total_price' => '200000',
                     'status' => 'canceled',
                     'by_admin' => 0,
-                    'description' => 'okey',
+                    'description' => 'حله',
                     'created_at' => Carbon::yesterday()->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
@@ -402,13 +402,13 @@ class OrderTableSeeder extends Seeder
                     'total_price' => '200000',
                     'status' => 'processing',
                     'by_admin' => 0,
-                    'description' => 'okey',
+                    'description' => 'حله',
                     'created_at' => Carbon::yesterday()->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
                     'c_mail' => 'omid@gm.com',
-                    'c_name' => 'Omid',
+                    'c_name' => 'امید',
                     'c_address' => 'تهران',
                     'c_state' => 'تهران',
                     'c_city' => 'تهران',
@@ -419,13 +419,13 @@ class OrderTableSeeder extends Seeder
                     'total_price' => '200000',
                     'status' => 'paid',
                     'by_admin' => 0,
-                    'description' => 'okey',
+                    'description' => 'حله',
                     'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
                     'c_mail' => 'o.js@hotmail.com',
-                    'c_name' => 'Omid',
+                    'c_name' => 'امید',
                     'c_address' => 'تهران',
                     'c_state' => 'تهران',
                     'c_city' => 'تهران',
@@ -436,13 +436,13 @@ class OrderTableSeeder extends Seeder
                     'total_price' => '200000',
                     'status' => 'paid',
                     'by_admin' => 0,
-                    'description' => 'okey',
+                    'description' => 'حله',
                     'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
                     'c_mail' => 'admin@zontelecom.com',
-                    'c_name' => 'admin',
+                    'c_name' => 'امید',
                     'c_address' => 'تهران',
                     'c_state' => 'تهران',
                     'c_city' => 'تهران',
@@ -453,13 +453,13 @@ class OrderTableSeeder extends Seeder
                     'total_price' => '200000',
                     'status' => 'ready to deliver',
                     'by_admin' => 1,
-                    'description' => 'okey',
+                    'description' => 'حله',
                     'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
                     'c_mail' => 'o.shabani@hotmail.com',
-                    'c_name' => 'admin',
+                    'c_name' => 'امید',
                     'c_address' => 'تهران',
                     'c_state' => 'تهران',
                     'c_city' => 'تهران',
@@ -470,7 +470,7 @@ class OrderTableSeeder extends Seeder
                     'total_price' => '200000',
                     'status' => 'paid',
                     'by_admin' => 0,
-                    'description' => 'okey',
+                    'description' => 'حله',
                     'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ], [
@@ -486,7 +486,7 @@ class OrderTableSeeder extends Seeder
                     'total_price' => '200000',
                     'status' => 'paid',
                     'by_admin' => 0,
-                    'description' => 'okey',
+                    'description' => 'حله',
                     'created_at' => Carbon::now()->addWeek(-1)->format('Y-m-d H:i:s'),
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
