@@ -117,6 +117,7 @@ class PaymentController extends Controller
         $payment->status = "initializing";
         $pay_method = \DB::table('setting')->first()->pay_method;
         if (!$pay_method) {
+            return 1;
             $payment->amount = $final_price;
             $payment->via = "squerup";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
@@ -125,6 +126,7 @@ class PaymentController extends Controller
             return $squerup->squarup($payment);
 
         } else {
+            return 2;
             $payment->amount = $final_price;
             $payment->via = "zpal";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
