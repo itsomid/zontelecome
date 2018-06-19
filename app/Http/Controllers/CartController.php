@@ -41,7 +41,7 @@ class CartController extends Controller
         //get total price
         $tax = \DB::table('setting')->first();
 
-        return view('cart',['products'=>$products,'tax'=>$tax]);
+        return view(config('app.locale').'.cart',['products'=>$products,'tax'=>$tax]);
     }
 
     public function removeProductFromCart(Request $request)

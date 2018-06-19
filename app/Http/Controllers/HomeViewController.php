@@ -11,7 +11,7 @@ class HomeViewController extends Controller
     {
 
         $products = Product::whereType('physical')->get();
-        return view('welcome',['products'=>$products]);
+        return view(config('app.locale').'.welcome',['products'=>$products]);
     }
 
 }

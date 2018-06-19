@@ -16,7 +16,7 @@ class RefillController extends Controller
     public function index()
     {
 
-        return view('refill');
+        return view(config('app.locale').'.refill');
     }
 
     public function refillBalance(Request $request)
@@ -64,7 +64,7 @@ class RefillController extends Controller
         );
         $device_info = (object) $device_info;
 
-        return view('refill_balance', ['device_info' => $device_info, 'refill_history' => $refill_history]);
+        return view(config('app.locale').'.refill_balance', ['device_info' => $device_info, 'refill_history' => $refill_history]);
     }
 
     public function dataPlan(Request $request,$slug)
@@ -74,7 +74,7 @@ class RefillController extends Controller
         $product = Product::whereSlug($slug)->first();
         $plans = Product::whereRelatedProduct($product->id)->get();
 
-        return view('refill_plan',['device_id'=>$device_id,'product'=>$product,'plans'=>$plans]);
+        return view(config('app.locale').'.refill_plan',['device_id'=>$device_id,'product'=>$product,'plans'=>$plans]);
     }
 
 }

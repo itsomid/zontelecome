@@ -11,7 +11,7 @@ class OrderController extends Controller
     public function trackOrder()
     {
 
-        return view('order_track');
+        return view(config('app.locale').'.order_track');
     }
 
     public function getOrderSituation(Request $request)
@@ -19,7 +19,7 @@ class OrderController extends Controller
         $order_uid = Order::realId($request->order_uid);
         $order = Order::with('products','payment')->whereId($order_uid)->first();
 
-        return view('order_situation',['order'=>$order]);
+        return view(config('app.locale').'.order_situation',['order'=>$order]);
 
     }
 

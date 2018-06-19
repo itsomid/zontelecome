@@ -13,7 +13,7 @@ class PaymentController extends Controller
 
     public function createPaymentForProduct(Request $request)
     {
-       
+
 
         $total_price = 0;
         $discount = 0;
@@ -120,13 +120,14 @@ class PaymentController extends Controller
             $payment->via = "squerup";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
+            $squerup = new SquarupController();
+            return $squerup->squarup($payment);
 
         } else {
             $payment->via = "zpal";
         }
 
-        $squerup = new SquarupController();
-        return $squerup->squarup($payment);
+
 
 
 
