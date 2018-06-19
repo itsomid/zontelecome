@@ -295,6 +295,48 @@ z-index: -1;
     background: #E3E3E3;
     border-radius: 100px;
 }
+.bg__refill{
+    background-image: url("/img/refill.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 50%;
+}
+.bg__done{
+    background-image: url("/img/done.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 0px;
+    background-size: 35%;
+}
+.bg__track{
+    background-image: url("/img/track.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 100%;
+
+}
+.bg__tracking{
+    background-image: url("/img/Tracking.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 0px;
+    background-size: 60%;
+}
+.bg__enjoy{
+    background-image: url("/img/enjoy.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 0px;
+    background-size: 30%;
+}
+.bg__flesh{
+   position: absolute;
+    right: 7rem;
+    top: 80px;
+    height: 75%;
+    z-index: 0;
+
+}
 .menu_product{
 
     z-index: 0;
@@ -334,7 +376,9 @@ z-index: -1;
 
 /* Same as the width of the sidenav */
 }
-
+.btn:hover{
+    color: black;
+}
 .btn__login{
     border-radius: 58px;
     background: #E3E3E3;
@@ -451,6 +495,12 @@ z-index: -1;
     margin-top: -20px;
     color: #454545;
     white-space: nowrap;
+}
+.product_quantity{
+    font-family: BloggerSans-Bold;
+    font-size: 24px;
+    color: #949494;
+
 }
 .price{
     font-family: BloggerSans-Light;
@@ -740,12 +790,57 @@ z-index: -1;
     font-size: 24px;
     color: #FFCC00;
 }
+.order_id{
+    font-family: BloggerSans-Bold;
+    font-size: 36px;
+    color: #FFCC00;
+}
+.order_situation{
+    font-family: BloggerSans;
+    font-size: 30px;
+    color: #FFCC00;
+    text-align: left;
+}
+.order_situation_g{
+    font-family: BloggerSans;
+    font-size: 30px;
+    color: #949494;
+}
+.order_description{
+    background: url("/img/factor.svg") no-repeat;
+    background-position: center;
+    background-size: 60%;
+    height: 1000px;
+    border: 1px solid #FFCC00;
+
+}
 .table-border-bottom td{
     font-family: BloggerSans-Light;
     font-size: 20px;
     color: #E3E3E3;
     text-align: justify;
     border-bottom: 2px solid #242424; !important;
+}
+.table_situation{
+    font-family: BloggerSans;
+    font-size: 20px;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFCC00;
+}
+.table_situation {
+    font-family: BloggerSans;
+    font-size: 20px;
+    color: #FFFFFF;
+
+}
+
+.table_situation td:first-child{
+    text-align: left;
+}
+.table_situation td:nth-child(2)
+{
+    text-align: right;
+    width: 40%;
 }
 .data__plan{
     display: flex;

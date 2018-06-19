@@ -2,9 +2,9 @@
 @section('content')
 
     @include('landing.topnav')
-    <div class="main-body fifth-color">
+    <div class="main-body fifth-color bg__refill" style="background-size: 30%">
 
-        <section class="w-100">
+        <section class="w-100 mt-5">
             <div class="container text-center sec__bg sixth-color">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6">

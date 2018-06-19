@@ -49,7 +49,7 @@ class RefillController extends Controller
             $product_slug = $product->slug;
 
         }
-          $refill_history = Cart::with('insideOrder', 'insideProduct')->whereDeviceId($device_id)->get();
+        $refill_history = Cart::with('insideOrder', 'insideProduct')->whereDeviceId($device_id)->get();
 
          $device_info = array(
             'uuid' => $info->data[0]->uuid,

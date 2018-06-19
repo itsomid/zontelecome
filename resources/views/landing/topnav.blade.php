@@ -21,9 +21,9 @@
                 </a>
             </li>
             <li class="nav-item p-2">
-                <button type="button" class="btn btn__light">
+                <a href="{{route('website/order/track')}}" class="btn btn__light">
                     Track Order
-                </button>
+                </a>
             </li>
             <li class="nav-item p-2">
                 <a href="{{route('website/refill')}}" class="btn btn__primary">

@@ -30,6 +30,6 @@ class DashboardController extends Controller
             ->groupBy(\DB::raw('YEAR('.$current_year.')'))->get();
 
 
-        return view('panel.dashboard',['all_order'=>$all_order,'income'=>$income,'annual_income'=>$annual_income,'monthly_order'=>$monthly_order]);
+        return view(config('app.locale').'.panel.dashboard',['all_order'=>$all_order,'income'=>$income,'annual_income'=>$annual_income,'monthly_order'=>$monthly_order]);
     }
 }

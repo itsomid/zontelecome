@@ -13,6 +13,7 @@ class PaymentController extends Controller
 
     public function createPaymentForProduct(Request $request)
     {
+        return view('payment_result');
 
         $total_price = 0;
         $discount = 0;
@@ -84,6 +85,7 @@ class PaymentController extends Controller
 
     public function createPaymentForData(Request $request)
     {
+
         $plan_id = $request->plan;
         $device_id = $request->device_id;
         $plan = Product::whereId($plan_id)->first();

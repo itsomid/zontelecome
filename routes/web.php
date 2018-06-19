@@ -26,6 +26,7 @@ Route::group(['prefix'=>'refill'],function (){
 });
 Route::group(['prefix'=>'order'],function () {
     Route::get('/track', 'OrderController@trackOrder')->name('website/order/track');
+    Route::post('/track/order','OrderController@getOrderSituation')->name('website/order/track/situation');
 
     Route::group(['prefix'=>'cart'],function (){
         Route::get('/', 'CartController@getCart')->name('website/cart');
