@@ -647,7 +647,7 @@ class OrderTableSeeder extends Seeder
                 ]
                 ,
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-1447"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-1447"}',
                     'order_id' => '8',
                     'amount' => '50000',
                     'status' => 'successful',
@@ -657,7 +657,7 @@ class OrderTableSeeder extends Seeder
                 ]
                 ,
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-124"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-124"}',
                     'order_id' => '9',
                     'amount' => '50000',
                     'status' => 'pending',
