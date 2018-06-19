@@ -147,6 +147,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -161,6 +162,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Atnic\Inspinia\Providers\AppServiceProvider::class,
+        Zarinpal\Laravel\ZarinpalServiceProvider::class
 
     ],
 
@@ -210,7 +212,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Hashids' => Vinkla\Hashids\Facades\Hashids::class
+        'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
+        'Zarinpal' => Zarinpal\Laravel\Facade\Zarinpal::class,
+        'DefaultIPG' => App\Http\Controllers\ZarinPalController::class,
+
 
     ],
 

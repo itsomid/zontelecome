@@ -111,7 +111,8 @@ class PaymentController extends Controller
         $cart->device_id = $device_id;
         $cart->save();
 
-        $payment = new Payment;
+        $payment = new Payment();
+        $zarin = new \ZarinpalC();
         $payment->order_id = $insertedId;
         $payment->status = "initializing";
         $pay_method = \DB::table('setting')->first()->pay_method;
@@ -124,14 +125,17 @@ class PaymentController extends Controller
             return $squerup->squarup($payment);
 
         } else {
+            $payment->amount = $final_price;
             $payment->via = "zpal";
+            $payment->setDetails(['scheme' => 'ZonTelecom']);
+            $payment->save();
+            return redirect()->away($zarin->createRequest($payment));
+
         }
 
 
-
-
-
     }
+
     public function result(Request $request, $payment_uid)
     {
         $payment = Payment::where('id', Payment::realId($payment_uid))->first();
