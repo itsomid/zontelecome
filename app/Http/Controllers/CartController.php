@@ -39,7 +39,7 @@ class CartController extends Controller
             $products = [];
         }
         //get total price
-        $tax = \DB::table('setting')->first();
+         $tax = \DB::table('setting')->first();
 
         return view(config('app.locale').'.cart',['products'=>$products,'tax'=>$tax]);
     }

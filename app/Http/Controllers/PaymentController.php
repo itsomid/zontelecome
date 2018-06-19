@@ -74,7 +74,13 @@ class PaymentController extends Controller
             $payment->save();
 
         } else {
-            $payment->via = "zpal";
+            return 2;
+            $payment->amount = $final_price;
+            $payment->via = "IPG";
+            $payment->setDetails(['scheme' => 'ZonTelecom']);
+            $payment->save();
+            $zarin = new \ZarinpalC();
+            return redirect()->away($zarin->createRequest($payment));
         }
 //        session()->forget('cart');
 
@@ -112,7 +118,7 @@ class PaymentController extends Controller
         $cart->save();
 
         $payment = new Payment();
-        $zarin = new \ZarinpalC();
+
         $payment->order_id = $insertedId;
         $payment->status = "initializing";
         $pay_method = \DB::table('setting')->first()->pay_method;
@@ -131,6 +137,7 @@ class PaymentController extends Controller
             $payment->via = "zpal";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
+            $zarin = new \ZarinpalC();
             return redirect()->away($zarin->createRequest($payment));
 
         }
