@@ -13,7 +13,7 @@ class PaymentController extends Controller
 
     public function createPaymentForProduct(Request $request)
     {
-        return view('payment_result');
+       
 
         $total_price = 0;
         $discount = 0;
