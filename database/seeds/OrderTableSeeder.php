@@ -583,58 +583,65 @@ class OrderTableSeeder extends Seeder
             ];
             $payment = [
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-1447"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-1447"}',
                     'order_id' => '1',
                     'amount' => '100000',
                     'status' => 'successful',
+                    'via'=>'IPG',
                     'reference' => 'ksjhdish83kdn234245',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-1447"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-1447"}',
                     'order_id' => '2',
                     'amount' => '200000',
                     'status' => 'canceled',
+                    'via'=>'IPG',
                     'reference' => 'dfhghkgdhs346dgh',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-1447"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-1447"}',
                     'order_id' => '2',
                     'amount' => '200000',
                     'status' => 'successful',
+                    'via'=>'IPG',
                     'reference' => 'asdfsg235ytjdfbhfg',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-1447"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-1447"}',
                     'order_id' => '3',
                     'amount' => '50000',
                     'status' => 'failed',
+                    'via'=>'IPG',
                     'reference' => '23445fdhdfgj465',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-1447"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-1447"}',
                     'order_id' => '4',
                     'amount' => '50000',
                     'status' => 'pending',
+                    'via'=>'IPG',
                     'reference' => '32423dfhf7567',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-1447"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-1447"}',
                     'order_id' => '5',
                     'amount' => '50000',
                     'status' => 'successful',
+                    'via'=>'IPG',
                     'reference' => '435fdgfgd435',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ],
                 [
-                    'payment_details' => '{"scheme":"IPG","reference_id":"fake-1447"}',
+                    'payment_details' => '{"scheme":"zontelecom","reference_id":"fake-1447"}',
                     'order_id' => '6',
                     'amount' => '50000',
                     'status' => 'successful',
+                    'via'=>'IPG',
                     'reference' => 'sdrg546457sf',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ]
@@ -644,6 +651,7 @@ class OrderTableSeeder extends Seeder
                     'order_id' => '8',
                     'amount' => '50000',
                     'status' => 'successful',
+                    'via'=>'IPG',
                     'reference' => '2356hjkgf325346fdb',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ]
@@ -653,6 +661,7 @@ class OrderTableSeeder extends Seeder
                     'order_id' => '9',
                     'amount' => '50000',
                     'status' => 'pending',
+                    'via'=>'IPG',
                     'reference' => 'sdhhj5677ujyjh',
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ]
