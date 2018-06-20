@@ -19,7 +19,7 @@
             <div class="col-md-4">
                 <h1 class="fabfelt text-center mb-5 ">Download Application</h1>
                 <div class="text-center">
-                    <a class="btn btn__footer">iOS</a>
+                    <a class="btn btn__footer mr-3">iOS</a>
                     <a class="btn btn__footer">Android</a>
                 </div>
             </div>
