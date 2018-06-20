@@ -17,8 +17,8 @@
     font-family: 'FabFeltScript';
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/fabfeltscript-bold.tff');
-    src: url('/fonts/fabfeltscript-bold.otf');
+    src: url('/fonts/FabfeltScript-Bold.tff');
+    src: url('/fonts/FabfeltScript-Bold.otf');
 }
 /* Webfont: BloggerSans */@font-face {
     font-family: 'BloggerSans';
