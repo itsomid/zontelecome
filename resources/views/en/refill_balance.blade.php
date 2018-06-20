@@ -78,7 +78,7 @@
                 <div class="row align-items-center justify-content-around flex-nowrap pt-5 pb-5">
 
                     <p class="fabfelt">If you need any help, please contact us</p>
-                    <a class="btn btn__contact" href="">
+                    <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
                         Contact Us
                     </a>
                 </div>

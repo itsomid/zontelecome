@@ -13,6 +13,7 @@
 Auth::routes();
 
 Route::get('/','HomeViewController@index')->name('website/home');
+Route::get('/contact','HomeViewController@contact')->name('website/contact');
 
 Route::get('/product/{slug}', 'ProductController@getProduct')->name('website/product');
 
@@ -47,6 +48,18 @@ Route::group(['prefix'=>'payment'],function () {
     Route::post('/product/createpayment', 'PaymentController@createPaymentForProduct')->name('website/product/payment/create');
     Route::post('/data/createpayment', 'PaymentController@createPaymentForData')->name('website/data/payment/create');
     Route::get('/result/{uid}', 'PaymentController@result')->name('website/payment/result');
+});
+Route::group(['prefix' => 'bank'], function () {
+
+    Route::group(['prefix' => 'zpal'], function () {
+        Route::get('/callback', 'ZarinPalController@callback')->name('zarinpal/callback');
+        Route::get('redirect/{token}', 'ZarinPalController@redirectToBank');
+    });
+    Route::get('/redirect/{token}', '\ZarinpalC@redirectToBank')->name('bank/redirect');
+    Route::get('/pay/result/{result}/{order_uid}', 'PaymentController@zarinPalWebResult')->name('website/bank/result');
+
+
+
 });
 
 

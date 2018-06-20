@@ -14,4 +14,9 @@ class HomeViewController extends Controller
         return view(config('app.locale').'.welcome',['products'=>$products]);
     }
 
+    public function contact()
+    {
+        return view('en.contact');
+    }
+
 }

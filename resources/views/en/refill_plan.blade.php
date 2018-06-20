@@ -34,7 +34,7 @@
                 <div class="row justify-content-center pb-5 pt-3">
                     <form action="{{route('website/data/payment/create')}}" method="POST">
                         {{csrf_field()}}
-                        <input type="hidden" name="plan" id="plan" value="1">
+                        <input type="hidden" name="package_id" id="plan" value="1">
                         <input type="hidden" name="device_id" value="{{$device_id}}">
                         <button class="btn btn__pay"><strong>Pay</strong> by Square</button>
                     </form>
@@ -48,7 +48,7 @@
                 <div class="row flex-wrap align-items-center justify-content-around  pt-5 pb-5">
 
                     <div class="fabfelt">If you need any help, please contact us</div>
-                    <a class="btn btn__contact" href="">
+                    <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
                         Contact Us
                     </a>
                 </div>

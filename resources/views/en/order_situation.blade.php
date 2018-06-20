@@ -25,10 +25,12 @@
                             <img src="/img/registered.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
                             <div class="order_situation mt-4">order registered.</div>
+                            <div class="order_date">{{$order->created_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/registered-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
                             <div class="order_situation_g mt-4">order registered.</div>
+                            <div class="order_date_g">{{$order->created_at->format('d/m/Y')}}</div>
                         @endif
 
                     </div>
@@ -37,6 +39,7 @@
                             <img src="/img/track.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
                             <div class="order_situation mt-4">order on the way.</div>
+                            <div class="order_date">{{$order->updated_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/track-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
@@ -48,6 +51,7 @@
                             <img src="/img/delivered.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
                             <div class="order_situation mt-4">order delivered.</div>
+                            <div class="order_date">{{$order->updated_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/delivered-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
@@ -110,7 +114,11 @@
                             </tr>
                             <tr>
                                 <td>Invoice ID</td>
-                                <td>{{$order->payment->reference}}</td>
+                                @if(config('app.locale') == 'en')
+                                    <td>{{$order->payment->reference}}</td>
+                                @else
+                                    <td>{{$order->payment->payment_info->refrence_id}}</td>
+                                @endif
                             </tr>
                             <tr>
                                 <td>Status</td>
@@ -128,7 +136,7 @@
                 <div class="row flex-wrap align-items-center justify-content-around  pt-5 pb-5">
 
                     <div class="fabfelt">If you need any help, please contact us</div>
-                    <a class="btn btn__contact" href="">
+                    <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
                         Contact Us
                     </a>
                 </div>

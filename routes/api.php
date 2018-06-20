@@ -28,5 +28,14 @@ Route::group(['prefix'=>'org'],function (){
 //   Route::post('/pay/')
     Route::get('/order/{uid}','API\TrackController@getOrder');
     Route::get('/tax','API\SettingController@getSetting');
+    Route::group(['prefix' => 'bank'], function () {
 
+        Route::group(['prefix' => 'zpal'], function () {
+            Route::get('/callback', 'ZarinPalController@callback')->name('zarinpal/callback');
+            Route::get('redirect/{token}', 'ZarinPalController@redirectToBank');
+        });
+        Route::get('/redirect/{token}', '\ZarinpalC@redirectToBank')->name('bank/redirect');
+        Route::get('/mobile/pay/result/{result}/{order_uid}', 'PaymentController@zarinPalmobResult')->name('mobile/bank/result');
+
+    });
 });

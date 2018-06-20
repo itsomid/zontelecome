@@ -1,5 +1,6 @@
 <?php
 
+
     namespace App\Classes\Abstracts;
 
     use Illuminate\Http\Request;

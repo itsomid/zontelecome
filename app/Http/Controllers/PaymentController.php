@@ -64,6 +64,7 @@ class PaymentController extends Controller
         }
 
         $payment = new Payment;
+        $zarin = new \ZarinpalC();
         $payment->order_id = $insertedId;
         $payment->status = "initializing";
         $pay_method = \DB::table('setting')->first()->pay_method;
@@ -73,28 +74,31 @@ class PaymentController extends Controller
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
 
+            $squerup = new SquarupController();
+            return $squerup->squarup($payment);
+
         } else {
-            $payment->amount = $final_price;
+            $payment->amount = 100000;
             $payment->via = "IPG";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
-            $zarin = new \ZarinpalC();
+
             return redirect()->away($zarin->createRequest($payment));
+
         }
 //        session()->forget('cart');
 
-        $squerup = new SquarupController();
-        return $squerup->squarup($payment);
+
 
     }
 
     public function createPaymentForData(Request $request)
     {
 
-        $plan_id = $request->plan;
-        $device_id = $request->device_id;
-        $plan = Product::whereId($plan_id)->first();
-        $total_price = $plan->price;
+        $package_id = $request->input('package_id');
+        $device_id = $request->input('device_id');
+        $package = Product::whereId($package_id)->first();
+        $total_price = $package->price;
 
 
         $order = new Order;
@@ -111,13 +115,13 @@ class PaymentController extends Controller
         }
         $cart = new Cart;
         $cart->order_id = $insertedId;
-        $cart->product_id = $plan_id;
+        $cart->product_id = $package_id;
         $cart->quantity = 1;
         $cart->device_id = $device_id;
         $cart->save();
 
         $payment = new Payment();
-
+        $zarin = new \ZarinpalC();
         $payment->order_id = $insertedId;
         $payment->status = "initializing";
         $pay_method = \DB::table('setting')->first()->pay_method;
@@ -131,10 +135,10 @@ class PaymentController extends Controller
 
         } else {
             $payment->amount = $final_price;
-            $payment->via = "zpal";
+            $payment->via = "IPG";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
-            $zarin = new \ZarinpalC();
+
             return redirect()->away($zarin->createRequest($payment));
 
         }
@@ -142,8 +146,9 @@ class PaymentController extends Controller
 
     }
 
-    public function result(Request $request, $payment_uid)
+    public function webResult(Request $request, $payment_uid)
     {
+
         $payment = Payment::where('id', Payment::realId($payment_uid))->first();
         $checkout_id = $request->input('checkoutId');
         $order_uid = $request->input('referenceId');
@@ -157,6 +162,18 @@ class PaymentController extends Controller
         $payment->setPaid();
 
         return view('payment_result', ['order_uid' => $order_uid]);
+    }
+
+    public function zarinPalWebResult(Request $request, $result, $order_uid)
+    {
+
+            return view('en.payment_result',['order_uid'=>$order_uid]);
+
+    }
+
+    public function zarinPalmobResult(Request $request, $result, $order_uid)
+    {
+        return view('fa.mobile_payresult',['result' => $result, 'order_uid' => $order_uid]);
     }
 
     public function finalPrice($total_price, $discount, $delivery_fee)

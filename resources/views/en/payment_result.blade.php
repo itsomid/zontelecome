@@ -21,7 +21,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <span class="success__box">asfsdgasdd</span>
+                                <span class="success__box">{{$order_uid}}</span>
                             </div>
                             <div class="col-md-6">
                                 <button class="btn btn__find"><i class="fa fa-arrow-down" style="padding-right: 5px"></i>Download</button>

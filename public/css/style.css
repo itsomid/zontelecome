@@ -301,6 +301,12 @@ z-index: -1;
     background-position-x: center;
     background-size: 50%;
 }
+.bg__contact{
+    background-image: url("/img/contact.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 35%;
+}
 .bg__done{
     background-image: url("/img/done.png");
     background-repeat: no-repeat;
@@ -462,6 +468,33 @@ z-index: -1;
     border-radius: 100px;
     padding: 20px 0px 3px 0px;
     min-width: 290px;
+}
+.btn__contact__email{
+    font-family: BloggerSans;
+    font-size: 26px;
+    color: #121212 !important;
+    background: #FFCC00;
+    border-radius: 58px;
+    padding: 20px 30px 10px 30px;
+    /*min-width: 340px;*/
+}
+.btn__contact__phone{
+    font-family: BloggerSans;
+    font-size: 26px;
+    color: #121212 !important;
+    background: #FFCC00;
+    border-radius: 58px;
+    padding: 20px 30px 6px 30px;
+    min-width: 340px;
+}
+.btn__footer{
+    font-family: BloggerSans-Bold;
+    font-size: 18px;
+    color: black !important;
+    background: white;
+    border-radius: 58px;
+    padding: 13px 0px 3px 0px;
+    min-width: 140px;
 }
 .product_name{
     position: absolute;
@@ -806,6 +839,16 @@ z-index: -1;
     font-size: 30px;
     color: #949494;
 }
+.order_date{
+    font-family: BloggerSans-Light;
+    font-size: 20px;
+    color: #FFCC00;
+}
+.order_date_g{
+    font-family: BloggerSans-Light;
+    font-size: 20px;
+    color: #949494;
+}
 .order_description{
     background: url("/img/factor.svg") no-repeat;
     background-position: center;
@@ -881,6 +924,19 @@ z-index: -1;
     font-family: BloggerSans;
     font-size: 30px;
     color: #FFFFFF;
+}
+.contact__text{
+    text-align: justify;
+    color: white;
+}
+.contact__email{
+    color: white;
+    font-size: 18px;
+}
+.footer__text{
+    text-align: left;
+    color: white;
+    line-height: 15px;
 }
 @media screen and  (min-width: 576px) {
     .wid_mr_l div:nth-child(2){

@@ -1,0 +1,58 @@
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    background: #232831;
+    padding: 30px
+}
+
+img {
+    margin: auto;
+    display: block;
+    width: 90%
+}
+
+@font-face {
+    font-family: Sans;
+    src: url(/fonts/sans/ttf/IRANSansWeb_Light.ttf);
+}
+
+p {
+    width: 100%;
+    text-align: center;
+    font-family: Sans !important;
+    color: #ffffff
+}
+
+.ture {
+    color: #519408
+}
+
+.false {
+    color: #FF1B37
+}
+
+a {
+    width: 70%;
+    display: block;
+    margin: auto;
+    padding: 20px;
+    color: #000000;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Sans;
+    background: #FFCC00;
+    text-decoration: none
+}
+
+
+
+
+
+
+

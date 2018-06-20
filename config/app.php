@@ -162,7 +162,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Atnic\Inspinia\Providers\AppServiceProvider::class,
-        Zarinpal\Laravel\ZarinpalServiceProvider::class
+        Zarinpal\Laravel\ZarinpalServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
+
 
     ],
 
@@ -214,7 +216,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Hashids' => Vinkla\Hashids\Facades\Hashids::class,
         'Zarinpal' => Zarinpal\Laravel\Facade\Zarinpal::class,
-        'DefaultIPG' => App\Http\Controllers\ZarinPalController::class,
+        'ZarinpalC' => \App\Http\Controllers\ZarinPalController::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
+
+
 
 
     ],
