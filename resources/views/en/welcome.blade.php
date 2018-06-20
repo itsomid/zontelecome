@@ -1,5 +1,7 @@
 @extends('landing.main')
-
+@section('header')
+    {{config('app.name')}}
+    @endsection
 @section('content')
     @include('landing.nav')
     <div class="main">

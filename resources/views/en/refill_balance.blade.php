@@ -1,4 +1,7 @@
 @extends('landing.main')
+@section('header')
+    {{config('app.name')}} | Refill Balance
+@endsection
 @section('content')
 
     @include('landing.topnav')

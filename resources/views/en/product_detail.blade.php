@@ -1,4 +1,7 @@
 @extends('landing.main')
+@section('header')
+    {{config('app.name')}} | {{$product->title}}
+@endsection
 @section('content')
 
     @include('landing.topnav')
