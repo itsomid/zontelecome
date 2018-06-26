@@ -19,28 +19,29 @@ class ProductsTableSeeder extends Seeder
                 'price' => '10.00',
                 'related_product' => 0,
                 'status' => '1',
-                'description' => 'ZoneFi is your ultimate modem . . . ',
+                'description' => 'ZonFi is your ultimate travel companion. With its groundbreaking EzFi Virtual Sim technology, the modem switches carriers remotely which ensures a stronger and faster Internet connection, as well as noticably lower roaming costs. With its global coverage, you can enjoy a local carrier experience in over 110 countries worldwide at 4G/LTE speeds as high as 150Mbps.
+Equipped with an embedded 6000mAh Li-ion battery, the device can get up to 14 hours of battery life and also be used to charge your gadgets on the go. ZonFi requires no configurations or setup and will get you online with a simple push of a button. You can also connect up to 8 of your WiFi enables devices simultaniously.',
                 'main_image_url'=>'/img/modem.png'
             ],
 
             [
                 'title' => 'ZonTel EU Simcard',
-                'slug' => 'zontel-eu-sim',
+                'slug' => 'zontel-eu-simcard',
                 'type' => 'physical',
                 'price' => '12.00',
                 'related_product' => 0,
                 'status' => '1',
-                'description' => 'ZoneFi is your ultimate modem . . . ',
+                'description' => 'Stay connected every step of the way with ZonTel EU Data SIM, the best mobile data solution for european travelers. Travel all through the EU without worrying about data roaming charges, hunting for hotel WiFi and swapping SIM cards every time you cross a border.',
                 'main_image_url'=>'/img/sim-eu.png'
             ],
             [
                 'title' => 'ZonTel Global Simcard',
-                'slug' => 'zontel-global-sim',
+                'slug' => 'zontel-global-simcard',
                 'type' => 'physical',
                 'price' => '14.00',
                 'related_product' => 0,
                 'status' => '1',
-                'description' => 'ZoneFi is your ultimate modem . . . ',
+                'description' => 'Stay connected every step of the way with ZonTel EU Data SIM, the best mobile data solution for european travelers. Travel all through the EU without worrying about data roaming charges, hunting for hotel WiFi and swapping SIM cards every time you cross a border.',
                 'main_image_url'=>'/img/sim-global.png'
             ]
             ,
