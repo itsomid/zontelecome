@@ -10,7 +10,8 @@ class ProductController extends Controller
     public function getProduct($slug)
     {
         $product =  Product::whereSlug($slug)->first();
-        return view(config('app.locale').'.product_detail', ['product'=>$product]);
+        $products = Product::whereType('physical')->get();
+        return view(config('app.locale').'.product_detail', ['product'=>$product,'products'=>$products]);
     }
 
 

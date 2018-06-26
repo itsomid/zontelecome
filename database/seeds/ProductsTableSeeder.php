@@ -13,8 +13,8 @@ class ProductsTableSeeder extends Seeder
     {
         $products = [
             [
-                'title' => 'ZoneFi Global Modem',
-                'slug' => 'zonefi-global-modem',
+                'title' => 'ZonFi Global Modem',
+                'slug' => 'zonfi-global-modem',
                 'type' => 'physical',
                 'price' => '10.00',
                 'related_product' => 0,
@@ -24,24 +24,24 @@ class ProductsTableSeeder extends Seeder
             ],
 
             [
-                'title' => 'ZoneTel EU Sim',
-                'slug' => 'zonetel-eu-sim',
+                'title' => 'ZonTel EU Simcard',
+                'slug' => 'zontel-eu-sim',
                 'type' => 'physical',
                 'price' => '12.00',
                 'related_product' => 0,
                 'status' => '1',
                 'description' => 'ZoneFi is your ultimate modem . . . ',
-                'main_image_url'=>'/img/sim.png'
+                'main_image_url'=>'/img/sim-eu.png'
             ],
             [
-                'title' => 'ZoneFi Global Sim',
-                'slug' => 'zonefi-global-sim',
+                'title' => 'ZonTel Global Simcard',
+                'slug' => 'zontel-global-sim',
                 'type' => 'physical',
                 'price' => '14.00',
                 'related_product' => 0,
                 'status' => '1',
                 'description' => 'ZoneFi is your ultimate modem . . . ',
-                'main_image_url'=>'/img/router.png'
+                'main_image_url'=>'/img/sim-global.png'
             ]
             ,
             [

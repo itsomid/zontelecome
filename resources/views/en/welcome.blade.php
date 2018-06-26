@@ -1,7 +1,7 @@
 @extends('landing.main')
 @section('header')
     {{config('app.name')}}
-    @endsection
+@endsection
 @section('content')
     @include('landing.nav')
     <div class="main">
@@ -12,18 +12,20 @@
                     <section class="flex-container" id="{{$key+1}}">
                         <div class="flex-item-1">
                             <p class="product_title">{{$product->title}}</p>
-                            <p class="Product_subtitle">For Your Global Needs</p>
-                            <p class="price">$ 2.99</p>
+                            <p class="Product_subtitle">
+                                @if($product->slug == "zonfi-global-modem")
+                                    Global Wifi At Your Fingertips
+                                @elseif($product->slug == "zontel-eu-simcard")
+                                    For Your Trips Across Europe
+                                @elseif($product->slug == "zontel-global-simcard")
+                                    For Your Global Needs
+                                @endif
+                            </p>
+                            <p class="price">$ {{number_format($product->price,2)}}</p>
                             <div class="product_description">
-                    <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
 
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
+                                    {{$product->description}}
 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-
-                    </span>
                             </div>
                             <a href="{{route('website/product',['slug'=>$product->slug])}}" class="btn btn__more ">
                                 Read More
@@ -31,23 +33,40 @@
                         </div>
                         <div class="flex-item-2">
                             <div style="position: relative;margin-top: 110px;    margin-left: 100px;">
-                                <img src="img/modem.png" width="657" height="544" id="product_1" class="main_product">
-                                <img src="img/shopping_circle.svg" style="position: absolute; z-index: 0">
+                                <img src="{{$product->main_image_url}}" width="657" height="657" id="img_{{$key+1}}"
+                                     class="main_product ">
+                                <img src="img/shopping_circle.svg" class="img-fluid"
+                                     style="position: absolute; z-index: 0">
                             </div>
                         </div>
-                        <div class="flex-item-3">
+                        <div class="flex-item-3 pb-5">
                             <ul class="product_feature">
-                                <li>cool features</li>
-                                <li>amazing anten</li>
-                                <li>awesome stuff</li>
-                                <li>mindblowing button</li>
+                                @if($product->slug == "zonfi-global-modem")
+                                    <li>Flexible Refill Options</li>
+                                    <li>A Full Year To Use Your Data</li>
+                                    <li>SIM-Free, Hassle-Free, No Overage Charges.</li>
+                                    <li>Access to 500 Carriers Worldwide</li>
+                                @elseif($product->slug == "zontel-eu-simcard")
+                                    <li>Coverage All Over EU</li>
+                                    <li>Instant Activation</li>
+                                    <li>Lifetime Ownership</li>
+                                    <li>Compatible With All Unlocked Phones</li>
+                                @elseif($product->slug == "zontel-global-simcard")
+                                    <li>Coverage All Over World</li>
+                                    <li>Instant Activation</li>
+                                    <li>Lifetime Ownership</li>
+                                    <li>Compatible With All Unlocked Phones</li>
+                                @endif
                             </ul>
-                            <a class="btn btn__light addbtn" id="{{$product->slug}}">
-                                <i class="fa fa-plus"></i> Add to cart
-                            </a>
-                            <a href="{{route('website/cart')}}" class="btn btn__primary addbtn" id="{{$product->slug}}">
-                                Buy Now
-                            </a>
+                            <div class="d-flex flex-nowrap">
+                                <a class="btn btn__light addbtn" id="{{$product->slug}}">
+                                    <i class="fa fa-plus"></i> Add to cart
+                                </a>
+                                <a href="{{route('website/cart')}}" class="btn btn__primary ml-3 addbtn"
+                                   id="{{$product->slug}}">
+                                    Buy Now
+                                </a>
+                            </div>
                         </div>
 
                     </section>

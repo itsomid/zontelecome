@@ -19,7 +19,7 @@
                         <div id="omid" class="row align-items-center cart_item mb-3">
                             <a class="remove_product" id="{{$item[0]->slug}}"><i class="fa fa-times cart_item_remove"></i></a>
                             <div class="cart_item_img">
-                                <img src="{{$item[0]->main_image_url}}" height="110px" width="135">
+                                <img src="{{$item[0]->main_image_url}}" height="135" width="135">
                             </div>
                             <div class="cart_item_text mt-4">
                                 <h2 class="mb-0">{{$item[0]->title}}</h2>
