@@ -14,9 +14,9 @@
                         <div class="row justify-content-center align-items-center mb-3 mt-3">
                             <img src="{{url('/img/shopping_circle.svg')}}" width="100" height="100">
                             <img src="{{url($device_info->image_url)}}" width="130px" class="main_product"
-                                 style="left: 22%">
+                                 style="left: 22%; top: 0px;">
 
-                            <p class="device_id ml-3">{{$device_info->product_id}}</p>
+                            <p class="device_id ml-3 pt-4">{{$device_info->product_id}}</p>
                         </div>
 
                     </div>
