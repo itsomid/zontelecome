@@ -26,9 +26,7 @@
                     Track Order
                 </a>
 
-                    <a href="{{route('website/order/track')}}" class="btn btn__light" style="background-color: #202020 !important;">
-                        Track Order
-                    </a>
+                
 
             </li>
             <li class="nav-item p-2">
