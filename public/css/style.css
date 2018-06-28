@@ -414,19 +414,20 @@ z-index: -1;
     border-radius: 20px;
     color: #242424;
     padding: 15px 20px 3px 20px;
-
+    box-shadow: 2px 3px #949494;
     border: none;
 
 }
 .btn__light{
     font-family: BloggerSans-Bold;
     font-size: 14px;
-    background-color: rgba(76, 175, 80, 0);
+    background-color: #C2C2C2;
     color: #949494 !important;
     padding: 12px 0px 3px 0px;
     width: 125px;
     border: 2px solid #979797;
     border-radius: 20px;
+    box-shadow: 1px 2px #949494;
 
 }
 .btn__product{
@@ -682,6 +683,10 @@ z-index: -1;
 
 .shopping__cart{
     position: relative;
+}
+.shopping__cart__circle{
+    box-shadow: 2px 3px #949494;
+    border-radius: 60px;
 }
 .shopping__cart span{
     background-image: url("/img/black-circle.svg");

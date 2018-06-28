@@ -59,10 +59,10 @@
                                 @endif
                             </ul>
                             <div class="d-flex flex-nowrap">
-                                <a class="btn btn__light addbtn" id="{{$product->slug}}">
+                                <a class="btn btn__light shadow-none addbtn" style="background-color: transparent" id="{{$product->slug}}">
                                     <i class="fa fa-plus"></i> Add to cart
                                 </a>
-                                <a href="{{route('website/cart')}}" class="btn btn__primary ml-3 addbtn"
+                                <a href="{{route('website/cart')}}" class="btn btn__primary shadow-none ml-3 addbtn"
                                    id="{{$product->slug}}">
                                     Buy Now
                                 </a>
