@@ -131,7 +131,7 @@ class PaymentController extends Controller
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
             $squerup = new SquarupController();
-            return $squerup->squarup($payment);
+            return $squerup->squarup($payment,"web");
 
         } else {
             $zarin = new \ZarinpalC();
@@ -149,7 +149,7 @@ class PaymentController extends Controller
 
     public function webResult(Request $request, $order_uid)
     {
-        
+
         $order = Order::whereId(Order::realId($order_uid))->first();
         return $order->payment()->id;
         $payment = Payment::where('id', Payment::realId($payment_uid))->first();
