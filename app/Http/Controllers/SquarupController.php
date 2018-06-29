@@ -14,7 +14,7 @@ class SquarupController extends Controller
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
-       return $orderArray = $this->square_json($payment,$agent);
+        $orderArray = $this->square_json($payment,$agent);
 
 
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
