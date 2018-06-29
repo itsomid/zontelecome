@@ -162,7 +162,7 @@ class PaymentController extends Controller
 
         $payment->setPaid();
 
-        return view('payment_result', ['order_uid' => $order_uid]);
+        return view('en.payment_result', ['order_uid' => $order_uid]);
     }
 
     public function zarinPalWebResult(Request $request, $result, $order_uid)
