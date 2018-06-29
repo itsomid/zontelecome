@@ -21,7 +21,7 @@
                             @if(!empty($payment->order->c_mail))
                                 <p class="success__title__1">{{$payment->order->c_mail}}</p>
                             @else
-                                <p class="success__title__1">fdgd</p>\
+                                <p class="success__title__1">Your Product Email</p>
                             @endif
                         </div>
                         <div class="row">
