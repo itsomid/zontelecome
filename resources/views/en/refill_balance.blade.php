@@ -58,7 +58,7 @@
                             Refill Now
                         </a>
                     </div>
-                    <div class="col-md-8 mb-5">
+                    <div class="col-md-12 mb-5">
                         <table class="table table-borderless table-border-bottom">
                             <tbody>
                             @foreach($refill_history as $item)

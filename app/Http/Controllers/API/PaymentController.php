@@ -66,9 +66,23 @@ class PaymentController extends Controller
 
     }
 
-    public function squareMobResult($payment_uid)
+    public function squareMobResult(Request $request, $order_uid)
     {
-        return view('en.mobile_payment_result');
+        $order = Order::whereId(Order::realId($order_uid))->first();
+        $payment = Payment::where('order_id', $order->id)->first();
+        $checkout_id = $request->input('checkoutId');
+//         $order_uidd = $request->input('referenceId');
+
+        $transaction_id = $request->input('transactionId');
+        $payment->reference = $transaction_id;
+        $details = $payment->details();
+        $details->reference_id = $checkout_id;
+        $payment->setDetails($details);
+        $payment->save();
+
+        $payment->setPaid();
+
+        return view('en.mobile_payment_result',['order_uid'=>$order_uid]);
     }
     public function mobResult(Request $request, $result, $order_uid)
     {
