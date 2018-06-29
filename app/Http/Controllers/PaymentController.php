@@ -151,6 +151,7 @@ class PaymentController extends Controller
     {
 
         $payment = Payment::where('id', Payment::realId($payment_uid))->first();
+        return $payment->order;
         $checkout_id = $request->input('checkoutId');
         $order_uid = $request->input('referenceId');
         $transaction_id = $request->input('transactionId');
