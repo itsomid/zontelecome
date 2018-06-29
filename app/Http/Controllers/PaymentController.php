@@ -151,14 +151,10 @@ class PaymentController extends Controller
     {
 
         $order = Order::whereId(Order::realId($order_uid))->first();
-//       return $payment = $order->allPayments()->get();
         $payment = Payment::where('order_id', $order->id)->first();
         $checkout_id = $request->input('checkoutId');
-         $order_uidd = $request->input('referenceId');
+//         $order_uidd = $request->input('referenceId');
 
-        return $o =[
-            $order_uid,$order_uidd
-        ];
         $transaction_id = $request->input('transactionId');
         $payment->reference = $transaction_id;
         $details = $payment->details();
@@ -168,7 +164,7 @@ class PaymentController extends Controller
 
         $payment->setPaid();
 
-        return view('en.payment_result', ['order_uid' => $order_uid,'payment'=>$payment]);
+        return view('en.payment_result', ['order_uid' => $order_uid,'order'=>$order]);
     }
 
 //    public function squareMobResult(Request $request, $payment_uid)

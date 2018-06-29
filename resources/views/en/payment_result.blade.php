@@ -18,8 +18,8 @@
                             <h2 class="fabfelt">Thank You For Your Purchase</h2>
                             <p class="success__title__1 w-100">Please keep <span style="font-family: BloggerSans-Bold;">this number</span>
                                 for tracking your order</p>
-                            @if(!empty($payment->order->c_mail))
-                                <p class="success__title__1">{{$payment->order->c_mail}}</p>
+                            @if(!empty($order->c_mail))
+                                <p class="success__title__1">{{$order->c_mail}}</p>
                             @else
                                 <p class="success__title__1">Your Product Email</p>
                             @endif
