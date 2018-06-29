@@ -9,17 +9,13 @@
     <link rel="stylesheet" href="/css/payment.css">
 </head>
 <body>
-@if($result == 1)
     <img src="/img/OK.png" >
     <p class="res ture">Successful</p>
-@else
-    <img src="/img/NOK.png" >
-    <p class="res false">Unsuccessful</p>
-@endif
+
 
 @if(false)
-    <p class="code">شماره پیگیری : </p>
+    <p class="code">Transaction_id</p>
 @endif
-<a href="persiaticket://order?uid={{$order_uid}}">بازگشت به اپلیکیشن</a>
+<a href="zontelecom://order?uid={{$order_uid}}">Return to app</a>
 </body>
 </html>
