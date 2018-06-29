@@ -95,7 +95,7 @@ class PaymentController extends Controller
     public function createPaymentForData(Request $request)
     {
 
-        $package_id = $request->input('package_id');
+         $package_id = $request->input('package_id');
         $device_id = $request->input('device_id');
         $package = Product::whereId($package_id)->first();
         $total_price = $package->price;
@@ -121,7 +121,7 @@ class PaymentController extends Controller
         $cart->save();
 
         $payment = new Payment();
-        $zarin = new \ZarinpalC();
+
         $payment->order_id = $insertedId;
         $payment->status = "initializing";
         $pay_method = \DB::table('setting')->first()->pay_method;
@@ -134,6 +134,7 @@ class PaymentController extends Controller
             return $squerup->squarup($payment);
 
         } else {
+            $zarin = new \ZarinpalC();
             $payment->amount = $final_price;
             $payment->via = "IPG";
             $payment->setDetails(['scheme' => 'ZonTelecom']);

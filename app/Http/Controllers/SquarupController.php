@@ -14,7 +14,7 @@ class SquarupController extends Controller
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
-
+//        return $payment;
          $orderArray = $this->square_json($payment);
 
 
