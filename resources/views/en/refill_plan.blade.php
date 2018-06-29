@@ -37,7 +37,7 @@
                 <div class="row justify-content-center pb-5 pt-3">
                     <form action="{{route('website/data/payment/create')}}" method="POST">
                         {{csrf_field()}}
-                        <input type="hidden" name="package_id" id="plan" value="1">
+                        <input type="hidden" name="package_id" id="plan" value="{{$plans[0]->id}}">
                         <input type="hidden" name="device_id" value="{{$device_id}}">
                         <button class="btn btn__pay"><strong>Pay</strong> by Square</button>
                     </form>
