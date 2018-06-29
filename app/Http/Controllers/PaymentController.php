@@ -75,7 +75,7 @@ class PaymentController extends Controller
             $payment->save();
 
             $squerup = new SquarupController();
-            return $squerup->squarup($payment);
+            return $squerup->squarup($payment,"web");
 
         } else {
             $payment->amount = 100000;
@@ -147,9 +147,11 @@ class PaymentController extends Controller
 
     }
 
-    public function webResult(Request $request, $payment_uid)
+    public function webResult(Request $request, $order_uid)
     {
-
+        
+        $order = Order::whereId(Order::realId($order_uid))->first();
+        return $order->payment()->id;
         $payment = Payment::where('id', Payment::realId($payment_uid))->first();
         $checkout_id = $request->input('checkoutId');
         $order_uid = $request->input('referenceId');
@@ -164,6 +166,23 @@ class PaymentController extends Controller
 
         return view('en.payment_result', ['order_uid' => $order_uid,'payment'=>$payment]);
     }
+
+//    public function squareMobResult(Request $request, $payment_uid)
+//    {
+//        $payment = Payment::where('id', Payment::realId($payment_uid))->first();
+//        $checkout_id = $request->input('checkoutId');
+//        $order_uid = $request->input('referenceId');
+//        $transaction_id = $request->input('transactionId');
+//        $payment->reference = $transaction_id;
+//        $details = $payment->details();
+//        $details->reference_id = $checkout_id;
+//        $payment->setDetails($details);
+//        $payment->save();
+//
+//        $payment->setPaid();
+//
+//        return js
+//    }
 
     public function zarinPalWebResult(Request $request, $result, $order_uid)
     {

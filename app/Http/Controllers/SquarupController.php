@@ -8,14 +8,13 @@ use Illuminate\Http\Request;
 
 class SquarupController extends Controller
 {
-    public function squarup($payment)
+    public function squarup($payment, $agent)
     {
 
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
-//        return $payment;
-         $orderArray = $this->square_json($payment);
+       return $orderArray = $this->square_json($payment,$agent);
 
 
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
@@ -47,36 +46,45 @@ class SquarupController extends Controller
             exit();
         }
 // Redirect the customer to Square Checkout
+        if ($agent == "mobile")
+            return $checkoutUrl;
+        else
+            header("Location: $checkoutUrl");
 
-        header("Location: $checkoutUrl");
     }
-    public function square_json($payment){
+
+    public function square_json($payment,$agent)
+    {
 
 
-        $cart_item = Cart::with('product')->where('order_id',$payment->order_id)->get();
+        $cart_item = Cart::with('product')->where('order_id', $payment->order_id)->get();
 
 
-        foreach ($cart_item as $key=>$item) {
+        foreach ($cart_item as $key => $item) {
             $list_item[$key] = [
                 "name" => $item->product->title,
-                "quantity"=> (string)$item->quantity,
-                "base_price_money" =>[
+                "quantity" => (string)$item->quantity,
+                "base_price_money" => [
                     "amount" => $item->product->price * 100,
                     "currency" => "CAD"
                 ]
             ];
         }
+        if ($agent == "mobile")
+            $redirect_url = route('mobile/payment/result', ['order_uid' => $payment->order->uid]);
+        else
+            $redirect_url = route('website/payment/result', ['order_uid' => $payment->order->uid]);
 
 
         $square = array(
 
             "idempotency_key" => uniqid(),
             "order" => array(
-                "reference_id" => (string) $cart_item[0]->uid,
+                "reference_id" => (string)$cart_item[0]->uid,
 
-                "line_items" =>  $list_item
+                "line_items" => $list_item
             ),
-            "redirect_url" => route('website/payment/result',['payment'=>$payment->uid]),
+            "redirect_url" => $redirect_url,
         );
         //$json = json_encode($square);
         return $square;

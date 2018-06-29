@@ -47,7 +47,7 @@ Route::group(['prefix'=>'order'],function () {
 Route::group(['prefix'=>'payment'],function () {
     Route::post('/product/createpayment', 'PaymentController@createPaymentForProduct')->name('website/product/payment/create');
     Route::post('/data/createpayment', 'PaymentController@createPaymentForData')->name('website/data/payment/create');
-    Route::get('/result/{uid}', 'PaymentController@webResult')->name('website/payment/result');
+    Route::get('/result/{order_uid}', 'PaymentController@webResult')->name('website/payment/result');
 });
 Route::group(['prefix' => 'bank'], function () {
 

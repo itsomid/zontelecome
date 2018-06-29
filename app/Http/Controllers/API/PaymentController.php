@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\SquarupController;
 use App\Payment;
 use App\Product;
 use App\Cart;
@@ -15,7 +16,7 @@ class PaymentController extends Controller
     {
 
         $package_id = $request->input('package_id');
-        $device_id = $request->input('device_id');
+         $device_id = $request->input('device_id');
         $package = Product::whereId($package_id)->first();
         $total_price = $package->price;
 
@@ -50,7 +51,7 @@ class PaymentController extends Controller
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
             $squerup = new SquarupController();
-            return $squerup->squarup($payment);
+            return response()->json($squerup->squarup($payment,"mobile"));
 
         } else {
             $payment->amount = $final_price;
@@ -63,6 +64,11 @@ class PaymentController extends Controller
         }
 
 
+    }
+
+    public function squareMobResult($payment_uid)
+    {
+        return view('en.mobile_payment_result');
     }
     public function mobResult(Request $request, $result, $order_uid)
     {

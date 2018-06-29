@@ -17,7 +17,7 @@
                         <div class="row pb-4">
                             <h2 class="fabfelt">Thank You For Your Purchase</h2>
                             <p class="success__title__1 w-100">Please keep <span style="font-family: BloggerSans-Bold;">this number</span>
-                                for tracking your order</p>\
+                                for tracking your order</p>
                             @if(!empty($payment->order->c_mail))
                                 <p class="success__title__1">{{$payment->order->c_mail}}</p>
                             @else
