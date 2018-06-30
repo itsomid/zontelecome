@@ -82,7 +82,7 @@ class PaymentController extends Controller
 
         $payment->setPaid();
 
-        return view('en.mobile_payment_result',['order_uid'=>$order_uid]);
+        return view('en.mobile_payment_result',['order'=>$order]);
     }
     public function mobResult(Request $request, $result, $order_uid)
     {

@@ -9,13 +9,10 @@
     <link rel="stylesheet" href="/css/payment.css">
 </head>
 <body>
-    <img src="/img/OK.png" >
-    <p class="res ture">Successful</p>
+
+    <p class="" style="font-size: 30px;color: green">Successful</p>
 
 
-@if(false)
-    <p class="code">Transaction_id</p>
-@endif
-<a href="zontelecom://order?uid={{$order_uid}}">Return to app</a>
+<a href="zontelecom://pay/?status=true&orderId={{$order->uid}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}" style="font-size: 20px; width: 50%">Return to app</a>
 </body>
 </html>
