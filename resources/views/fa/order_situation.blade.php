@@ -120,7 +120,7 @@
                                 @if(config('app.locale') == 'en')
                                     <td>{{$order->payment->reference}}</td>
                                 @else
-                                    <td>{{$order->payment->payment_info->refrence_id}}</td>
+                                    <td>{{$order->payment->payment_info->reference_id}}</td>
                                 @endif
                             </tr>
                             <tr>
