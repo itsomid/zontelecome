@@ -39,6 +39,7 @@ Route::group(['prefix'=>'org'],function (){
             Route::get('redirect/{token}', 'ZarinPalController@redirectToBank');
         });
         Route::get('/redirect/{token}', '\ZarinpalC@redirectToBank')->name('bank/redirect');
+        Route::get('/pay/result/{result}/{order_uid}', 'API\PaymentController@zarinpalMobResult')->name('mobile/bank/result');
 
 
     });

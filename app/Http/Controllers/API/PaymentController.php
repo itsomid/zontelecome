@@ -84,13 +84,9 @@ class PaymentController extends Controller
 
         return view('en.mobile_payment_result',['order'=>$order]);
     }
-    public function mobResult(Request $request, $result, $order_uid)
+    public function zarinpalMobResult(Request $request, $result, $order_uid)
     {
-        $payment_info =  [
-            'result' => $result,
-            'order_uid' => $order_uid
-        ];
-        return response()->json($payment_info);
+        return view('fa.mobile_payresult',['result' => $result, 'order_uid' => $order_uid]);
 
     }
     public function finalPrice($total_price, $discount, $delivery_fee)

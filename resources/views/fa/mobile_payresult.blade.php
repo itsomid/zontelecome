@@ -20,6 +20,6 @@
 @if(false)
     <p class="code">شماره پیگیری : </p>
 @endif
-<a href="zontelecom://order?uid={{$order_uid}}">بازگشت به اپلیکیشن</a>
+<a href="irzontelecom://pay/?status=true&orderId={{$order->uid}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت به اپلیکیشن</a>
 </body>
 </html>
