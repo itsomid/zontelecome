@@ -14,7 +14,7 @@ class SquarupController extends Controller
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
-        $orderArray = $this->square_json($payment,$agent);
+        $orderArray = $this->square_json($payment, $agent);
 
 
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
@@ -47,13 +47,13 @@ class SquarupController extends Controller
         }
 // Redirect the customer to Square Checkout
         if ($agent == "mobile")
-            return $checkoutUrl;
+            return ['redirect_url' => $checkoutUrl];
         else
             header("Location: $checkoutUrl");
 
     }
 
-    public function square_json($payment,$agent)
+    public function square_json($payment, $agent)
     {
 
 
