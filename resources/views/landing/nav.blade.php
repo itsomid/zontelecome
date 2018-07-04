@@ -60,7 +60,7 @@
 
             $('#up').click(function (e) {
                 e.preventDefault();
-
+                $(document).off("scroll");
                 var cur_id = $('.menu_product.active').attr('id');
                 var first_id = $('.menu_product').first().attr('id');
 
@@ -84,13 +84,13 @@
                 $('.menu_content a').each(function () {
 
                     $('.circle_product').css('opacity', 0);
-                    $('.menu_title').css('color', '');
+                    $('.menu_title').css('color', 'white');
                 });
 
 
-                $('.menu_product.active').find('.circle_product').css('opacity', 1);
+                $('#' + next_id).find('.circle_product').css('opacity', 1);
                 $('.product_description').css('opacity', 1);
-                $('.menu_product.active').find('.menu_title').css('color', '#FFC506');
+                $('#' + next_id).find('.menu_title').css('color', '#FFC506');
 
                 $('.btn__more').css('opacity', 1);
                 $('html, body').stop().animate({
