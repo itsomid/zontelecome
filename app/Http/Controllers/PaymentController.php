@@ -83,7 +83,7 @@ class PaymentController extends Controller
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
 
-            return redirect()->away($zarin->createRequest($payment));
+            return redirect($zarin->createRequest($payment,"web"));
 
         }
 //        session()->forget('cart');

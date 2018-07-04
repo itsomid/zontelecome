@@ -59,7 +59,7 @@ class PaymentController extends Controller
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
 
-            return response()->json($zarin->createRequest($payment));
+            return response()->json($zarin->createRequest($payment,"mobile"));
 
         }
 

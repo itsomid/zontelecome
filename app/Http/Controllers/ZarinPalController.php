@@ -9,15 +9,19 @@ use Jenssegers\Agent\Agent;
 class ZarinPalController extends Controller implements AbstractIPG
 {
     public $fake = true;
-    public function createRequest($payment)
+    public function createRequest($payment,$agent)
     {
 
         $result = \Zarinpal::request(route('zarinpal/callback'), $payment->amount, 'testing');
         $payment->reference = $result['Authority'];
         $payment->save();
-        $url = ['redirect_url' => 'https://www.zarinpal.com/pg/StartPay/'.$result['Authority'].'/ZarinGate'];
+        $url ='https://www.zarinpal.com/pg/StartPay/'.$result['Authority'].'/ZarinGate';
+        if ($agent == "web")
+            return $url;
+        else
+            return ['redirect_url' => 'https://www.zarinpal.com/pg/StartPay/'.$result['Authority'].'/ZarinGate'];
 
-        return $url;
+
     }
 
     public function redirectToBank($token)
