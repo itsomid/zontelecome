@@ -21,7 +21,7 @@
                                     For Your Global Needs
                                 @endif
                             </p>
-                            <p class="price">$ {{number_format($product->price,2)}}</p>
+                            <p class="product_price">$ {{number_format($product->price,2)}}</p>
                             <div class="product_description">
 
                                     {{$product->description}}
@@ -32,11 +32,9 @@
                             </a>
                         </div>
                         <div class="flex-item-2">
-                            <div style="position: relative;margin-top: 110px;    margin-left: 100px;">
-                                <img src="{{$product->main_image_url}}" width="657" height="657" id="img_{{$key+1}}"
-                                     class="main_product ">
-                                <img src="img/shopping_circle.svg" class="img-fluid"
-                                     style="position: absolute; z-index: 0">
+                            <div >
+                                <img src="{{$product->main_image_url}}" id="img_{{$key+1}}" width="657" height="657" class="main_product ">
+                                <img src="img/shopping_circle.svg" class="main_product_circle">
                             </div>
                         </div>
                         <div class="flex-item-3 pb-5">
@@ -58,7 +56,7 @@
                                     <li>Compatible With All Unlocked Phones</li>
                                 @endif
                             </ul>
-                            <div class="d-flex flex-nowrap">
+                            <div class="d-flex flex-nowrap justify-content-center">
                                 <a class="btn btn__light shadow-none addbtn" style="background-color: transparent" id="{{$product->slug}}">
                                     <i class="fa fa-plus"></i> Add to cart
                                 </a>

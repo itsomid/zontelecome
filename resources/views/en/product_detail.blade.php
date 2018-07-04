@@ -62,14 +62,14 @@
         <section class="flex-container-main justify-content-center sec__padding second-color always__online__bg">
             <div class="container text-center d-flex flex-row justify-content-center align-items-center">
                 @if($product->slug == "zonfi-global-modem")
-                <p class="sim__feature">Your Internet Solution on 195 Countries…</p>
+                    <div class="col-md-4 helvetica">Power Bank</div>
+                    <div class="col-md-3">
+                        <img src="{{asset('img/powerbank.svg')}}">
+                    </div>
+                    <div class="col-md-4 helvetica">WIFI 4G LTE</div>
                 @elseif($product->slug == "zontel-eu-simcard" ||$product->slug == "zontel-global-simcard")
-                <div class="col-md-4 helvetica">Power Bank</div>
-                <div class="col-md-3">
-                    <img src="{{asset('img/powerbank.svg')}}">
-                </div>
-                <div class="col-md-4 helvetica">WIFI 4G LTE</div>
-                    @endif
+                    <p class="sim__feature">Your Internet Solution on 195 Countries…</p>
+                @endif
             </div>
         </section>
         <section class="flex-container-main flex-wrap   main-color sec__padding">
@@ -118,21 +118,49 @@
                             <div class="col-lg-4 wid_mr_l">
                                 <div>
                                     <span class="title__feature title__color">UNTHROTTLED 4G LTE</span>
-                                    <p class="context__feature context__color"> Global 4G LTE data with no throttling at no extra charge. </p>
+                                    <p class="context__feature context__color"> Global 4G LTE data with no throttling at
+                                        no extra charge. </p>
                                 </div>
                                 <div>
 
                                 </div>
                                 <div>
                                     <span class="title__feature title__color">ACTIVATES INSTANTLY</span>
-                                    <p class="context__feature context__color">Your SIM will arrive activated. Slip it on your mobile device, change the APN settings and you are ready to go. </p>
+                                    <p class="context__feature context__color">Your SIM will arrive activated. Slip it
+                                        on your mobile device, change the APN settings and you are ready to go. </p>
                                 </div>
                             </div>
                         </div>
-                        @endif
+                    @endif
                 </div>
             </div>
 
+        </section>
+        <section class="seventh-color sec__padding">
+            <div class="container text-center">
+                <div class="row justify-content-center mb-5">
+                    <p class="title__step">It is easy as 1,2,3</p>
+                </div>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-4 col-sm-12">
+                        <img src="{{asset('/img/3Steps-A.png')}}" width="384" height="306">
+                        <p class="title__color main__feature__title">Grab a ZonFi</p>
+                        <span class="main__feature__sub"> Buy ZonFi here or at retail stores near you. Carry it all the time to get secure mobile WiFi ("MiFi") and keep all your devices charged wherever you go.
+                            Get big savings with low rates for WiFi and never worry about roaming fees again. No SIMs or tedious configuration needed. </span>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <img src="{{asset('img/3Steps-B.png')}}" width="384" height="306">
+                        <p class="title__color main__feature__title">Power On</p>
+                        <span class="main__feature__sub">Simply turn on ZonFi gadgets to WiFi, connect up to 8 gadgets wo WiFi, Top up your data anytime, anywhere,
+                            through our app or website and enjoy the power of ZonFi. </span>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <img src="{{asset('img/3Steps-C.png')}}" width="384" height="306">
+                        <p class="title__color main__feature__title">Enjoy WiFi Anywhere</p>
+                        <span class="main__feature__sub">   Enjoy WiFi Anywhere Enjoy fast and secure WiFi connectivity across 110+ countries all at a flat rate, with the convenience of pay-as-you-go with no subscriptions. </span>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="main-color sec__padding head__bg">
             <div class="container text-center">

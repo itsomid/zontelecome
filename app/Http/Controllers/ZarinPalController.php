@@ -15,7 +15,8 @@ class ZarinPalController extends Controller implements AbstractIPG
         $result = \Zarinpal::request(route('zarinpal/callback'), $payment->amount, 'testing');
         $payment->reference = $result['Authority'];
         $payment->save();
-        $url = 'https://www.zarinpal.com/pg/StartPay/' . $result['Authority'];
+        $url = ['redirect_url' => 'https://www.zarinpal.com/pg/StartPay/'.$result['Authority'].'/ZarinGate'];
+//        ['redirect_url' => 'https://www.zarinpal.com/pg/StartPay/'.$result['Authority'].'/ZarinGate'];
         return $url;
     }
 

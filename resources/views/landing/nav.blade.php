@@ -27,125 +27,128 @@
 </nav>
 <script>
     $(document).ready(function () {
-        var scrollPos = $(document).scrollTop() + 500;
-        $('.circle_product').css('opacity', 0);
+
+        if (screen.width >= 1200) {
+
+            var scrollPos = $(document).scrollTop() + 500;
+            $('.circle_product').css('opacity', 0);
 
 
-        $('.menu_content a').each(function () {
+            $('.menu_content a').each(function () {
 
-            var refElement = $($(this).attr("href"));
+                var refElement = $($(this).attr("href"));
 
-            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-                $('.circle_product').css('opacity', 0);
-                $(this).find('.circle_product').css('opacity', 1);
-                $(this).find('.product_description').css('opacity', 1);
-                $(this).find('.menu_title').css('color', '#FFC506');
-                $(this).addClass('active');
-                // $('html,body').scrollTop(0);
+                if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                    $('.circle_product').css('opacity', 0);
+                    $(this).find('.circle_product').css('opacity', 1);
+                    $(this).find('.product_description').css('opacity', 1);
+                    $(this).find('.menu_title').css('color', '#FFC506');
+                    $(this).addClass('active');
+                    // $('html,body').scrollTop(0);
+                    $('html, body').stop().animate({
+                        scrollTop: $(refElement).offset().top - 100
+                    }, 250, 'swing', function () {
+                        $(document).on("scroll", onScroll);
+                    });
+                }
+                else {
+                    $('html, body').stop().animate({scrollTop: 0});
+                }
+            });
+
+            $(document).on("scroll", onScroll);
+
+            $('#up').click(function (e) {
+                e.preventDefault();
+
+                var cur_id = $('.menu_product.active').attr('id');
+                var first_id = $('.menu_product').first().attr('id');
+
+                if (cur_id === first_id) {
+
+                    var next_id = $('.menu_product').last().attr('id');
+                    var next_href = $('.menu_product').last().attr('href');
+                    $('a.menu_link').removeClass('active');
+                    $('#' + next_id).addClass('active');
+
+                }
+                else {
+
+                    var next_id = $('.menu_product.active').prev().attr('id');
+                    var next_href = $('.menu_product.active').prev().attr('href');
+                    $('a.menu_link').removeClass('active');
+                    $('#' + next_id).addClass('active');
+
+                }
+
+                $('.menu_content a').each(function () {
+
+                    $('.circle_product').css('opacity', 0);
+                    $('.menu_title').css('color', '');
+                });
+
+
+                $('.menu_product.active').find('.circle_product').css('opacity', 1);
+                $('.product_description').css('opacity', 1);
+                $('.menu_product.active').find('.menu_title').css('color', '#FFC506');
+
+                $('.btn__more').css('opacity', 1);
                 $('html, body').stop().animate({
-                    scrollTop: $(refElement).offset().top - 100
-                }, 250, 'swing', function () {
+                    scrollTop: $(next_href).offset().top - 100
+                }, 1000, 'swing', function () {
                     $(document).on("scroll", onScroll);
                 });
-            }
-            else {
-                $('html, body').stop().animate({scrollTop:0});
-            }
-        });
+            });
+            $('#down').click(function (e) {
 
-        $(document).on("scroll", onScroll);
+                e.preventDefault();
+                $(document).off("scroll");
+                var cur_id = $('.menu_product.active').attr('id');
+                var last_id = $('.menu_product').last().attr('id');
 
-        $('#up').click(function (e) {
-            e.preventDefault();
+                if (cur_id === last_id) {
 
-            var cur_id = $('.menu_product.active').attr('id');
-            var first_id = $('.menu_product').first().attr('id');
+                    var next_id = $('.menu_product').first().attr('id');
+                    var next_href = $('.menu_product').first().attr('href');
+                    $('a.menu_link').removeClass('active');
+                    $('#' + next_id).addClass('active');
 
-            if (cur_id === first_id){
+                }
+                else {
 
-                var next_id = $('.menu_product').last().attr('id');
-                var next_href = $('.menu_product').last().attr('href');
-                $('a.menu_link').removeClass('active');
-                $('#' + next_id).addClass('active');
+                    var next_id = $('.menu_product.active').next().attr('id');
+                    var next_href = $('.menu_product.active').next().attr('href');
+                    $('a.menu_link').removeClass('active');
+                    $('#' + next_id).addClass('active');
 
-            }
-            else{
+                }
 
-                var next_id = $('.menu_product.active').prev().attr('id');
-                var next_href = $('.menu_product.active').prev().attr('href');
-                $('a.menu_link').removeClass('active');
-                $('#' + next_id).addClass('active');
+                $('.menu_content a').each(function () {
 
-            }
+                    $('.circle_product').css('opacity', 0);
+                    $('.menu_title').css('color', '');
 
-            $('.menu_content a').each(function () {
+                });
 
-                $('.circle_product').css('opacity', 0);
-                $('.menu_title').css('color', '');
+
+                $('#' + next_id).find('.circle_product').css('opacity', 1);
+                $('.product_description').css('opacity', 1);
+                $('#' + next_id).find('.menu_title').css('color', '#FFC506');
+
+                $('btn__more').css('opacity', 1);
+                $('html, body').stop().animate({
+                    scrollTop: $(next_href).offset().top - 100
+                }, 1000, 'swing', function () {
+                    $(document).on("scroll", onScroll);
+                });
             });
 
+            $('.menu_content a').click(function (e) {
+                e.preventDefault();
+                $(document).off("scroll");
+                var linkHref = $(this).attr("href");
 
-            $('.menu_product.active').find('.circle_product').css('opacity', 1);
-            $('.product_description').css('opacity', 1);
-            $('.menu_product.active').find('.menu_title').css('color', '#FFC506');
-
-            $('.btn__more').css('opacity', 1);
-            $('html, body').stop().animate({
-                scrollTop: $(next_href).offset().top - 100
-            }, 1000, 'swing', function () {
-                $(document).on("scroll", onScroll);
-            });
-        });
-        $('#down').click(function (e) {
-
-            e.preventDefault();
-            $(document).off("scroll");
-            var cur_id = $('.menu_product.active').attr('id');
-            var last_id = $('.menu_product').last().attr('id');
-
-            if (cur_id === last_id){
-
-                var next_id = $('.menu_product').first().attr('id');
-                var next_href = $('.menu_product').first().attr('href');
-                $('a.menu_link').removeClass('active');
-                $('#' + next_id).addClass('active');
-
-            }
-            else{
-
-                var next_id = $('.menu_product.active').next().attr('id');
-                var next_href = $('.menu_product.active').next().attr('href');
-                $('a.menu_link').removeClass('active');
-                $('#' + next_id).addClass('active');
-
-            }
-
-            $('.menu_content a').each(function () {
-
-                $('.circle_product').css('opacity', 0);
-                $('.menu_title').css('color', '');
-
-            });
-
-
-            $('#' + next_id).find('.circle_product').css('opacity', 1);
-            $('.product_description').css('opacity', 1);
-            $('#' + next_id).find('.menu_title').css('color', '#FFC506');
-
-            $('btn__more').css('opacity', 1);
-            $('html, body').stop().animate({
-                scrollTop: $(next_href).offset().top - 100
-            }, 1000, 'swing', function () {
-                $(document).on("scroll", onScroll);
-            });
-        });
-
-        $('.menu_content a').click(function (e) {
-            e.preventDefault();
-            $(document).off("scroll");
-            var linkHref = $(this).attr("href");
-
-            // var idElement = linkHref.substr(linkHref.indexOf("#"));
+                // var idElement = linkHref.substr(linkHref.indexOf("#"));
 
 
                 $('.menu_content a').each(function (e) {
@@ -167,7 +170,8 @@
                     $(document).on("scroll", onScroll);
                 });
 
-        });
+            });
+        }
 
     });
 

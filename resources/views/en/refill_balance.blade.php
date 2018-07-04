@@ -5,6 +5,26 @@
 @section('content')
 
     @include('landing.topnav')
+    <style>
+        .circle__radial{
+            stroke-linecap: square;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+
+            stroke-dasharray: 100;
+            /*stroke-dashoffset: 0;*/
+            animation: dash 1s linear forwards;
+
+        }
+        @keyframes dash {
+            from {
+                stroke-dashoffset: 100;
+            }
+            to {
+                stroke-dashoffset: {{100 - $device_info->balance_perc}};
+            }
+        }
+    </style>
     <div class="main-body fifth-color bg__refill" style="background-size: 30%;">
 
         <section class="w-100 mt-5">
@@ -13,7 +33,7 @@
                     <div class="col-md-6">
                         <div class="row justify-content-center align-items-center mb-3 mt-3">
                             <img src="{{url('/img/shopping_circle.svg')}}" width="100" height="100">
-                            <img src="{{url($device_info->image_url)}}" width="130px" class="main_product"
+                            <img src="{{url($device_info->image_url)}}" width="130px" height="130px" class="main_product"
                                  style="left: 22%; top: 0px;">
 
                             <p class="device_id ml-3 pt-4">{{$device_info->product_id}}</p>
@@ -28,12 +48,12 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-12 mb-5">
                         <svg width="30%" height="100%" viewBox="0 0 42 42" class="donut">
-                            <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent"
+                            <circle class="donut-ring"  cx="21" cy="21" r="15.91549430918954" fill="transparent"
                                     stroke="#242424" stroke-width="2"></circle>
-                            <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent"
-                                    stroke="#FFCC00" stroke-width="1"
-                                    stroke-dasharray="{{$device_info->balance_perc}} {{100 - $device_info->balance_perc}}"
-                                    stroke-dashoffset="25"></circle>
+                            <circle class="circle__radial" cx="21" cy="21" r="15.91549430918954" fill="transparent"
+                                    stroke="#FFCC00" stroke-width="1" style=""
+                                    {{--                                    stroke-dasharray="{{$device_info->balance_perc}} {{100 - $device_info->balance_perc}}"--}}
+                                   ></circle>
                             <g class="chart-text">
                                 <text x="50%" y="50%" class="chart-number">
                                     @if($device_info->balance % 1024 == 0)
@@ -84,11 +104,17 @@
                     <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
                         Contact Us
                     </a>
+
                 </div>
             </div>
         </section>
 
     </div>
+    <script>
+       $(document).ready(function () {
 
+       });
+
+    </script>
 @endsection
 
