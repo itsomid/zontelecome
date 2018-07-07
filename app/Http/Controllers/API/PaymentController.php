@@ -9,6 +9,7 @@ use App\Cart;
 use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Jenssegers\Agent\Agent;
 
 class PaymentController extends Controller
 {
@@ -81,12 +82,27 @@ class PaymentController extends Controller
         $payment->save();
 
         $payment->setPaid();
-
-        return view('en.mobile_payment_result',['order'=>$order]);
+        $agent = new Agent();
+        if ($agent->isAndroidOS()){
+            $user_agent = "android";
+        }
+        elseif ($agent->isiOS()){
+            $user_agent = "ios";
+        }
+        return view('en.mobile_payment_result',['order'=>$order,'user_agent'=>$user_agent]);
     }
     public function zarinpalMobResult(Request $request, $result, $order_uid)
     {
-        return view('fa.mobile_payresult',['result' => $result, 'order_uid' => $order_uid]);
+        $order = Order::whereId(Order::realId($order_uid))->first();
+        $agent = new Agent();
+        if ($agent->isAndroidOS()){
+            $user_agent = "android";
+        }
+        elseif ($agent->isiOS()){
+            $user_agent = "ios";
+        }
+
+        return view('fa.mobile_payresult',['result' => $result, 'order' => $order,'user_agent'=>$user_agent]);
 
     }
     public function finalPrice($total_price, $discount, $delivery_fee)

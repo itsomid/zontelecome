@@ -10,16 +10,22 @@
 </head>
 <body>
 @if($result == 1)
-    <img src="/img/OK.png" >
+    <img src="/img/OK.png">
     <p class="res ture">تراکنش شما با موفقیت انجام شد</p>
 @else
-    <img src="/img/NOK.png" >
+    <img src="/img/NOK.png">
     <p class="res false">تراکنش شما ناموفق بود</p>
 @endif
 
 @if(false)
     <p class="code">شماره پیگیری : </p>
 @endif
-<a href="irzontelecom://pay/?status=true&orderId={{$order->uid}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت به اپلیکیشن</a>
+@if($user_agent == "ios")
+    <a href="irzontelecom://pay/?status=true&orderId={{$order->id}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت
+        به اپلیکیشن</a>
+@elseif($user_agent == "android")
+    <a href="zontelecom://success/{{$order->uid}}/{{$order->total_price}}/dataplan={{$order->products[0]->title}}">بازگشت
+        به اپلیکیشن</a>
+@endif
 </body>
 </html>

@@ -52,7 +52,7 @@ Route::group(['prefix'=>'payment'],function () {
 Route::group(['prefix' => 'bank'], function () {
 
     Route::group(['prefix' => 'zpal'], function () {
-        Route::get('/callback', 'ZarinPalController@callback')->name('zarinpal/callback');
+        Route::get('/callback', 'ZarinPalController@webCallback')->name('web/zarinpal/callback');
         Route::get('redirect/{token}', 'ZarinPalController@redirectToBank');
     });
     Route::get('/redirect/{token}', '\ZarinpalC@redirectToBank')->name('bank/redirect');
