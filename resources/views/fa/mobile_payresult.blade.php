@@ -12,14 +12,28 @@
 @if($result == 1)
     <img src="/img/OK.png">
     <p class="res ture">تراکنش شما با موفقیت انجام شد</p>
+
+    @if($user_agent == "ios")
+        <a href="irzontelecom://pay/?status=true&orderId={{$order->id}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت
+            به اپلیکیشن</a>
+    @elseif($user_agent == "android")
+        <a href="zontelecom://success/{{$order->uid}}/{{$order->total_price}}/dataplan={{$order->products[0]->title}}">بازگشت
+            به اپلیکیشن</a>
+    @endif
 @else
     <img src="/img/NOK.png">
     <p class="res false">تراکنش شما ناموفق بود</p>
+
+    @if($user_agent == "ios")
+        <a href="irzontelecom://pay/?status=true&orderId={{$order->id}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت
+            به اپلیکیشن</a>
+    @elseif($user_agent == "android")
+        <a href="zontelecom://failure/{{$order->uid}}/{{$order->total_price}}/dataplan={{$order->products[0]->title}}">بازگشت
+            به اپلیکیشن</a>
+    @endif
 @endif
 
-@if(false)
-    <p class="code">شماره پیگیری : </p>
-@endif
+
 @if($user_agent == "ios")
     <a href="irzontelecom://pay/?status=true&orderId={{$order->id}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت
         به اپلیکیشن</a>
