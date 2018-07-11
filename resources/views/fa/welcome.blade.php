@@ -33,7 +33,7 @@
                         </div>
                         <div class="flex-item-2">
                             <div style="position: relative;margin-top: 110px;    margin-left: 100px;">
-                                <img src="{{$product->main_image_url}}" width="657" height="657" id="img_{{$key+1}}"
+                                <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
                                      class="main_product img-fluid">
                                 <img src="img/shopping_circle.svg" class="img-fluid"
                                      style="position: absolute; z-index: 0">
