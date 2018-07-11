@@ -33,7 +33,7 @@
                         </div>
                         <div class="flex-item-2">
                             <div >
-                                <img src="{{$product->main_image_url}}" id="img_{{$key+1}}" width="657" height="657" class="main_product ">
+                                <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
                                 <img src="img/shopping_circle.svg" class="main_product_circle">
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                                     <li>Compatible With All Unlocked Phones</li>
                                 @endif
                             </ul>
-                            <div class="d-flex flex-nowrap justify-content-center">
+                            <div class="d-flex flex-nowrap justify-content-start">
                                 <a class="btn btn__light shadow-none addbtn" style="background-color: transparent" id="{{$product->slug}}">
                                     <i class="fa fa-plus"></i> Add to cart
                                 </a>

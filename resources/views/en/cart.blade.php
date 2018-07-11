@@ -19,14 +19,14 @@
                         <div id="omid" class="row align-items-center cart_item mb-3">
                             <a class="remove_product" id="{{$item[0]->slug}}"><i class="fa fa-times cart_item_remove"></i></a>
                             <div class="cart_item_img">
-                                <img src="{{$item[0]->main_image_url}}" height="135" width="135">
+                                <img src="{{$item[0]->main_image_url}}" >
                             </div>
                             <div class="cart_item_text mt-4">
                                 <h2 class="mb-0">{{$item[0]->title}}</h2>
                                 <h3 class="mb-3">Model 4358E</h3>
                                 <span>$ {{number_format($item[0]->price,2)}}</span>
                             </div>
-                            <div class="cart_item_price flex-grow-1 text-right mt-4">
+                            <div class="cart_item_price text-right mt-4">
                                 <div class="row justify-content-end mb-3">
                             <span class="mr-2 pt-1">
                                 <a class="cart_item_ar add_item" id="{{$item[0]->slug}}">Add <i class="fa fa-plus"></i></a>
