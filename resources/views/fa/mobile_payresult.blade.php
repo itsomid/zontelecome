@@ -25,7 +25,7 @@
     <p class="res false">تراکنش شما ناموفق بود</p>
 
     @if($user_agent == "ios")
-        <a href="irzontelecom://pay/?status=true&orderId={{$order->id}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت
+        <a href="irzontelecom://pay/?status=false&orderId={{$order->id}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت
             به اپلیکیشن</a>
     @elseif($user_agent == "android")
         <a href="zontelecom://failure/{{$order->uid}}/{{$order->total_price}}/dataplan={{$order->products[0]->title}}">بازگشت
@@ -33,13 +33,5 @@
     @endif
 @endif
 
-
-@if($user_agent == "ios")
-    <a href="irzontelecom://pay/?status=true&orderId={{$order->id}}&price={{$order->total_price}}&dataplan={{$order->products[0]->title}}">بازگشت
-        به اپلیکیشن</a>
-@elseif($user_agent == "android")
-    <a href="zontelecom://success/{{$order->uid}}/{{$order->total_price}}/dataplan={{$order->products[0]->title}}">بازگشت
-        به اپلیکیشن</a>
-@endif
 </body>
 </html>

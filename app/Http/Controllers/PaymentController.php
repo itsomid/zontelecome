@@ -150,6 +150,13 @@ class PaymentController extends Controller
     public function webResult(Request $request, $order_uid)
     {
 
+
+
+        return view('en.payment_result', ['order_uid' => $order_uid,'order'=>$order]);
+    }
+
+    public function zarinPalWebResult(Request $request, $result, $order_uid)
+    {
         $order = Order::whereId(Order::realId($order_uid))->first();
         $payment = Payment::where('order_id', $order->id)->first();
         $checkout_id = $request->input('checkoutId');
@@ -163,14 +170,7 @@ class PaymentController extends Controller
         $payment->save();
 
         $payment->setPaid();
-
         return view('en.payment_result', ['order_uid' => $order_uid,'order'=>$order]);
-    }
-
-    public function zarinPalWebResult(Request $request, $result, $order_uid)
-    {
-
-        return view('en.payment_result',['order_uid'=>$order_uid]);
 
     }
 
