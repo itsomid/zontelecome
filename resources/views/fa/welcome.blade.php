@@ -21,7 +21,7 @@
                                     برای نیاز های جهانی شما
                                 @endif
                             </p>
-                            <p class="product_price">{{number_format($product->price,2)}}تومان </p>
+                            <p class="product_price">{{number_format($product->price,0)}}تومان </p>
                             {{--<p class="product_price">100,000 تومان</p>--}}
                             <div class="product_description">
 
