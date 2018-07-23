@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('en.landing.main')
 @section('header')
     {{config('app.name')}} | Payment Result
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('en.landing.topnav')
     <div class="main-body fifth-color d-flex flex-column justify-content-center align-items-center bg__done ">
         <section class="w-100" >
             <img src="/img/flesh.svg" class="bg__flesh img-fluid">

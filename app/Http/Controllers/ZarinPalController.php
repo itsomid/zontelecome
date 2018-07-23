@@ -13,6 +13,7 @@ class ZarinPalController extends Controller implements AbstractIPG
 
     public function createRequest($payment, $agent)
     {
+
         if ($agent == "web")
             $result = \Zarinpal::request(route('web/zarinpal/callback'), $payment->amount, 'testing');
         else
@@ -53,7 +54,6 @@ class ZarinPalController extends Controller implements AbstractIPG
 
 
         if ($this->fake) {
-
             $details = $payment->details();
             $details->reference_id = 'fake-' . rand(1000, 2000);
             $payment->setDetails($details);
@@ -89,7 +89,7 @@ class ZarinPalController extends Controller implements AbstractIPG
 
         $reference = $request->input('Authority');
         $status = $request->input('Status');
-        $payment = Payment::where('reference', $reference)->firstOrFail();
+         $payment = Payment::where('reference', $reference)->firstOrFail();
 
         $failed = "http://buyfailed";
         $success = "http://buysuccessful";
@@ -102,7 +102,6 @@ class ZarinPalController extends Controller implements AbstractIPG
 
 
         if ($this->fake) {
-
             $details = $payment->details();
             $details->reference_id = 'fake-' . rand(1000, 2000);
             $payment->setDetails($details);

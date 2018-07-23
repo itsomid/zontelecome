@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('en.landing.main')
 @section('header')
     {{config('app.name')}} | Contact
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('en.landing.topnav')
     <div class="main-body fifth-color bg__contact pb-5">
         <section class="w-100 mt-5">
             <div class="container text-center sec__bg sixth-color">

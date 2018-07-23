@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('fa.landing.main')
 @section('header')
     {{config('app.name')}} | Refill Balance
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('fa.landing.topnav')
     <div class="main-body fifth-color bg__refill" style="background-size: 30%;">
 
         <section class="w-100 mt-5">
@@ -13,10 +13,9 @@
                     <div class="col-md-6">
                         <div class="row justify-content-center align-items-center mb-3 mt-3">
                             <img src="{{url('/img/shopping_circle.svg')}}" width="100" height="100">
-                            <img src="{{url($device_info->image_url)}}" width="130px" class="main_product"
-                                 style="left: 22%; top: 0px;">
+                            <img src="{{url($device_info->image_url)}}" class="main_product refill">
 
-                            <p class="device_id ml-3 pt-4">{{$device_info->product_id}}</p>
+                            <p class="device_id mr-3 pt-4">{{$device_info->product_id}}</p>
                         </div>
 
                     </div>
@@ -38,10 +37,10 @@
                                 <text x="50%" y="50%" class="chart-number">
                                     @if($device_info->balance % 1024 == 0)
                                         {{$device_info->balance / 1024}}GB
-                                        <tspan class="chart-number-text inline">left</tspan>
+                                        <tspan class="chart-number-text inline">مانده</tspan>
                                     @else
                                         {{number_format((float)$device_info->balance / 1024,2,'.',',')}}GB
-                                        <tspan class="chart-number-text inline">left</tspan>
+                                        <tspan class="chart-number-text inline">مانده</tspan>
                                     @endif
                                 </text>
 
@@ -55,7 +54,7 @@
                     <div class="col-md-12 mb-5">
                         <a class="btn btn__refill" href="{{route('website/refill/plan',['slug'=>$device_info->product_slug,'device_id'=>$device_info->product_id])}}">
                             <i class="fa fa-plus" style="font-size: 12px"></i>
-                            Refill Now
+                            افزایش اعتبار
                         </a>
                     </div>
                     <div class="col-md-12 mb-5">
@@ -80,9 +79,9 @@
             <div class="container text-center ">
                 <div class="row align-items-center justify-content-around flex-nowrap pt-5 pb-5">
 
-                    <p class="fabfelt">If you need any help, please contact us</p>
+                    <div class="fabfelt">اگر به کمک احتیاج دارید با ما تماس بگیرید</div>
                     <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
-                        Contact Us
+                        تماس با ما
                     </a>
                 </div>
             </div>

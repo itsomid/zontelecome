@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('en.landing.main')
 @section('header')
     {{config('app.name')}} | {{$product->title}}
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('en.landing.topnav')
     <div class=" main-body">
         <section class="flex-container-main justify-content-center max_width">
             <div class="flex-item-main-1">

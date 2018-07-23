@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('en.landing.main')
 @section('header')
     {{config('app.name')}} | Refill Plan
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('en.landing.topnav')
     <div class="main-body fifth-color bg__refill" style="background-size: 30%">
 
         <section class="w-100 mt-5">
@@ -12,11 +12,10 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6">
                         <div class="row justify-content-center align-items-center mb-3 mt-3">
-                            <img src="{{url('/img/shopping_circle.svg')}}" width="100" height="100">
-                            <img src="{{url($product->main_image_url)}}" width="130px" class="main_product img-fluid"
-                                 style="left: 22%;top: 0px">
+                            <img src="{{url('/img/shopping_circle.svg')}}" width="77" height="77">
+                            <img src="{{url($product->main_image_url)}}" class="main_product_refill">
 
-                            <p class="device_id ml-3 pt-4">{{$device_id}}</p>
+                            <p class="device_id ml-5 pt-4">{{$device_id}}</p>
                         </div>
 
                     </div>
@@ -24,10 +23,10 @@
             </div>
         </section>
         <section>
-            <div class="container text-center  sixth-color">
+            <div class="container text-center  sixth-color">r
                 <div class="data__plan">
                     @foreach($plans as $plan)
-                        <div id="{{$plan->id}}">
+                        <div class="plan__box" id="{{$plan->id}}">
                             <div class="plan__size pt-3">{{$plan->title}}</div>
                             <div class="plan__month">12month</div>
                             <div class="plan__price">{{$plan->price}}$</div>

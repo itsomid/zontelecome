@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('fa.landing.main')
 @section('header')
     {{config('app.name')}} | Contact
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('fa.landing.topnav')
     <div class="main-body fifth-color bg__contact pb-5">
         <section class="w-100 mt-5">
             <div class="container text-center sec__bg sixth-color">
@@ -32,7 +32,7 @@
                             <a class="btn btn__contact__email"><img src="/img/email.png" width="40"> support@zontelecom.ca</a>
                         </div>
                         <div class="mb-5 mt-5">
-                        <a class="btn btn__contact__phone"><img src="/img/phone.png" width="40" class="mr-5"> +1 98 921 8762</a>
+                        <a class="btn btn__contact__phone"><img src="/img/phone.png" width="40" class="ml-5"> +1 98 921 8762</a>
                         </div>
                     </div>
                 </div>

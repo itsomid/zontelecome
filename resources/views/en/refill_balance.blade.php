@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('en.landing.main')
 @section('header')
     {{config('app.name')}} | Refill Balance
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('en.landing.topnav')
     <style>
         .circle__radial{
             stroke-linecap: square;
@@ -32,11 +32,9 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6">
                         <div class="row justify-content-center align-items-center mb-3 mt-3">
-                            <img src="{{url('/img/shopping_circle.svg')}}" width="100" height="100">
-                            <img src="{{url($device_info->image_url)}}" width="130px" height="130px" class="main_product"
-                                 style="left: 22%; top: 0px;">
-
-                            <p class="device_id ml-3 pt-4">{{$device_info->product_id}}</p>
+                            <img src="{{url('/img/shopping_circle.svg')}}" width="77" height="77">
+                            <img src="{{url($device_info->image_url)}}"  class="main_product_refill" >
+                            <p class="device_id ml-5 pt-4">{{$device_info->product_id}}</p>
                         </div>
 
                     </div>
@@ -78,14 +76,14 @@
                             Refill Now
                         </a>
                     </div>
-                    <div class="col-md-12 mb-5">
+                    <div class="col-md-12 mb-5" style="overflow-x: auto">
                         <table class="table table-borderless table-border-bottom">
                             <tbody>
                             @foreach($refill_history as $item)
                                 <tr>
                                     <td>Refilled for <strong>{{$item->product->title}}</strong></td>
                                     <td>{{number_format($item->product->price,2)}}$</td>
-                                    <td>invoice:{{$item->order->payment['reference']}}</td>
+                                    <td>invoice: {{substr($item->order->payment['reference'], -11)}}</td>
                                     <td>{{$item->created_at->format('F,d,Y')}}</td>
                                 </tr>
                             @endforeach

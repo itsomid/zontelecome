@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('fa.landing.main')
 @section('header')
     {{config('app.name')}} | Order Track
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('fa.landing.topnav')
     <div class="main-body fifth-color bg__tracking ">
 
         <section class="w-100 mt-5">
@@ -27,12 +27,12 @@
                         @if($order->status == 'paid' || $order->status == 'processing' || $order->status == 'ready to deliver' )
                             <img src="/img/registered.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
-                            <div class="order_situation mt-4">order registered.</div>
+                            <div class="order_situation mt-4">تایید سفارش</div>
                             <div class="order_date">{{$order->created_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/registered-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
-                            <div class="order_situation_g mt-4">order registered.</div>
+                            <div class="order_situation_g mt-4">تایید سفارش</div>
                             <div class="order_date_g">{{$order->created_at->format('d/m/Y')}}</div>
                         @endif
 
@@ -41,24 +41,24 @@
                         @if($order->status == 'delivering')
                             <img src="/img/track.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
-                            <div class="order_situation mt-4">order on the way.</div>
+                            <div class="order_situation mt-4">ارسال شده</div>
                             <div class="order_date">{{$order->updated_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/track-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
-                            <div class="order_situation_g mt-4">order on the way.</div>
+                            <div class="order_situation_g mt-4">ارسال شده</div>
                         @endif
                     </div>
                     <div class="d-flex flex-column align-items-center">
                         @if($order->status == 'delivered')
                             <img src="/img/delivered.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
-                            <div class="order_situation mt-4">order delivered.</div>
+                            <div class="order_situation mt-4">تحویل شده</div>
                             <div class="order_date">{{$order->updated_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/delivered-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
-                            <div class="order_situation_g mt-4">order on the way.</div>
+                            <div class="order_situation_g mt-4">تحویل شده</div>
                         @endif
                     </div>
                 </div>
@@ -80,9 +80,12 @@
                             <tbody>
                             @foreach($order->products as $product)
                                 <tr>
-                                    <td>{{$product->title}}<span
-                                                class="product_quantity ml-3">x{{$product->pivot->quantity}}</span></td>
-                                    <td>$ {{number_format($product->price,2)}}</td>
+                                    <td>
+                                        <span class="product_quantity ml-3">{{$product->pivot->quantity}}x</span>
+                                        {{$product->title}}
+
+                                    </td>
+                                    <td>{{number_format($product->price,2)}} تومان </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -90,33 +93,33 @@
                         <table class="table table-borderless table_situation ">
                             <tbody>
                             <tr>
-                                <td>Total</td>
-                                <td>$ {{number_format($order->total_price,2)}}</td>
+                                <td>مجموع</td>
+                                <td>{{number_format($order->total_price,2)}}  تومان </td>
 
                             </tr>
                             <tr>
-                                <td>Taxes</td>
-                                <td>$ {{number_format($order->tax,2)}}</td>
+                                <td>مالیات</td>
+                                <td>{{number_format($order->tax,2)}}  تومان </td>
                             </tr>
                             <tr>
-                                <td>Discount</td>
-                                <td>$ {{number_format($order->discount,2)}}</td>
+                                <td>تخفیف</td>
+                                <td>{{number_format($order->discount,2)}}  تومان </td>
                             </tr>
                             <tr>
-                                <td><strong>Final Price</strong></td>
-                                <td>$ {{number_format($order->final_price,2)}}</td>
+                                <td><strong>قیمت نهایی</strong></td>
+                                <td>{{number_format($order->final_price,2)}}  تومان </td>
                             </tr>
                             </tbody>
                         </table>
                         <table class="table  table_situation table-borderless border-0">
                             <tbody>
                             <tr>
-                                <td>Date</td>
+                                <td>تاریخ</td>
                                 <td>{{$order->payment->created_at->format('d-m-Y')}}</td>
 
                             </tr>
                             <tr>
-                                <td>Invoice ID</td>
+                                <td>شماره فاکتور</td>
                                 @if(config('app.locale') == 'en')
                                     <td>{{$order->payment->reference}}</td>
                                 @else
@@ -124,7 +127,7 @@
                                 @endif
                             </tr>
                             <tr>
-                                <td>Status</td>
+                                <td>وضعیت</td>
                                 <td>{{$order->status}}</td>
                             </tr>
 
@@ -138,9 +141,9 @@
             <div class="container text-center ">
                 <div class="row flex-wrap align-items-center justify-content-around  pt-5 pb-5">
 
-                    <div class="fabfelt">If you need any help, please contact us</div>
+                    <div class="fabfelt">اگر به کمک احتیاج دارید با ما تماس بگیرید</div>
                     <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
-                        Contact Us
+                        تماس با ما
                     </a>
                 </div>
             </div>

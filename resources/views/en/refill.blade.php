@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('en.landing.main')
 @section('header')
     {{config('app.name')}} | Refill
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('en.landing.topnav')
     <div class="main-body fifth-color d-flex justify-content-center align-items-center bg__refill pt-0">
         <section class="w-100">
             <form action="{{route('website/refill/balance')}}" method="POST">

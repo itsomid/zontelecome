@@ -1,11 +1,11 @@
-@extends('landing.main')
+@extends('en.landing.main')
 @section('header')
     {{config('app.name')}}
 @endsection
 @section('content')
-    @include('landing.nav')
+    @include('en.landing.nav')
     <div class="main">
-        @include('landing.topnav')
+        @include('en.landing.topnav')
         <div class="container-fluid">
             <div class="scrolling-box">
                 @foreach($products as $key=>$product)

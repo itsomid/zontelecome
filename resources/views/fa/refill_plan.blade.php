@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('fa.landing.main')
 @section('header')
     {{config('app.name')}} | Refill Plan
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('fa.landing.topnav')
     <div class="main-body fifth-color bg__refill" style="background-size: 30%">
 
         <section class="w-100 mt-5">
@@ -13,10 +13,9 @@
                     <div class="col-md-6">
                         <div class="row justify-content-center align-items-center mb-3 mt-3">
                             <img src="{{url('/img/shopping_circle.svg')}}" width="100" height="100">
-                            <img src="{{url($product->main_image_url)}}" width="130px" class="main_product img-fluid"
-                                 style="left: 22%;top: 0px">
+                            <img src="{{url($product->main_image_url)}}"  class="main_product refill">
 
-                            <p class="device_id ml-3 pt-4">{{$device_id}}</p>
+                            <p class="device_id mr-3 pt-4">{{$device_id}}</p>
                         </div>
 
                     </div>
@@ -39,7 +38,7 @@
                         {{csrf_field()}}
                         <input type="hidden" name="package_id" id="plan" value="{{$plans[0]->id}}">
                         <input type="hidden" name="device_id" value="{{$device_id}}">
-                        <button class="btn btn__pay"><strong>Pay</strong> by Square</button>
+                        <button class="btn btn__pay"><strong>پرداخت</strong></button>
                     </form>
                 </div>
 
@@ -50,9 +49,9 @@
             <div class="container text-center ">
                 <div class="row flex-wrap align-items-center justify-content-around  pt-5 pb-5">
 
-                    <div class="fabfelt">If you need any help, please contact us</div>
+                    <div class="fabfelt">اگر به کمک احتیاج دارید با ما تماس بگیرید</div>
                     <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
-                        Contact Us
+                        تماس با ما
                     </a>
                 </div>
             </div>

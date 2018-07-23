@@ -16,7 +16,7 @@ class HomeViewController extends Controller
 
     public function contact()
     {
-        return view('en.contact');
+        return view(config('app.locale').'.contact');
     }
 
 }

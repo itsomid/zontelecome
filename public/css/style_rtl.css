@@ -11,22 +11,27 @@
     font-family: 'MoskBold';
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/Mosk-bold-700.tff');
+    src: url('/fonts/Mosk-bold-700.tff') format('truetype');
 }
 
 @font-face {
     font-family: 'FabFeltScript';
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/FabfeltScript-Bold.tff');
-    src: url('/fonts/FabfeltScript-Bold.otf');
+    src: url('/fonts/FabfeltScript-Bold.tff') format('truetype'),
+    url('/fonts/FabfeltScript-Bold.otf');
 }
 
 /* Webfont: BloggerSans */
 @font-face {
     font-family: 'BloggerSans';
     src: url('/fonts/BloggerSans.eot'); /* IE9 Compat Modes */
-    src: url('/fonts/BloggerSans.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans.ttf') format('truetype'), /* Safari, Android, iOS */ url('/fonts/BloggerSans.svg#BloggerSans') format('svg'); /* Legacy iOS */
+    src: url('/fonts/BloggerSans.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('/fonts/BloggerSans.woff') format('woff'),
+        /* Modern Browsers */
+    url('/fonts/BloggerSans.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+    url('/fonts/BloggerSans.svg#BloggerSans') format('svg'); /* Legacy iOS */
     font-style: normal;
     font-weight: normal;
     text-rendering: optimizeLegibility;
@@ -62,7 +67,55 @@
     font-weight: bold;
     text-rendering: optimizeLegibility;
 }
+@font-face {
+    font-family: Vazir;
+    src: url('/fonts/vazir/Vazir.eot');
+    src: url('/fonts/vazir/Vazir.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/vazir/Vazir.woff2') format('woff2'),
+    url('/fonts/vazir/Vazir.woff') format('woff'),
+    url('/fonts/vazir/Vazir.ttf') format('truetype');
+    font-weight: normal;
+}
 
+@font-face {
+    font-family: Vazir;
+    src: url('/fonts/vazir/Vazir-Bold.eot');
+    src: url('/fonts/vazir/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/vazir/Vazir-Bold.woff2') format('woff2'),
+    url('/fonts/vazir/Vazir-Bold.woff') format('woff'),
+    url('/fonts/vazir/Vazir-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('/fonts/vazir/Vazir-Light.eot');
+    src: url('/fonts/vazir/Vazir-Light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/vazir/vazir/Vazir-Light.woff2') format('woff2'),
+    url('/fonts/vazir/Vazir-Light.woff') format('woff'),
+    url('/fonts/vazir/Vazir-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('/fonts/vazir/Vazir-Medium.eot');
+    src: url('/fonts/vazir/Vazir-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/vazir/Vazir-Medium.woff2') format('woff2'),
+    url('/fonts/vazir/Vazir-Medium.woff') format('woff'),
+    url('/fonts/vazir/Vazir-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('/fonts/vazir/Vazir-Thin.eot');
+    src: url('/fonts/vazir/Vazir-Thin.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/vazir/Vazir-Thin.woff2') format('woff2'),
+    url('/fonts/vazir/Vazir-Thin.woff') format('woff'),
+    url('/fonts/vazir/Vazir-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
 html, body {
     height: 100%;
 }
@@ -70,16 +123,20 @@ html, body {
 body {
     height: 100%;
     -webkit-font-smoothing: antialiased;
-    font-family: BloggerSans;
+    font-family: Vazir;
     background-color: #242424;
 }
 
 .main-body {
+    direction: rtl;
     min-height: 100%;
     padding-top: 100px;
     position: relative;
     background-color: #C9C9C9;
 
+}
+.main{
+    text-align: right;
 }
 
 .detail {
@@ -107,13 +164,14 @@ body {
 }
 
 .main-topbar {
+    direction: rtl;
     position: fixed;
     right: 0;
     height: 100px;
     width: 100%;
-    padding-right: 150px;
+    padding-right: 260px;
     padding-left: 150px;
-    z-index: 2;
+    z-index: 999;
 }
 
 .flex-container:not(:last-child) {
@@ -152,11 +210,12 @@ body {
     padding: 10px 0px 0px 50px;
     background-image: url("/img/black-circle.svg");
     background-repeat: no-repeat;
+    background-position-x: right;
     z-index: 1;
 }
 
 .flex-item-2 {
-    width: 50%;
+    width: 45%;
     z-index: 0;
 }
 
@@ -243,6 +302,7 @@ body {
 .sec__bg__half {
     background-image: url("/img/z.svg");
     background-repeat: repeat-y;
+    background-position: right;
     background-size: 50%;
 }
 
@@ -301,24 +361,24 @@ body {
 }
 
 .main__feature__title {
-    font-family: MoskNormal;
+    font-family: Vazir;
     font-size: 36px;
 }
 
 .main__feature__sub {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 20px;
     color: #FFFFFF;
 }
 
 .refill_title {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 36px;
     color: #FFFFFF;
 }
 
 .refill__input {
-    font-family: MoskNormal;
+    font-family: Vazir;
 
     font-size: 2rem;
     padding: 0.375rem 6.75rem;
@@ -400,7 +460,12 @@ body {
     z-index: 0;
     position: absolute;
 }
-
+.main_product.refill{
+    width: 150px;
+    height: 150px;
+    right: 22%;
+    top: 0px;
+}
 .main_product_back {
     position: relative;
     padding-top: 80px;
@@ -442,7 +507,10 @@ body {
 
     /* Same as the width of the sidenav */
 }
-
+.btn{
+    font-family: Vazir;
+    font-weight: bold;
+}
 .btn:hover {
     color: black;
 }
@@ -457,28 +525,25 @@ body {
     color: #949494 !important;
     border: 1px solid #979797;
     border-radius: 15px;
-    padding: 9px 21px 0px 21px;
+    padding: 5px 21px ;
 }
 
 .btn__primary {
-    font-family: BloggerSans-Bold;
     font-size: 14px;
     background-color: #FFCC00;
     border-radius: 20px;
     color: #242424;
-    padding: 15px 20px 3px 20px;
+    padding: 11px 20px;
     box-shadow: 2px 3px #949494;
     border: none;
 
 }
 
 .btn__light {
-    font-family: BloggerSans-Bold;
     font-size: 14px;
     background-color: #C2C2C2;
     color: #949494 !important;
-    padding: 12px 0px 3px 0px;
-    min-width: 125px;
+    padding: 10px 15px ;
     border: 2px solid #979797;
     border-radius: 20px;
     box-shadow: 1px 2px #949494;
@@ -486,12 +551,12 @@ body {
 }
 
 .btn__product {
-    font-family: BloggerSans-Medium;
+
     font-size: 24px;
     background-color: #FFCC00;
     border-radius: 40px;
     color: #454545;
-    padding: 20px 0px 3px 0px;
+    padding: 3px 0px ;
     width: 142px;
     min-height: 63px;
     border: none;
@@ -499,44 +564,43 @@ body {
 }
 
 .btn__find {
-    font-family: BloggerSans-Bold;
+
     font-size: 14px;
     border-radius: 20px;
     background-color: #FFCC00;
-    padding: 12px 0px 3px 0px;
+    padding: 7px 0px ;
     color: #242424;
     min-width: 140px;
 }
 
 .btn__refill {
-    font-family: BloggerSans-Bold;
     font-size: 20px;
     background-color: #FFCC00;
     color: #242424;
     border-radius: 40px;
-    padding: 14px 0px 3px 0px;
+    padding: 7px 0px ;
     border: none;
     min-width: 200px;
 }
 
 .btn__contact {
-    font-family: BloggerSans-Bold;
+
     font-size: 14px;
     color: #FFFFFF !important;
     background: #454545;
     border-radius: 58px;
-    padding: 13px 0px 3px 0px;
+    padding: 10px 0px ;
     min-width: 140px;
 }
 
 .btn__pay {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 25px;
     color: #121212;
     line-height: 27px;
     background: #FFCC00;
     border-radius: 100px;
-    padding: 20px 0px 3px 0px;
+    padding: 10px 0px ;
     min-width: 290px;
 }
 
@@ -551,6 +615,7 @@ body {
 }
 
 .btn__contact__phone {
+    text-align: right;
     font-family: BloggerSans;
     font-size: 26px;
     color: #121212 !important;
@@ -586,7 +651,7 @@ body {
 }
 
 .Product_subtitle {
-    font-family: MoskNormal;
+    font-family: Vazir;
     font-size: 36px;
     margin-top: -20px;
     color: #FFFFFF;
@@ -616,7 +681,7 @@ body {
 }
 
 .product_price {
-    font-family: BloggerSans-Light;
+    font-family: Vazir;
     font-size: 40px;
     color: #FFCC00;
     margin-top: 3rem;
@@ -639,7 +704,9 @@ body {
     background-image: url(/img/shopping_circle.svg);
     background-size: 15px;
     background-repeat: no-repeat;
-    padding-left: 1.2em;
+    background-position: right 10px;
+    padding-right: 1.2em;
+    list-style:none;
     font-size: 24px;
     color: #949494;
     white-space: nowrap;
@@ -700,13 +767,15 @@ body {
 }
 
 .success__title__1 {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 20px;
     color: white;
+    text-align: right;
+
 }
 
 .success__title__2 {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 24px;
     color: #FFCC00;
 }
@@ -789,7 +858,7 @@ body {
     background-image: url("/img/black-circle.svg");
     background-size: 19px;
     position: absolute;
-    top: -25px;
+    top: -13px;
     left: 30px;
     min-width: 19px;
     height: 20px;
@@ -957,7 +1026,7 @@ body {
 }
 
 .fabfelt {
-    font-family: FabFeltScript;
+    font-family: Vazir;
     font-size: 36px;
     color: #949494;
 }
@@ -976,14 +1045,14 @@ body {
 }
 
 .order_situation {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 30px;
     color: #FFCC00;
     text-align: left;
 }
 
 .order_situation_g {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 30px;
     color: #949494;
 }
@@ -1033,11 +1102,11 @@ body {
 }
 
 .table_situation td:first-child {
-    text-align: left;
+    text-align: right;
 }
 
 .table_situation td:nth-child(2) {
-    text-align: right;
+    text-align: left;
     width: 40%;
 }
 
@@ -1142,7 +1211,7 @@ body {
         display: none;
     }
     .collapse_menu{
-        margin-left: auto;
+        margin-right: auto;
     }
 
 }
@@ -1184,7 +1253,6 @@ body {
 
     .navbar-collapse_menu{
         -ms-flex-preferred-size: 100%;
-
         -ms-flex-positive: 1;
         flex-grow: 1;
         -ms-flex-align: center;
@@ -1393,9 +1461,6 @@ body {
     .flex-item-1{
         width: 50%;
     }
-    .main_product{
-
-    }
     .flex-item-2 div{
         margin-top: 0px !important;
         margin-left: 170px !important;
@@ -1423,6 +1488,7 @@ body {
         left: -70px;
     }
 
+
     .collapse_menu{
         display: -ms-flexbox!important;
         display: flex!important;
@@ -1442,7 +1508,7 @@ body {
         position: fixed;
         z-index: 999;
         top: 0px;
-        left: 0px;
+        right: 0px;
         background-color: rgb(33, 32, 33);
         overflow-x: hidden;
         overflow-y: hidden;
@@ -1458,16 +1524,15 @@ body {
         margin-left: 100px;
     }
     .flex-item-3 {
-        width: 20%;
+        width: 25%;
         z-index: 1;
         align-self: flex-end;
     }
     .main {
-        padding-left: 260px;
-        padding-right: 150px;
+        padding-right: 260px;
+        padding-left: 150px;
         /*max-width: calc(100% - 260px);*/
-        float: right;
-        overflow-x: hidden;
+        direction: rtl;
     }
 
     .menu_link {

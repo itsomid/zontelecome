@@ -1,10 +1,10 @@
-@extends('landing.main')
+@extends('fa.landing.main')
 @section('header')
     {{config('app.name')}} | Cart
 @endsection
 @section('content')
 
-    @include('landing.topnav')
+    @include('fa.landing.topnav')
     <div class="main-body fifth-color bg__enjoy">
 
         <section class="flex-container-main  justify-content-center sec__padding  pt-0">
