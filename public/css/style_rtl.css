@@ -133,10 +133,12 @@ body {
     padding-top: 100px;
     position: relative;
     background-color: #C9C9C9;
-
 }
 .main{
     text-align: right;
+}
+footer{
+    direction: rtl;
 }
 
 .detail {
@@ -597,7 +599,6 @@ body {
     font-family: Vazir;
     font-size: 25px;
     color: #121212;
-    line-height: 27px;
     background: #FFCC00;
     border-radius: 100px;
     padding: 10px 0px ;
@@ -696,7 +697,7 @@ body {
 }
 
 .product_feature {
-    padding-left: 0;
+    padding-right: 0;
 }
 
 .product_feature li {
@@ -1027,7 +1028,7 @@ body {
 
 .fabfelt {
     font-family: Vazir;
-    font-size: 36px;
+    font-size: 30px;
     color: #949494;
 }
 
@@ -1165,9 +1166,9 @@ body {
 }
 
 .footer__text {
-    text-align: left;
+    text-align: right;
     color: white;
-    line-height: 15px;
+    line-height: 25px;
 }
 
 .helvetica {
@@ -1218,7 +1219,7 @@ body {
 
 @media (max-width: 767px) {
     .icon{
-        float: right;
+        float: left;
         display: block;
         font-size: 30px;
         color: #FFCC00;
@@ -1247,7 +1248,7 @@ body {
    }
    .responsive .icon{
        position: absolute;
-       right: 20px;
+       left: 20px;
        top: 34px;
    }
 
@@ -1329,6 +1330,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 0px;
+
     }
     .flex-item-3{
         margin-top: 100px;
@@ -1462,12 +1465,13 @@ body {
         width: 50%;
     }
     .flex-item-2 div{
-        margin-top: 0px !important;
-        margin-left: 170px !important;
+        margin-top: 50px !important;
+        margin-right: 100px !important;
     }
     .flex-item-2{
         width: 30%;
     }
+
     .main_product{
         width: 500px !important;
         height: 500px !important;
@@ -1478,6 +1482,9 @@ body {
 
 }
 @media (min-width: 1200px) {
+    .main-body{
+        padding-top: 0px;
+    }
     .main_product {
         position: absolute;
         transform: rotate(-3deg);
@@ -1485,7 +1492,7 @@ body {
         width: 600px;
         height: 600px;
         top: -80px;
-        left: -70px;
+        right: -70px;
     }
 
 
@@ -1524,7 +1531,7 @@ body {
         margin-left: 100px;
     }
     .flex-item-3 {
-        width: 25%;
+        width: 20%;
         z-index: 1;
         align-self: flex-end;
     }
@@ -1579,6 +1586,9 @@ body {
     }
     .data__plan > div{
         min-width: 145px;
+    }
+    .flex-item-3 div{
+        justify-content: flex-end;
     }
 }
 

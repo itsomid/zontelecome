@@ -5,7 +5,7 @@
 @section('content')
 
     @include('fa.landing.topnav')
-    <div class="main-body fifth-color d-flex justify-content-center align-items-center pt-0 bg__tracking">
+    <div class="main-body fifth-color d-flex justify-content-center align-items-center bg__tracking">
 
         <section class="w-100 ">
             <div class="container text-center sec__bg__half sixth-color" style="background-size: 50%">

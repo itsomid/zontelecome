@@ -38,7 +38,7 @@
                         {{csrf_field()}}
                         <input type="hidden" name="package_id" id="plan" value="{{$plans[0]->id}}">
                         <input type="hidden" name="device_id" value="{{$device_id}}">
-                        <button class="btn btn__pay"><strong>پرداخت</strong></button>
+                        <button class="btn btn__pay">پرداخت</button>
                     </form>
                 </div>
 

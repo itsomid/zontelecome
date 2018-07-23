@@ -5,7 +5,7 @@
 @section('content')
 
     @include('fa.landing.topnav')
-    <div class="main-body fifth-color d-flex justify-content-center align-items-center bg__refill pt-0">
+    <div class="main-body fifth-color d-flex justify-content-center align-items-center bg__refill pt-lg-0">
         <section class="w-100">
             <form action="{{route('website/refill/balance')}}" method="POST">
                 {{csrf_field()}}

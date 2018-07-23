@@ -33,7 +33,7 @@
                             </a>
                         </div>
                         <div class="flex-item-2">
-                            <div style="position: relative;margin-top: 110px;    margin-left: 100px;">
+                            <div >
                                 <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
                                      class="main_product">
                                 <img src="img/shopping_circle.svg" class="main_product_circle">
@@ -43,22 +43,22 @@
                             <ul class="product_feature">
                                 @if($product->slug == "zonfi-global-modem")
                                     <li>لورم ایپسوم متن ساختگی</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
                                 @elseif($product->slug == "zontel-eu-simcard")
-                                    <li>Coverage All Over EU</li>
-                                    <li>Instant Activation</li>
-                                    <li>Lifetime Ownership</li>
-                                    <li>Compatible With All Unlocked Phones</li>
+                                    <li>لورم ایپسوم متن ساختگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
                                 @elseif($product->slug == "zontel-global-simcard")
-                                    <li>Coverage All Over World</li>
-                                    <li>Instant Activation</li>
-                                    <li>Lifetime Ownership</li>
-                                    <li>Compatible With All Unlocked Phones</li>
+                                    <li>لورم ایپسوم متن ساختگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
                                 @endif
                             </ul>
-                            <div class="d-flex flex-nowrap pr-5">
+                            <div class="d-flex flex-nowrap pl-5">
                                 <a class="btn btn__light shadow-none addbtn" style="background-color: transparent" id="{{$product->slug}}">
                                     <i class="fa fa-plus"></i> افزودن به سبد خرید
                                 </a>
