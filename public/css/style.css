@@ -1478,14 +1478,6 @@ body {
     .menu_content {
         top: 55%;
     }
-    .main_product {
-        position: absolute;
-        transform: rotate(-3deg);
-        z-index: 2;
-
-        /*top: -90px;*/
-        /*left: -60px;*/
-    }
     .main_product_refill{
         left: 22%;
         top: 0px;

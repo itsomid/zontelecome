@@ -554,7 +554,7 @@ footer{
 
 .btn__product {
 
-    font-size: 24px;
+    font-size: 20px;
     background-color: #FFCC00;
     border-radius: 40px;
     color: #454545;
@@ -562,7 +562,8 @@ footer{
     width: 142px;
     min-height: 63px;
     border: none;
-    min-width: 200px;
+    min-width: 300px;
+
 }
 
 .btn__find {
@@ -756,13 +757,14 @@ footer{
 }
 
 .cart_title_1 {
-    font-family: BloggerSans-Medium;
+    font-family: Vazir;
     font-size: 24px;
     color: #949494;
+    text-align: right;
 }
 
 .cart_title_2 {
-    font-family: BloggerSans-Medium;
+    font-family: Vazir;
     font-size: 24px;
     color: #E3E3E3;
 }
@@ -875,12 +877,12 @@ footer{
     position: relative;
     background: #454545;
     min-height: 150px;
-    border-left: 80px solid #FFCC00;
+    border-right: 80px solid #FFCC00;
 }
 
 .cart_item_img {
     position: relative;
-    left: -65px;
+    right: -65px;
 }
 .cart_item img{
     height: 135px;
@@ -900,14 +902,14 @@ footer{
 }
 
 .cart_item_text span {
-    font-family: BloggerSans-Light;
+    font-family: Vazir;
     font-size: 36px;
     color: #949494;
 }
 
 .cart_item_price {
-    padding-right: 20px;
-    margin-right: 30px;
+    padding-left: 20px;
+    margin-left: 30px;
     flex-grow: 1;
 }
 
@@ -928,16 +930,16 @@ footer{
 }
 
 .cart_item_price h3 {
-    font-family: BloggerSans-Medium;
+    font-family: Vazir;
     font-size: 36px;
     color: #FFCC00;
 }
 
 .cart_item_ar {
-    font-family: BloggerSans-Medium;
+    font-family: Vazir;
     font-size: 14px;
     color: #949494 !important;
-    text-align: right;
+    text-align: left;
     width: 100%;
     float: left;
     cursor: pointer;
@@ -969,31 +971,32 @@ footer{
 }
 
 .cart_item_final span:nth-child(1) {
-    font-family: BloggerSans-Bold;
+    font-family: Vazir;
     font-size: 20px;
     color: #454545;
 }
 
 .cart_item_final span:nth-child(2) {
-    font-family: BloggerSans-Bold;
+    font-family: Vazir;
     font-size: 36px;
     color: #454545;
 }
 
 .cart_item_table td {
     padding: 2px;
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 20px;
     color: #949494;
+    text-align: right;
 }
 
 .cart_item_table td:nth-child(2) {
-    text-align: right;
+    text-align: left;
 }
 
 .cart_item_remove {
     position: absolute;
-    right: 5px;
+    left: 5px;
     top: 5px;
     font-size: 22px;
     cursor: pointer;
@@ -1005,13 +1008,14 @@ footer{
 }
 
 .form-group label {
-    font-family: BloggerSans-Medium;
-    font-size: 24px;
+    font-family: Vazir;
+    font-weight: 300;
+    font-size: 22px;
     color: #FFFFFF;
 }
 
 .form-group input {
-    font-family: MoskNormal;
+    font-family: Vazir;
     border-radius: 2px;
 }
 
@@ -1021,9 +1025,10 @@ footer{
 }
 
 .payment__text {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 20px;
     color: #949494;
+    text-align: right !important;
 }
 
 .fabfelt {
@@ -1485,6 +1490,9 @@ footer{
     .main-body{
         padding-top: 0px;
     }
+    .main-body.bg__enjoy{
+        padding-top: 100px;
+    }
     .main_product {
         position: absolute;
         transform: rotate(-3deg);
@@ -1549,14 +1557,6 @@ footer{
 
     .menu_content {
         top: 55%;
-    }
-    .main_product {
-        position: absolute;
-        transform: rotate(-3deg);
-        z-index: 2;
-
-        /*top: -90px;*/
-        /*left: -60px;*/
     }
     .main_product_refill{
         left: 22%;
