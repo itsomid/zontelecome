@@ -24,7 +24,7 @@
                             <div class="cart_item_text mt-4">
                                 <h2 class="mb-0">{{$item[0]->title}}</h2>
                                 <h3 class="mb-3">Model 4358E</h3>
-                                <span>{{number_format($item[0]->price,2)}} تومان </span>
+                                <span>{{$item[0]->price}} تومان </span>
                             </div>
                             <div class="cart_item_price flex-grow-1 text-right mt-4">
                                 <div class="row justify-content-end mb-3">
@@ -35,14 +35,14 @@
                                     <span id="p_slug_{{$key}}" class="cart_item_number mb-4">x{{count($item)}}</span>
                                 </div>
                                 <div class="row justify-content-end">
-                                    <h3 id="product_price_{{$key}}" class="product_price">  {{number_format($item[0]->price*count($item),2)}} تومان </h3>
+                                    <h3 id="product_price_{{$key}}" class="product_price">{{$item[0]->price*count($item)}} تومان </h3>
                                 </div>
                             </div>
                         </div>
                     @endforeach
 
                     <div class="row cart_item mt-2">
-                        <div class="col-md-4 text-center align-self-center">
+                        <div class="col-md-3 text-center align-self-center">
                             <span class="fa fa-check tick_icon"></span>
                             <span id="total_item"><strong>
                                     @if(!empty(session('cart.item')))
@@ -50,7 +50,7 @@
                                         @endif
                                 </strong>آیتم</span>
                         </div>
-                        <div class="col-md-3 align-self-end mt-5">
+                        <div class="col-md-4 align-self-end mt-5">
                             <div class="table-responsive m-t">
                                 <table class="table invoice-table table-borderless cart_item_table">
 
@@ -71,7 +71,7 @@
                                         <td>
                                             <div>هزینه حمل</div>
                                         </td>
-                                        <td>{{number_format($tax->delivery_fee,2)}} تومان </td>
+                                        <td>{{number_format($tax->delivery_fee)}} تومان </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -429,16 +429,19 @@
     <script>
         $(document).ready(function () {
             var sum = 0;
+
             var tax_perc = parseFloat({{$tax->tax_fee}});
             $('.product_price').each(function(){
-                sum += parseFloat($(this).text().replace('$ ',''));
+
+                sum += parseInt($(this).text().replace(' تومان ',''));
             });
+
             var tax = taxPrice(sum,tax_perc);
-            $('#tax').text(tax.toFixed(2)+ " تومان ");
-            $('#total_price').text(sum.toFixed(2) + " تومان ");
+            $('#tax').text(tax.toFixed(0)+ " تومان ");
+            $('#total_price').text(sum+ " تومان ");
 
             var final_price =finalPrice(sum,tax_perc);
-            $('#final_price').text(final_price.toFixed(2) + " تومان");
+            $('#final_price').text(final_price.toFixed(0) + " تومان ");
 
 
 
@@ -480,16 +483,16 @@
                         $('#p_slug_' + product_slug).text("x" + data['product_count']);
                         $('.nav-item span').text(data['total_count']);
                         $('#total_item').text(data['total_count'] + " آیتم");
-                        $('#product_price_' + product_slug).text(data['total_price'].toFixed(2) + " تومان");
+                        $('#product_price_' + product_slug).text(data['total_price'].toFixed(0) + " تومان ");
                         var sum = 0;
                         $('.product_price').each(function(){
                            sum += parseFloat($(this).text().replace(' تومان ',''));
                         });
-                        $('#total_price').text(sum.toFixed(2) + " تومان");
+                        $('#total_price').text(sum.toFixed(0) + " تومان ");
                         var tax = taxPrice(sum,tax_perc);
-                        $('#tax').text(tax.toFixed(2) + " تومان");
+                        $('#tax').text(tax.toFixed(0) + " تومان ");
                         var final_price =finalPrice(sum,tax_perc);
-                        $('#final_price').text(final_price.toFixed(2) + " تومان");
+                        $('#final_price').text(final_price.toFixed(0) + " توما ن");
                     }
 
                 });
@@ -517,17 +520,17 @@
                             $('#p_slug_' + product_slug).text("x" + data['product_count']);
                             $('.nav-item span').text(data['total_count']);
                             $('#total_item').text(data['total_count'] + " آیتم");
-                            $('#product_price_' + product_slug).text(" تومان "+data['total_price'].toFixed(2));
+                            $('#product_price_' + product_slug).text(data['total_price'].toFixed(0)+ " تومان ");
                             var sum = 0;
                             $('.product_price').each(function(){
-                                sum += parseFloat($(this).text().replace('تومان ',''));
+                                sum += parseFloat($(this).text().replace(' تومان ',''));
                             });
-                            $('#total_price').text(sum.toFixed(2)+ " تومان ");
+                            $('#total_price').text(sum.toFixed(0)+ " تومان ");
                             var tax = taxPrice(sum,tax_perc);
-                            $('#tax').text(tax.toFixed(2)+ " تومان ");
+                            $('#tax').text(tax.toFixed(0)+ " تومان ");
 
                             var final_price =finalPrice(sum,tax_perc);
-                            $('#final_price').text(final_price.toFixed(2)+ " تومان ");
+                            $('#final_price').text(final_price.toFixed(0)+ " تومان ");
                         }
                     });
                 }
