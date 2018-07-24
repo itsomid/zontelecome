@@ -5,7 +5,7 @@
 @section('content')
 
     @include('en.landing.topnav')
-    <div class="main-body fifth-color d-flex flex-column justify-content-center align-items-center bg__done ">
+    <div class="main-body fifth-color bg__track d-flex flex-column justify-content-center align-items-center bg__done ">
         <section class="w-100" >
             <img src="/img/flesh.svg" class="bg__flesh img-fluid">
             <div class="container text-center sec__bg__half sixth-color" style="background-size: 35%">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </section>
-        <section class="sec__padding bg__track w-100">
+        <section class="sec__padding w-100">
             <div class="container text-center">
             </div>
         </section>
