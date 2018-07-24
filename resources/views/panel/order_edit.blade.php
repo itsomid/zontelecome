@@ -1,7 +1,7 @@
 @extends('panel.layouts.main')
 
 @section('title')
-    Order {{$order->id}}
+    Order {{$order->uid}}
 @endsection
 @section('breadtitle')
     Order {{$order->id}}
@@ -29,7 +29,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="title">Order ID</label>
-                                    <input id="title" type="text" class="form-control" value="{{$order->id}}" disabled>
+                                    <input id="title" type="text" class="form-control" value="{{$order->uid}}" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="countries">Country</label>

@@ -63,7 +63,7 @@
                         <tbody>
                         @foreach($orders as $order)
                             <tr>
-                                <td>{{$order->id}}</td>
+                                <td>{{$order->uid}}</td>
                                 <td>{{$order->c_name}}</td>
                                 <td>{{$order->c_mail}}</td>
                                 <td>{{$order->c_address}}</td>

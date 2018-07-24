@@ -77,7 +77,7 @@
                                         <td>
                                             <div>تخفیف</div>
                                         </td>
-                                        <td id="dis">0.00 تومان</td>
+                                        <td id="dis">0 تومان</td>
                                     </tr>
 
 
