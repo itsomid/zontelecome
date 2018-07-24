@@ -163,7 +163,7 @@ class PaymentController extends Controller
 
         $payment->setPaid();
 
-
+        session()->forget('cart.item');
         return view('en.payment_result', ['order_uid' => $order_uid,'order'=>$order]);
     }
 
