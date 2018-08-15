@@ -1153,6 +1153,7 @@ body {
         height: 7em;
         font-size: 40px !important;
         color: white;
+        font-family: "Courier New", Courier, monospace;
     }
     .icon{
         float: right;
