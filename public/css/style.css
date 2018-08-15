@@ -615,13 +615,13 @@ body {
 
 .product_feature li {
     height: 2em;
-    background-image: url(/img/shopping_circle.svg);
-    background-size: 15px;
-    background-repeat: no-repeat;
-    padding-left: 1.2em;
+    /*background-image: url(/img/shopping_circle.svg);*/
+    /*background-size: 15px;*/
+    /*background-repeat: no-repeat;*/
+    /*padding-left: 1.2em;*/
     font-size: 24px;
     color: #949494;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 .product__feature__details {
@@ -1150,10 +1150,7 @@ body {
         line-height: 30px;
     }
     .product_feature li{
-        height: 7em;
-        font-size: 40px !important;
-        color: white;
-        font-family: "Courier New", Courier, monospace;
+        font-size: 19px !important;
     }
     .icon{
         float: right;
@@ -1266,7 +1263,7 @@ body {
     }
     .flex-item-3{
         margin-top: 100px;
-        padding-left: 10px;
+        padding-left: 20px;
         padding-right: 40px;
         z-index: 2;
     }
