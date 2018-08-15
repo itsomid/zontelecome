@@ -1147,7 +1147,7 @@ body {
 
 @media (max-width: 767px) {
     .product_description{
-        line-height: 27px;
+        line-height: 40px;
     }
     .icon{
         float: right;
