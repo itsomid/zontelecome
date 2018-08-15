@@ -615,13 +615,15 @@ body {
 
 .product_feature li {
     height: 2em;
-    /*background-image: url(/img/shopping_circle.svg);*/
-    /*background-size: 15px;*/
-    /*background-repeat: no-repeat;*/
-    /*padding-left: 1.2em;*/
+    background-image: url(/img/shopping_circle.svg);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    line-height: 36px;
+    padding-left: 1.2em;
     font-size: 24px;
     color: #949494;
-    /*white-space: nowrap;*/
+    white-space: nowrap;
 }
 
 .product__feature__details {
