@@ -113,7 +113,7 @@ body {
     width: 100%;
     padding-right: 150px;
     padding-left: 150px;
-    z-index: 2;
+    z-index: 3;
 }
 
 
@@ -1146,6 +1146,9 @@ body {
 }
 
 @media (max-width: 767px) {
+    .product_description{
+        line-height: 27px;
+    }
     .icon{
         float: right;
         display: block;
