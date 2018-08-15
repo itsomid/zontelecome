@@ -79,6 +79,7 @@ class Order extends Model
 
     public function getFinalPriceAttribute()
     {
+
         $tax = $this->total_price * ($this->tax/100);
         return (float)number_format($this->total_price + $tax + $this->delivery_fee - $this->discount,'2');
     }

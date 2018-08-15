@@ -78,7 +78,7 @@ class PaymentController extends Controller
             return $squerup->squarup($payment,"web");
 
         } else {
-            $payment->amount = 100000;
+            $payment->amount = $final_price;
             $payment->via = "IPG";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
@@ -135,7 +135,7 @@ class PaymentController extends Controller
 
         } else {
             $zarin = new \ZarinpalC();
-            $payment->amount = 100000;
+            $payment->amount = $final_price;
             $payment->via = "IPG";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();

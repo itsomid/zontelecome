@@ -7,7 +7,7 @@
     @include('fa.landing.topnav')
     <div class="main-body fifth-color d-flex flex-column justify-content-center align-items-center  pt-0 bg__done ">
         <section class="sec__padding">
-            <img src="/img/flesh.svg" class="bg__flesh img-fluid">
+            {{--<img src="/img/flesh.svg" class="bg__flesh img-fluid">--}}
             <div class="container text-center sec__bg__half sixth-color" style="background-size: 35%">
                 <div class="row align-items-center pt-5 pb-5">
                     <div class="col-md-4">
@@ -19,8 +19,8 @@
                             <p class="success__title__1 w-100"> لطفا<span style="font-weight: bold;"> این شماره </span>
                                را برای پیگیری سفارش نزد خود نگه دارید.</p>
                             @if(!empty($order->c_mail))
-                                <p class="success__title__1">Your Product Email</p>
-                                <p class="success__title__1">{{$order->c_mail}}</p>
+                                <div class="success__title__1 w-100">ایمیل محصول شما</div>
+                                <div class="success__title__1 w-100">{{$order->c_mail}}</div>
                             @else
                                 <p class="success__title__1">ایمیل محصول شما</p>
                             @endif

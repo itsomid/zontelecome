@@ -501,9 +501,9 @@
                         '<td>'+id+'</td>' +
                         '<td class="item">' +
                             '<select id="p_name" name="p_name[]" class="form-control product">' +
-                                '<option value="zone-global-modem">ZoneFi Global Modem</option>' +
-                                '<option value="zonetel-modem">ZoneTel EU Sim</option>' +
-                                '<option value="zonefi-global-modem">ZoneFi Global Sim</option>' +
+                                '<option value="zonfi-global-modem">ZoneFi Global Modem</option>' +
+                                '<option value="zontel-eu-simcard">ZoneTel EU Sim</option>' +
+                                '<option value="zontel-global-simcard">ZoneFi Global Sim</option>' +
                             '</select>' +
                         '</td>' +
                         '<td>'+

@@ -14,14 +14,14 @@
                             <p class="product_title">{{$product->title}}</p>
                             <p class="Product_subtitle">
                                 @if($product->slug == "zonfi-global-modem")
-                                    Global Wifi At Your Fingertips
+                                    Global WiFi At Your Fingertips
                                 @elseif($product->slug == "zontel-eu-simcard")
                                     For Your Trips Across Europe
                                 @elseif($product->slug == "zontel-global-simcard")
                                     For Your Global Needs
                                 @endif
                             </p>
-                            <p class="product_price">$ {{number_format($product->price,2)}}</p>
+                            <p class="product_price">${{number_format($product->price,2)}}</p>
                             <div class="product_description">
 
                                     {{$product->description}}
@@ -32,7 +32,7 @@
                             </a>
                         </div>
                         <div class="flex-item-2">
-                            <div >
+                            <div class="item" >
                                 <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
                                 <img src="img/shopping_circle.svg" class="main_product_circle">
                             </div>
@@ -75,4 +75,6 @@
     </div>
 
 @endsection
+<script>
 
+</script>

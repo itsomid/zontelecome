@@ -65,7 +65,7 @@
 
                                 <text x="50%" y="50%" class="chart-label">
                                     DataPlan:
-                                    <tspan class="chart-label-text "> {{$device_info->balance / 1024}}GB</tspan>
+                                    <tspan class="chart-label-text "> {{number_format($device_info->allowance_usage / 1024,2,'.',',')}}GB</tspan>
                                 </text>
                             </g>
                         </svg>

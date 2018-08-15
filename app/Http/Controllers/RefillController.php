@@ -35,15 +35,14 @@ class RefillController extends Controller
         if (empty($info->data))
             return \Redirect::back()->with('message', "Device not Exist!");
 
-
+//         $info->data;
         $balance = $info->data[0]->allowance_balance - $info->data[0]->usage->product;
         $allowance_usage = $info->data[0]->allowance_balance;
-        $product_id = Cart::whereDeviceId($device_id)->firstOrFail()->product_id;
-        $product = Product::whereId(Product::whereId($product_id)->first()->related_product)->first();
 
         $balance_perc = ($balance * 100) / $allowance_usage;
 
         if ($info->data[0]->hardware_model->prefix == "KF") {
+            $product = Product::whereSlug("zonfi-global-modem")->first();
             $image_url = $product->main_image_url;
             $product_title = $product->title;
             $product_slug = $product->slug;

@@ -28,12 +28,12 @@
                             <img src="/img/registered.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
                             <div class="order_situation mt-4">تایید سفارش</div>
-                            <div class="order_date">{{$order->created_at->format('d/m/Y')}}</div>
+                            <div class="order_date">{{\p3ym4n\JDate\JDate::createFromCarbon($order->created_at)->format('Y/m/d')}}</div>
                         @else
                             <img src="/img/registered-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
                             <div class="order_situation_g mt-4">تایید سفارش</div>
-                            <div class="order_date_g">{{$order->created_at->format('d/m/Y')}}</div>
+                            <div class="order_date_g">{{\p3ym4n\JDate\JDate::createFromCarbon($order->created_at)->format('Y/m/d')}}</div>
                         @endif
 
                     </div>
@@ -42,7 +42,7 @@
                             <img src="/img/track.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
                             <div class="order_situation mt-4">ارسال شده</div>
-                            <div class="order_date">{{$order->updated_at->format('d/m/Y')}}</div>
+                            <div class="order_date">{{\p3ym4n\JDate\JDate::createFromCarbon($order->updated_at)->format('Y/m/d')}}</div>
                         @else
                             <img src="/img/track-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
@@ -54,7 +54,7 @@
                             <img src="/img/delivered.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
                             <div class="order_situation mt-4">تحویل شده</div>
-                            <div class="order_date">{{$order->updated_at->format('d/m/Y')}}</div>
+                            <div class="order_date">{{\p3ym4n\JDate\JDate::createFromCarbon($order->updated_at)->format('Y/m/d')}}</div>
                         @else
                             <img src="/img/delivered-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
@@ -83,9 +83,8 @@
                                     <td>
                                         <span class="product_quantity ml-3">{{$product->pivot->quantity}}x</span>
                                         {{$product->title}}
-
                                     </td>
-                                    <td>{{number_format($product->price,2)}} تومان </td>
+                                    <td>{{number_format($product->price*$product->pivot->quantity)}} تومان </td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -94,20 +93,24 @@
                             <tbody>
                             <tr>
                                 <td>مجموع</td>
-                                <td>{{number_format($order->total_price,2)}}  تومان </td>
+                                <td>{{number_format($order->total_price - $order->tax - $order->delivery_fee)}}  تومان </td>
 
                             </tr>
                             <tr>
                                 <td>مالیات</td>
-                                <td>{{number_format($order->tax,2)}}  تومان </td>
+                                <td>{{number_format($order->tax)}}  تومان </td>
+                            </tr>
+                            <tr>
+                                <td>هزینه حمل</td>
+                                <td>{{number_format($order->delivery_fee)}}  تومان </td>
                             </tr>
                             <tr>
                                 <td>تخفیف</td>
-                                <td>{{number_format($order->discount,2)}}  تومان </td>
+                                <td>{{number_format($order->discount)}}  تومان </td>
                             </tr>
                             <tr>
                                 <td><strong>قیمت نهایی</strong></td>
-                                <td>{{number_format($order->final_price,2)}}  تومان </td>
+                                <td>{{number_format($order->total_price)}}  تومان </td>
                             </tr>
                             </tbody>
                         </table>
@@ -115,20 +118,29 @@
                             <tbody>
                             <tr>
                                 <td>تاریخ</td>
-                                <td>{{$order->payment->created_at->format('d-m-Y')}}</td>
-
+                                <td>{{\p3ym4n\JDate\JDate::createFromCarbon($pay->created_at)->format('d-m-Y')}}</td>
                             </tr>
                             <tr>
                                 <td>شماره فاکتور</td>
                                 @if(config('app.locale') == 'en')
-                                    <td>{{$order->payment->reference}}</td>
+                                    <td>{{$pay->reference}}</td>
                                 @else
-                                    <td>{{$order->payment->payment_info->reference_id}}</td>
+                                    <td>{{$pay->payment_info->reference_id}}</td>
                                 @endif
                             </tr>
                             <tr>
-                                <td>وضعیت</td>
-                                <td>{{$order->status}}</td>
+                                <td>وضعیت پرداخت</td>
+                                @if($pay->status == "successful")
+                                    <td>پرداخت شده</td>
+                                @elseif($pay->status == "failed")
+                                    <td>ناموفق</td>
+                                @elseif($pay->status == "canceled")
+                                    <td>لفو شده</td>
+                                @elseif($pay->status == "pending")
+                                    <td>ناموفق</td>
+                                @elseif($pay->status == "initializing")
+                                    <td>انجام نشده</td>
+                                @endif
                             </tr>
 
                             </tbody>

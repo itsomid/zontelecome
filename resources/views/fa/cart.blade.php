@@ -23,8 +23,7 @@
                             </div>
                             <div class="cart_item_text mt-4">
                                 <h2 class="mb-0">{{$item[0]->title}}</h2>
-                                <h3 class="mb-3">Model 4358E</h3>
-                                <span>{{$item[0]->price}} تومان </span>
+                                <span>{{number_format($item[0]->price)}} تومان </span>
                             </div>
                             <div class="cart_item_price flex-grow-1 text-right mt-4">
                                 <div class="row justify-content-end mb-3">
@@ -35,7 +34,7 @@
                                     <span id="p_slug_{{$key}}" class="cart_item_number mb-4">x{{count($item)}}</span>
                                 </div>
                                 <div class="row justify-content-end">
-                                    <h3 id="product_price_{{$key}}" class="product_price">{{$item[0]->price*count($item)}} تومان </h3>
+                                    <h3 id="product_price_{{$key}}" class="product_price">{{number_format($item[0]->price*count($item))}} تومان </h3>
                                 </div>
                             </div>
                         </div>
@@ -44,11 +43,13 @@
                     <div class="row cart_item mt-2">
                         <div class="col-md-3 text-center align-self-center">
                             <span class="fa fa-check tick_icon"></span>
-                            <span id="total_item"><strong>
+                            <span id="total_item">
+                                <strong>تعداد محصول:
                                     @if(!empty(session('cart.item')))
                                     {{count(session('cart.item'))}}
                                         @endif
-                                </strong>آیتم</span>
+                                </strong>
+                            </span>
                         </div>
                         <div class="col-md-4 align-self-end mt-5">
                             <div class="table-responsive m-t">
@@ -88,7 +89,7 @@
                         <div class="col-md-5 second-color cart_item_final">
                             <div class="">
                                 <span class="mr-3">قیمت نهایی</span>
-                                <span  id="final_price">19.19 تومان</span>
+                                <span  id="final_price"> تومان</span>
                             </div>
                         </div>
 
@@ -427,22 +428,24 @@
         </section>
     </div>
     <script>
-        $(document).ready(function () {
-            var sum = 0;
 
+        $(document).ready(function () {
+            // $('.body').persiaNumber();
+
+            var sum = 0;
             var tax_perc = parseFloat({{$tax->tax_fee}});
             $('.product_price').each(function(){
 
-                sum += parseInt($(this).text().replace(' تومان ',''));
+                sum += parseInt($(this).text().replace(' تومان ','').replace(/,/g, ''));
             });
 
             var tax = taxPrice(sum,tax_perc);
-            $('#tax').text(tax.toFixed(0)+ " تومان ");
-            $('#total_price').text(sum+ " تومان ");
+            $('#tax').text(addCommas(tax.toFixed(0))+ " تومان ");
+            $('#total_price').text(addCommas(sum) + " تومان ");
 
             var final_price =finalPrice(sum,tax_perc);
-            $('#final_price').text(final_price.toFixed(0) + " تومان ");
-
+            $('#final_price').text(addCommas(final_price.toFixed(0)) + "تومان ");
+            persian_numbers();
 
 
             $('.remove_product').click(function () {
@@ -466,7 +469,7 @@
             });
             $('.add_item').click(function () {
                 var product_slug = $(this).attr('id');
-
+                // alert(persian_numbers(12));
                 $.ajax({
 
                     url: "{{route('website/add/product/item')}}",
@@ -482,17 +485,20 @@
 
                         $('#p_slug_' + product_slug).text("x" + data['product_count']);
                         $('.nav-item span').text(data['total_count']);
-                        $('#total_item').text(data['total_count'] + " آیتم");
-                        $('#product_price_' + product_slug).text(data['total_price'].toFixed(0) + " تومان ");
+                        $('#total_item').text("تعداد محصول: " + data['total_count']);
+                        // alert(addCommas(data['total_price']));
+                        $('#product_price_' + product_slug).text(addCommas(data['total_price']) + " تومان ");
                         var sum = 0;
                         $('.product_price').each(function(){
-                           sum += parseFloat($(this).text().replace(' تومان ',''));
+                            // alert(parseFloat($(this).text().replace(' تومان ','').replace(/,/g, '')));
+                           sum += parseFloat($(this).text().replace(' تومان ','').replace(/,/g, ''));
                         });
-                        $('#total_price').text(sum.toFixed(0) + " تومان ");
+                        $('#total_price').text(addCommas(sum.toFixed(0)) + " تومان ");
                         var tax = taxPrice(sum,tax_perc);
-                        $('#tax').text(tax.toFixed(0) + " تومان ");
+                        $('#tax').text(addCommas(tax.toFixed(0)) + " تومان ");
                         var final_price =finalPrice(sum,tax_perc);
-                        $('#final_price').text(final_price.toFixed(0) + " توما ن");
+                        $('#final_price').text(addCommas(final_price.toFixed(0)) + " تومان");
+                        persian_numbers();
                     }
 
                 });
@@ -519,18 +525,19 @@
 
                             $('#p_slug_' + product_slug).text("x" + data['product_count']);
                             $('.nav-item span').text(data['total_count']);
-                            $('#total_item').text(data['total_count'] + " آیتم");
-                            $('#product_price_' + product_slug).text(data['total_price'].toFixed(0)+ " تومان ");
+                            $('#total_item').text("تعداد محصول: " + data['total_count']);
+                            $('#product_price_' + product_slug).text(addCommas(data['total_price'])+ " تومان ");
                             var sum = 0;
                             $('.product_price').each(function(){
-                                sum += parseFloat($(this).text().replace(' تومان ',''));
+                                sum += parseFloat($(this).text().replace(' تومان ','').replace(/,/g, ''));
                             });
-                            $('#total_price').text(sum.toFixed(0)+ " تومان ");
+                            $('#total_price').text(addCommas(sum.toFixed(0)) + " تومان ");
                             var tax = taxPrice(sum,tax_perc);
-                            $('#tax').text(tax.toFixed(0)+ " تومان ");
+                            $('#tax').text(addCommas(tax.toFixed(0)) + " تومان ");
 
                             var final_price =finalPrice(sum,tax_perc);
-                            $('#final_price').text(final_price.toFixed(0)+ " تومان ");
+                            $('#final_price').text(addCommas(final_price.toFixed(0)) + " تومان ");
+                            persian_numbers();
                         }
                     });
                 }
@@ -550,6 +557,28 @@
         function taxPrice(price,tax_perc) {
             var  tax = price * (tax_perc/100);
             return tax;
+        }
+        function addCommas(nStr)
+        {
+            nStr += '';
+            x = nStr.split('.');
+            x1 = x[0];
+            x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            }
+            return x1 + x2;
+        }
+
+        function toPersianNumber(input) {
+            var inputstring = input;
+            var persian = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"]
+            for (var j = 0; j < persian.length; j++) {
+                inputstring = inputstring.toString().replace(new RegExp(j, "g"), persian[j]);
+            }
+
+            return inputstring;
         }
     </script>
 @endsection

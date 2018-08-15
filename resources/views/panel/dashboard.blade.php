@@ -28,7 +28,6 @@
                                         style="display: block; width: 2030px; height: 473px;"></canvas>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -54,7 +53,11 @@
                             <span style="font-size: 16px">Monthly</span>
                         </div>
                         <div class="ibox-content">
+                            @if(!empty($monthly_order[Carbon\carbon::now()->format('m')]))
                             <h1>{{count($monthly_order[Carbon\carbon::now()->format('m')])}}</h1>
+                                @else
+                                <h1>0</h1>
+                                @endif
                         </div>
                     </div>
                 </div>

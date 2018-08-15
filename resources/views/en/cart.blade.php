@@ -23,7 +23,7 @@
                             </div>
                             <div class="cart_item_text mt-4">
                                 <h2 class="mb-0">{{$item[0]->title}}</h2>
-                                <h3 class="mb-3">Model 4358E</h3>
+
                                 <span>$ {{number_format($item[0]->price,2)}}</span>
                             </div>
                             <div class="cart_item_price text-right mt-4">
@@ -44,11 +44,14 @@
                     <div class="row cart_item mt-2">
                         <div class="col-md-4 text-center align-self-center">
                             <span class="fa fa-check tick_icon"></span>
-                            <span id="total_item"><strong>
+                            <span id="total_item">
+                                Number of items:
+                                <strong>
                                     @if(!empty(session('cart.item')))
                                     {{count(session('cart.item'))}}
                                         @endif
-                                </strong>items</span>
+                                </strong>
+                               </span>
                         </div>
                         <div class="col-md-3 align-self-end mt-5">
                             <div class="table-responsive m-t">
@@ -418,7 +421,7 @@
                             </div>
                             <div class="col-md-4 align-self-end text-right">
                                 @if(!empty($products))
-                                    <span class="payment__text">Secrue payment by <strong>Paypal</strong></span>
+                                    <span class="payment__text">Secrue payment by <strong>Squareup</strong></span>
                                     <button class="btn btn__product mb-5">Check Out<i class="fa fa-caret-right" style="padding-left: 15px"></i></button>
                                 @endif
                             </div>
@@ -481,7 +484,7 @@
 
                         $('#p_slug_' + product_slug).text("x" + data['product_count']);
                         $('.nav-item span').text(data['total_count']);
-                        $('#total_item').text(data['total_count'] + " items");
+                        $('#total_item').text("Number of items: " + data['total_count']);
                         $('#product_price_' + product_slug).text("$ "+data['total_price'].toFixed(2));
                         var sum = 0;
                         $('.product_price').each(function(){
@@ -518,7 +521,7 @@
 
                             $('#p_slug_' + product_slug).text("x" + data['product_count']);
                             $('.nav-item span').text(data['total_count']);
-                            $('#total_item').text(data['total_count'] + " items");
+                            $('#total_item').text("Number of items: " + data['total_count']);
                             $('#product_price_' + product_slug).text("$ "+data['total_price'].toFixed(2));
                             var sum = 0;
                             $('.product_price').each(function(){

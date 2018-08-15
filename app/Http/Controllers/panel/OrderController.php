@@ -25,7 +25,6 @@ class OrderController extends Controller
     {
        $id = Order::realId($uid);
        $order = Order::whereId($id)->with('products','cart')->first();
-
         $item = Cart::whereOrderId($order->id)->get();
         return view('panel.order_edit',['order'=>$order,'item'=>$item]);
     }
@@ -78,7 +77,6 @@ class OrderController extends Controller
         $order->c_country = $request->c_country;
         $order->c_zip = $request->zipcode;
 
-//        $order->description = $request->p_description;
         $order->status = "ready to deliver";
         foreach ($request->p_name as $key=>$item)
         {
@@ -86,7 +84,8 @@ class OrderController extends Controller
             $quantity = $request->p_quantity[$key];
             $total_price += $price * $quantity;
         }
-         $delivery_fee =  \DB::table('setting')->first()->delivery_fee;
+
+          $delivery_fee =  \DB::table('setting')->first()->delivery_fee;
         if($delivery_fee == -1){
             ///do somethings
         }
@@ -113,7 +112,8 @@ class OrderController extends Controller
             $cart->save();
 
         }
-        return \Redirect::back();
+        $new_order= Order::whereId($insertedId)->first();
+        return \Redirect::route('panel/get/order',['uid'=>$new_order->uid]);
 
     }
 

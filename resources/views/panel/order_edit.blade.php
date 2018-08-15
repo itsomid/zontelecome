@@ -421,17 +421,22 @@
                                         <tr>
                                             <td><strong>Total</strong></td>
                                             <td>
-                                                <strong>$ {{number_format((float)$order->total_price - 5.00, 2, '.', ',')}}</strong>
+                                                <strong>$ {{number_format((float)$order->total_price - $order->tax - $order->delivery_fee  + $order->discount , 2, '.', ',')}}</strong>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td><strong>Taxes</strong></td>
-                                            <td><strong>$ 5.00</strong></td>
+                                            <td><strong>$ {{number_format($order->tax,2)}}</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Delivery fee</strong></td>
+                                            <td><strong>$ {{number_format($order->delivery_fee,2)}}</strong></td>
                                         </tr>
                                         <tr>
                                             <td><strong>Discount</strong></td>
-                                            <td><strong>$ 0.00</strong></td>
+                                            <td><strong>$ {{number_format($order->discount,2)}}</strong></td>
                                         </tr>
+
                                         <tr>
                                             <td><strong>Final Price</strong></td>
                                             <td>
@@ -471,16 +476,16 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr >
-                        <td width="40%">03/05/2018 at 12:52:23</td>
-                        <td width="40%">physical</td>
-                        <td width="10%">stripe</td>
-                    </tr>
-                    <tr>
-                        <td>03/05/2018 at 12:52:23</td>
-                        <td>physical</td>
-                        <td>stripe</td>
-                    </tr>
+                    {{--<tr >--}}
+                        {{--<td width="40%">03/05/2018 at 12:52:23</td>--}}
+                        {{--<td width="40%">physical</td>--}}
+                        {{--<td width="10%">stripe</td>--}}
+                    {{--</tr>--}}
+                    {{--<tr>--}}
+                        {{--<td>03/05/2018 at 12:52:23</td>--}}
+                        {{--<td>physical</td>--}}
+                        {{--<td>stripe</td>--}}
+                    {{--</tr>--}}
 
                     </tbody>
 
@@ -510,19 +515,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr style="" class="footable-even">
-                        <td width="30%">1</td>
-                        <td width="30%">asffgwt34545yhfghgd</td>
-                        <td width="30%">physical</td>
-                        <td width="10%">stripe</td>
-                    </tr>
-                    <tr style="" class="footable-even">
-                        <td><span class="footable-toggle"></span>2</td>
-                        <td>dfhghhgjkerefwgth</td>
-                        <td>physical</td>
-                        <td>stripe</td>
-                    </tr>
+                    @if($order->by_admin == 1)
 
+                        @else
+                        @foreach($order->allPayments as $pay)
+                            <tr style="" class="footable-even">
+                                <td width="30%">{{$pay->created_at}}</td>
+                                @if(config('app.locale') == 'en')
+                                    <td width="30%">{{$pay->reference}}</td>
+                                @else
+                                    <td width="30%">{{$pay->payment_info->reference_id}}</td>
+                                @endif
+                                <td width="30%">{{$pay->status}}</td>
+                                <td width="10%">{{$pay->via}}</td>
+                            </tr>
+                        @endforeach
+                        @endif
                     </tbody>
                 </table>
 

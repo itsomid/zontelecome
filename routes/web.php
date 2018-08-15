@@ -27,7 +27,7 @@ Route::group(['prefix'=>'refill'],function (){
 });
 Route::group(['prefix'=>'order'],function () {
     Route::get('/track', 'OrderController@trackOrder')->name('website/order/track');
-    Route::post('/track/order','OrderController@getOrderSituation')->name('website/order/track/situation');
+    Route::post('/track/situation','OrderController@getOrderSituation')->name('website/order/track/situation');
 
     Route::group(['prefix'=>'cart'],function (){
         Route::get('/', 'CartController@getCart')->name('website/cart');
@@ -78,7 +78,7 @@ Route::group(['prefix' => 'panel', 'middleware' => ['auth']], function () {
     });
     Route::group(['prefix'=>'order'],function (){
         Route::get('/','Panel\OrderController@index')->name('panel/get/allorder');
-        Route::get('/edit/{uid}','Panel\OrderController@getOrder')->name('panel/get/order');
+        Route::get('/get/{uid}','Panel\OrderController@getOrder')->name('panel/get/order');
         Route::post('/edit/{uid}','Panel\OrderController@editOrder')->name('panel/edit/order');
         Route::get('/new','Panel\OrderController@newOrder')->name('panel/get/neworder');
         Route::post('/new','Panel\OrderController@addnewOrder')->name('panel/add/newOrder');

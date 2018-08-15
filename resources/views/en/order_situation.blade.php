@@ -27,12 +27,12 @@
                         @if($order->status == 'paid' || $order->status == 'processing' || $order->status == 'ready to deliver' )
                             <img src="/img/registered.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
-                            <div class="order_situation mt-4">order registered.</div>
+                            <div class="order_situation mt-4">Order Registered.</div>
                             <div class="order_date">{{$order->created_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/registered-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
-                            <div class="order_situation_g mt-4">order registered.</div>
+                            <div class="order_situation_g mt-4">Order Registered.</div>
                             <div class="order_date_g">{{$order->created_at->format('d/m/Y')}}</div>
                         @endif
 
@@ -41,24 +41,24 @@
                         @if($order->status == 'delivering')
                             <img src="/img/track.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
-                            <div class="order_situation mt-4">order on the way.</div>
+                            <div class="order_situation mt-4">Order On The Way.</div>
                             <div class="order_date">{{$order->updated_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/track-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
-                            <div class="order_situation_g mt-4">order on the way.</div>
+                            <div class="order_situation_g mt-4">Order On The Way.</div>
                         @endif
                     </div>
                     <div class="d-flex flex-column align-items-center">
                         @if($order->status == 'delivered')
                             <img src="/img/delivered.svg" width="100" height="100">
                             <img src="/img/shopping_circle.svg" width="32" class="mt-5">
-                            <div class="order_situation mt-4">order delivered.</div>
+                            <div class="order_situation mt-4">Order Delivered.</div>
                             <div class="order_date">{{$order->updated_at->format('d/m/Y')}}</div>
                         @else
                             <img src="/img/delivered-bw.svg" width="100" height="100">
                             <img src="/img/grey-circle-2.svg" width="32" class="mt-5">
-                            <div class="order_situation_g mt-4">order on the way.</div>
+                            <div class="order_situation_g mt-4">Order Delivered.</div>
                         @endif
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                             <tbody>
                             <tr>
                                 <td>Total</td>
-                                <td>$ {{number_format($order->total_price,2)}}</td>
+                                <td>$ {{number_format($order->total_price - $order->tax - $order->delivery_fee + $order->discount ,2)}}</td>
 
                             </tr>
                             <tr>
@@ -99,20 +99,33 @@
                                 <td>$ {{number_format($order->tax,2)}}</td>
                             </tr>
                             <tr>
+                                <td>Delivery fee</td>
+                                <td>$ {{number_format($order->delivery_fee,2)}}</td>
+                            </tr>
+                            <tr>
                                 <td>Discount</td>
                                 <td>$ {{number_format($order->discount,2)}}</td>
                             </tr>
+
                             <tr>
                                 <td><strong>Final Price</strong></td>
-                                <td>$ {{number_format($order->final_price,2)}}</td>
+                                <td>$ {{number_format($order->total_price,2)}}</td>
                             </tr>
                             </tbody>
                         </table>
+
                         <table class="table  table_situation table-borderless border-0">
                             <tbody>
+                            @if($order->by_admin)
+                                <tr>
+                                    <td>Payment Not Found!</td>
+
+
+                                </tr>
+                                @else
                             <tr>
                                 <td>Date</td>
-                                <td>{{$order->payment->created_at->format('d-m-Y')}}</td>
+                                <td>{{$pay->created_at->format('d-m-Y')}}</td>
 
                             </tr>
                             <tr>
@@ -127,7 +140,7 @@
                                 <td>Status</td>
                                 <td>{{$order->status}}</td>
                             </tr>
-
+                            @endif
                             </tbody>
                         </table>
                     </div>

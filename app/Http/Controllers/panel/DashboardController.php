@@ -16,7 +16,7 @@ class DashboardController extends Controller
 
          $all_order = Order::all()->count();
          $income = Order::all()->sum('total_price');
-           $monthly_order = \DB::table('orders')->get(['id', 'created_at'])->groupBy(function($date) {
+            $monthly_order = \DB::table('orders')->get(['id', 'created_at'])->groupBy(function($date) {
             return Carbon::parse($date->created_at)->format('m');
          });
 

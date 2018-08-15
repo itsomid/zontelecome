@@ -76,10 +76,17 @@
             <div class="flex__item__1">
                 <div class="container">
                     <div class="context__color">
-                        <p style="font-size: 48px;line-height: 43px;">We Provided<br>
-                            <span class="title__color">Best Features</span><br>
-                            on One Device<br>
-                            Just For You</p>
+                        @if($product->slug == "zonfi-global-modem")
+                        <p style="font-size: 48px;line-height: 43px;">
+                            <span class="title__color">ZonFi,</span><br>
+                            The Smart Global<br>
+                            Connectivity<br>
+                            Gadget</p>
+                        @else
+                            <p style="font-size: 48px;line-height: 43px;">
+                                <span class="title__color">FEATURES YOU ARE</span><br>
+                                GOING TO LOVE<br>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -89,7 +96,7 @@
                     @if($product->slug == "zonfi-global-modem")
                         <div class="row">
                             <div class="col-lg-8 image__modem">
-                                <img src="{{asset('img/modem-z.svg')}}" class="img-fluid ">
+                                <img src="{{asset('img/modem-z.svg')}}" class="img-fluid">
                             </div>
                             <div class="col-lg-4 wid_mr_l">
                                 <div>
@@ -136,32 +143,36 @@
             </div>
 
         </section>
-        <section class="seventh-color sec__padding">
-            <div class="container text-center">
-                <div class="row justify-content-center mb-5">
-                    <p class="title__step">It is easy as 1,2,3</p>
-                </div>
-                <div class="row justify-content-center mb-5">
-                    <div class="col-md-4 col-sm-12">
-                        <img src="{{asset('/img/3Steps-A.png')}}" width="384" height="306">
-                        <p class="title__color main__feature__title">Grab a ZonFi</p>
-                        <span class="main__feature__sub"> Buy ZonFi here or at retail stores near you. Carry it all the time to get secure mobile WiFi ("MiFi") and keep all your devices charged wherever you go.
+        @if($product->slug == "zontel-eu-simcard" || $product->slug == "zontel-global-simcard")
+            {{--// --}}
+        @else
+            <section class="seventh-color sec__padding">
+                <div class="container text-center">
+                    <div class="row justify-content-center mb-5">
+                        <p class="title__step">It's easy as 1,2,3</p>
+                    </div>
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-md-4 col-sm-12">
+                            <img src="{{asset('/img/3Steps-A.png')}}" width="384" height="306">
+                            <p class="title__color main__feature__title">Grab a ZonFi</p>
+                            <span class="main__feature__sub"> Buy ZonFi here or at retail stores near you. Carry it all the time to get secure mobile WiFi ("MiFi") and keep all your devices charged wherever you go.
                             Get big savings with low rates for WiFi and never worry about roaming fees again. No SIMs or tedious configuration needed. </span>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <img src="{{asset('img/3Steps-B.png')}}" width="384" height="306">
-                        <p class="title__color main__feature__title">Power On</p>
-                        <span class="main__feature__sub">Simply turn on ZonFi gadgets to WiFi, connect up to 8 gadgets wo WiFi, Top up your data anytime, anywhere,
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="{{asset('img/3Steps-B.png')}}" width="384" height="306">
+                            <p class="title__color main__feature__title">Power On</p>
+                            <span class="main__feature__sub">Simply turn on ZonFi gadgets to WiFi, connect up to 8 gadgets wo WiFi, Top up your data anytime, anywhere,
                             through our app or website and enjoy the power of ZonFi. </span>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <img src="{{asset('img/3Steps-C.png')}}" width="384" height="306">
-                        <p class="title__color main__feature__title">Enjoy WiFi Anywhere</p>
-                        <span class="main__feature__sub">   Enjoy WiFi Anywhere Enjoy fast and secure WiFi connectivity across 110+ countries all at a flat rate, with the convenience of pay-as-you-go with no subscriptions. </span>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <img src="{{asset('img/3Steps-C.png')}}" width="384" height="306">
+                            <p class="title__color main__feature__title">Enjoy WiFi Anywhere</p>
+                            <span class="main__feature__sub">   Enjoy WiFi Anywhere Enjoy fast and secure WiFi connectivity across 110+ countries all at a flat rate, with the convenience of pay-as-you-go with no subscriptions. </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <section class="main-color sec__padding head__bg">
             <div class="container text-center">
                 <div class="row justify-content-center mb-5">
@@ -191,7 +202,7 @@
                 <div class="row justify-content-center" style="height: 100%">
                     <div class="flex__1 align-self-center text-right position-relative">
                         <img src="{{asset('/img/z-circle.svg')}}" width="544" class="position-relative">
-                        <img src="{{asset($product->main_image_url)}}" width="530" class="position-absolute"
+                        <img src="{{asset($product->main_image_url)}}" width="530" class="position-absolute main_p"
                              style="left: 50%;top: -10%">
                     </div>
                     <div class="flex__2">
@@ -221,7 +232,7 @@
                 <div class="row main-color col_row_2_padd">
                     <p class="product__cart ">$ {{number_format($product->price,2)}}</p>
                     <p class="product__cart__sub">Place Your Order Now</p>
-                    <a class="btn btn__product addbtn" id="{{$product->slug}}">
+                    <a class="btn btn__product addbtn_detail" id="{{$product->slug}}">
                         <i class="fa fa-plus" style="font-size: 12px"></i>
                         Add to Cart
                     </a>

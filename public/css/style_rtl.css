@@ -693,7 +693,7 @@ footer{
     color: #949494;
     font-size: 20px;
     width: 100%;
-    line-height: 20px;
+    line-height: 25px;
     margin-bottom: 20px
 }
 
@@ -866,10 +866,11 @@ footer{
     min-width: 19px;
     height: 20px;
     background-repeat: no-repeat;
-    font-family: BloggerSans-Bold;
+    font-family: Vazir;
+    font-weight: bold;
     font-size: 12px;
     color: #FFCC00;
-    padding: 5px 6px;
+    padding: 2px 6px;
 }
 
 .cart_item {
@@ -920,11 +921,12 @@ footer{
     height: 50px;
     width: 50px;
     display: inline-block;
-    font-family: BloggerSans-Bold;
+    font-family: Vazir;
+    font-weight: bold;
     font-size: 24px;
     color: #454545;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 10px;
 
     /*border: 1px solid #979797;*/
 }
@@ -1064,13 +1066,13 @@ footer{
 }
 
 .order_date {
-    font-family: BloggerSans-Light;
+    font-family: Vazir;
     font-size: 20px;
     color: #FFCC00;
 }
 
 .order_date_g {
-    font-family: BloggerSans-Light;
+    font-family: Vazir;
     font-size: 20px;
     color: #949494;
 }
@@ -1101,7 +1103,7 @@ footer{
 }
 
 .table_situation {
-    font-family: BloggerSans;
+    font-family: Vazir;
     font-size: 20px;
     color: #FFFFFF;
 
@@ -1114,6 +1116,7 @@ footer{
 .table_situation td:nth-child(2) {
     text-align: left;
     width: 40%;
+
 }
 
 .data__plan {
@@ -1144,6 +1147,7 @@ footer{
     font-family: BloggerSans-Bold;
     font-size: 40px;
     color: #FFCC00;
+    direction: ltr;
 
 }
 
@@ -1488,7 +1492,7 @@ footer{
 }
 @media (min-width: 1200px) {
     .main-body{
-        padding-top: 0px;
+        padding-top: 100px;
     }
     .main-body.bg__enjoy{
         padding-top: 100px;

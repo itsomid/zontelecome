@@ -23,7 +23,7 @@
 
                         <div class="product-imitation second-color" >
 
-                           <img src="{{$product->main_image_url}}" width="200px" height="162px">
+                           <img src="{{$product->main_image_url}}" width="220px" height="220px">
                         </div>
                         <div class="product-desc text-center">
                                 <span class="product-price">

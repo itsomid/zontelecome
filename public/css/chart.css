@@ -1,16 +1,16 @@
 
 .chart-text {
     font: 16px/1.4em "Montserrat", Arial, sans-serif;
-
     -moz-transform: translateY(0.25em);
     -ms-transform: translateY(0.25em);
     -webkit-transform: translateY(0.25em);
     transform: translateY(0.25em);
+    direction: ltr;
 }
 
 .chart-number {
     font-family: BloggerSans-Bold;
-    font-size: 8px;
+    font-size: 7px;
     fill: #FFCC00;
     line-height: 1;
     text-anchor: middle;

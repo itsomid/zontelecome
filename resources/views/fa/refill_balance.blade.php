@@ -37,16 +37,16 @@
                                 <text x="50%" y="50%" class="chart-number">
                                     @if($device_info->balance % 1024 == 0)
                                         {{$device_info->balance / 1024}}GB
-                                        <tspan class="chart-number-text inline">مانده</tspan>
+                                        <tspan class="chart-number-text inline">left</tspan>
                                     @else
                                         {{number_format((float)$device_info->balance / 1024,2,'.',',')}}GB
-                                        <tspan class="chart-number-text inline">مانده</tspan>
+                                        <tspan class="chart-number-text inline">left</tspan>
                                     @endif
                                 </text>
 
                                 <text x="50%" y="50%" class="chart-label">
                                     DataPlan:
-                                    <tspan class="chart-label-text "> {{$device_info->balance / 1024}}GB</tspan>
+                                    <tspan class="chart-label-text"> {{number_format($device_info->allowance_usage / 1024,2,'.',',')}}GB</tspan>
                                 </text>
                             </g>
                         </svg>

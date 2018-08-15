@@ -165,7 +165,6 @@ return [
         Zarinpal\Laravel\ZarinpalServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
 
-
     ],
 
     /*
@@ -218,6 +217,7 @@ return [
         'Zarinpal' => Zarinpal\Laravel\Facade\Zarinpal::class,
         'ZarinpalC' => \App\Http\Controllers\ZarinPalController::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
+
 
 
 
