@@ -22,6 +22,12 @@
                                 @endif
                             </p>
                             <p class="product_price">${{number_format($product->price,2)}}</p>
+                            <div class="flex-item-2-inner">
+                                <div class="item" >
+                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
+                                    <img src="img/shopping_circle.svg" class="main_product_circle">
+                                </div>
+                            </div>
                             <div class="product_description">
 
                                     {{$product->description}}
