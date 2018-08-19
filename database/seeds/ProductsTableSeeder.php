@@ -14,15 +14,44 @@ class ProductsTableSeeder extends Seeder
         if (config('app.locale') == 'en'){
             $products = [
                 [
-                    'title' => 'ZonFi Global Modem',
+                    'title' => 'ZonFi V1 Global Modem',
                     'slug' => 'zonfi-global-modem',
                     'type' => 'physical',
                     'price' => '10.00',
                     'related_product' => 0,
                     'status' => '1',
-                    'description' => 'ZonFi is your ultimate travel companion. With its groundbreaking EzFi Virtual Sim technology, the modem switches carriers remotely which ensures a stronger and faster Internet connection, as well as noticably lower roaming costs. With its global coverage, you can enjoy a local carrier experience in over 110 countries worldwide at 4G/LTE speeds as high as 150Mbps.
-Equipped with an embedded 6000mAh Li-ion battery, the device can get up to 14 hours of battery life and also be used to charge your gadgets on the go. ZonFi requires no configurations or setup and will get you online with a simple push of a button. You can also connect up to 8 of your WiFi enables devices simultaniously.',
+                    'description' => 'ZonFi is your ultimate travel
+companion. with its groundbreaking
+EzFi Virtual Sim technology, the
+modem switches carriers remotely
+which ensures a stronger and faster
+internet connection, as well as
+noticably lower roaming costs.
+With its global coverage, you can
+enjoy a local carrier experience in
+over 110 countries worldwide at
+4G/LTE speeds as high as 150Mbps.
+Equipped With an embedded
+6000mAh Li-ion battery, the device
+can get up to 8 hours of battery life
+and also be used to charge your
+gadgets on the go. ZonFi requires no
+configurations or setup and will get
+you online With a simple push of a
+button. You can also connect up to 8
+of your WiFi enables devices
+Simultaniouslyi.',
                     'main_image_url'=>'/img/modem.png'
+                ],
+                [
+                    'title' => 'ZonFi V2 Global Modem',
+                    'slug' => 'zonfi-v2-global-modem',
+                    'type' => 'physical',
+                    'price' => '116.00',
+                    'related_product' => 0,
+                    'status' => '1',
+                    'description' => 'ZonFi is your ultimate travel companion. with its groundbreaking EzFi Virtual Sim technology, the modem switches carriers remotely which ensures a stronger and faster internet connection, as well as noticably lower roaming costs. With its global coverage, you can enjoy a local carrier experience in over 110 countries worldwide at 4G/LTE speeds as high as 150Mbps. Equipped With an embedded 600omAh Li-ion battery, the device can get up to 14 hours of battery life ZonFi requires no configurations or setup and Will get you online With a simple push of a button. You can also connect up to 8 of your WiFi enables devrces Simultaniously',
+                    'main_image_url'=>'/img/modem-v2.png'
                 ],
 
                 [
@@ -42,7 +71,7 @@ Equipped with an embedded 6000mAh Li-ion battery, the device can get up to 14 ho
                     'price' => '14.00',
                     'related_product' => 0,
                     'status' => '1',
-                    'description' => 'Stay connected every step of the way with ZonTel EU Data SIM, the best mobile data solution for european travelers. Travel all through the EU without worrying about data roaming charges, hunting for hotel WiFi and swapping SIM cards every time you cross a border.',
+                    'description' => 'Stay connected every step of the way with ZonTel Global Data SIM, the best mobile data solution for world travelers. Travel worldwide without worrying about data roaming charges, hunting for hotel WiFi and swapping SIM cards every time you cross a border.',
                     'main_image_url'=>'/img/sim-global.png'
                 ]
                 ,

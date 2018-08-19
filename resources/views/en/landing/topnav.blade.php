@@ -29,7 +29,7 @@
                 </li>
                 <li class="nav-item p-2">
                     <a href="{{route('website/refill')}}" class="btn btn__primary">
-                        <i class="fa fa-plus"></i> Refill Balance
+                        <i class="fa fa-plus"></i> Data Refill
                     </a>
                 </li>
                 <li class="nav-item pt-3">
@@ -59,7 +59,7 @@
                 </li>
                 <li class="nav-item p-2">
                     <a href="{{route('website/refill')}}" class="btn btn__primary shadow-none">
-                        <i class="fa fa-plus"></i> Refill Balance
+                        <i class="fa fa-plus"></i> Data Refill
                     </a>
                 </li>
                 <li class="nav-item pt-3">

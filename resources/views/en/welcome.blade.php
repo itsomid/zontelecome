@@ -16,9 +16,9 @@
                                 @if($product->slug == "zonfi-global-modem")
                                     Global WiFi At Your Fingertips
                                 @elseif($product->slug == "zontel-eu-simcard")
-                                    For Your Trips Across Europe
+                                    For Your EU Trips
                                 @elseif($product->slug == "zontel-global-simcard")
-                                    For Your Global Needs
+                                    For Your Global Travels
                                 @endif
                             </p>
                             <p class="product_price">${{number_format($product->price,2)}}</p>
@@ -47,9 +47,14 @@
                             <ul class="product_feature">
                                 @if($product->slug == "zonfi-global-modem")
                                     <li>Flexible Refill Options</li>
-                                    <li>A Full Year To Use Your Data</li>
-                                    <li>SIM-Free, Hassle-Free, No Overage Charges.</li>
                                     <li>Access to 500 Carriers Worldwide</li>
+                                    <li>Built-In Power Bank</li>
+                                    <li>A Full Year To Use Your Data</li>
+                                @elseif($product->slug == "zonfi-v2-global-modem")
+                                    <li>Flexible Refill Options</li>
+                                    <li>Access to 500 Carriers Worldwide</li>
+                                    <li>More compact, with twice the battery life</li>
+                                    <li>A Full Year To Use Your Data</li>
                                 @elseif($product->slug == "zontel-eu-simcard")
                                     <li>Coverage All Over EU</li>
                                     <li>Instant Activation</li>

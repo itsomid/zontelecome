@@ -86,6 +86,10 @@ body {
     top: 40px !important;
     left: 40px !important;
 }
+.detail_v2{
+    top: 100px !important;
+    left: 40px !important;
+}
 
 .sec__padding {
     padding: 7rem 0;
@@ -143,7 +147,6 @@ body {
 
 .flex-item-main-1 {
     position: relative;
-    left: 100px;
 
 }
 
@@ -160,6 +163,7 @@ body {
 
 .flex-item-main-3 img {
     right: 200px;
+    bottom: 30px;
     position: relative;
 }
 
@@ -238,7 +242,11 @@ body {
     transform: translateX(-50%) translateY(-50%);
 
 }
-
+.main_p{
+    width: 480px;
+    left: 50%;
+    top: 2%;
+}
 .menu_link {
     display: block;
     text-align: center;
@@ -395,7 +403,6 @@ body {
     transform: rotate(-3deg);
     max-width: 130px;
 }
-
 
 .circle_product {
     opacity: 0;
@@ -1150,6 +1157,47 @@ body {
 }
 
 @media (max-width: 767px) {
+    .main_product_back{
+        display: none;
+    }
+    .flex-item-main-1 > img{
+        display: none;
+    }
+    .flex-item-main-3 img{
+        right: 0;
+    }
+    .detail{
+        top: 140px !important;
+    }
+    .product_title_main{
+        font-family: MoskNormal;
+        font-size: 34px;
+        color: #181818;
+        white-space: nowrap;
+    }
+    .Product_subtitle_main{
+        font-family: MoskNormal;
+        font-size: 26px;
+        margin-top: 0;
+        color: #454545;
+        white-space: nowrap;
+    }
+    .sec__padding{
+        padding: 3rem 0;
+    }
+    .circle_zebra{
+        display: none;
+    }
+    .flex__item__1{
+        text-align: center;
+    }
+    .flex__item__2{
+        text-align: center;
+    }
+    .wid_mr_l div{
+        width: 100%;
+        min-height: 0;
+    }
     .product_description{
         line-height: 30px;
     }
@@ -1308,6 +1356,24 @@ body {
     }
     .bg__refill{
         background-image: none;
+    }
+    .main_p{
+        position: relative !important;
+        width: 350px !important;
+        left: 0;
+    }
+    .col_row_2_padd{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 70px 0px 70px 0px;
+    }
+    .flex__1{
+        width: 100%;
+    }
+    .flex__2{
+        width: 100%;
     }
 
 }
@@ -1487,11 +1553,11 @@ body {
 
     .menu_link {
         transform: translateY(-100px);
-        margin: 1rem auto;
+        margin: 0.1rem auto;
     }
 
     .menu_content {
-        top: 55%;
+        top: 58%;
     }
     .main_product_refill{
         left: 22%;
