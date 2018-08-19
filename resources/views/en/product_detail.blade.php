@@ -199,13 +199,13 @@
             <section class="main-color sec__padding head__bg">
                 <div class="container text-center">
                     <div class="row justify-content-center mb-5">
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 mb-5 mb-md-0">
                             <img src="{{asset('/img/gb-1.svg')}}">
                             <p class="title__color main__feature__title">Access to Over 250 Carriers Across The
                                 Globe</p>
                             <span class="main__feature__sub">While traveling, ZonTel global Data Sim will automatically link up with our partners across the world and provide you with an unparalleled browsing experience, hassle-free.</span>
                         </div>
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 mb-5 mb-md-0">
                             <img src="{{asset('img/gb-2.svg')}}">
                             <p class="title__color main__feature__title">Simple and Transparent</p>
                             <span class="main__feature__sub">ZonFi is Sim-Free, requires no setup, and  with a push of a button you are moments away from getting connected to the internet and the worldwide web.
@@ -224,13 +224,13 @@
         @elseif($product->slug == "zontel-eu-simcard")
             <section class="main-color sec__padding head__bg">
                 <div class="container text-center">
-                    <div class="row justify-content-center mb-5">
-                        <div class="col-md-4 col-sm-12">
+                    <div class="row justify-content-center ">
+                        <div class="col-md-4 col-sm-12 mb-5 mb-sm-0">
                             <img src="{{asset('/img/gb-1.svg')}}">
                             <p class="title__color main__feature__title">Access to Over 60 Carriers Across Europe</p>
                             <span class="main__feature__sub">While traveling, ZonTel EU Data Sim will automatically link up with our partners across the European Union and provide you with an unparalleled browsing experience, hassle-free.</span>
                         </div>
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 mb-5 mb-md-0">
                             <img src="{{asset('img/gb-2.svg')}}">
                             <p class="title__color main__feature__title">Simple and Transparent</p>
                             <span class="main__feature__sub">ZonFi is Sim-Free, requires no setup, and  with a push of a button you are moments away from getting connected to the internet and the worldwide web.
@@ -250,12 +250,12 @@
             <section class="main-color sec__padding head__bg">
                 <div class="container text-center">
                     <div class="row justify-content-center mb-5">
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 mb-5 mb-md-0">
                             <img src="{{asset('/img/gb-1.svg')}}">
                             <p class="title__color main__feature__title">Access to Over 60 Carriers Across Europe</p>
                             <span class="main__feature__sub">While traveling, ZonTel EU Data Sim will automatically link up with our partners across the European Union and provide you with an unparalleled browsing experience, hassle-free.</span>
                         </div>
-                        <div class="col-md-4 col-sm-12">
+                        <div class="col-md-4 col-sm-12 mb-5 mb-md-0">
                             <img src="{{asset('img/gb-2.svg')}}">
                             <p class="title__color main__feature__title">Simple and Transparent</p>
                             <span class="main__feature__sub">ZonFi is Sim-Free, requires no setup, and  with a push of a button you are moments away from getting connected to the internet and the worldwide web.
