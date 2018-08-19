@@ -295,7 +295,7 @@ body {
 .main__feature__sub {
     font-family: BloggerSans;
     font-size: 20px;
-    color: #FFFFFF;
+    color: #898989;
 }
 
 .refill_title {
@@ -1375,8 +1375,12 @@ body {
     .flex__2{
         width: 100%;
     }
-    .context__color{
+    .product__feature__details li,.context__color,  .title__feature,.main__feature__sub,.other_product_text
+    {
         font-family: MoskNormal;
+    }
+    .other_product_text{
+        padding-left: 10%;
     }
 
 }
