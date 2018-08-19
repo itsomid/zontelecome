@@ -1379,6 +1379,9 @@ body {
     {
         font-family: MoskNormal;
     }
+    .product__cart{
+        font-size: 60px;
+    }
     .other_product_text{
         padding-left: 10%;
     }
