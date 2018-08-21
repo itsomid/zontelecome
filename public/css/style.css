@@ -1600,6 +1600,10 @@ body {
     .data__plan > div{
         min-width: 145px;
     }
+    .product__feature__details li,.context__color,  .title__feature,.main__feature__sub,.other_product_text
+    {
+        font-family: MoskNormal;
+    }
 }
 
 @media screen and (max-height: 450px) {
