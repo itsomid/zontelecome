@@ -76,7 +76,7 @@
                     </div>
                     <div class="col-md-4 helvetica">WIFI 4G LTE</div>
                 @elseif($product->slug == "zonfi-v2-global-modem")
-                    @else
+
                     <p class="sim__feature">Your Internet Solution in 110 Countries…</p>
                 @elseif($product->slug == "zontel-eu-simcard")
                     <p class="sim__feature">Your Internet Solution in 28 Countries…</p>

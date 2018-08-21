@@ -40,7 +40,7 @@
     transform: translateY(0.7em);
 }
 .chart-label-text{
-    font-family: BloggerSans;
+    font-family: Arial;
     font-size: 2.5px;
     fill:  #E3E3E3;
 }
