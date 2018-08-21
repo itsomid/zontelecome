@@ -29,8 +29,8 @@ class RefillController extends Controller
 
         $client = new Client(['base_uri' => 'https://org.sdgtelecom.com/api/']);
         $r = $client->request('GET', "org/9179e3d4c94a51f780f4b4ef91eba8b2/devices?common_filter=$device_id", ['headers' => \Config::get('keepgo.data')]);
-
-        $info = json_decode($r->getBody());
+//        return $r->getBody();
+         $info = json_decode($r->getBody());
 
         if (empty($info->data))
             return \Redirect::back()->with('message', "Device not Exist!");
@@ -47,6 +47,12 @@ class RefillController extends Controller
             $product_title = $product->title;
             $product_slug = $product->slug;
 
+        }
+        if ($info->data[0]->hardware_model->prefix == "KH") {
+            $product = Product::whereSlug("zonfi-v2-global-modem")->first();
+            $image_url = $product->main_image_url;
+            $product_title = $product->title;
+            $product_slug = $product->slug;
         }
         $refill_history = Cart::with('insideOrder', 'insideProduct')->whereDeviceId($device_id)->get();
 

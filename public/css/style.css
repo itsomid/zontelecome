@@ -400,7 +400,7 @@ body {
 }
 .main_product_refill{
     position: absolute;
-    transform: rotate(-3deg);
+    transform: rotate(3deg);
     max-width: 130px;
 }
 
@@ -522,8 +522,8 @@ body {
     line-height: 27px;
     background: #FFCC00;
     border-radius: 100px;
-    padding: 20px 0px 3px 0px;
-    min-width: 290px;
+    padding: 25px 0px 8px 0px;
+    min-width: 270px;
 }
 
 .btn__contact__email {
@@ -1053,21 +1053,22 @@ body {
 }
 
 .plan__size {
-    font-family: BloggerSans-Bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     font-size: 40px;
     color: #FFCC00;
 
 }
 
 .plan__month {
-    font-family: BloggerSans;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     color: #FFCC00;
 
 }
 
 .plan__price {
-    font-family: BloggerSans;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
     color: #FFFFFF;
 }

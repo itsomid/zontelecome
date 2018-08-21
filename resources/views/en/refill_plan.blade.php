@@ -28,8 +28,8 @@
                     @foreach($plans as $plan)
                         <div class="plan__box" id="{{$plan->id}}">
                             <div class="plan__size pt-3">{{$plan->title}}</div>
-                            <div class="plan__month">12month</div>
-                            <div class="plan__price">{{$plan->price}}$</div>
+                            <div class="plan__month">12 months</div>
+                            <div class="plan__price">${{$plan->price}}</div>
                         </div>
                     @endforeach
                 </div>
