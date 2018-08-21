@@ -30,9 +30,9 @@
 
                 @if($product->slug == "zonfi-v2-global-modem")
                     <img src="{{$product->main_image_url}}" width="657" height="657" class="main_product detail_v2">
-                    @else
+                @else
                     <img src="{{$product->main_image_url}}" width="657" height="657" class="main_product detail">
-                    @endif
+                @endif
             </div>
             <div class="flex-item-main-3">
 
@@ -76,6 +76,7 @@
                     </div>
                     <div class="col-md-4 helvetica">WIFI 4G LTE</div>
                 @elseif($product->slug == "zonfi-v2-global-modem")
+                    @else
                     <p class="sim__feature">Your Internet Solution in 110 Countries…</p>
                 @elseif($product->slug == "zontel-eu-simcard")
                     <p class="sim__feature">Your Internet Solution in 28 Countries…</p>
