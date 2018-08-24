@@ -271,7 +271,7 @@ body {
     color: #FFCC00;
 }
 .title__step{
-    font-family: BloggerSans-Bold;
+    font-family: 'BloggerSans-Bold', sans-serif;
     font-size: 52px;
     color: #FFCC00;
 }
