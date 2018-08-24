@@ -1390,7 +1390,7 @@ body {
     }
     .product__feature__details li,.context__color,.title__feature,.main__feature__sub,.other_product_text
     {
-        font-family: 'BloggerSans', sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
     }
     .product__cart{
         font-family: sans-serif;
@@ -1611,7 +1611,7 @@ body {
     }
     .product__feature__details li,.context__color,  .title__feature,.main__feature__sub,.other_product_text
     {
-        font-family: 'BloggerSans', sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
     }
 }
 
