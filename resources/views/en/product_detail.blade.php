@@ -59,7 +59,7 @@
                         @endif
                         <div class="row">
                             <div class="col-lg-10">
-                                <p class="lead divider-subtitle mt-2 text-muted">{{$product->description}}
+                                <p class="lead product_description mt-2 text-muted">{{$product->description}}
                                 </p>
                             </div>
                         </div>

@@ -9,8 +9,9 @@
 }
 
 .chart-number {
-    font-family: Arial;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 6px;
+    font-weight: bold;
     fill: #FFCC00;
     line-height: 1;
     text-anchor: middle;
@@ -20,7 +21,7 @@
     transform: translateY(-0.25em);
 }
 .chart-number-text{
-    font-family: Arial;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 2px;
     fill: #FFCC00;
     line-height: 1;
@@ -29,7 +30,7 @@
 }
 
 .chart-label {
-    font-family: Arial;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 2.5px;
     fill:  #E3E3E3;
     text-align: left;
@@ -40,7 +41,7 @@
     transform: translateY(0.7em);
 }
 .chart-label-text{
-    font-family: Arial;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 2.5px;
     fill:  #E3E3E3;
 }

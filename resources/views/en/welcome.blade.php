@@ -15,6 +15,8 @@
                             <p class="Product_subtitle">
                                 @if($product->slug == "zonfi-global-modem")
                                     Global WiFi At Your Fingertips
+                                @elseif($product->slug == "zonfi-v2-global-modem")
+                                    Our Revolutionary Global WiFi Solution
                                 @elseif($product->slug == "zontel-eu-simcard")
                                     For Your EU Trips
                                 @elseif($product->slug == "zontel-global-simcard")
@@ -24,7 +26,11 @@
                             <p class="product_price">${{number_format($product->price,2)}}</p>
                             <div class="flex-item-2-inner">
                                 <div class="item" >
-                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
+                                    @if($product->slug != "zonfi-v2-global-modem")
+                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
+                                    @else
+                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product main_product_v2">
+                                    @endif
                                     <img src="img/shopping_circle.svg" class="main_product_circle">
                                 </div>
                             </div>
@@ -39,7 +45,11 @@
                         </div>
                         <div class="flex-item-2">
                             <div class="item" >
-                                <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
+                                @if($product->slug != "zonfi-v2-global-modem")
+                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
+                                @else
+                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product main_product_v2">
+                                @endif
                                 <img src="img/shopping_circle.svg" class="main_product_circle">
                             </div>
                         </div>

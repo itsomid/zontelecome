@@ -10,7 +10,11 @@
             @foreach($products as $key=>$product)
             <a class="menu_link menu_product" id="product_{{$key+1}}" href="#{{$key+1}}">
                 <div class="parent_product">
-                    <img src="{{$product->main_image_url}}" width="153" height="153" class="menu_product_img">
+                    @if($product->slug != "zonfi-v2-global-modem")
+                        <img src="{{$product->main_image_url}}" width="153" height="153" class="menu_product_img">
+                    @else
+                        <img src="{{$product->main_image_url}}" width="153" height="153" class="menu_product_img menu_product_img_v2">
+                    @endif
                     <img src="/img/circle-line.svg" width="153" height="125.5" id="img1" class="circle_product">
                 </div>
                 <h3 class="menu_title pt-1">{{$product->title}}</h3>

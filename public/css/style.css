@@ -288,7 +288,7 @@ body {
 }
 
 .main__feature__title {
-    font-family: MoskNormal;
+    font-family: 'BloggerSans', sans-serif;
     font-size: 36px;
 }
 
@@ -299,7 +299,7 @@ body {
 }
 
 .refill_title {
-    font-family: MoskNormal;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 36px;
     color: #FFFFFF;
 }
@@ -383,9 +383,13 @@ body {
 }
 
 .menu_product_img {
-
     z-index: 0;
     position: absolute;
+}
+.menu_product_img_v2 {
+    z-index: 0;
+    position: absolute;
+    transform: rotate(15deg);
 }
 
 .main_product_back {
@@ -397,6 +401,12 @@ body {
 
 .main_product_circle{
     width: 400px;
+}
+.main_product{
+    transform: rotate(-3deg);
+}
+.main_product_v2{
+    transform: rotate(15deg);
 }
 .main_product_refill{
     position: absolute;
@@ -516,7 +526,7 @@ body {
 }
 
 .btn__pay {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
     color: #121212;
     line-height: 27px;
@@ -1158,6 +1168,9 @@ body {
 }
 
 @media (max-width: 767px) {
+    .data__plan{
+        padding: 50px 0;
+    }
     .main_product_back{
         display: none;
     }
@@ -1200,13 +1213,13 @@ body {
         min-height: 0;
     }
     .product_description{
+        font-family: "Source Sans Pro", sans-serif;
         line-height: 30px;
     }
     .product_feature li{
-        font-family: MoskNormal;
+        font-family: 'Source Sans Pro', sans-serif;
         background-position-y: 5px;
         font-size: 19px !important;
-
     }
     .icon{
         float: right;
@@ -1289,7 +1302,6 @@ body {
     }
     .main_product {
         position: absolute;
-        transform: rotate(-3deg);
         z-index: 2;
         width: 320px;
         height: 320px;
@@ -1376,9 +1388,9 @@ body {
     .flex__2{
         width: 100%;
     }
-    .product__feature__details li,.context__color,  .title__feature,.main__feature__sub,.other_product_text
+    .product__feature__details li,.context__color,.title__feature,.main__feature__sub,.other_product_text
     {
-        font-family: MoskNormal;
+        font-family: 'BloggerSans', sans-serif;
     }
     .product__cart{
         font-family: sans-serif;
@@ -1428,10 +1440,9 @@ body {
 @media (min-width: 768px) and (max-width: 1199px) {
     .main_product {
         position: absolute;
-        transform: rotate(-3deg);
         z-index: 2;
-        width: 600px;
-        height: 600px;
+        width: 450px;
+        height: 450px;
     }
     .main_product_refill{
         position: absolute;
@@ -1468,14 +1479,7 @@ body {
     .flex-item-3 {
         z-index: 1;
     }
-    .main_product {
 
-        transform: rotate(-3deg);
-        z-index: 2;
-        width: 450px;
-        height: 450px;
-
-    }
     .main_product_circle{
         width: 250px;
     }
@@ -1485,9 +1489,6 @@ body {
 @media (min-width: 1200px) and (max-width: 1500px){
     .flex-item-1{
         width: 50%;
-    }
-    .main_product{
-
     }
     .flex-item-2 div{
         margin-top: 0px !important;
@@ -1508,7 +1509,14 @@ body {
 @media (min-width: 1200px) {
     .main_product {
         position: absolute;
-        transform: rotate(-3deg);
+        z-index: 2;
+        width: 600px;
+        height: 600px;
+        top: -80px;
+        left: -70px;
+    }
+    .main_product_v2 {
+        position: absolute;
         z-index: 2;
         width: 600px;
         height: 600px;
@@ -1547,7 +1555,7 @@ body {
     }
     .flex-item-2 div{
         position: relative;
-        margin-top: 110px;
+        margin-top: 130px;
         margin-left: 100px;
     }
     .flex-item-3 {
@@ -1603,7 +1611,7 @@ body {
     }
     .product__feature__details li,.context__color,  .title__feature,.main__feature__sub,.other_product_text
     {
-        font-family: MoskNormal;
+        font-family: 'BloggerSans', sans-serif;
     }
 }
 
