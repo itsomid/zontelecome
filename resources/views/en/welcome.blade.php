@@ -27,9 +27,9 @@
                             <div class="flex-item-2-inner">
                                 <div class="item" >
                                     @if($product->slug != "zonfi-v2-global-modem")
-                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
+                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product_res">
                                     @else
-                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product main_product_v2">
+                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product_res main_product_v2">
                                     @endif
                                     <img src="img/shopping_circle.svg" class="main_product_circle">
                                 </div>

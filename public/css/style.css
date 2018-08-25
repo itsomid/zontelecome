@@ -1246,21 +1246,20 @@ body {
    .responsive{
        display: block;
        text-align: center;
-       margin-top: 250px;
+       margin-top: 280px;
        text-align: right;
-       background-color: #212121;
+       background-color: #181818;
    }
    .responsive .icon{
        position: absolute;
        right: 20px;
-       top: 35px;
+       top: 43px;
    }
 
     .navbar-collapse_menu{
         -ms-flex-preferred-size: 100%;
         -ms-flex-positive: 1;
         order: 3;
-        width: 120px;
         -ms-flex-align: center;
         align-items: center;
     }
@@ -1273,14 +1272,11 @@ body {
     }
     .navbar-brand{
         order: 2;
-        margin-right: 0px;
-        margin-left: auto;
     }
     .main-topbar{
         padding-left: 20px;
         padding-right: 20px;
         background: #181818;
-        justify-content: space-between;
     }
     .sidenav {
         visibility: hidden;
@@ -1311,7 +1307,7 @@ body {
     .image__modem {
         display: none;
     }
-    .main_product {
+    .main_product_res {
         position: absolute;
         z-index: 2;
         width: 320px;
@@ -1413,16 +1409,8 @@ body {
     .always__online__bg{
         background-image: none;
     }
-    .responsive .navbar-nav .nav-item:first-child{
-        display: none !important;
-    }
-    .cart_item_res{
-        padding-left: 0px;
-        margin-bottom: 0;
-    }
-    .btn__primary{
-        min-width: 125px;
-    }
+
+
 }
 
 @media (max-width: 991px) {

@@ -8,8 +8,8 @@
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="WORLD-WIDE-SIMCARD-gray">
-            <use fill="#2B2B2B" xlink:href="#path-1"></use>
-            <use fill="#C9C9C9" xlink:href="#path-1"></use>
+            <use fill="#E3E3E3" xlink:href="#path-1"></use>
+            <use fill="#E3E3E3" xlink:href="#path-1"></use>
         </g>
     </g>
 </svg>
