@@ -35,8 +35,11 @@
                 @endif
             </div>
             <div class="flex-item-main-3">
-
-                <img src="{{url('img/world-wide-modem.svg')}}">
+                @if($product->slug == "zonfi-v2-global-modem" || $product->slug == "zonfi-global-modem")
+                    <img src="{{url('img/world-wide-modem.svg')}}">
+                @elseif($product->slug == "zontel-eu-simcard" ||$product->slug == "zontel-global-simcard")
+                    <img src="{{url('img/world-wide-simcard.svg')}}">
+                    @endif
             </div>
         </section>
         <section class="flex-container-main  justify-content-center main-color sec__padding">
