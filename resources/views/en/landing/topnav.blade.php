@@ -141,7 +141,7 @@
                 if (imgtodrag) {
                     var imgclone = imgtodrag.clone()
                         .offset({
-                            top: Math.floor(window.innerWidth/2),
+                            top: imgtodrag.offset().top +200 ,
                             left: imgtodrag.offset().left + 200
                         })
                         .css({
