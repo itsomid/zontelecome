@@ -92,7 +92,7 @@
                             left: imgtodrag.offset().left + 200
                         }).delay(500)
                         .css({
-                            'opacity': '0.7',
+                            'opacity': '0.8',
                             'position': 'absolute',
                             'height': '150px',
                             'width': '150px',
