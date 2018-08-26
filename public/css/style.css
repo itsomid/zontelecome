@@ -312,13 +312,13 @@ body {
 }
 
 .refill_title {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'BloggerSans', sans-serif;
     font-size: 36px;
     color: #FFFFFF;
 }
 
 .refill__input {
-    font-family: Arial;
+    font-family: 'Arial' , sans-serif;
 
     font-size: 2rem;
     padding: 0.375rem 6.75rem;
