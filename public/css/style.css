@@ -34,12 +34,7 @@
     font-weight: normal;
 
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-        font-family: 'BloggerSans';
-        src: url('/fonts/BloggerSans.svg') format('svg');
-    }
-}
+
 
 /* Webfont: BloggerSans-Light */
 @font-face {
@@ -50,28 +45,18 @@
     font-weight: normal;
 
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-        font-family: 'BloggerSans-Light';
-        src: url('/fonts/BloggerSans-Ligh.svg') format('svg');
-    }
-}
+
 /* Webfont: BloggerSans-Medium */
 @font-face {
     font-family: 'BloggerSans-Medium';
     src: url('/fonts/BloggerSans-Medium.eot'); /* IE9 Compat Modes */
-    src: url('/fonts/BloggerSans-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans-Medium.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans-Medium.ttf') format('truetype') /* Safari, Android, iOS */; /* Legacy iOS */
+    src: url('/fonts/BloggerSans-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans-Medium.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans-Medium.ttf') format('truetype') ; /* Legacy iOS */
     font-style: normal;
     font-weight: bold;
 
 
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-        font-family: 'BloggerSans-Medium';
-        src: url('/fonts/BloggerSans-Medium.svg') format('svg');
-    }
-}
+
 /* Webfont: BloggerSans-Bold */
 @font-face {
     font-family: 'BloggerSans-Bold';
@@ -81,12 +66,7 @@
     font-weight: bold;
 
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-        font-family: 'BloggerSans-Bold';
-        src: url('/fonts/BloggerSans-Bold.svg') format('svg');
-    }
-}
+
 
 html, body {
     height: 100%;
