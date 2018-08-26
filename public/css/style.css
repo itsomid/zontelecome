@@ -613,7 +613,7 @@ body {
 }
 
 .product_price {
-    font-family: BloggerSans-Light;
+    font-family: 'BloggerSans-Light' , sans-serif;
     font-size: 40px;
     color: #FFCC00;
     margin-top: 3rem;
