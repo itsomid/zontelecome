@@ -40,6 +40,7 @@
         src: url('/fonts/BloggerSans.svg') format('svg');
     }
 }
+
 /* Webfont: BloggerSans-Light */
 @font-face {
     font-family: 'BloggerSans-Light';
@@ -49,7 +50,12 @@
     font-weight: normal;
 
 }
-
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'BloggerSans-Light';
+        src: url('/fonts/BloggerSans-Ligh.svg') format('svg');
+    }
+}
 /* Webfont: BloggerSans-Medium */
 @font-face {
     font-family: 'BloggerSans-Medium';
