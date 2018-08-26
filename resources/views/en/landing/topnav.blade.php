@@ -144,9 +144,9 @@
                         .offset({
                             top:  imgtodrag.offset().top + 200  ,
                             left: imgtodrag.offset().left + 250
-                        }).delay(200)
+                        }).delay(600)
                         .css({
-                            'opacity': '0.9',
+                            'opacity': '0.7',
                             'position': 'absolute',
                             'width': '105px',
                             'height': '105px',

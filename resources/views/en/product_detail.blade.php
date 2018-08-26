@@ -62,7 +62,7 @@
                         @endif
                         <div class="row">
                             <div class="col-lg-10">
-                                <p class="lead product_description mt-2 text-muted">{{$product->description}}
+                                <p class="lead product_description mt-2">{{$product->description}}
                                 </p>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
             <div class="flex__item__1">
                 <div class="container">
                     <div class="context__color">
-                        <p style="font-size: 48px;line-height: 43px;">
+                        <p class="header__feature">
                             <span class="title__color">FEATURES YOU ARE</span><br>
                             GOING TO LOVE<br>
                         </p>
