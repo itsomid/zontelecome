@@ -67,24 +67,7 @@
     font-weight: bold;
     text-rendering: optimizeLegibility;
 }
-@supports (-webkit-overflow-scrolling: touch) {
-    @font-face {
-        font-family: 'BloggerSans';
-        src: url('../fonts/BloggerSans.svg') format('svg');
-    }
-    @font-face {
-        font-family: 'BloggerSans-Light';
-        src: url('../fonts/BloggerSans-Light.svg') format('svg');
-    }
-    @font-face {
-        font-family: 'BloggerSans-Medium';
-        src: url('../fonts/BloggerSans-Medium.svg') format('svg');
-    }
-    @font-face {
-        font-family: 'BloggerSans-Bold';
-        src: url('../fonts/BloggerSans-Bold.svg') format('svg');
-    }
-}
+
 
 html, body {
     height: 100%;
