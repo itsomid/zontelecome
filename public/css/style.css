@@ -79,9 +79,9 @@
     src: url('/fonts/BloggerSans-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans-Bold.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans-Bold.ttf') format('truetype') /* Safari, Android, iOS */; /* Legacy iOS */
     font-style: normal;
     font-weight: bold;
-
+    text-rendering: optimizeLegibility;
 }
-@media screen and (-webkit-min-device-pixel-ratio:0) {
+@media screen and (max-width: 767px) {
     @font-face {
         font-family: 'BloggerSans-Bold';
         src: url('/fonts/BloggerSans-Bold.svg') format('svg');
@@ -683,7 +683,7 @@ body {
 }
 
 .product__cart__sub {
-    font-family: BloggerSans-Bold;
+    font-family: 'BloggerSans-Bold', sans-serif;
     font-size: 24px;
     color: #949494;
 }
