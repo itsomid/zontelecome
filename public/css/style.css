@@ -57,10 +57,10 @@
 @font-face {
     font-family: 'BloggerSans-Light';
     src: url('/fonts/BloggerSans-Light.eot'); /* IE9 Compat Modes */
-    src: url('/fonts/BloggerSans-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans-Light.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans-Light.ttf') format('truetype') /* Safari, Android, iOS */; /* Legacy iOS */
+    src: url('/fonts/BloggerSans-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans-Light.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans-Light.ttf') format('truetype'); /* Legacy iOS */
     font-style: normal;
     font-weight: normal;
-
+    text-rendering: optimizeLegibility;
 }
 
 /* Webfont: BloggerSans-Medium */
@@ -70,7 +70,7 @@
     src: url('/fonts/BloggerSans-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans-Medium.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans-Medium.ttf') format('truetype') ; /* Legacy iOS */
     font-style: normal;
     font-weight: bold;
-
+    text-rendering: optimizeLegibility;
 
 }
 
@@ -658,19 +658,13 @@ body {
 }
 
 .related__product__title {
-    font-family: BloggerSans-Bold;
+    font-family: 'BloggerSans-Bold' , sans-serif;
     font-size: 36px;
     color: #242424;
     text-align: center;
 }
 
-.related__product__title {
-    font-family: BloggerSans-Light;
-    font-size: 24px;
-    color: #121212;
-    text-align: center;
-    line-height: 23px;
-}
+
 
 .product__cart {
     font-family: BloggerSans-Light;
