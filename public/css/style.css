@@ -68,7 +68,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     @font-face {
         font-family: 'BloggerSans';
-        src: url('/fonts/BloggerSans-Bold.svg') format('svg');
+        src: url('/fonts/BloggerSans.svg') format('svg');
     }
 }
 html, body {
