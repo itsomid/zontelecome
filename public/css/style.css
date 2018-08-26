@@ -1270,7 +1270,7 @@ body {
         min-height: 0;
     }
     .product_description{
-        font-family: 'BloggerSans';
+        font-family: 'BloggerSans', sans-serif;
         line-height: 25px;
         font-size: 19px;
     }
