@@ -286,12 +286,12 @@ body {
 }
 
 .main__feature__title {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'BloggerSans', sans-serif;
     font-size: 36px;
 }
 
 .main__feature__sub {
-    font-family: BloggerSans;
+    font-family:'BloggerSans', sans-serif ;
     font-size: 20px;
     color: #898989;
 }
@@ -470,7 +470,7 @@ body {
 }
 
 .btn__light {
-    font-family: BloggerSans-Bold;
+    font-family: 'BloggerSans-Bold' , sans-serif;
     font-size: 14px;
     background-color: #C2C2C2;
     color: #949494 !important;
@@ -483,7 +483,7 @@ body {
 }
 
 .btn__product {
-    font-family: BloggerSans-Medium;
+    font-family: 'BloggerSans-Medium', sans-serif;
     font-size: 24px;
     background-color: #FFCC00;
     border-radius: 40px;
@@ -1458,12 +1458,9 @@ body {
     .col_row_1_padd{
        display: none;
     }
-    .product__feature__details li,.context__color,.title__feature,.main__feature__sub,.other_product_text
-    {
-        font-family: 'Source Sans Pro', sans-serif;
-    }
+
     .product__cart{
-        font-family: sans-serif;
+        font-family: 'BloggerSans' , sans-serif;
         font-size: 60px;
     }
     .other_product_text{
@@ -1682,10 +1679,7 @@ body {
     .data__plan > div{
         min-width: 145px;
     }
-    .product__feature__details li,.context__color,  .title__feature,.main__feature__sub,.other_product_text
-    {
-        font-family: 'Source Sans Pro', sans-serif;
-    }
+
 }
 @media screen and (max-height: 450px) {
     .sidenav {
