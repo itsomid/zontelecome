@@ -65,12 +65,12 @@
     font-weight: bold;
 
 }
-/*@media screen and (-webkit-min-device-pixel-ratio:0) {*/
-    /*@font-face {*/
-        /*font-family: 'BloggerSans';*/
-        /*src: url('/fonts/BloggerSans.svg') format('svg');*/
-    /*}*/
-/*}*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'BloggerSans';
+        src: url('/fonts/BloggerSans.svg') format('svg');
+    }
+}
 html, body {
     height: 100%;
 }
