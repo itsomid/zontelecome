@@ -78,7 +78,7 @@ html, body {
 body {
     height: 100%;
     -webkit-font-smoothing: antialiased;
-    font-family: BloggerSans;
+    font-family: 'BloggerSans',sans-serif;
     background-color: #242424;
 }
 
@@ -591,7 +591,7 @@ body {
 }
 
 .product_title_main {
-    font-family: MoskNormal;
+    font-family: 'MoskNormal' , sans-serif;
     font-size: 52px;
     color: #181818;
     white-space: nowrap;
@@ -1240,14 +1240,14 @@ body {
     }
 
     .product_title_main{
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'MoskNormal', sans-serif;
         font-weight: bold;
         font-size: 34px;
         color: #181818;
         white-space: nowrap;
     }
     .Product_subtitle_main{
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'MoskNormal', sans-serif;
         font-size: 26px;
         margin-top: 0;
         color: #454545;
