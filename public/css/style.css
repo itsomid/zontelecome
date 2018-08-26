@@ -45,7 +45,7 @@
 @font-face {
     font-family: 'BloggerSans-Light';
     src: url('/fonts/BloggerSans-Light.eot'); /* IE9 Compat Modes */
-    src: url('/fonts/BloggerSans-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans-Light.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans-Light.ttf') format('truetype'), /* Safari, Android, iOS */ url('/fonts/BloggerSans-Light.svg') format('svg'); /* Legacy iOS */
+    src: url('/fonts/BloggerSans-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('/fonts/BloggerSans-Light.woff') format('woff'), /* Modern Browsers */ url('/fonts/BloggerSans-Light.ttf') format('truetype'), /* Safari, Android, iOS */; /* Legacy iOS */
     font-style: normal;
     font-weight: normal;
 
