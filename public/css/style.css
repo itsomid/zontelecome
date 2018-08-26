@@ -1189,6 +1189,9 @@ body {
 }
 
 @media (max-width: 767px) {
+    .related__product__title{
+        font-size: 30px;
+    }
     .context__feature{
         font-size: 20px;
     }
