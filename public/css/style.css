@@ -39,6 +39,18 @@
         font-family: 'BloggerSans';
         src: url('/fonts/BloggerSans.svg') format('svg');
     }
+    @font-face {
+        font-family: 'BloggerSans-Light';
+        src: url('/fonts/BloggerSans-Ligh.svg') format('svg');
+    }
+    @font-face {
+        font-family: 'BloggerSans-Medium';
+        src: url('/fonts/BloggerSans-Medium.svg') format('svg');
+    }
+    @font-face {
+        font-family: 'BloggerSans-Bold';
+        src: url('/fonts/BloggerSans-Bold.svg') format('svg');
+    }
 }
 
 /* Webfont: BloggerSans-Light */
@@ -50,12 +62,7 @@
     font-weight: normal;
 
 }
-@media screen and (max-width: 767px) {
-    @font-face {
-        font-family: 'BloggerSans-Light';
-        src: url('/fonts/BloggerSans-Ligh.svg') format('svg');
-    }
-}
+
 /* Webfont: BloggerSans-Medium */
 @font-face {
     font-family: 'BloggerSans-Medium';
@@ -66,12 +73,7 @@
 
 
 }
-@media screen and (max-width: 767px) {
-    @font-face {
-        font-family: 'BloggerSans-Medium';
-        src: url('/fonts/BloggerSans-Medium.svg') format('svg');
-    }
-}
+
 /* Webfont: BloggerSans-Bold */
 @font-face {
     font-family: 'BloggerSans-Bold';
@@ -81,12 +83,7 @@
     font-weight: bold;
     text-rendering: optimizeLegibility;
 }
-@media screen and (max-width: 767px) {
-    @font-face {
-        font-family: 'BloggerSans-Bold';
-        src: url('/fonts/BloggerSans-Bold.svg') format('svg');
-    }
-}
+
 
 html, body {
     height: 100%;
