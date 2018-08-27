@@ -104,7 +104,7 @@
                 <div class="container">
                     @if($product->slug == "zonfi-global-modem" || $product->slug == "zonfi-v2-global-modem")
                         <div class="row">
-                            <div class="col-lg-8 image__modem">
+                            <div class="col-lg-8 img__modem">
                                 @if($product->slug == "zonfi-global-modem")
                                     <img src="{{asset('img/modem-z.svg')}}" class="img-fluid">
                                 @else
@@ -173,21 +173,21 @@
                     <div class="row justify-content-center mb-0 mb-md-5">
                         <p class="title__step">It's easy as 1,2,3</p>
                     </div>
-                    <div class="row justify-content-center mb-5">
-                        <div class="col-md-4 col-sm-12">
-                            <img src="{{asset('/img/3Steps-A.png')}}" width="384" height="306">
+                    <div class="row justify-content-center ">
+                        <div class="col-md-4 col-sm-12 mb-5">
+                            <img src="{{asset('/img/3Steps-A.png')}}" class="img__step" >
                             <p class="title__color main__feature__title">Grab a ZonFi</p>
                             <span class="main__feature__sub"> Buy ZonFi here or at retail stores near you. Carry it all the time to get secure mobile WiFi ("MiFi") and keep all your devices charged wherever you go.
                             Get big savings with low rates for WiFi and never worry about roaming fees again. No SIMs or tedious configuration needed. </span>
                         </div>
-                        <div class="col-md-4 col-sm-12">
-                            <img src="{{asset('img/3Steps-B.png')}}" width="384" height="306">
+                        <div class="col-md-4 col-sm-12 mb-5">
+                            <img src="{{asset('img/3Steps-B.png')}}" class="img__step">
                             <p class="title__color main__feature__title">Power On</p>
                             <span class="main__feature__sub">Simply turn on ZonFi. connect up to 8 gadgets to WiFi, Top up your data anytime, anywhere,
                             through our app or website and enjoy the power of ZonFi. </span>
                         </div>
                         <div class="col-md-4 col-sm-12">
-                            <img src="{{asset('img/3Steps-C.png')}}" width="384" height="306">
+                            <img src="{{asset('img/3Steps-C.png')}}" class="img__step">
                             <p class="title__color main__feature__title">Enjoy WiFi Anywhere</p>
                             @if($product->slug == "zonfi-global-modem")
                                 <span class="main__feature__sub">   Enjoy fast and secure WiFi connectivity across 110+ countries all at a flat rate, with the convenience of pay-as-you-go with no subscriptions. Keep your other devices charged all day with the embedded power bank.</span>
@@ -277,49 +277,51 @@
             </section>
         @endif
 
-        <section class="row fourth-color">
-            <div class="col-md-8">
-                <div class="row justify-content-center" style="height: 100%">
-                    <div class="flex__1 align-self-center text-center text-sm-right position-relative">
-                        <img src="{{asset('/img/z-circle.svg')}}" class="position-relative circle_zebra">
-                        <img src="{{asset($product->main_image_url)}}" class="main_p">
-                    </div>
-                    <div class="flex__2">
-                        <ul class="product__feature__details">
-                            @if($product->slug == "zonfi-global-modem")
-                                <li>Flexible Refill Options</li>
-                                <li>Access to 500 Carriers Worldwide</li>
-                                <li>Built-In Power Bank</li>
-                                <li>A Full Year To Use Your Data</li>
-                            @elseif($product->slug == "zonfi-v2-global-modem")
-                                <li>Flexible Refill Options</li>
-                                <li>Access to 500 Carriers Worldwide</li>
-                                <li>More compact, with twice the battery life</li>
-                                <li>A Full Year To Use Your Data</li>
-                            @elseif($product->slug == "zontel-eu-simcard")
-                                <li>Coverage All Over EU</li>
-                                <li>Instant Activation</li>
-                                <li>Lifetime Ownership</li>
-                                <li>Compatible With All Unlocked Phones</li>
-                            @elseif($product->slug == "zontel-global-simcard")
-                                <li>Coverage All Over World</li>
-                                <li>Instant Activation</li>
-                                <li>Lifetime Ownership</li>
-                                <li>Compatible With All Unlocked Phones</li>
-                            @endif
-                        </ul>
+        <section class="fourth-color">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row justify-content-center" style="height: 100%">
+                        <div class="flex__1 align-self-center text-center text-sm-right position-relative">
+                            <img src="{{asset('/img/z-circle.svg')}}" class="position-relative circle_zebra">
+                            <img src="{{asset($product->main_image_url)}}" class="main_p">
+                        </div>
+                        <div class="flex__2">
+                            <ul class="product__feature__details">
+                                @if($product->slug == "zonfi-global-modem")
+                                    <li>Flexible Refill Options</li>
+                                    <li>Access to 500 Carriers Worldwide</li>
+                                    <li>Built-In Power Bank</li>
+                                    <li>A Full Year To Use Your Data</li>
+                                @elseif($product->slug == "zonfi-v2-global-modem")
+                                    <li>Flexible Refill Options</li>
+                                    <li>Access to 500 Carriers Worldwide</li>
+                                    <li>More compact, with twice the battery life</li>
+                                    <li>A Full Year To Use Your Data</li>
+                                @elseif($product->slug == "zontel-eu-simcard")
+                                    <li>Coverage All Over EU</li>
+                                    <li>Instant Activation</li>
+                                    <li>Lifetime Ownership</li>
+                                    <li>Compatible With All Unlocked Phones</li>
+                                @elseif($product->slug == "zontel-global-simcard")
+                                    <li>Coverage All Over World</li>
+                                    <li>Instant Activation</li>
+                                    <li>Lifetime Ownership</li>
+                                    <li>Compatible With All Unlocked Phones</li>
+                                @endif
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="row second-color enjoy__bg col_row_1_padd"></div>
-                <div class="row main-color col_row_2_padd">
-                    <p class="product__cart ">$ {{number_format($product->price,2)}}</p>
-                    <p class="product__cart__sub">Place Your Order Now</p>
-                    <a class="btn btn__product addbtn_detail" id="{{$product->slug}}">
-                        <i class="fa fa-plus" style="font-size: 12px"></i>
-                        Add to Cart
-                    </a>
+                <div class="col-md-4">
+                    <div class="second-color enjoy__bg col_row_1_padd"></div>
+                    <div class="main-color col_row_2_padd">
+                        <p class="product__cart ">$ {{number_format($product->price,2)}}</p>
+                        <p class="product__cart__sub">Place Your Order Now</p>
+                        <a class="btn btn__product addbtn_detail" id="{{$product->slug}}">
+                            <i class="fa fa-plus" style="font-size: 12px"></i>
+                            Add to Cart
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

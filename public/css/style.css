@@ -1113,7 +1113,10 @@ body {
     font-size: 64px;
     color: #181818;
 }
-
+.img__step{
+    width: 384px;
+    height: 306px;
+}
 @media screen and  (min-width: 576px) {
     .wid_mr_l div:nth-child(2) {
         margin-left: 0px;
@@ -1189,6 +1192,10 @@ body {
 }
 
 @media (max-width: 767px) {
+    body{
+        margin-left: -4px;
+        margin-right: -4px;
+    }
     .related__product__title{
         font-size: 30px;
     }
@@ -1215,8 +1222,11 @@ body {
         line-height: 43px;
     }
     .product__feature__details li {
+        background-image: url(/img/grey-circle-2.svg);
         background-size: 15px;
-        font-size: 24px;
+        background-repeat: no-repeat;
+       padding-left: 1.2em;
+        font-size: 22px;
         color: #949494;
     }
     .detail_v2{
@@ -1318,7 +1328,7 @@ body {
    .responsive .icon{
        position: absolute;
        right: 20px;
-       top: 43px;
+       top: 35px;
    }
 
     .navbar-collapse_menu{
@@ -1362,14 +1372,19 @@ body {
         transform: translateY(0px);
         margin: 1rem auto;
     }
-
+    .sim__feature{
+        font-size: 39px;
+    }
     .scrolling-box {
         display: block;
         scroll-behavior: smooth;
         margin-top: 120px;
     }
-
-    .image__modem {
+    .img__step{
+        width: 80%;
+        height: auto;
+    }
+    .img__modem {
         display: none;
     }
     .main_product {
