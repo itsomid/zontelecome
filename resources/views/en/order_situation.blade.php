@@ -149,12 +149,15 @@
         </section>
         <section class="fifth-color">
             <div class="container text-center ">
-                <div class="row flex-wrap align-items-center justify-content-around  pt-5 pb-5">
-
-                    <div class="fabfelt">If you need any help, please contact us</div>
-                    <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
-                        Contact Us
-                    </a>
+                <div class="row align-items-center  pt-5 pb-5">
+                    <div class="col-md-8 col-12">
+                        <p class="fabfelt">If you need any help, please contact us</p>
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <a class="btn btn__contact" target="_blank" href="{{route('website/contact')}}">
+                            Contact Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
