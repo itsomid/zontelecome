@@ -3,42 +3,46 @@
         <img src="/img/logo.svg">
     </a>
 
+    @if(Request::url() !== url("/"))
+        <div class="collapse_menu navbar-collapse_menu" id="myTopnav">
+            <ul class="navbar-nav ml-auto">
 
-    <div class="collapse_menu navbar-collapse_menu" id="myTopnav">
-
-        <ul class="navbar-nav ml-auto">
-            @if(Request::url() !== url("/"))
-                <li class="nav-item p-2">
+                    <li class="nav-item" style="padding: 0.5rem 15px 0.5rem 0px ">
+                        <a class="shopping__cart" href="{{route('website/cart')}}">
+                            <img src="/img/shopping_circle.svg" width="40" height="40" class="shopping__cart__circle">
+                            <img src="/img/shopping-cart.svg" width="21" height="24"
+                                 style="position: absolute;left: 9px; top: -15px;">
+                            @if(!empty(session('cart.item')))
+                                <span>{{count(session('cart.item'))}}</span>
+                            @else
+                                <span>0</span>
+                            @endif
+                        </a>
+                    </li>
+                    <li class="nav-item p-2 ">
+                        <a href="{{route('website/order/track')}}" class="btn btn__light">
+                            Track Order
+                        </a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a href="{{route('website/refill')}}" class="btn btn__primary">
+                            <i class="fa fa-plus"></i> Data Refill
+                        </a>
+                    </li>
+                    <li class="nav-item pt-3">
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    @else
+        <div class="collapse_menu navbar-collapse_menu" id="myTopnav_home">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item p-2 pr-2">
                     <a class="shopping__cart" href="{{route('website/cart')}}">
-                        <img src="/img/shopping_circle.svg" width="40" height="40" class="shopping__cart__circle">
-                        <img src="/img/shopping-cart.svg" width="21" height="24"
-                             style="position: absolute;left: 9px; top: -15px;">
-                        @if(!empty(session('cart.item')))
-                            <span>{{count(session('cart.item'))}}</span>
-                        @else
-                            <span>0</span>
-                        @endif
-                    </a>
-                </li>
-                <li class="nav-item p-2">
-                    <a href="{{route('website/order/track')}}" class="btn btn__light">
-                        Track Order
-                    </a>
-                </li>
-                <li class="nav-item p-2">
-                    <a href="{{route('website/refill')}}" class="btn btn__primary">
-                        <i class="fa fa-plus"></i> Data Refill
-                    </a>
-                </li>
-                <li class="nav-item pt-3">
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                </li>
-            @else
-                <li class="nav-item p-2">
-                    <a class="shopping__cart" href="{{route('website/cart')}}">
-                        <img src="/img/shopping_circle.svg" width="40" height="40" class="shopping__cart__circle shadow-none">
+                        <img src="/img/shopping_circle.svg" width="40" height="40"
+                             class="shopping__cart__circle shadow-none">
                         <img src="/img/shopping-cart.svg" width="21" height="24"
                              style="position: absolute;left: 9px; top: -15px;">
                         @if(!empty(session('cart.item')))
@@ -61,15 +65,16 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction_home()">
                         <i class="fa fa-bars"></i>
                     </a>
                 </li>
-            @endif
+            </ul>
 
-        </ul>
+        </div>
 
-    </div>
+    @endif
+
 
 </nav>
 
@@ -83,12 +88,12 @@
                 var imgtodrag = $(this).parent().parent().parent().find('.main_product_res').eq(0);
                 console.log(imgtodrag);
                 $([document.documentElement, document.body]).animate({
-                    scrollTop: $(this).parent().parent().parent().offset().top -200
+                    scrollTop: $(this).parent().parent().parent().offset().top - 200
                 }, 1000);
                 if (imgtodrag) {
                     var imgclone = imgtodrag.clone()
                         .offset({
-                            top:  imgtodrag.offset().top +200 ,
+                            top: imgtodrag.offset().top + 200,
                             left: imgtodrag.offset().left + 200
                         }).delay(500)
                         .css({
@@ -142,7 +147,7 @@
                 if (imgtodrag) {
                     var imgclone = imgtodrag.clone()
                         .offset({
-                            top:  imgtodrag.offset().top + 200  ,
+                            top: imgtodrag.offset().top + 200,
                             left: imgtodrag.offset().left + 250
                         }).delay(600)
                         .css({
@@ -190,7 +195,7 @@
 
             });
         }
-        else{
+        else {
             $('.addbtn').click(function () {
                 var cart = $('.shopping__cart');
                 var imgtodrag = $(this).parent().parent().parent().find('.main_product').eq(0);
@@ -198,7 +203,7 @@
                 if (imgtodrag) {
                     var imgclone = imgtodrag.clone()
                         .offset({
-                            top: imgtodrag.offset().top +200 ,
+                            top: imgtodrag.offset().top + 200,
                             left: imgtodrag.offset().left + 200
                         })
                         .css({
@@ -247,7 +252,8 @@
                     }
                 });
 
-            });$('.addbtn_detail').click(function () {
+            });
+            $('.addbtn_detail').click(function () {
                 var cart = $('.shopping__cart');
                 var imgtodrag = $(this).parent().parent().parent().find('.main_p').eq(0);
 
@@ -302,13 +308,20 @@
         }
 
 
-
     });
 
     function myFunction() {
         var x = document.getElementById("myTopnav");
         if (x.className === "collapse_menu navbar-collapse_menu") {
             x.className += " responsive";
+        } else {
+            x.className = "collapse_menu navbar-collapse_menu";
+        }
+    }
+    function  myFunction_home() {
+        var x = document.getElementById("myTopnav_home");
+        if (x.className === "collapse_menu navbar-collapse_menu") {
+            x.className += " responsive_home";
         } else {
             x.className = "collapse_menu navbar-collapse_menu";
         }
