@@ -42,20 +42,24 @@
 @font-face {
     font-family: 'BloggerSans-Light';
     src: url('../fonts/BloggerSans-Light.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/BloggerSans-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/BloggerSans-Light.woff') format('woff'), /* Modern Browsers */ url('../fonts/BloggerSans-Light.ttf') format('truetype'); /* Legacy iOS */
+    src: url('../fonts/BloggerSans-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/BloggerSans-Light.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/BloggerSans-Light.ttf') format('truetype'); /* Legacy iOS */
     font-style: normal;
     font-weight: normal;
-    text-rendering: optimizeLegibility;
+
 }
 
 /* Webfont: BloggerSans-Medium */
 @font-face {
     font-family: 'BloggerSans-Medium';
     src: url('../fonts/BloggerSans-Medium.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/BloggerSans-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/BloggerSans-Medium.woff') format('woff'), /* Modern Browsers */ url('../fonts/BloggerSans-Medium.ttf') format('truetype') ; /* Legacy iOS */
+    src: url('../fonts/BloggerSans-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/BloggerSans-Medium.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/BloggerSans-Medium.ttf') format('truetype') ; /* Legacy iOS */
     font-style: normal;
     font-weight: bold;
-    text-rendering: optimizeLegibility;
+
 
 }
 
@@ -63,11 +67,11 @@
 @font-face {
     font-family: 'BloggerSans-Bold';
     src: url('../fonts/BloggerSans-Bold.eot'); /* IE9 Compat Modes */
-    src: url('../fonts/BloggerSans-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/BloggerSans-Bold.woff') format('woff'), /* Modern Browsers */ url('../fonts/BloggerSans-Bold.ttf') format('truetype'),
-    url('../fonts/BloggerSans-Bold.svg#BloggerSans-Bold') format('svg'); /* Legacy iOS *//* Safari, Android, iOS */; /* Legacy iOS */
+    src: url('../fonts/BloggerSans-Bold.eot?#iefix') format('embedded-opentype'); /* IE6-IE8 */ url('../fonts/BloggerSans-Bold.woff') format('woff'), /* Modern Browsers */ url('../fonts/BloggerSans-Bold.ttf') format('truetype'),
+     /* Legacy iOS *//* Safari, Android, iOS */; /* Legacy iOS */
     font-style: normal;
     font-weight: bold;
-    text-rendering: optimizeLegibility;
+  
 }
 @supports (-webkit-overflow-scrolling: touch) {
     @font-face {
