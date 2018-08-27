@@ -1250,6 +1250,7 @@ body {
         background-position: 45% 50%;
     }
     .header__feature{
+        font-family: 'BloggerSans', serif;
         font-size: 38px;
         font-weight: bold;
         line-height: 43px;
