@@ -11,7 +11,7 @@
                         <a class="shopping__cart" href="{{route('website/cart')}}">
                             <img src="/img/shopping_circle.svg" width="40" height="40" class="shopping__cart__circle">
                             <img src="/img/shopping-cart.svg" width="21" height="24"
-                                 style="position: absolute;left: 9px; top: -15px;">
+                                 style="position: absolute;left: 9px; top: 0px;">
                             @if(!empty(session('cart.item')))
                                 <span>{{count(session('cart.item'))}}</span>
                             @else
@@ -44,7 +44,7 @@
                         <img src="/img/shopping_circle.svg" width="40" height="40"
                              class="shopping__cart__circle shadow-none">
                         <img src="/img/shopping-cart.svg" width="21" height="24"
-                             style="position: absolute;left: 9px; top: -15px;">
+                             style="position: absolute;left: 9px; top: 0px;">
                         @if(!empty(session('cart.item')))
                             <span>{{count(session('cart.item'))}}</span>
                         @else

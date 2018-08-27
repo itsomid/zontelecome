@@ -71,7 +71,7 @@
      /* Legacy iOS *//* Safari, Android, iOS */; /* Legacy iOS */
     font-style: normal;
     font-weight: bold;
-  
+    text-rendering: optimizeLegibility;
 }
 @supports (-webkit-overflow-scrolling: touch) {
     @font-face {
@@ -790,7 +790,7 @@ body {
     background: #242424;
     background-size: 19px;
     position: absolute;
-    top: -25px;
+    top: -13px;
     left: 30px;
     min-width: 19px;
     height: 20px;
