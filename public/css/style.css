@@ -1268,6 +1268,7 @@ body {
        padding-left: 1.2em;
         font-size: 22px;
         color: #949494;
+        list-style: none;
     }
     .detail_v2{
         width: 380px !important;
