@@ -73,28 +73,34 @@
     text-rendering: optimizeLegibility;
 }
 
-@media  (max-width: 767px)   {
+@media screen and (max-device-width: 480px){
+    body{
+        -webkit-text-size-adjust: none;
+    }
     @font-face {
         font-family: 'BloggerSans';
         src: url('../fonts/BloggerSans.svg') format('svg');
+        font-weight: normal;
     }
     @font-face {
-        font-family: 'BloggerSans-Light';
+        font-family: 'BloggerSans';
         src: url('../fonts/BloggerSans-Light.svg') format('svg');
+        font-weight: 200;
     }
     @font-face {
-        font-family: 'BloggerSans-Medium';
+        font-family: 'BloggerSans';
         src: url('../fonts/BloggerSans-Medium.svg') format('svg');
+        font-weight: 500;
     }
     @font-face {
-        font-family: 'BloggerSans-Bold';
+        font-family: 'BloggerSans';
         src: url('../fonts/BloggerSans-Bold.svg') format('svg');
+        font-weight: bold;
     }
 }
 
 html, body {
     height: 100%;
-    -webkit-text-size-adjust: none;
 }
 
 body {
