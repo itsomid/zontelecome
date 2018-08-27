@@ -87,19 +87,19 @@
     }
     @font-face {
         font-family: 'BloggerSans';
-        src: url('../fonts/BloggerSans-Light') format('svg');
+        src: url('../fonts/BloggerSans-Light.svg') format('svg');
         font-weight: 200;
     }
     @font-face {
         font-family: 'BloggerSans';
-        src: url('../fonts/BloggerSans-Medium') format('svg');
+        src: url('../fonts/BloggerSans-Medium.svg') format('svg');
         font-weight: 500;
     }
     @font-face {
         font-family: 'BloggerSans';
-        src: url('../fonts/BloggerSans-Bold') format('svg');
+        src: url('../fonts/BloggerSans-Bold.svg') format('svg');
         font-weight: bold;
-       
+
     }
 }
 
