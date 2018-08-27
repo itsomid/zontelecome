@@ -1303,14 +1303,14 @@ body {
     }
 
     .product_title_main{
-        font-family: 'MoskNormal', sans-serif;
+        font-family: 'MoskNormal', serif;
         font-weight: bold;
-        font-size: 34px;
+        font-size: 32px;
         color: #181818;
         white-space: nowrap;
     }
     .Product_subtitle_main{
-        font-family: 'MoskNormal', sans-serif;
+        font-family: 'MoskNormal', serif;
         font-size: 26px;
         margin-top: 0;
         color: #454545;
