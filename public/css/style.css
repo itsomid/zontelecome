@@ -1328,7 +1328,8 @@ body {
         min-height: 0;
     }
     .product_description{
-        font-family: 'BloggerSans', sans-serif;
+        font-family: 'BloggerSans', serif;
+        font-weight: normal;
         line-height: 25px;
         font-size: 19px;
     }
