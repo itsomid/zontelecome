@@ -1,13 +1,21 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light main-topbar">
-    <a class="navbar-brand p-2" href="{{route('website/home')}}">
+    <a class="navbar__logo" href="{{route('website/home')}}">
         <img src="/img/logo.svg">
     </a>
-
+    <a class="shopping__cart__res" href="{{route('website/cart')}}">
+        <img src="/img/shopping_circle.svg" width="40" height="40" class="shopping__cart__circle shadow-none">
+        <img src="/img/shopping-cart.svg" width="21" height="24"
+             style="position: absolute;left: 9px; top: 7px;">
+        @if(!empty(session('cart.item')))
+            <span>{{count(session('cart.item'))}}</span>
+        @else
+            <span>0</span>
+        @endif
+    </a>
     @if(Request::url() !== url("/"))
         <div class="collapse_menu navbar-collapse_menu" id="myTopnav">
             <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item" style="padding: 0.5rem 15px 0.5rem 0px ">
+                    <li class="nav-item p-2 pr-2">
                         <a class="shopping__cart" href="{{route('website/cart')}}">
                             <img src="/img/shopping_circle.svg" width="40" height="40" class="shopping__cart__circle">
                             <img src="/img/shopping-cart.svg" width="21" height="24"
@@ -20,7 +28,7 @@
                         </a>
                     </li>
                     <li class="nav-item p-2 ">
-                        <a href="{{route('website/order/track')}}" class="btn btn__light">
+                        <a href="{{route('website/order/track')}}" class="btn btn__light ">
                             Track Order
                         </a>
                     </li>
@@ -29,7 +37,7 @@
                             <i class="fa fa-plus"></i> Data Refill
                         </a>
                     </li>
-                    <li class="nav-item pt-3">
+                    <li class="nav-item pt-3 pt-md-3">
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                             <i class="fa fa-bars"></i>
                         </a>
@@ -54,7 +62,7 @@
                 </li>
                 <li class="nav-item p-2">
                     <a href="{{route('website/order/track')}}" class="btn btn__light shadow-none"
-                       style="background-color: #202020 !important;">
+                       style="">
                         Track Order
                     </a>
 
