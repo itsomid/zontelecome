@@ -92,20 +92,21 @@
 
         if ($(window).width() < 767) {
             $('.addbtn').click(function () {
-                var cart = $('.shopping__cart');
+                var cart = $('.shopping__cart__res');
                 var imgtodrag = $(this).parent().parent().parent().find('.main_product_res').eq(0);
+                $window = $(window);
                 console.log(imgtodrag);
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $(this).parent().parent().parent().offset().top - 200
-                }, 1000);
+                // $([document.documentElement, document.body]).animate({
+                //     scrollTop: $(this).parent().parent().parent().offset().top - 200
+                // }, 1000);
                 if (imgtodrag) {
                     var imgclone = imgtodrag.clone()
                         .offset({
                             top: imgtodrag.offset().top + 200,
-                            left: imgtodrag.offset().left + 200
-                        }).delay(500)
+                            left: imgtodrag.offset().left + 250
+                        }).delay()
                         .css({
-                            'opacity': '0.8',
+                            'opacity': '0.7',
                             'position': 'absolute',
                             'height': '150px',
                             'width': '150px',
@@ -113,11 +114,11 @@
                         })
                         .appendTo($('body'))
                         .animate({
-                            'top': cart.offset().top + 10,
-                            'left': cart.offset().left + 300,
+                            'top': cart.offset().top - 10,
+                            'left': cart.offset().left -10,
                             'width': 110,
                             'height': 110
-                        }, 2000);
+                        }, 1200);
 
                     imgclone.animate({
                         'width': 100,
@@ -126,6 +127,9 @@
                         $(this).detach()
                     });
                 }
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(this).parent().parent().parent().offset().top - 200
+                }, 2000);
                 var name = $(this).attr('id');
 
                 $.ajax({
@@ -140,24 +144,24 @@
                     },
                     success: function (data) {
 
-                        $('.nav-item span').text(data);
+                        $('.shopping__cart__res span').text(data);
                     }
                 });
 
             });
 
             $('.addbtn_detail').click(function () {
-                var cart = $('.shopping__cart');
+                var cart = $('.shopping__cart__res');
                 var imgtodrag = $(this).parent().parent().parent().find('.main_p').eq(0);
-                $([document.documentElement, document.body]).animate({
-                    scrollTop: $('.main_p').offset().top - 100
-                }, 800);
+                // $([document.documentElement, document.body]).animate({
+                //     scrollTop: $('.main_p').offset().top - 100
+                // }, 800);
                 if (imgtodrag) {
                     var imgclone = imgtodrag.clone()
                         .offset({
                             top: imgtodrag.offset().top + 200,
                             left: imgtodrag.offset().left + 250
-                        }).delay(600)
+                        })
                         .css({
                             'opacity': '0.7',
                             'position': 'absolute',
@@ -167,11 +171,11 @@
                         })
                         .appendTo($('body'))
                         .animate({
-                            'top': cart.offset().top + 10,
-                            'left': cart.offset().left + 0,
+                            'top': cart.offset().top - 10,
+                            'left': cart.offset().left - 10,
                             'width': 110,
                             'height': 110
-                        }, 2000);
+                        }, 1000);
 
 
                     imgclone.animate({
@@ -197,7 +201,7 @@
                     },
                     success: function (data) {
 
-                        $('.nav-item span').text(data);
+                        $('.shopping__cart__res span').text(data);
                     }
                 });
 
