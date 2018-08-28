@@ -94,42 +94,41 @@
             $('.addbtn').click(function () {
                 var cart = $('.shopping__cart__res');
                 var imgtodrag = $(this).parent().parent().parent().find('.main_product_res').eq(0);
-                $window = $(window);
-                console.log(imgtodrag);
-                // $([document.documentElement, document.body]).animate({
-                //     scrollTop: $(this).parent().parent().parent().offset().top - 200
-                // }, 1000);
-                if (imgtodrag) {
-                    var imgclone = imgtodrag.clone()
-                        .offset({
-                            top: imgtodrag.offset().top + 200,
-                            left: imgtodrag.offset().left + 250
-                        }).delay()
-                        .css({
-                            'opacity': '0.7',
-                            'position': 'absolute',
-                            'height': '150px',
-                            'width': '150px',
-                            'z-index': '100'
-                        })
-                        .appendTo($('body'))
-                        .animate({
-                            'top': cart.offset().top - 10,
-                            'left': cart.offset().left -10,
-                            'width': 110,
-                            'height': 110
-                        }, 1200);
 
-                    imgclone.animate({
-                        'width': 100,
-                        'height': 100
-                    }, function () {
-                        $(this).detach()
-                    });
-                }
                 $([document.documentElement, document.body]).animate({
                     scrollTop: $(this).parent().parent().parent().offset().top - 200
-                }, 2000);
+                }, 600);
+
+                    if (imgtodrag) {
+                       setTimeout(function () {drag()},600);
+                         function drag() {
+                            var imgclone = imgtodrag.clone()
+                                .offset({
+                                    top: imgtodrag.offset().top + 200,
+                                    left: imgtodrag.offset().left + 250
+                                })
+                                .css({
+                                    'opacity': '0.7',
+                                    'position': 'absolute',
+                                    'height': '150px',
+                                    'width': '150px',
+                                    'z-index': '100'
+                                })
+                                .appendTo($('body'))
+                                .animate({
+                                    'top': cart.offset().top - 30,
+                                    'left': cart.offset().left - 10,
+                                    'width': 110,
+                                    'height': 110
+                                }, 1200);
+                             imgclone.animate({
+                                 'width': 100,
+                                 'height': 100
+                             }, function () {
+                                 $(this).detach()
+                             });
+                        }
+                }
                 var name = $(this).attr('id');
 
                 $.ajax({
@@ -153,38 +152,44 @@
             $('.addbtn_detail').click(function () {
                 var cart = $('.shopping__cart__res');
                 var imgtodrag = $(this).parent().parent().parent().find('.main_p').eq(0);
-                // $([document.documentElement, document.body]).animate({
-                //     scrollTop: $('.main_p').offset().top - 100
-                // }, 800);
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $('.main_p').offset().top - 100
+                }, 600);
                 if (imgtodrag) {
-                    var imgclone = imgtodrag.clone()
-                        .offset({
-                            top: imgtodrag.offset().top + 200,
-                            left: imgtodrag.offset().left + 250
-                        })
-                        .css({
-                            'opacity': '0.7',
-                            'position': 'absolute',
-                            'width': '105px',
-                            'height': '105px',
-                            'z-index': '100'
-                        })
-                        .appendTo($('body'))
-                        .animate({
-                            'top': cart.offset().top - 10,
-                            'left': cart.offset().left - 10,
-                            'width': 110,
-                            'height': 110
-                        }, 1000);
+                    setTimeout(function () {
+                        drag()
+                    }, 600);
+
+                    function drag() {
+                        var imgclone = imgtodrag.clone()
+                            .offset({
+                                top: imgtodrag.offset().top + 200,
+                                left: imgtodrag.offset().left + 250
+                            })
+                            .css({
+                                'opacity': '0.7',
+                                'position': 'absolute',
+                                'width': '105px',
+                                'height': '105px',
+                                'z-index': '100'
+                            })
+                            .appendTo($('body'))
+                            .animate({
+                                'top': cart.offset().top - 10,
+                                'left': cart.offset().left - 10,
+                                'width': 110,
+                                'height': 110
+                            }, 1000);
 
 
-                    imgclone.animate({
+                        imgclone.animate({
 
-                        'width': 0,
-                        'height': 0
-                    }, function () {
-                        $(this).detach()
-                    });
+                            'width': 0,
+                            'height': 0
+                        }, function () {
+                            $(this).detach()
+                        });
+                    }
                 }
 
                 var name = $(this).attr('id');
