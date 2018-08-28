@@ -76,7 +76,6 @@
 @media screen and (max-device-width: 768px){
     body{
         -webkit-text-size-adjust: none;
-
     }
 
     @font-face {
