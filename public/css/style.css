@@ -404,7 +404,7 @@ body {
 .bg__other__circle {
     background-image: url("/img/grey-circle-3.svg");
     background-repeat: no-repeat;
-    background-position-x: 20%;
+    background-position: 20% 15%;
     background-size: 345px;
 }
 
@@ -712,13 +712,15 @@ body {
 }
 
 .cart_title_1 {
-    font-family: BloggerSans-Medium;
+    font-family: 'BloggerSans',serif;
+    font-weight: 500;
     font-size: 24px;
     color: #949494;
 }
 
 .cart_title_2 {
-    font-family: BloggerSans-Medium;
+    font-family: 'BloggerSans',serif;
+    font-weight: 500;
     font-size: 24px;
     color: #E3E3E3;
 }
@@ -846,7 +848,8 @@ body {
 }
 
 .cart_item_text h2 {
-    font-family: BloggerSans-Bold;
+    font-family: 'BloggerSans', serif;
+    font-weight: bold;
     font-size: 36px;
     color: #FFCC00;
 }
@@ -858,7 +861,8 @@ body {
 }
 
 .cart_item_text span {
-    font-family: BloggerSans-Light;
+    font-family: 'BloggerSans',serif;
+    font-weight: 200;
     font-size: 36px;
     color: #949494;
 }
@@ -870,13 +874,13 @@ body {
 }
 
 .cart_item_number {
-
     background: url("/img/shopping_circle.svg") no-repeat top left;
     background-size: 50px;
     height: 50px;
     width: 50px;
     display: inline-block;
-    font-family: BloggerSans-Bold;
+    font-family: 'BloggerSans',serif;
+    font-weight: bold;
     font-size: 24px;
     color: #454545;
     text-align: center;
@@ -886,13 +890,15 @@ body {
 }
 
 .cart_item_price h3 {
-    font-family: BloggerSans-Medium;
+    font-family: 'BloggerSans',serif;
+    font-weight: 500;
     font-size: 36px;
     color: #FFCC00;
 }
 
 .cart_item_ar {
-    font-family: BloggerSans-Medium;
+    font-family: 'BloggerSans',serif;
+    font-weight: normal;
     font-size: 14px;
     color: #949494 !important;
     text-align: right;
@@ -927,20 +933,23 @@ body {
 }
 
 .cart_item_final span:nth-child(1) {
-    font-family: BloggerSans-Bold;
+    font-family: 'BloggerSans';
+    font-weight: bold;
     font-size: 20px;
     color: #454545;
 }
 
 .cart_item_final span:nth-child(2) {
-    font-family: BloggerSans-Bold;
+    font-family: 'BloggerSans',serif;
+    font-weight: bold;
     font-size: 36px;
     color: #454545;
 }
 
 .cart_item_table td {
     padding: 2px;
-    font-family: BloggerSans;
+    font-family: 'BloggerSans',serif;
+    font-weight: normal;
     font-size: 20px;
     color: #949494;
 }
@@ -963,7 +972,8 @@ body {
 }
 
 .form-group label {
-    font-family: BloggerSans-Medium;
+    font-family: 'BloggerSans',serif;
+    font-weight: 500;
     font-size: 24px;
     color: #FFFFFF;
 }
@@ -1143,7 +1153,7 @@ body {
     font-size: 36px;
     color: #242424;
     width: 100%;
-    padding-left: 20%;
+    padding: 20% 0 0 20px;
 }
 
 .sim__feature {
@@ -1232,6 +1242,15 @@ body {
 }
 
 @media (max-width: 767px) {
+    .bg__other__circle{
+        background-position: 20% 5%;
+    }
+    .cart_title_1{
+        padding: 20px 0 0 20px;
+    }
+    .cart_title_2{
+        padding: 20px 0 0 20px;
+    }
     .btn__light.menu{
         box-shadow: none;
         font-family: 'BloggerSans' , sans-serif;
@@ -1307,7 +1326,7 @@ body {
     .bg__other{
 
         background-size: 90%;
-        background-position: 45% 50%;
+        background-position: 45% 0%;
     }
     .header__feature{
         font-family: 'BloggerSans', serif;

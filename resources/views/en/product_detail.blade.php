@@ -325,9 +325,9 @@
                 </div>
             </div>
         </section>
-        <section class="sec__padding third-color">
-            <div class="row bg__other__circle justify-content-center align-items-center" style=" height: 345px;">
-                <div class="other_product_text bg__other ">we provide a <strong>variety of products</strong><br>
+        <section class="sec__padding third-color bg__other__circle  ">
+            <div class="row  bg__other justify-content-center align-items-center" style=" height: 345px;">
+                <div class="other_product_text ">we provide a <strong>variety of products</strong><br>
                     for your different needs.<br>
                     have a look …
                 </div>

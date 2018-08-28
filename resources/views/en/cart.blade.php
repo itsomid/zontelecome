@@ -9,7 +9,7 @@
 
         <section class="flex-container-main  justify-content-center sec__padding  pt-0">
             <div class="container text-center text-lg-left">
-                <div class="row mb-3">
+                <div class="row mb-md-3">
                     <p class="cart_title_1">1. Check your shopping list:</p>
                 </div>
                 @if(empty($products))
@@ -412,17 +412,17 @@
                                     <div class="col-sm-3">
                                         <input type="text" class="form-control" id="c_state" name="c_state">
                                     </div>
-                                    <label for="c_zipcode" class="col-sm-2 col-form-label text-right pr-0 pl-0">Zip Code</label>
+                                    <label for="c_zipcode" class="col-sm-2 col-form-label text-center text-md-right pr-0 pl-0">Zip Code</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" id="c_zipcode" name="c_zipcode">
                                     </div>
                                 </div>
 
                             </div>
-                            <div class="col-md-4 align-self-end text-right">
+                            <div class="col-md-4 align-self-end mt-3 mt-md-0 text-center text-md-right">
                                 @if(!empty($products))
                                     <span class="payment__text">Secrue payment by <strong>Squareup</strong></span>
-                                    <button class="btn btn__product mb-5">Check Out<i class="fa fa-caret-right" style="padding-left: 15px"></i></button>
+                                    <button class="btn btn__product   mb-md-5">Check Out<i class="fa fa-caret-right" style="padding-left: 15px"></i></button>
                                 @endif
                             </div>
                         </form>
