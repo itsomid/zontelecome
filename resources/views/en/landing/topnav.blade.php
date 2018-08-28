@@ -128,24 +128,25 @@
                                  $(this).detach()
                              });
                         }
+                        var name = $(this).attr('id');
+
+                        $.ajax({
+                            url: "{{route('website/order/cart/item')}}",
+                            type: "POST",
+                            data: {
+                                name: name,
+                                _token: "{{ csrf_token() }}"
+                            },
+                            error: function (data) {
+                                console.log(data);
+                            },
+                            success: function (data) {
+
+                                $('.shopping__cart__res span').text(data);
+                            }
+                        });
                 }
-                var name = $(this).attr('id');
 
-                $.ajax({
-                    url: "{{route('website/order/cart/item')}}",
-                    type: "POST",
-                    data: {
-                        name: name,
-                        _token: "{{ csrf_token() }}"
-                    },
-                    error: function (data) {
-                        console.log(data);
-                    },
-                    success: function (data) {
-
-                        $('.shopping__cart__res span').text(data);
-                    }
-                });
 
             });
 
@@ -190,25 +191,24 @@
                             $(this).detach()
                         });
                     }
+                    var name = $(this).attr('id');
+
+                    $.ajax({
+                        url: "{{route('website/order/cart/item')}}",
+                        type: "POST",
+                        data: {
+                            name: name,
+                            _token: "{{ csrf_token() }}"
+                        },
+                        error: function (data) {
+                            console.log(data);
+                        },
+                        success: function (data) {
+
+                            $('.shopping__cart__res span').text(data);
+                        }
+                    });
                 }
-
-                var name = $(this).attr('id');
-
-                $.ajax({
-                    url: "{{route('website/order/cart/item')}}",
-                    type: "POST",
-                    data: {
-                        name: name,
-                        _token: "{{ csrf_token() }}"
-                    },
-                    error: function (data) {
-                        console.log(data);
-                    },
-                    success: function (data) {
-
-                        $('.shopping__cart__res span').text(data);
-                    }
-                });
 
             });
         }
