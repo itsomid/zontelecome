@@ -28,12 +28,12 @@
                         </a>
                     </li>
                     <li class="nav-item p-2 ">
-                        <a href="{{route('website/order/track')}}" class="btn btn__light ">
+                        <a href="{{route('website/order/track')}}" class="btn btn__light menu">
                             Track Order
                         </a>
                     </li>
                     <li class="nav-item p-2">
-                        <a href="{{route('website/refill')}}" class="btn btn__primary">
+                        <a href="{{route('website/refill')}}" class="btn btn__primary menu">
                             <i class="fa fa-plus"></i> Data Refill
                         </a>
                     </li>
@@ -61,14 +61,14 @@
                     </a>
                 </li>
                 <li class="nav-item p-2">
-                    <a href="{{route('website/order/track')}}" class="btn btn__light shadow-none"
+                    <a href="{{route('website/order/track')}}" class="btn btn__light menu shadow-none"
                        style="">
                         Track Order
                     </a>
 
                 </li>
                 <li class="nav-item p-2">
-                    <a href="{{route('website/refill')}}" class="btn btn__primary shadow-none">
+                    <a href="{{route('website/refill')}}" class="btn btn__primary menu shadow-none">
                         <i class="fa fa-plus"></i> Data Refill
                     </a>
                 </li>
