@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light main-topbar">
+    @if(Request::url() !== url("/"))
     <a class="navbar__logo" href="{{route('website/home')}}">
         <img src="/img/logo.svg">
     </a>
+    @endif
     <a class="shopping__cart__res" href="{{route('website/cart')}}">
         <img src="/img/shopping_circle.svg" width="40" height="40" class="shopping__cart__circle shadow-none">
         <img src="/img/shopping-cart.svg" width="21" height="24"

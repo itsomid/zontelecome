@@ -29,7 +29,7 @@
             </div>
             <div class="flex-item-main-3">
 
-                <img src="{{url('img/world-wide-modem.svg')}}">
+                <img src="{{url('img/world-wide-modem-ltr.png')}}">
             </div>
         </section>
         <section class="flex-container-main  justify-content-center main-color sec__padding">
@@ -45,13 +45,13 @@
                     </div>
                     <div class="col-lg-7">
                         @if($product->slug == "zonfi-global-modem")
-                            <h2 class="divider-heading title__color">ZonFi Makes Connecting Simple</h2>
+                            <h2 class="divider-heading title__color">ZonFi ارتباط شما را آسان میکند.</h2>
                         @elseif($product->slug == "zontel-eu-simcard" ||$product->slug == "zontel-global-simcard")
                             <h2 class="divider-heading title__color">LIFETIME 4G LTE DATA SIM CARD</h2>
                         @endif
                         <div class="row">
                             <div class="col-lg-10">
-                                <p class="lead divider-subtitle mt-2 text-muted">{{$product->description}}
+                                <p class="lead divider-subtitle mt-2 text-muted text-right">{{$product->description}}
                                 </p>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
         <section class="flex-container-main justify-content-center sec__padding second-color always__online__bg">
             <div class="container text-center d-flex flex-row justify-content-center align-items-center">
                 @if($product->slug == "zonfi-global-modem")
-                <p class="sim__feature">Your Internet Solution on 195 Countries…</p>
+                <p class="sim__feature">راه حل اینترنت شما در 195 کشور ...</p>
                 @elseif($product->slug == "zontel-eu-simcard" ||$product->slug == "zontel-global-simcard")
                 <div class="col-md-4 helvetica">Power Bank</div>
                 <div class="col-md-3">
@@ -161,28 +161,33 @@
         <section class="row fourth-color">
             <div class="col-md-8">
                 <div class="row justify-content-center" style="height: 100%">
-                    <div class="flex__1 align-self-center text-right position-relative">
+                    <div class="flex__1 align-self-center text-left position-relative">
                         <img src="{{asset('/img/z-circle.svg')}}" width="544" class="position-relative">
                         <img src="{{asset($product->main_image_url)}}" width="530" class="position-absolute"
-                             style="left: 50%;top: -10%">
+                             style="right: 50%;top: -10%">
                     </div>
                     <div class="flex__2">
                         <ul class="product__feature__details">
                             @if($product->slug == "zonfi-global-modem")
-                                <li>Flexible Refill Options</li>
-                                <li>A Full Year To Use Your Data</li>
-                                <li>SIM-Free, Hassle-Free, No Overage Charges.</li>
-                                <li>Access to 500 Carriers Worldwide</li>
+                                <li>لورم ایپسوم متن ساختگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                            @elseif($product->slug == "zonfi-v2-global-modem")
+                                <li>لورم ایپسوم متن ساختگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
                             @elseif($product->slug == "zontel-eu-simcard")
-                                <li>Coverage All Over EU</li>
-                                <li>Instant Activation</li>
-                                <li>Lifetime Ownership</li>
-                                <li>Compatible With All Unlocked Phones</li>
+                                <li>لورم ایپسوم متن ساختگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
                             @elseif($product->slug == "zontel-global-simcard")
-                                <li>Coverage All Over World</li>
-                                <li>Instant Activation</li>
-                                <li>Lifetime Ownership</li>
-                                <li>Compatible With All Unlocked Phones</li>
+                                <li>لورم ایپسوم متن ساختگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
                             @endif
                         </ul>
                     </div>

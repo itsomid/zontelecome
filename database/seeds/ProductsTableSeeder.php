@@ -26,7 +26,7 @@ EzFi Virtual Sim technology, the
 modem switches carriers remotely
 which ensures a stronger and faster
 internet connection, as well as
-noticably lower roaming costs.
+noticeably lower roaming costs.
 With its global coverage, you can
 enjoy a local carrier experience in
 over 110 countries worldwide at
@@ -40,7 +40,7 @@ configurations or setup and will get
 you online With a simple push of a
 button. You can also connect up to 8
 of your WiFi enables devices
-Simultaniouslyi.',
+Simultaneously.',
                     'main_image_url'=>'/img/modem.png'
                 ],
                 [
@@ -50,7 +50,7 @@ Simultaniouslyi.',
                     'price' => '116.00',
                     'related_product' => 0,
                     'status' => '1',
-                    'description' => 'ZonFi is your ultimate travel companion. with its groundbreaking EzFi Virtual Sim technology, the modem switches carriers remotely which ensures a stronger and faster internet connection, as well as noticably lower roaming costs. With its global coverage, you can enjoy a local carrier experience in over 110 countries worldwide at 4G/LTE speeds as high as 150Mbps. Equipped With an embedded 600omAh Li-ion battery, the device can get up to 14 hours of battery life ZonFi requires no configurations or setup and Will get you online With a simple push of a button. You can also connect up to 8 of your WiFi enables devrces Simultaniously',
+                    'description' => 'ZonFi is your ultimate travel companion. with its groundbreaking EzFi Virtual Sim technology, the modem switches carriers remotely which ensures a stronger and faster internet connection, as well as noticeably lower roaming costs. With its global coverage, you can enjoy a local carrier experience in over 110 countries worldwide at 4G/LTE speeds as high as 150Mbps. Equipped With an embedded 6000mAh Li-ion battery, the device can get up to 14 hours of battery life. ZonFi requires no configurations or setup and Will get you online With a simple push of a button. You can also connect up to 8 of your WiFi enables devices Simultaneously',
                     'main_image_url'=>'/img/modem-v2.png'
                 ],
 
@@ -166,38 +166,48 @@ Simultaniouslyi.',
         else{
             $products = [
                 [
-                    'title' => 'ZonFi Global Modem',
+                    'title' => 'ZonFi V1 Global Modem',
                     'slug' => 'zonfi-global-modem',
                     'type' => 'physical',
-                    'price' => '100000.00',
+                    'price' => '10.00',
                     'related_product' => 0,
                     'status' => '1',
-                    'description' => 'ZonFi is your ultimate travel companion. With its groundbreaking EzFi Virtual Sim technology, the modem switches carriers remotely which ensures a stronger and faster Internet connection, as well as noticably lower roaming costs. With its global coverage, you can enjoy a local carrier experience in over 110 countries worldwide at 4G/LTE speeds as high as 150Mbps.
-Equipped with an embedded 6000mAh Li-ion battery, the device can get up to 14 hours of battery life and also be used to charge your gadgets on the go. ZonFi requires no configurations or setup and will get you online with a simple push of a button. You can also connect up to 8 of your WiFi enables devices simultaniously.',
+                    'description' => 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.',
                     'main_image_url'=>'/img/modem.png'
+                ],
+                [
+                    'title' => 'ZonFi V2 Global Modem',
+                    'slug' => 'zonfi-v2-global-modem',
+                    'type' => 'physical',
+                    'price' => '116.00',
+                    'related_product' => 0,
+                    'status' => '1',
+                    'description' => 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.',
+                    'main_image_url'=>'/img/modem-v2.png'
                 ],
 
                 [
                     'title' => 'ZonTel EU Simcard',
                     'slug' => 'zontel-eu-simcard',
                     'type' => 'physical',
-                    'price' => '120000.00',
+                    'price' => '12.00',
                     'related_product' => 0,
                     'status' => '1',
-                    'description' => 'Stay connected every step of the way with ZonTel EU Data SIM, the best mobile data solution for european travelers. Travel all through the EU without worrying about data roaming charges, hunting for hotel WiFi and swapping SIM cards every time you cross a border.',
+                    'description' => 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.',
                     'main_image_url'=>'/img/sim-eu.png'
                 ],
                 [
                     'title' => 'ZonTel Global Simcard',
                     'slug' => 'zontel-global-simcard',
                     'type' => 'physical',
-                    'price' => '140000.00',
+                    'price' => '14.00',
                     'related_product' => 0,
                     'status' => '1',
-                    'description' => 'Stay connected every step of the way with ZonTel EU Data SIM, the best mobile data solution for european travelers. Travel all through the EU without worrying about data roaming charges, hunting for hotel WiFi and swapping SIM cards every time you cross a border.',
+                    'description' => 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.',
                     'main_image_url'=>'/img/sim-global.png'
                 ]
                 ,
+
                 [
                     'title' => '1 GB',
                     'slug' => null,

@@ -25,30 +25,31 @@
                             </p>
                             <p class="product_price">${{number_format($product->price,2)}}</p>
                             <div class="flex-item-2-inner">
-                                <div class="item" >
+                                <div class="item">
                                     @if($product->slug != "zonfi-v2-global-modem")
-                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product_res">
+                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
+                                             class="main_product_res">
                                     @else
-                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product_res main_product_v2">
+                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
+                                             class="main_product_res main_product_v2">
                                     @endif
                                     <img src="img/shopping_circle.svg" class="main_product_circle">
                                 </div>
                             </div>
                             <div class="product_description">
-
-                                    {{$product->description}}
-
+                                {{$product->description}}
                             </div>
                             <a href="{{route('website/product',['slug'=>$product->slug])}}" class="btn btn__more ">
                                 Read More
                             </a>
                         </div>
                         <div class="flex-item-2">
-                            <div class="item" >
+                            <div class="item">
                                 @if($product->slug != "zonfi-v2-global-modem")
-                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product">
+                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}" class="main_product">
                                 @else
-                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"  class="main_product main_product_v2">
+                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
+                                         class="main_product main_product_v2">
                                 @endif
                                 <img src="img/shopping_circle.svg" class="main_product_circle">
                             </div>
@@ -78,7 +79,8 @@
                                 @endif
                             </ul>
                             <div class="d-flex flex-nowrap justify-content-start">
-                                <a class="btn btn__light shadow-none addbtn" style="background-color: transparent" id="{{$product->slug}}">
+                                <a class="btn btn__light shadow-none addbtn" style="background-color: transparent"
+                                   id="{{$product->slug}}">
                                     <i class="fa fa-plus"></i> Add to cart
                                 </a>
                                 <a href="{{route('website/cart')}}" class="btn btn__primary shadow-none ml-3 addbtn"
@@ -96,6 +98,3 @@
     </div>
 
 @endsection
-<script>
-
-</script>

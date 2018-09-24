@@ -15,6 +15,8 @@
                             <p class="Product_subtitle">
                                 @if($product->slug == "zonfi-global-modem")
                                     برای نیاز های جهانی شما
+                                @elseif($product->slug == "zonfi-v2-global-modem")
+                                    برای نیاز های جهانی شما
                                 @elseif($product->slug == "zontel-eu-simcard")
                                     برای نیاز های جهانی شما
                                 @elseif($product->slug == "zontel-global-simcard")
@@ -22,20 +24,33 @@
                                 @endif
                             </p>
                             <p class="product_price">{{number_format($product->price,0)}}تومان </p>
-                            {{--<p class="product_price">100,000 تومان</p>--}}
+                            <div class="flex-item-2-inner">
+                                <div class="item">
+                                    @if($product->slug != "zonfi-v2-global-modem")
+                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
+                                             class="main_product_res">
+                                    @else
+                                        <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
+                                             class="main_product_res main_product_v2">
+                                    @endif
+                                    <img src="img/shopping_circle.svg" class="main_product_circle">
+                                </div>
+                            </div>
                             <div class="product_description">
-
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-
+                                {{$product->description}}
                             </div>
                             <a href="{{route('website/product',['slug'=>$product->slug])}}" class="btn btn__more ">
                                 میخواهم بیشتر بدانم
                             </a>
                         </div>
                         <div class="flex-item-2">
-                            <div >
-                                <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
-                                     class="main_product">
+                            <div class="item">
+                                @if($product->slug != "zonfi-v2-global-modem")
+                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}" class="main_product">
+                                @else
+                                    <img src="{{$product->main_image_url}}" id="img_{{$key+1}}"
+                                         class="main_product main_product_v2">
+                                @endif
                                 <img src="img/shopping_circle.svg" class="main_product_circle">
                             </div>
                         </div>
@@ -43,23 +58,29 @@
                             <ul class="product_feature">
                                 @if($product->slug == "zonfi-global-modem")
                                     <li>لورم ایپسوم متن ساختگی</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                @elseif($product->slug == "zonfi-v2-global-modem")
+                                    <li>لورم ایپسوم متن ساختگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
                                 @elseif($product->slug == "zontel-eu-simcard")
                                     <li>لورم ایپسوم متن ساختگی</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
                                 @elseif($product->slug == "zontel-global-simcard")
                                     <li>لورم ایپسوم متن ساختگی</li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
-                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی </li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
+                                    <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
                                 @endif
                             </ul>
                             <div class="d-flex flex-nowrap pl-5">
-                                <a class="btn btn__light shadow-none addbtn" style="background-color: transparent" id="{{$product->slug}}">
+                                <a class="btn btn__light shadow-none addbtn" style="background-color: transparent"
+                                   id="{{$product->slug}}">
                                     <i class="fa fa-plus"></i> افزودن به سبد خرید
                                 </a>
                                 <a href="{{route('website/cart')}}" class="btn btn__primary shadow-none mr-3 addbtn"
