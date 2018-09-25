@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light main-topbar">
-    @if(Request::url() !== url("/"))
+
     <a class="navbar__logo" href="{{route('website/home')}}">
         <img src="/img/logo.svg">
     </a>
-    @endif
+
     <a class="shopping__cart__res" href="{{route('website/cart')}}">
         <img src="/img/shopping_circle.svg" width="40" height="40" class="shopping__cart__circle shadow-none">
         <img src="/img/shopping-cart.svg" width="21" height="24"
@@ -74,7 +74,7 @@
                         <i class="fa fa-plus"></i> Data Refill
                     </a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item pt-3 pt-md-3">
                     <a href="javascript:void(0);" class="icon" onclick="myFunction_home()">
                         <i class="fa fa-bars"></i>
                     </a>

@@ -134,9 +134,7 @@ body {
     position: relative;
     background-color: #C9C9C9;
 }
-.main-body:nth-child(1) section{
-    direction: rtl;
-}
+
 .main{
     text-align: right;
     direction: rtl;
@@ -147,7 +145,7 @@ footer{
 
 .detail {
     top: 40px !important;
-    left: 40px !important;
+    right: 60px !important;
 }
 
 .sec__padding {
@@ -229,7 +227,6 @@ footer{
 
 .flex-item-main-1 {
     position: relative;
-    left: 100px;
 
 }
 
@@ -245,18 +242,20 @@ footer{
 }
 
 .flex-item-main-3 img {
-    left: 300px;
+    left: 200px;
     position: relative;
     width: 470px;
 }
 
 .flex__item__1 {
     width: 100%;
+    text-align: right;
 }
 
 .flex__item__2 {
-    direction: ltr;
+    direction: rtl;
     width: 100%;
+    text-align: right;
 }
 
 .flex__item__3 {
@@ -282,7 +281,10 @@ footer{
     margin-left: 100px;
     margin-right: 100px;
 }
-
+.header__feature{
+    font-size: 48px;
+    line-height: 43px;
+}
 .always__online__bg {
     background-image: url("/img/always-online.svg");
     background-repeat: no-repeat;
@@ -294,13 +296,6 @@ footer{
     background-repeat: no-repeat;
     background-size: 130%;
 }
-
-.head__bg {
-    background-image: url("/img/z.svg");
-    background-size: 100%;
-    background-repeat: repeat-x;
-}
-
 .sec__bg {
     background-image: url("/img/z.svg");
     background-repeat: repeat;
@@ -336,10 +331,10 @@ footer{
 }
 
 .menu_title {
-    font-family: BloggerSans-Medium;
+    font-family: 'Vazir', sans-serif;
     font-size: 18px;
     line-height: 23px;
-
+    direction: rtl;
 }
 
 .menu_subtitle {
@@ -349,7 +344,7 @@ footer{
 
 .title__color {
     color: #FFCC00;
-    text-align: right;
+
 }
 .title__step{
     font-family: BloggerSans-Bold;
@@ -357,7 +352,7 @@ footer{
     color: #FFCC00;
 }
 .context__color {
-    color: #898989;
+    color: #949494 ;
 }
 
 .title__feature {
@@ -370,13 +365,15 @@ footer{
 
 .main__feature__title {
     font-family: Vazir;
+    text-align: center;
     font-size: 36px;
+    min-height: 110px;
 }
 
 .main__feature__sub {
     font-family: Vazir;
     font-size: 20px;
-    color: #FFFFFF;
+    color: #898989;
 }
 
 .refill_title {
@@ -452,7 +449,7 @@ footer{
 .bg__other__circle {
     background-image: url("/img/grey-circle-3.svg");
     background-repeat: no-repeat;
-    background-position-x: 20%;
+    background-position-x: 78%;
     background-size: 345px;
 }
 
@@ -460,7 +457,7 @@ footer{
     background-image: url("/img/other-products.svg");
     background-repeat: no-repeat;
     background-size: 60%;
-    background-position-x: 20%;
+    background-position-x: 70%;
 }
 
 .menu_product_img {
@@ -478,7 +475,7 @@ footer{
 .main_product_back {
     position: relative;
     padding-top: 80px;
-    padding-left: 120px;
+    padding-right: 120px;
 }
 
 
@@ -563,16 +560,12 @@ footer{
 
 .btn__product {
 
-    font-size: 20px;
+    font-size: 18px;
     background-color: #FFCC00;
     border-radius: 40px;
     color: #454545;
-    padding: 3px 0px ;
-    width: 142px;
-    min-height: 63px;
+    padding:20px 25px;
     border: none;
-    min-width: 300px;
-
 }
 
 .btn__find {
@@ -648,14 +641,15 @@ footer{
 
 .product_name {
     position: absolute;
-    right: 50px;
+    right: 60px;
     top: 20px;
     z-index: 1;
     text-align: right;
 }
 
 .product_title {
-    font-family: MoskNormal;
+    font-family: 'Vazir', sans-serif;
+    font-weight: 500;
     font-size: 52px;
     color: #FFCC00;
     white-space: nowrap;
@@ -663,7 +657,7 @@ footer{
 }
 
 .Product_subtitle {
-    font-family: Vazir;
+    font-family: 'Vazir',sans-serif;
     font-size: 36px;
     margin-top: -20px;
     color: #FFFFFF;
@@ -671,14 +665,16 @@ footer{
 }
 
 .product_title_main {
-    font-family: MoskNormal;
+    font-family: 'Vazir',sans-serif;
+    font-weight: 500;
     font-size: 52px;
     color: #181818;
     white-space: nowrap;
 }
 
 .Product_subtitle_main {
-    font-family: MoskNormal;
+    font-family: 'Vazir',sans-serif;
+    font-weight: normal;
     font-size: 36px;
     margin-top: -20px;
     color: #454545;
@@ -742,14 +738,16 @@ footer{
 }
 
 .related__product__title {
-    font-family: BloggerSans-Bold;
+    font-family: Vazir;
+    font-weight: bold;
     font-size: 36px;
     color: #242424;
     text-align: center;
 }
 
 .related__product__title {
-    font-family: BloggerSans-Light;
+    font-family: Vazir;
+    font-weight: bold;
     font-size: 24px;
     color: #121212;
     text-align: center;
@@ -757,14 +755,15 @@ footer{
 }
 
 .product__cart {
-    font-family: BloggerSans-Light;
+    font-family: Vazir;
     line-height: 40px;
     font-size: 72px;
     color: #949494;
 }
 
 .product__cart__sub {
-    font-family: BloggerSans-Bold;
+    font-family: Vazir;
+    font-weight: 500;
     font-size: 24px;
     color: #949494;
 }
@@ -858,7 +857,8 @@ footer{
 
 .col_row_2_padd {
     display: block;
-    padding: 70px 0px 70px 70px;
+    padding: 70px 0px;
+    text-align: center;
 }
 
 .shopping__cart {
@@ -1200,11 +1200,12 @@ footer{
 }
 
 .other_product_text {
-    font-family: BloggerSans-Light;
+    font-family: Vazir;
     font-size: 36px;
     color: #242424;
     width: 100%;
-    padding-left: 20%;
+    padding-right: 20%;
+    text-align: right;
 }
 
 .sim__feature {
@@ -1213,41 +1214,65 @@ footer{
     font-weight: 500;
 }
 
-@media screen and  (min-width: 576px) {
-    .wid_mr_l div:nth-child(2) {
-        margin-left: 0px;
-    }
 
-}
-@media screen and  (min-width: 768px) {
-    .shopping__cart__res{
+@media screen and (max-width: 767px) {
+    .context__feature {
+        font-size: 20px;
+    }
+    .wid_mr_l div {
+        width: 100%;
+        min-height: 0;
+    }
+    .flex__item__1 {
+        text-align: center;
+    }
+    .header__feature{
+        font-family: 'Vazir', serif;
+        font-size: 38px;
+        font-weight: bold;
+        line-height: 43px;
+    }
+    .flex__item__2 {
+        text-align: center;
+    }
+    .head__bg > div > div > div:nth-child(1) img {
+        padding-left: 60px;
+    }
+    .head__bg > div > div > div:nth-child(3) img {
+        padding-right: 60px;
+    }
+    .sec__padding {
+        padding: 3rem 0;
+    }
+    .product__feature__details li {
+        background-image: url(/img/grey-circle-2.svg);
+        background-size: 15px;
+        background-repeat: no-repeat;
+        padding-left: 1.2em;
+        font-size: 22px;
+        color: #949494;
+        list-style: none;
+        margin-top: 25px;
+    }
+    .col_row_1_padd{
         display: none;
     }
-  .navbar-nav {
-        -ms-flex-direction: row;
-        flex-direction: row;
+    .main_p {
+        width: 350px;
+        left: 0;
     }
-    .navbar-collapse_menu{
-        display: flex!important;
-        -ms-flex-preferred-size: auto;
-        flex-basis: auto;
-
+    .flex__2 {
+        width: 100%;
+        text-align: left;
+        margin: 1rem;
     }
-    .collapse_menu .icon{
-        display: none;
+    .flex__1 {
+        width: 100%;
     }
-    .collapse_menu{
-        margin-right: auto;
-    }
-    .flex-item-2-inner{
-        display: none;
-    }
-}
-
-@media (max-width: 767px) {
     .shopping__cart__res{
         position: relative;
         width: 30%;
+        text-align: right;
     }
     .shopping__cart__res span {
         background: #242424;
@@ -1266,7 +1291,46 @@ footer{
         border: 1px solid #FFCC00;
         border-radius: 20px;
     }
-
+    .main_product_back{
+        display: none;
+    }
+    .flex-item-main-1 > img{
+        position: absolute;
+        width: 150px;
+        right: 35px;
+        top: 5px;
+    }
+    .flex-item-main-3 img {
+        left: 0;
+        bottom: 0;
+        width: 460px;
+        height: 554px;
+        opacity: 0.2;
+    }
+    .main_product {
+        position: absolute;
+        transform: rotate(-3deg);
+        z-index: 2;
+        width: 320px;
+        height: 320px;
+    }
+    .detail {
+        top: 140px !important;
+    }
+    .product_title_main {
+        font-family: 'Vazir', sans-serif;
+        font-weight: bold;
+        font-size: 35px;
+        color: #181818;
+        white-space: nowrap;
+    }
+    .Product_subtitle_main {
+        font-family: 'Vazir', sans-serif;
+        font-size: 26px;
+        margin-top: 0;
+        color: #454545;
+        white-space: normal;
+    }
     .icon{
         float: left;
         display: block;
@@ -1279,26 +1343,25 @@ footer{
     .collapse_menu li:not(:last-child){
         display: none;
     }
-   .responsive li:not(:last-child){
-       float: none;
-       position: relative;
-       display: block !important;
+    .responsive li:not(:last-child){
+        float: none;
+        position: relative;
+        display: block !important;
     }
-   .responsive{
-       display: block;
-       text-align: center;
-       margin-top: 280px;
-       text-align: right;
-       background-color: #181818;
+    .responsive{
+        display: block;
+        text-align: center;
+        margin-top: 280px;
+        text-align: right;
+        background-color: #181818;
 
 
-   }
-   .responsive .icon{
-       position: absolute;
-       left: 20px;
-       top: 34px;
-   }
-
+    }
+    .responsive .icon{
+        position: absolute;
+        left: 20px;
+        top: 34px;
+    }
     .navbar-collapse_menu{
         -ms-flex-preferred-size: 100%;
         -ms-flex-positive: 1;
@@ -1420,7 +1483,7 @@ footer{
     .footer__text {
         text-align: center;
         color: white;
-        line-height: 15px;
+        line-height: 25px;
     }
     .main_product_refill{
 
@@ -1430,10 +1493,12 @@ footer{
     .bg__refill{
         background-image: none;
     }
+    .circle_zebra {
+        display: none;
+    }
 
 }
-
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
     .cart_item{
         border: none;
         justify-content: center;
@@ -1459,6 +1524,76 @@ footer{
         background-image: none;
     }
 
+}
+@media screen and (max-width: 1200px) {
+    .flex-item-1 {
+        width: 100%;
+        padding: 10px 50px 50px 50px;
+    }
+    .scrolling-box {
+
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .product_feature li {
+        font-size: 20px;
+    }
+    .bg__flesh{
+        display: none;
+    }
+    .data__plan {
+        justify-content: center;
+    }
+    .data__plan > div{
+        min-width: 145px;
+    }
+    .flex-item-3 div{
+        justify-content: flex-end;
+    }
+}
+
+
+@media screen and  (min-width: 576px) {
+    .wid_mr_l div:nth-child(2) {
+        margin-left: 0px;
+    }
+
+}
+@media screen and  (min-width: 768px) {
+    .head__bg {
+        background-image: url("/img/z.svg");
+        background-size: 100%;
+        background-repeat: repeat-x;
+    }
+    .shopping__cart__res{
+        display: none;
+    }
+  .navbar-nav {
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+    .navbar-collapse_menu{
+        display: flex!important;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+
+    }
+    .collapse_menu .icon{
+        display: none;
+    }
+    .collapse_menu{
+        margin-right: auto;
+    }
+    .flex-item-2-inner{
+        display: none;
+    }
+    .main_p {
+        position: absolute;
+        width: 480px;
+        left: 50%;
+        top: 2%;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px) {
     .main_product_refill{
@@ -1518,10 +1653,26 @@ footer{
     .main_product_circle{
         width: 250px;
     }
+    .flex-item-main-3{
+        display: none;
+    }
+    .main_product_back{
+        width: 600px;
+    }
+    .detail {
+        top: 100px !important;
+        right: 80px !important;
+    }
 
 
 }
 @media (min-width: 1200px) and (max-width: 1500px){
+    .product_name{
+        right: 280px;
+    }
+    .flex-item-main-1 > img{
+        padding-right: 230px;
+    }
     .scrolling-box{
         margin-right: 15px !important;
     }
@@ -1563,7 +1714,6 @@ footer{
         width: 600px;
         height: 600px;
         top: -80px;
-        right: -70px;
     }
 
 
@@ -1577,7 +1727,7 @@ footer{
 
     .wid_mr_l div:nth-child(2) {
         padding-bottom: 30px;
-        margin-left: -100px
+        margin-right: -100px
     }
 
     .sidenav {
@@ -1626,33 +1776,7 @@ footer{
         top: 0px;
     }
 }
-@media screen and (max-width: 1200px) {
-    .flex-item-1 {
-        width: 100%;
-        padding: 10px 50px 50px 50px;
-    }
-    .scrolling-box {
 
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-
-    .product_feature li {
-        font-size: 20px;
-    }
-    .bg__flesh{
-        display: none;
-    }
-    .data__plan {
-        justify-content: center;
-    }
-    .data__plan > div{
-        min-width: 145px;
-    }
-    .flex-item-3 div{
-        justify-content: flex-end;
-    }
-}
 
 /*heigh*/
 

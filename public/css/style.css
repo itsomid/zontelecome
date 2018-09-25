@@ -700,7 +700,7 @@ body {
 
 
 .product__cart {
-    font-family: BloggerSans-Light;
+    font-family: 'BloggerSans-Bold', sans-serif;
     line-height: 40px;
     font-size: 72px;
     color: #949494;
@@ -1154,7 +1154,7 @@ body {
     font-size: 36px;
     color: #242424;
     width: 100%;
-    padding: 20% 0 0 20px;
+    padding-left: 20%;
 }
 
 .sim__feature {
@@ -1628,7 +1628,8 @@ body {
         font-size: 60px;
     }
     .other_product_text{
-        padding-left: 10%;
+        font-size: 32px;
+        padding: 20% 0 0 20%;
     }
     .always__online__bg{
         background-image: none;
@@ -1662,7 +1663,10 @@ body {
     .sec__bg__half{
         background-image: none;
     }
-
+    .bg__other__circle{
+        background-position: 20% 7%;
+        background-size: 300px;
+    }
 
 
 }

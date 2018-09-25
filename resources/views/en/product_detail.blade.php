@@ -79,7 +79,6 @@
                     </div>
                     <div class="col-md-4 helvetica">WIFI 4G LTE</div>
                 @elseif($product->slug == "zonfi-v2-global-modem")
-
                     <p class="sim__feature">Your Internet Solution in 110 Countries…</p>
                 @elseif($product->slug == "zontel-eu-simcard")
                     <p class="sim__feature">Your Internet Solution in 28 Countries…</p>
@@ -281,7 +280,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="row justify-content-center" style="height: 100%">
-                        <div class="flex__1 align-self-center text-center text-sm-right position-relative">
+                        <div class="flex__1 align-self-center text-center text-md-right position-relative">
                             <img src="{{asset('/img/z-circle.svg')}}" class="position-relative circle_zebra">
                             <img src="{{asset($product->main_image_url)}}" class="main_p">
                         </div>

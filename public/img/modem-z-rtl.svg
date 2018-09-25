@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="853px" height="579px" viewBox="0 0 853 579" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>modem-z</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <pattern id="pattern-1" width="31.4558823" height="31.4558823" x="-31.0165895" y="-31.3626711" patternUnits="userSpaceOnUse">
+            <use xlink:href="#image-2" transform="scale(0.655330882,0.655330882)"></use>
+        </pattern>
+        <image id="image-2" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAEDWlDQ1BJQ0MgUHJvZmlsZQAAOI2NVV1oHFUUPrtzZyMkzlNsNIV0qD8NJQ2TVjShtLp/3d02bpZJNtoi6GT27s6Yyc44M7v9oU9FUHwx6psUxL+3gCAo9Q/bPrQvlQol2tQgKD60+INQ6Ium65k7M5lpurHeZe58853vnnvuuWfvBei5qliWkRQBFpquLRcy4nOHj4g9K5CEh6AXBqFXUR0rXalMAjZPC3e1W99Dwntf2dXd/p+tt0YdFSBxH2Kz5qgLiI8B8KdVy3YBevqRHz/qWh72Yui3MUDEL3q44WPXw3M+fo1pZuQs4tOIBVVTaoiXEI/MxfhGDPsxsNZfoE1q66ro5aJim3XdoLFw72H+n23BaIXzbcOnz5mfPoTvYVz7KzUl5+FRxEuqkp9G/Ajia219thzg25abkRE/BpDc3pqvphHvRFys2weqvp+krbWKIX7nhDbzLOItiM8358pTwdirqpPFnMF2xLc1WvLyOwTAibpbmvHHcvttU57y5+XqNZrLe3lE/Pq8eUj2fXKfOe3pfOjzhJYtB/yll5SDFcSDiH+hRkH25+L+sdxKEAMZahrlSX8ukqMOWy/jXW2m6M9LDBc31B9LFuv6gVKg/0Szi3KAr1kGq1GMjU/aLbnq6/lRxc4XfJ98hTargX++DbMJBSiYMIe9Ck1YAxFkKEAG3xbYaKmDDgYyFK0UGYpfoWYXG+fAPPI6tJnNwb7ClP7IyF+D+bjOtCpkhz6CFrIa/I6sFtNl8auFXGMTP34sNwI/JhkgEtmDz14ySfaRcTIBInmKPE32kxyyE2Tv+thKbEVePDfW/byMM1Kmm0XdObS7oGD/MypMXFPXrCwOtoYjyyn7BV29/MZfsVzpLDdRtuIZnbpXzvlf+ev8MvYr/Gqk4H/kV/G3csdazLuyTMPsbFhzd1UabQbjFvDRmcWJxR3zcfHkVw9GfpbJmeev9F08WW8uDkaslwX6avlWGU6NRKz0g/SHtCy9J30o/ca9zX3Kfc19zn3BXQKRO8ud477hLnAfc1/G9mrzGlrfexZ5GLdn6ZZrrEohI2wVHhZywjbhUWEy8icMCGNCUdiBlq3r+xafL549HQ5jH+an+1y+LlYBifuxAvRN/lVVVOlwlCkdVm9NOL5BE4wkQ2SMlDZU97hX86EilU/lUmkQUztTE6mx1EEPh7OmdqBtAvv8HdWpbrJS6tJj3n0CWdM6busNzRV3S9KTYhqvNiqWmuroiKgYhshMjmhTh9ptWhsF7970j/SbMrsPE1suR5z7DMC+P/Hs+y7ijrQAlhyAgccjbhjPygfeBTjzhNqy28EdkUh8C+DU9+z2v/oyeH791OncxHOs5y2AtTc7nb/f73TWPkD/qwBnjX8BoJ98VVBg/m8AAAFFSURBVGgF7djbDYMwDAXQBjEMYqyqY1WMxTppLiJIQIA8ariWkp8IPuweO60am67r7MstY8wwjuPH7dMz3uUua63p+/7r9rePIRW/9QmQzCV9ub0YgSIgzhxvQkjFb1EZBAdEKolkfJTqtnb7bv/zOJm58moRE0AzYgFoRawAGhE7gDZEEKAJcQjQgjgFaEBcAtgRUQBmRDSAFZEEYEQkA9gQWQAmRDaABVEEYEAUAx5H4EaGOyw+SMl66mbXzNOD4k6gCPNUY/CFwF1YOn5zRxJJRINqaUbUuZA/79sd3wm3xIdbdS60rXzo2XVCbO60/HxKJgFKKv4CkEziuyKBWAE0InYAbYggQBPiEKAFcQrQgLgEsCOiAMyIaAArIgnAiEgGsCGyAEyIbAALogjAgCgGPI7AX9w6F3JtqHMhnMWLFSrSD9jOnakVHpZYAAAAAElFTkSuQmCC"></image>
+        <path d="M328.654203,27.9098279 C196.830906,110.282884 96.8939928,176.219402 45.576258,216.722354 C-5.7414768,257.225306 -4.74748476,298.118987 7.21323263,323.971802 C11.1412811,332.462188 21.1100576,349.695916 35.4427495,369.635931 C54.1062109,395.601026 87.8754882,438.327604 115.937993,474.388342 C156.713351,526.785285 215.556088,541.004383 284.288985,494.292585 C404.051501,412.900373 431.564241,394.131874 557.282966,293.045874 C594.759054,262.91267 609.148435,236.139936 618.865691,209.677294 C636.664446,161.206601 620.868755,142.002332 592.482898,117.483889 C524.137152,58.4498714 515.510869,50.3874549 463.185059,13.4349471 C431.026952,-9.27512059 376.585617,-2.04130442 328.654203,27.9098279 Z" id="path-3"></path>
+        <path d="M328.654203,27.9098279 C196.830906,110.282884 96.8939928,176.219402 45.576258,216.722354 C-5.7414768,257.225306 -4.74748476,298.118987 7.21323263,323.971802 C11.1412811,332.462188 21.1100576,349.695916 35.4427495,369.635931 C54.1062109,395.601026 87.8754882,438.327604 115.937993,474.388342 C156.713351,526.785285 215.556088,541.004383 284.288985,494.292585 C404.051501,412.900373 431.564241,394.131874 557.282966,293.045874 C594.759054,262.91267 609.148435,236.139936 618.865691,209.677294 C636.664446,161.206601 620.868755,142.002332 592.482898,117.483889 C524.137152,58.4498714 515.510869,50.3874549 463.185059,13.4349471 C431.026952,-9.27512059 376.585617,-2.04130442 328.654203,27.9098279 Z" id="path-5"></path>
+        <path d="M328.654203,27.9098279 C196.830906,110.282884 96.8939928,176.219402 45.576258,216.722354 C-5.7414768,257.225306 -4.74748476,298.118987 7.21323263,323.971802 C11.1412811,332.462188 21.1100576,349.695916 35.4427495,369.635931 C54.1062109,395.601026 87.8754882,438.327604 115.937993,474.388342 C156.713351,526.785285 215.556088,541.004383 284.288985,494.292585 C404.051501,412.900373 431.564241,394.131874 557.282966,293.045874 C594.759054,262.91267 609.148435,236.139936 618.865691,209.677294 C636.664446,161.206601 620.868755,142.002332 592.482898,117.483889 C524.137152,58.4498714 515.510869,50.3874549 463.185059,13.4349471 C431.026952,-9.27512059 376.585617,-2.04130442 328.654203,27.9098279 Z" id="path-7"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="modem-z" transform="translate(4.000000, 3.000000)">
+            <g id="Group">
+                <g id="Group-2" transform="translate(524.522788, 335.239528) rotate(10.000000) translate(-524.522788, -335.239528) translate(211.022788, 73.739528)">
+                    <g id="Path-3-+-Path-5-+-Oval-4-Mask">
+                        <g id="Mask" fill-rule="nonzero">
+                            <g id="path-1-link" fill="#454545">
+                                <path d="M328.654203,27.9098279 C196.830906,110.282884 96.8939928,176.219402 45.576258,216.722354 C-5.7414768,257.225306 -4.74748476,298.118987 7.21323263,323.971802 C11.1412811,332.462188 21.1100576,349.695916 35.4427495,369.635931 C54.1062109,395.601026 87.8754882,438.327604 115.937993,474.388342 C156.713351,526.785285 215.556088,541.004383 284.288985,494.292585 C404.051501,412.900373 431.564241,394.131874 557.282966,293.045874 C594.759054,262.91267 609.148435,236.139936 618.865691,209.677294 C636.664446,161.206601 620.868755,142.002332 592.482898,117.483889 C524.137152,58.4498714 515.510869,50.3874549 463.185059,13.4349471 C431.026952,-9.27512059 376.585617,-2.04130442 328.654203,27.9098279 Z" id="path-1"></path>
+                            </g>
+                            <g id="path-1-link" fill="url(#pattern-1)">
+                                <path d="M328.654203,27.9098279 C196.830906,110.282884 96.8939928,176.219402 45.576258,216.722354 C-5.7414768,257.225306 -4.74748476,298.118987 7.21323263,323.971802 C11.1412811,332.462188 21.1100576,349.695916 35.4427495,369.635931 C54.1062109,395.601026 87.8754882,438.327604 115.937993,474.388342 C156.713351,526.785285 215.556088,541.004383 284.288985,494.292585 C404.051501,412.900373 431.564241,394.131874 557.282966,293.045874 C594.759054,262.91267 609.148435,236.139936 618.865691,209.677294 C636.664446,161.206601 620.868755,142.002332 592.482898,117.483889 C524.137152,58.4498714 515.510869,50.3874549 463.185059,13.4349471 C431.026952,-9.27512059 376.585617,-2.04130442 328.654203,27.9098279 Z" id="path-1"></path>
+                            </g>
+                        </g>
+                        <g id="Path-3-Clipped">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g id="path-1"></g>
+                            <path d="M4.73533307,250.490969 C-16.5990161,321.520956 26.9741737,359.965268 114.072588,464.262724 C164.738588,524.933574 218.678804,510.695871 258.232763,482.93499 C431.54223,361.298022 565.188967,261.740448 604.015728,219.330554 C642.84249,176.920659 628.436997,137.946881 576.826167,101.212195 C542.418948,76.7224036 494.069769,27.748532 431.778631,-45.7094203 L64.4831595,151.527957 C38.8741747,170.149974 18.9582325,203.137644 4.73533307,250.490969 Z" id="Path-3" stroke="#242424" stroke-width="5" mask="url(#mask-4)"></path>
+                        </g>
+                        <g id="Path-5-Clipped">
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <g id="path-1"></g>
+                            <path d="M317.283817,130.492022 L205.294351,206.281067 C199.348299,210.305067 197.790167,218.387391 201.814168,224.333444 C202.178291,224.87149 202.582235,225.381483 203.022606,225.859137 L290.119551,320.330164 C294.621172,325.212915 302.079325,325.91756 307.41577,321.964306 L423.282256,236.13008 C429.051385,231.856292 430.263599,223.714899 425.989812,217.945769 C425.511949,217.30071 424.975364,216.7013 424.386931,216.155221 L333.412967,131.729377 C328.979196,127.614739 322.293325,127.10183 317.283817,130.492022 Z" id="Path-5" stroke="#242424" stroke-width="8" mask="url(#mask-6)"></path>
+                        </g>
+                        <g id="Oval-4-Clipped">
+                            <mask id="mask-8" fill="white">
+                                <use xlink:href="#path-7"></use>
+                            </mask>
+                            <g id="path-1"></g>
+                            <ellipse id="Oval-4" stroke="#242424" stroke-width="6" mask="url(#mask-8)" cx="463.5" cy="119" rx="29.5" ry="24"></ellipse>
+                        </g>
+                    </g>
+                </g>
+                <g id="modem-z" transform="translate(362.000000, 235.690803) scale(-1, 1) translate(-362.000000, -235.690803) translate(0.000000, 0.690803)" stroke="#FFCC00">
+                    <polyline id="Path-6" stroke-width="7" stroke-linecap="round" points="28.5 213.309197 590.895923 0 724 0"></polyline>
+                    <polyline id="Path-7" stroke-width="7" stroke-linecap="round" points="15 351.809197 600.963609 470 670 470"></polyline>
+                    <polyline id="Path-8" stroke-width="7" stroke-linecap="round" points="189 295.309197 585.772978 229 631 229"></polyline>
+                    <circle id="Oval-5" stroke-width="6" fill="#454545" fill-rule="nonzero" cx="28.2939493" cy="213" r="14"></circle>
+                    <circle id="Oval-5-Copy" stroke-width="6" fill="#454545" fill-rule="nonzero" cx="189.891884" cy="295" r="14"></circle>
+                    <circle id="Oval-5-Copy-2" stroke-width="6" fill="#454545" fill-rule="nonzero" cx="14.5" cy="351.003631" r="14"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -166,7 +166,7 @@ Simultaneously.',
         else{
             $products = [
                 [
-                    'title' => 'ZonFi V1 Global Modem',
+                    'title' => 'مودم جهانی ZonFi V1',
                     'slug' => 'zonfi-global-modem',
                     'type' => 'physical',
                     'price' => '10.00',
@@ -176,7 +176,7 @@ Simultaneously.',
                     'main_image_url'=>'/img/modem.png'
                 ],
                 [
-                    'title' => 'ZonFi V2 Global Modem',
+                    'title' => 'مودم جهانی ZonFi V2',
                     'slug' => 'zonfi-v2-global-modem',
                     'type' => 'physical',
                     'price' => '116.00',
@@ -187,7 +187,7 @@ Simultaneously.',
                 ],
 
                 [
-                    'title' => 'ZonTel EU Simcard',
+                    'title' => 'سیم کارت ZonTel EU',
                     'slug' => 'zontel-eu-simcard',
                     'type' => 'physical',
                     'price' => '12.00',
@@ -197,7 +197,7 @@ Simultaneously.',
                     'main_image_url'=>'/img/sim-eu.png'
                 ],
                 [
-                    'title' => 'ZonTel Global Simcard',
+                    'title' => 'سیم کارت ZonTel Global',
                     'slug' => 'zontel-global-simcard',
                     'type' => 'physical',
                     'price' => '14.00',
