@@ -91,7 +91,6 @@
 <script>
 
     $(document).ready(function () {
-
         if ($(window).width() < 767) {
             $('.addbtn').click(function () {
                 var cart = $('.shopping__cart__res');
@@ -132,71 +131,68 @@
                         }, function () {
                             $(this).detach()
                         });
-                        var name = $(this).attr('id');
-
-                        $.ajax({
-                            url: "{{route('website/order/cart/item')}}",
-                            type: "POST",
-                            data: {
-                                name: name,
-                                _token: "{{ csrf_token() }}"
-                            },
-                            error: function (data) {
-                                console.log(data);
-                            },
-                            success: function (data) {
-
-                                $('.shopping__cart__res span').text(data);
-                            }
-                        } );
                     }
+                }
+                var name = $(this).attr('id');
+                console.log(this);
+                $.ajax({
+                    url: "{{route('website/order/cart/item')}}",
+                    type: "POST",
+                    data: {
+                        name: name,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    },
+                    success: function (data) {
 
-
-        }
-
-
-    });
-
-    $('.addbtn_detail').click(function () {
-        var cart = $('.shopping__cart__res');
-        var imgtodrag = $(this).parent().parent().parent().find('.main_p').eq(0);
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $('.main_p').offset().top - 100
-        }, 600);
-        if (imgtodrag) {
-            setTimeout(function () {
-                drag()
-            }, 600);
-
-            function drag() {
-                var imgclone = imgtodrag.clone()
-                    .offset({
-                        top: imgtodrag.offset().top + 200,
-                        left: imgtodrag.offset().left + 250
-                    })
-                    .css({
-                        'opacity': '0.7',
-                        'position': 'absolute',
-                        'width': '105px',
-                        'height': '105px',
-                        'z-index': '100'
-                    })
-                    .appendTo($('body'))
-                    .animate({
-                        'top': cart.offset().top - 10,
-                        'left': cart.offset().left - 10,
-                        'width': 110,
-                        'height': 110
-                    }, 1000);
-
-
-                imgclone.animate({
-
-                    'width': 0,
-                    'height': 0
-                }, function () {
-                    $(this).detach()
+                        $('.shopping__cart__res span').text(data);
+                    }
                 });
+            });
+            $('.addbtn_detail').click(function () {
+                var cart = $('.shopping__cart__res');
+                var imgtodrag = $(this).parent().parent().parent().find('.main_p').eq(0);
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $('.main_p').offset().top - 100
+                }, 600);
+                if (imgtodrag) {
+                    setTimeout(function () {
+                        drag()
+                    }, 600);
+
+                    function drag() {
+                        var imgclone = imgtodrag.clone()
+                            .offset({
+                                top: imgtodrag.offset().top + 200,
+                                left: imgtodrag.offset().left + 250
+                            })
+                            .css({
+                                'opacity': '0.7',
+                                'position': 'absolute',
+                                'width': '105px',
+                                'height': '105px',
+                                'z-index': '100'
+                            })
+                            .appendTo($('body'))
+                            .animate({
+                                'top': cart.offset().top - 10,
+                                'left': cart.offset().left - 10,
+                                'width': 110,
+                                'height': 110
+                            }, 1000);
+
+
+                        imgclone.animate({
+
+                            'width': 0,
+                            'height': 0
+                        }, function () {
+                            $(this).detach()
+                        });
+                    }
+                }
                 var name = $(this).attr('id');
 
                 $.ajax({
@@ -214,124 +210,121 @@
                         $('.shopping__cart__res span').text(data);
                     }
                 });
-            }
 
+
+            });
         }
+        else {
+            $('.addbtn').click(function () {
+                var cart = $('.shopping__cart');
+                var imgtodrag = $(this).parent().parent().parent().find('.main_product').eq(0);
+                console.log(imgtodrag);
+                if (imgtodrag) {
+                    var imgclone = imgtodrag.clone()
+                        .offset({
+                            top: imgtodrag.offset().top + 200,
+                            left: imgtodrag.offset().left + 200
+                        })
+                        .css({
+                            'opacity': '1',
+                            'position': 'absolute',
+                            'height': '150px',
+                            'width': '150px',
+                            'z-index': '100'
+                        })
+                        .appendTo($('body'))
+                        .animate({
+                            'top': cart.offset().top + 10,
+                            'left': cart.offset().left + 10,
+                            'width': 110,
+                            'height': 110
+                        }, 1000);
 
-    });
-    }
-    else
-    {
-        $('.addbtn').click(function () {
-            var cart = $('.shopping__cart');
-            var imgtodrag = $(this).parent().parent().parent().find('.main_product').eq(0);
-            console.log(imgtodrag);
-            if (imgtodrag) {
-                var imgclone = imgtodrag.clone()
-                    .offset({
-                        top: imgtodrag.offset().top + 200,
-                        left: imgtodrag.offset().left + 200
-                    })
-                    .css({
-                        'opacity': '1',
-                        'position': 'absolute',
-                        'height': '150px',
-                        'width': '150px',
-                        'z-index': '100'
-                    })
-                    .appendTo($('body'))
-                    .animate({
-                        'top': cart.offset().top + 10,
-                        'left': cart.offset().left + 10,
-                        'width': 110,
-                        'height': 110
-                    }, 1000);
+                    setTimeout(function () {
+                        cart.effect("shake", {
+                            times: 2
+                        }, 200);
+                    }, 1500);
 
-                setTimeout(function () {
-                    cart.effect("shake", {
-                        times: 2
-                    }, 200);
-                }, 1500);
-
-                imgclone.animate({
-                    'width': 0,
-                    'height': 0
-                }, function () {
-                    $(this).detach()
-                });
-            }
-            var name = $(this).attr('id');
-
-            $.ajax({
-                url: "{{route('website/order/cart/item')}}",
-                type: "POST",
-                data: {
-                    name: name,
-                    _token: "{{ csrf_token() }}"
-                },
-                error: function (data) {
-                    console.log(data);
-                },
-                success: function (data) {
-
-                    $('.nav-item span').text(data);
+                    imgclone.animate({
+                        'width': 0,
+                        'height': 0
+                    }, function () {
+                        $(this).detach()
+                    });
                 }
-            });
+                var name = $(this).attr('id');
 
-        });
-        $('.addbtn_detail').click(function () {
-            var cart = $('.shopping__cart');
-            var imgtodrag = $(this).parent().parent().parent().find('.main_p').eq(0);
+                $.ajax({
+                    url: "{{route('website/order/cart/item')}}",
+                    type: "POST",
+                    data: {
+                        name: name,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    },
+                    success: function (data) {
 
-            if (imgtodrag) {
-                var imgclone = imgtodrag.clone()
-                    .offset({
-                        top: imgtodrag.offset().top + 200,
-                        left: imgtodrag.offset().left + 200
-                    })
-                    .css({
-                        'opacity': '0.7',
-                        'position': 'absolute',
-                        'height': '150px',
-                        'width': '150px',
-                        'z-index': '100'
-                    })
-                    .appendTo($('body'))
-                    .animate({
-                        'top': cart.offset().top + 10,
-                        'left': cart.offset().left + 10,
-                        'width': 110,
-                        'height': 110
-                    }, 1000);
-
-
-                imgclone.animate({
-                    'width': 0,
-                    'height': 0
-                }, function () {
-                    $(this).detach()
+                        $('.nav-item span').text(data);
+                    }
                 });
-            }
-            var name = $(this).attr('id');
 
-            $.ajax({
-                url: "{{route('website/order/cart/item')}}",
-                type: "POST",
-                data: {
-                    name: name,
-                    _token: "{{ csrf_token() }}"
-                },
-                error: function (data) {
-                    console.log(data);
-                },
-                success: function (data) {
-
-                    $('.nav-item span').text(data);
-                }
             });
+            $('.addbtn_detail').click(function () {
+                var cart = $('.shopping__cart');
+                var imgtodrag = $(this).parent().parent().parent().find('.main_p').eq(0);
 
-        });
-    }
+                if (imgtodrag) {
+                    var imgclone = imgtodrag.clone()
+                        .offset({
+                            top: imgtodrag.offset().top + 200,
+                            left: imgtodrag.offset().left + 200
+                        })
+                        .css({
+                            'opacity': '0.7',
+                            'position': 'absolute',
+                            'height': '150px',
+                            'width': '150px',
+                            'z-index': '100'
+                        })
+                        .appendTo($('body'))
+                        .animate({
+                            'top': cart.offset().top + 10,
+                            'left': cart.offset().left + 10,
+                            'width': 110,
+                            'height': 110
+                        }, 1000);
+
+
+                    imgclone.animate({
+                        'width': 0,
+                        'height': 0
+                    }, function () {
+                        $(this).detach()
+                    });
+                }
+                var name = $(this).attr('id');
+
+                $.ajax({
+                    url: "{{route('website/order/cart/item')}}",
+                    type: "POST",
+                    data: {
+                        name: name,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    },
+                    success: function (data) {
+
+                        $('.nav-item span').text(data);
+                    }
+                });
+
+            });
+        }
 
 
     })

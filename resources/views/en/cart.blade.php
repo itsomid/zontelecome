@@ -41,7 +41,7 @@
                         </div>
                     @endforeach
 
-                    <div class="row cart_item mt-2">
+                    <div class="row cart_item num_price mt-2">
                         <div class="col-md-4 text-center align-self-center">
                             <span class="fa fa-check tick_icon"></span>
                             <span id="total_item">
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="col-md-5 second-color cart_item_final">
-                            <div class="">
+                            <div class="mt-3 mt-md-0">
                                 <span class="mr-3">Final Price</span>
                                 <span  id="final_price">$ 19.19</span>
                             </div>

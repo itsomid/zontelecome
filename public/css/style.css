@@ -963,7 +963,7 @@ body {
     position: absolute;
     right: 5px;
     top: 5px;
-    font-size: 22px;
+    font-size: 22px !important;
     cursor: pointer;
 }
 
@@ -1639,9 +1639,21 @@ body {
 }
 
 @media (max-width: 991px) {
+    .cart_item_remove{
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 22px !important;
+        cursor: pointer;
+    }
     .cart_item{
         border: none;
         justify-content: center;
+        margin: 0 5px;
+        padding: 0 12px;
+    }
+    .num_price{
+        padding: 0 0;
     }
     .cart_item_img{
         left: 0px;
