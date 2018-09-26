@@ -1871,3 +1871,41 @@ body {
     }
 
 }
+@media (min-width: 850px) and (max-height: 950px) {
+    .menu_product_img {
+        width: 132px;
+        height: 132px;
+        z-index: 0;
+        position: absolute;
+    }
+    .circle_product{
+        width: 125px ;
+        height: 102px;
+
+    }
+    .parent_product{
+        position: relative;
+        padding-bottom: 130px;
+        padding-right: 120px;
+    }
+
+}
+@media screen and (max-height: 850px) {
+    .menu_product_img {
+        width: 120px;
+        height: 120px;
+        z-index: 0;
+        position: absolute;
+    }
+    .circle_product{
+        width: 115px ;
+        height: 95px;
+
+    }
+    .parent_product{
+        position: relative;
+        padding-bottom: 120px;
+        padding-right: 120px;
+    }
+
+}
