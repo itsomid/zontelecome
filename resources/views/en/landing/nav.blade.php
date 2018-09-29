@@ -227,22 +227,43 @@
                 {
                     $(this).removeClass( 'active');
                 }
-                opacity = (1 - (offset / (windowHeight+3000)));
-                opacity2 = (1 - (offset / (windowHeight - 700)));
                 // console.log("kharej" + refElement.attr("id"), opacity);
-                $(refElement).find('.product_description').css('opacity', opacity);
-                $(refElement).find('.btn__more').css('opacity', opacity);
-                if ($(this).find('.circle_product').css('opacity') <= 0.01) {
-                    $('.menu_title').css('color', '');
-                    $('.menu_product').removeClass('active');
-                    $(this).addClass('active');
+                if (screen.height >= 750){
+                    opacity = (1 - (offset / (windowHeight + 3000)));
+                    opacity2 = (1 - (offset / (windowHeight - 700)));
+                    $(refElement).find('.product_description').css('opacity', opacity);
+                    $(refElement).find('.btn__more').css('opacity', opacity);
+                    if ($(this).find('.circle_product').css('opacity') <= 0.01) {
+                        $('.menu_title').css('color', '');
+                        $('.menu_product').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                    else {
+                        $(this).find('.menu_title').css('color', '#FFC506');
+
+                    }
+
+                    $(this).find('.circle_product').css('opacity', opacity2);
                 }
                 else {
-                    $(this).find('.menu_title').css('color', '#FFC506');
+                    opacity = (1 - (offset / (windowHeight + 2000)));
+                    opacity2 = (1 - (offset / (windowHeight)));
+                    $(refElement).find('.product_description').css('opacity', opacity);
+                    $(refElement).find('.btn__more').css('opacity', opacity);
+                    if ($(this).find('.circle_product').css('opacity') <= 0.5) {
+                        $('.menu_title').css('color', '');
+                        $('.menu_product').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                    else {
+                        $(this).find('.menu_title').css('color', '#FFC506');
 
+                    }
+
+                    $(this).find('.circle_product').css('opacity', opacity2);
                 }
 
-                $(this).find('.circle_product').css('opacity', opacity2);
+
 
             }
 

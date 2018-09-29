@@ -1901,12 +1901,12 @@ body {
     .main_product {
         width: 300px !important;
         height: 300px !important;
-        top: 0px !important;
+        top: -30px !important;
         left: 30px !important;
     }
     .main_product_circle {
-        width: 220px !important;
-        margin: 50px 0 0 80px;
+        width: 200px !important;
+        margin: 10px 0 0 70px;
     }
     .product_title{
         font-size: 42px;
@@ -1918,7 +1918,7 @@ body {
         margin-top: 1rem;
     }
     .flex-item-1{
-        width:60%;
+        width:65%;
     }
     .flex-item-2{
         width:15%;
