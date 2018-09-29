@@ -422,7 +422,7 @@
                             <div class="col-md-4 align-self-end mt-3 mt-md-0 text-center text-md-right">
                                 @if(!empty($products))
                                     <span class="payment__text">Secrue payment by <strong>Squareup</strong></span>
-                                    <button class="btn btn__product   mb-md-5">Check Out<i class="fa fa-caret-right" style="padding-left: 15px"></i></button>
+                                    <button class="btn btn__product mb-md-5">Check Out<i class="fa fa-caret-right" style="padding-left: 15px"></i></button>
                                 @endif
                             </div>
                         </form>

@@ -235,20 +235,10 @@
                 }
                 else {
                     $(this).find('.menu_title').css('color', '#FFC506');
-
                 }
-
                 $(this).find('.circle_product').css('opacity', opacity2);
 
             }
-
-            //
-            // if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-            //
-            // }
-            // else {
-            //
-            // }
 
         });
     }

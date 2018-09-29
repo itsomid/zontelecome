@@ -904,13 +904,13 @@ footer{
 }
 
 .cart_item_text h2 {
-    font-family: BloggerSans-Bold;
+    font-family: Vazir;
     font-size: 36px;
     color: #FFCC00;
 }
 
 .cart_item_text h3 {
-    font-family: BloggerSans-Light;
+    font-family: Vazir;
     font-size: 20px;
     color: #E3E3E3;
 }
@@ -1043,7 +1043,7 @@ footer{
     font-family: Vazir;
     font-size: 20px;
     color: #949494;
-    text-align: right !important;
+    text-align: center !important;
 }
 
 .fabfelt {

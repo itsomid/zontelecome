@@ -7,9 +7,9 @@
         <img src="/img/shopping-cart.svg" width="21" height="24"
              style="position: absolute;right: 9px; top: 7px;">
         @if(!empty(session('cart.item')))
-            <span>{{count(session('cart.item'))}}</span>
+            <span class="cart__num">{{count(session('cart.item'))}}</span>
         @else
-            <span>0</span>
+            <span class="cart__num">0</span>
         @endif
     </a>
     @if(Request::url() !== url("/"))
@@ -21,9 +21,9 @@
                         <img src="/img/shopping-cart.svg" width="21" height="24"
                              style="position: absolute;left: 9px; top: 0px;">
                         @if(!empty(session('cart.item')))
-                            <span>{{count(session('cart.item'))}}</span>
+                            <span class="cart__num">{{count(session('cart.item'))}}</span>
                         @else
-                            <span>0</span>
+                            <span class="cart__num">0</span>
                         @endif
                     </a>
                 </li>
@@ -54,9 +54,9 @@
                         <img src="/img/shopping-cart.svg" width="21" height="24"
                              style="position: absolute;left: 9px; top: 0px;">
                         @if(!empty(session('cart.item')))
-                            <span>{{count(session('cart.item'))}}</span>
+                            <span class="cart__num">{{count(session('cart.item'))}}</span>
                         @else
-                            <span>0</span>
+                            <span class="cart__num">0</span>
                         @endif
                     </a>
                 </li>
@@ -89,7 +89,7 @@
 <script>
 
     $(document).ready(function () {
-
+        persian_numbers();
         if ($(window).width() < 767) {
             $('.addbtn').click(function () {
                 var cart = $('.shopping__cart__res');
@@ -148,11 +148,7 @@
                             }
                         } );
                     }
-
-
                 }
-
-
             });
 
             $('.addbtn_detail').click(function () {
@@ -331,9 +327,7 @@
             });
         }
 
-
-    })
-    ;
+    });
 
     function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -351,5 +345,40 @@
         } else {
             x.className = "collapse_menu navbar-collapse_menu";
         }
+    }
+    function persian_numbers(obj) {
+        if (typeof(obj) == 'string' && obj.length > 0) {
+            var Sobj = obj;
+        } else {
+            //all numbers in page will converted
+            var Sobj = 'body';
+        }
+        var AobJ = $(Sobj);
+console.log(AobJ);
+        // AobJ.filter("*:not(iframe)").filter("div.desc-video").andSelf().contents().each(function() {
+        AobJ.find("*:not(iframe)").contents().each(function () {
+
+            /*skip iframe like youtube vimo etc.. because jquery this function cannot access iframe https: content  */
+            if (this.nodeType === 3 && this.parentNode.localName != "style" && this.parentNode.localName != "script" && this.parentNode.localName != "iframe") {
+                if (
+                    this.parentNode.getAttribute('class') == "grid-dp-12 grid-tt-12 grid-tm-12 grid-me-12 desc-video"
+                    || this.parentNode.getAttribute('class') == "videocode-box"
+                    || this.parentNode.getAttribute('class') == "textarea-embed"
+                    || this.parentNode.getAttribute('class') == "menu_title pt-1"
+                    || this.parentNode.getAttribute('class') == "cart__num"
+                ) {
+                    //console.log('1');
+                } else {
+
+                    this.nodeValue = this.nodeValue.replace(this.nodeValue.match(/[0-9]*\.[0-9]+/), function (txt) {
+                        return txt.replace(/\./, ',');
+                    });
+                    this.nodeValue = this.nodeValue.replace(/\d/g, function (v) {
+                        return String.fromCharCode(v.charCodeAt(0) + 1584);
+                    });
+
+                }
+            }
+        });
     }
 </script>
