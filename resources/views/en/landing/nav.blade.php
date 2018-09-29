@@ -5,7 +5,7 @@
         </div>
         <div class="menu_content">
             <span class="menu_link  menu_nav" href="#up" id="up">
-                <i class="fa fa-angle-up" style="font-size: 80px"></i>
+                <i class="fa fa-angle-up navigator" ></i>
             </span>
             @foreach($products as $key=>$product)
             <a class="menu_link menu_product" id="product_{{$key+1}}" href="#{{$key+1}}">
@@ -23,7 +23,7 @@
             @endforeach
 
             <span class="menu_link " href="#down" id="down">
-                <i class="fa fa-angle-down" style="font-size: 80px"></i>
+                <i class="fa fa-angle-down navigator" ></i>
             </span>
         </div>
 
