@@ -77,20 +77,26 @@ class SquarupController extends Controller
             $redirect_url = route('website/payment/result', ['order_uid' => $payment->order->uid]);
 
 
-        $square = array(
+        $square = [
 
             "idempotency_key" => uniqid(),
-            "order" => array(
+            "order" => [
                 "reference_id" => (string)$cart_item[0]->uid,
                 "line_items" => $list_item,
-                "total_tax_money"=> array(
+                "total_tax_money"=> [
                     "amount"=> 823,
                     "currency" => "CAD"
-                ),
-            ),
+                ],
+                 "taxes" => [
+                        [
+                            "name" => "State Sales Tax",
+                            "percentage" => "9"
+                        ]
+                ],
+            ],
 
             "redirect_url" => $redirect_url,
-        );
+        ];
         //$json = json_encode($square);
         return $square;
     }
