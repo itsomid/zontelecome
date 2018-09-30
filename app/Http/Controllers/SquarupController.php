@@ -58,7 +58,7 @@ class SquarupController extends Controller
 
 
         $cart_item = Cart::with('product')->where('order_id', $payment->order_id)->get();
-
+         $tax = \DB::table('setting')->first()->tax_fee;
 
         foreach ($cart_item as $key => $item) {
             $list_item[$key] = [
@@ -90,7 +90,7 @@ class SquarupController extends Controller
                  "taxes" => [
                         [
                             "name" => "State Sales Tax",
-                            "percentage" => "9"
+                            "percentage" => (string) $tax
                         ]
                 ],
             ],
