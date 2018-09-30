@@ -68,6 +68,7 @@ class SquarupController extends Controller
                     "amount" => $item->product->price * 100,
                     "currency" => "CAD"
                 ]
+
             ];
         }
         if ($agent == "mobile")
@@ -81,9 +82,13 @@ class SquarupController extends Controller
             "idempotency_key" => uniqid(),
             "order" => array(
                 "reference_id" => (string)$cart_item[0]->uid,
-
-                "line_items" => $list_item
+                "line_items" => $list_item,
+                "total_tax_money"=> array(
+                    "amount"=> 823,
+                    "currency"=> "USD"
+                ),
             ),
+//
             "redirect_url" => $redirect_url,
         );
         //$json = json_encode($square);
