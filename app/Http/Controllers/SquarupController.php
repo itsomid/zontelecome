@@ -83,10 +83,7 @@ class SquarupController extends Controller
             "order" => [
                 "reference_id" => (string)$cart_item[0]->uid,
                 "line_items" => $list_item,
-                "total_tax_money"=> [
-                    "amount"=> 823,
-                    "currency" => "CAD"
-                ],
+               
                  "taxes" => [
                         [
                             "name" => "State Sales Tax",
@@ -100,16 +97,6 @@ class SquarupController extends Controller
                     ],
                 ]
              ],
-            'additional_recipients' => [
-                [
-                    'location_id' => '057P5VYJ4A5X1',
-                    'description' => 'Delivery fee',
-                    'amount_money' => [
-                        'amount' => $setting->delivery_fee,
-                        'currency' => 'USD'
-                    ]
-                ]
-            ],
 
             "redirect_url" => $redirect_url,
         ];
