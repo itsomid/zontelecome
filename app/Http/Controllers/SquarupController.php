@@ -85,7 +85,7 @@ class SquarupController extends Controller
                 "line_items" => $list_item,
                 "total_tax_money"=> array(
                     "amount"=> 823,
-                    "currency"=> "USD"
+                    "currency" => "CAD"
                 ),
             ),
 //
