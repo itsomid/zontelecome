@@ -65,7 +65,7 @@ class SquarupController extends Controller
                 "name" => $item->product->title,
                 "quantity" => (string)$item->quantity,
                 "base_price_money" => [
-                    "amount" => $item->product->price * 100,
+                    "amount" => $item->product->price * 1000,
                     "currency" => "CAD"
                 ]
 
@@ -91,7 +91,7 @@ class SquarupController extends Controller
 //
             "redirect_url" => $redirect_url,
         );
-        $json = json_encode($square);
+        //$json = json_encode($square);
         return $square;
     }
 }
