@@ -91,7 +91,7 @@ class SquarupController extends Controller
 //
             "redirect_url" => $redirect_url,
         );
-        //$json = json_encode($square);
+        $json = json_encode($square);
         return $square;
     }
 }
