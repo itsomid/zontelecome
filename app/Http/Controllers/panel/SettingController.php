@@ -15,8 +15,8 @@ class SettingController extends Controller
     public function edit(Request $request)
     {
 
-       \DB::table('setting')->update(['tax_fee'=>$request->tax_fee],['delivery_fee'=>$request->delivery_fee]);
+        \DB::table('setting')->where('id',1)->update(['tax_fee'=>$request->tax_fee,'delivery_fee'=>$request->delivery_fee,'discount'=>$request->discount]);
 
-        return \Redirect::back();
+        return \Redirect::back()->with('message','update successful');
     }
 }

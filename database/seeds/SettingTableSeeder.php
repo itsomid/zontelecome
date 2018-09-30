@@ -16,6 +16,7 @@ class SettingTableSeeder extends Seeder
             $setting = [
                 'tax_fee'     => 5.5,
                 'delivery_fee'    => 2.00,
+                'discount'    => 2,
                 'pay_method' => 0,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ];
@@ -24,6 +25,7 @@ class SettingTableSeeder extends Seeder
             $setting = [
                 'tax_fee'     => 0,
                 'delivery_fee'    => 15000,
+                'discount'    => 2,
                 'pay_method' => 1,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s')
             ];

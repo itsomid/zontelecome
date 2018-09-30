@@ -74,13 +74,13 @@
                                         <td>
                                             <div>Shipment</div>
                                         </td>
-                                        <td>${{number_format($tax->delivery_fee,2)}}</td>
+                                        <td>${{number_format($setting->delivery_fee,2)}}</td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div>Discount</div>
                                         </td>
-                                        <td id="dis">$0.00</td>
+                                        <td id="dis">${{number_format($setting->discount,2)}}</td>
                                     </tr>
 
 
@@ -434,7 +434,7 @@
     <script>
         $(document).ready(function () {
             var sum = 0;
-            var tax_perc = parseFloat({{$tax->tax_fee}});
+            var tax_perc = parseFloat({{$setting->tax_fee}});
             $('.product_price').each(function(){
                 sum += parseFloat($(this).text().replace('$ ',''));
             });
@@ -442,8 +442,13 @@
             $('#tax').text("$" + tax.toFixed(2));
             $('#total_price').text("$"+sum.toFixed(2));
 
+            var discount = discountPrice(sum);
+            $('#dis').text("$ "+discount.toFixed(2));
+
+
             var final_price =finalPrice(sum,tax_perc);
             $('#final_price').text("$ "+final_price.toFixed(2));
+
 
 
 
@@ -544,14 +549,20 @@
 
         });
         function finalPrice(price,tax_perc) {
-            var delivery = parseFloat({{$tax->delivery_fee}});
+            var delivery = parseFloat({{$setting->delivery_fee}});
+            var discount = discountPrice(price);
             var  tax = price * (tax_perc/100);
-            var  final_price = tax + price + delivery;
+            var  final_price = tax + price + delivery - discount;
             return final_price;
         }
         function taxPrice(price,tax_perc) {
             var  tax = price * (tax_perc/100);
             return tax;
+        }
+        function discountPrice(price) {
+            var discount_perc = parseFloat({{$setting->discount}});
+            var  discount = price * (discount_perc/100);
+            return discount;
         }
     </script>
 @endsection

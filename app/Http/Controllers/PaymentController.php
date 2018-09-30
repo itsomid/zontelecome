@@ -16,7 +16,7 @@ class PaymentController extends Controller
 
 
         $total_price = 0;
-        $discount = 0;
+
         $cart_items = session()->get('cart.item');
 
 
@@ -44,6 +44,7 @@ class PaymentController extends Controller
         } else {
             $order->delivery_fee = $delivery_fee;
         }
+        $discount = $this->discountCalculate($total_price);
         $final_price = $this->finalPrice($total_price, $discount, $delivery_fee);
         $order->tax = $this->taxCalculate($total_price);
         $order->discount = $discount;
@@ -193,6 +194,13 @@ class PaymentController extends Controller
         $tax_percentage = \DB::table('setting')->first()->tax_fee;
         $tax = $total_price * ($tax_percentage / 100);
         return $tax;
+    }
+
+    public function discountCalculate($total_price)
+    {
+        $discount = \DB::table('setting')->first()->discount;
+        $discount = $total_price * ($discount / 100);
+        return $discount;
     }
 
 }

@@ -26,15 +26,24 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="title">Tax fee</label>
+                                    <label for="title">Tax fee (Percentage)</label>
                                     <input id="tax" type="text" class="form-control" name="tax_fee" value="{{$setting->tax_fee}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="title">Delivery fee</label>
                                     <input id="delivery" type="text" class="form-control" name="delivery_fee" value="{{$setting->delivery_fee}}">
                                 </div>
+                                <div class="form-group">
+                                    <label for="title">Discount (Percentage)</label>
+                                    <input id="discount" type="text" class="form-control" name="discount" value="{{$setting->discount}}">
+                                </div>
                             </div>
                         </div>
+                        @if(session()->has('message'))
+                            <div class="alert alert-success">
+                                {{ session()->get('message') }}
+                            </div>
+                        @endif
                         <div class="row">
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
@@ -43,6 +52,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </form>
             </div>
