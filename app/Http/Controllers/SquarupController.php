@@ -88,16 +88,7 @@ class SquarupController extends Controller
                     "currency" => "CAD"
                 ),
             ),
-            'pre_populate_shipping_address' => [
-                'address_line_1' => '1455 Market St.',
-                'address_line_2' => 'Suite 600',
-                'locality' => 'San Francisco',
-                'administrative_district_level_1' => 'CA',
-                'postal_code' => '94103',
-                'country' => 'US',
-                'first_name' => 'Jane',
-                'last_name' => 'Doe'
-              ],
+
             "redirect_url" => $redirect_url,
         );
         //$json = json_encode($square);
