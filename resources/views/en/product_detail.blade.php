@@ -29,9 +29,9 @@
                     <img src="{{url('img/big-yellow-circle.svg')}}" class="main_product_back">
 
                 @if($product->slug == "zonfi-v2-global-modem")
-                    <img src="{{$product->main_image_url}}" width="657" height="657" class="main_product detail_v2">
+                    <img src="{{$product->main_image_url}}"  class="main_product_detail v2">
                 @else
-                    <img src="{{$product->main_image_url}}" width="657" height="657" class="main_product detail">
+                    <img src="{{$product->main_image_url}}"  class="main_product_detail">
                 @endif
             </div>
             <div class="flex-item-main-3">
@@ -74,7 +74,7 @@
             <div class="container text-center d-flex flex-column flex-sm-row justify-content-center align-items-center">
                 @if($product->slug == "zonfi-global-modem")
                     <div class="col-md-4 helvetica">Power Bank</div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <img src="{{asset('img/powerbank.svg')}}">
                     </div>
                     <div class="col-md-4 helvetica">WIFI 4G LTE</div>
@@ -228,12 +228,12 @@
             <section class="main-color sec__padding head__bg">
                 <div class="container text-center">
                     <div class="row justify-content-center ">
-                        <div class="col-md-4 col-sm-12 mb-5 mb-sm-0">
+                        <div class="col-md-4 col-sm-12 mb-5 ">
                             <img src="{{asset('/img/gb-1.svg')}}">
                             <p class="title__color main__feature__title">Access to Over 60 Carriers Across Europe</p>
                             <span class="main__feature__sub">While traveling, ZonTel EU Data Sim will automatically link up with our partners across the European Union and provide you with an unparalleled browsing experience, hassle-free.</span>
                         </div>
-                        <div class="col-md-4 col-sm-12 mb-5 mb-md-0">
+                        <div class="col-md-4 col-sm-12 mb-5">
                             <img src="{{asset('img/gb-2.svg')}}">
                             <p class="title__color main__feature__title">Simple and Transparent</p>
                             <span class="main__feature__sub">ZonFi is Sim-Free, requires no setup, and  with a push of a button you are moments away from getting connected to the internet and the worldwide web.
@@ -253,12 +253,12 @@
             <section class="main-color sec__padding head__bg">
                 <div class="container text-center">
                     <div class="row justify-content-center mb-5">
-                        <div class="col-md-4 col-sm-12 mb-5 mb-sm-0">
+                        <div class="col-md-4 col-sm-12 mb-5">
                             <img src="{{asset('/img/gb-1.svg')}}">
                             <p class="title__color main__feature__title">Access to Over 60 Carriers Across Europe</p>
                             <span class="main__feature__sub">While traveling, ZonTel EU Data Sim will automatically link up with our partners across the European Union and provide you with an unparalleled browsing experience, hassle-free.</span>
                         </div>
-                        <div class="col-md-4 col-sm-12 mb-5 mb-sm-0">
+                        <div class="col-md-4 col-sm-12 mb-5">
                             <img src="{{asset('img/gb-2.svg')}}">
                             <p class="title__color main__feature__title">Simple and Transparent</p>
                             <span class="main__feature__sub">ZonFi is Sim-Free, requires no setup, and  with a push of a button you are moments away from getting connected to the internet and the worldwide web.
@@ -280,7 +280,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="row justify-content-center" style="height: 100%">
-                        <div class="flex__1 align-self-center text-center text-md-right position-relative">
+                        <div class="flex__1  text-center text-md-right position-relative">
                             <img src="{{asset('/img/z-circle.svg')}}" class="position-relative circle_zebra">
                             <img src="{{asset($product->main_image_url)}}" class="main_p">
                         </div>

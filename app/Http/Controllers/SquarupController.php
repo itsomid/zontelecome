@@ -83,7 +83,7 @@ class SquarupController extends Controller
             "order" => [
                 "reference_id" => (string)$cart_item[0]->uid,
                 "line_items" => $list_item,
-               
+
                  "taxes" => [
                         [
                             "name" => "State Sales Tax",
