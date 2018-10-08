@@ -39,7 +39,7 @@
                         <i class="fa fa-plus"></i> Data Refill
                     </a>
                 </li>
-                <li class="nav-item pt-3 pt-md-3">
+                <li class="nav-item pt-0 pt-md-3">
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                         <i class="fa fa-bars"></i>
                     </a>
@@ -74,7 +74,7 @@
                         <i class="fa fa-plus"></i> Data Refill
                     </a>
                 </li>
-                <li class="nav-item pt-3 pt-md-3">
+                <li class="nav-item pt-0 pt-md-3">
                     <a href="javascript:void(0);" class="icon" onclick="myFunction_home()">
                         <i class="fa fa-bars"></i>
                     </a>

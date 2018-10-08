@@ -280,7 +280,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="row justify-content-center" style="height: 100%">
-                        <div class="flex__1  text-center text-md-right position-relative">
+                        <div class="flex__1 text-center text-md-right position-relative">
                             <img src="{{asset('/img/z-circle.svg')}}" class="position-relative circle_zebra">
                             <img src="{{asset($product->main_image_url)}}" class="main_p">
                         </div>
