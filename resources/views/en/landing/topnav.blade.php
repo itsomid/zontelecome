@@ -41,14 +41,14 @@
                 </li>
                 <li class="nav-item pt-0 pt-md-3">
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                        <i class="fa fa-bars"></i>
+                        <i  class="fa fa-bars"></i>
                     </a>
                 </li>
             </ul>
         </div>
     @else
         <div class="collapse_menu navbar-collapse_menu" id="myTopnav_home">
-            <ul class="navbar-nav ml-auto">
+            <ul  id="menu" class="navbar-nav ml-auto">
                 <li class="nav-item p-2 pr-2">
                     <a class="shopping__cart" href="{{route('website/cart')}}">
                         <img src="/img/shopping_circle.svg" width="40" height="40"
@@ -69,14 +69,14 @@
                     </a>
 
                 </li>
-                <li class="nav-item p-2">
+                <li  class="nav-item p-2">
                     <a href="{{route('website/refill')}}" class="btn btn__primary menu shadow-none">
                         <i class="fa fa-plus"></i> Data Refill
                     </a>
                 </li>
                 <li class="nav-item pt-0 pt-md-3">
                     <a href="javascript:void(0);" class="icon" onclick="myFunction_home()">
-                        <i class="fa fa-bars"></i>
+                        <i id="hm_menu" class="fa fa-bars"></i>
                     </a>
                 </li>
             </ul>
@@ -91,6 +91,7 @@
 <script>
 
     $(document).ready(function () {
+        // console.log( $('#menu').attr('class'));
         if ($(window).width() < 767) {
             $('.addbtn').click(function () {
                 var cart = $('.shopping__cart__res');
@@ -334,17 +335,24 @@
         var x = document.getElementById("myTopnav");
         if (x.className === "collapse_menu navbar-collapse_menu") {
             x.className += " responsive";
+
         } else {
             x.className = "collapse_menu navbar-collapse_menu";
         }
     }
 
     function myFunction_home() {
+
         var x = document.getElementById("myTopnav_home");
         if (x.className === "collapse_menu navbar-collapse_menu") {
             x.className += " responsive_home";
+            // console.log( $('#menu').attr('class','fa fa'));
+
+            $('#hm_menu').removeClass('fa-bars').addClass('fa-close');
+
         } else {
             x.className = "collapse_menu navbar-collapse_menu";
+            $('#hm_menu').removeClass('fa-close').addClass('fa-bars');
         }
     }
 </script>

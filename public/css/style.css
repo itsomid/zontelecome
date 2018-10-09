@@ -584,7 +584,7 @@ body {
 
 .product_price {
     font-family: 'Dosis', sans-serif;
-    font-weight: 200;
+    font-weight: 500;
     font-size: 40px;
     color: #FFCC00;
     margin-top: 3rem;
@@ -1215,11 +1215,11 @@ body {
     .btn__light.menu {
         box-shadow: none;
         font-family: 'Dosis', sans-serif;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 13px;
         background-color: #C2C2C2 !important;
         color: #656464 !important;
-        padding: 12px 0px 3px 0px;
+        padding: 8px 0px 8px 0px;
         min-width: 85px;
         /* min-width: 125px; */
         border: 2px solid #979797;
@@ -1229,9 +1229,9 @@ body {
     .btn__primary.menu {
         box-shadow: none;
         font-size: 13px;
-        font-weight: 500;
+        font-weight: 600;
         min-width: 85px;
-        padding: 12px 0px 3px 0px;
+        padding: 8px 0px 8px 0px;
     }
 
     .btn__primary i {
@@ -1430,7 +1430,7 @@ body {
 
     .responsive {
         display: block;
-        margin-top: 220px;
+        margin-top: 206px;
         text-align: right;
         background-color: #181818;
     }
@@ -1438,7 +1438,7 @@ body {
     .responsive .icon {
         position: absolute;
         right: 20px;
-        top: 34px;
+        top: 28px;
     }
 
     .responsive_home li:not(:last-child) {
@@ -1461,7 +1461,7 @@ body {
     .responsive_home .icon {
         position: absolute;
         right: 20px;
-        top: 35px;
+        top: 28px;
     }
 
     .navbar-collapse_menu {
@@ -1621,7 +1621,7 @@ body {
     }
 
     .product_price {
-        font-size: 28px;
+        font-size: 34px;
         margin-top: 1rem;
     }
 
