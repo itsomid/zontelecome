@@ -58,7 +58,7 @@ class SquarupController extends Controller
 
 
         $cart_item = Cart::with('product')->where('order_id', $payment->order_id)->get();
-         $setting = \DB::table('setting')->first();
+        $setting = \DB::table('setting')->first();
 
         foreach ($cart_item as $key => $item) {
             $list_item[$key] = [
@@ -79,36 +79,53 @@ class SquarupController extends Controller
                 "currency" => "CAD"
             ]
         ];
-        array_push($list_item,$shipping);
+        array_push($list_item, $shipping);
         if ($agent == "mobile")
             $redirect_url = route('mobile/payment/result', ['order_uid' => $payment->order->uid]);
         else
             $redirect_url = route('website/payment/result', ['order_uid' => $payment->order->uid]);
 
+        if ($setting->discount > 0){
+            $square = [
+                "idempotency_key" => uniqid(),
+                "order" => [
+                    "reference_id" => (string)$cart_item[0]->uid,
+                    "line_items" => $list_item,
 
-        $square = [
-
-            "idempotency_key" => uniqid(),
-            "order" => [
-                "reference_id" => (string)$cart_item[0]->uid,
-                "line_items" => $list_item,
-
-                 "taxes" => [
+                    "taxes" => [
                         [
                             "name" => "State Sales Tax",
-                            "percentage" => (string) $setting->tax_fee
+                            "percentage" => (string)$setting->tax_fee
                         ]
-                ],
-                "discounts" => [
-                    [
-                        "name" => "Opening Deals $setting->discount% OFF",
-                        "percentage" => (string) $setting->discount
                     ],
-                ]
-             ],
+                    "discounts" => [
+                        [
+                            "name" => "Opening Deals $setting->discount% OFF",
+                            "percentage" => (string)$setting->discount
+                        ],
+                    ]
+                ],
 
-            "redirect_url" => $redirect_url,
-        ];
+                "redirect_url" => $redirect_url,
+            ];
+        }
+        else{
+            $square = [
+                "idempotency_key" => uniqid(),
+                "order" => [
+                    "reference_id" => (string)$cart_item[0]->uid,
+                    "line_items" => $list_item,
+                    "taxes" => [
+                        [
+                            "name" => "State Sales Tax",
+                            "percentage" => (string)$setting->tax_fee
+                        ]
+                    ]
+                ],
+
+                "redirect_url" => $redirect_url,
+            ];
+        }
         //$json = json_encode($square);
         return $square;
     }
