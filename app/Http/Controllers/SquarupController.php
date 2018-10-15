@@ -88,7 +88,7 @@ class SquarupController extends Controller
         }
         $fakeTax = $this->calculateFakeTax($item_total_price,$setting->tax_fee,$setting->delivery_fee);
 
-        
+
         array_push($list_item, $shipping);
         if ($agent == "mobile")
             $redirect_url = route('mobile/payment/result', ['order_uid' => $payment->order->uid]);
@@ -128,7 +128,7 @@ class SquarupController extends Controller
                     "taxes" => [
                         [
                             "name" => "State Sales Tax",
-                            "percentage" => (string)$setting->tax_fee
+                            "percentage" => (string)$fakeTax
                         ]
                     ]
                 ],
