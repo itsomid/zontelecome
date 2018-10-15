@@ -73,6 +73,7 @@ class SquarupController extends Controller
         }
         $shipping = [
             "name" => "Shipping fee",
+            "quantity" => "1",
             "base_price_money" => [
                 "amount" => $setting->delivery_fee * 100,
                 "currency" => "CAD"
