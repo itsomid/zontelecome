@@ -71,6 +71,14 @@ class SquarupController extends Controller
 
             ];
         }
+        $shipping = [
+            "name" => "Shipping fee",
+            "base_price_money" => [
+                "amount" => $setting->delivery_fee * 100,
+                "currency" => "CAD"
+            ]
+        ];
+        array_push($list_item,$shipping);
         if ($agent == "mobile")
             $redirect_url = route('mobile/payment/result', ['order_uid' => $payment->order->uid]);
         else

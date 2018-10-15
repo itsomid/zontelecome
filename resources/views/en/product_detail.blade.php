@@ -182,7 +182,7 @@
                         <div class="col-md-4 col-sm-12 mb-5">
                             <img src="{{asset('img/3Steps-B.png')}}" class="img__step">
                             <p class="title__color main__feature__title">Power On</p>
-                            <span class="main__feature__sub">Simply turn on ZonFi. connect up to 8 gadgets to WiFi, Top up your data anytime, anywhere,
+                            <span class="main__feature__sub">Simply turn on ZonFi. connect up to 8 gadgets to WiFi, top up your data anytime, anywhere,
                             through our app or website and enjoy the power of ZonFi. </span>
                         </div>
                         <div class="col-md-4 col-sm-12">
@@ -206,7 +206,7 @@
                             <img src="{{asset('/img/gb-1.svg')}}">
                             <p class="title__color main__feature__title">Access to Over 250 Carriers Across The
                                 Globe</p>
-                            <span class="main__feature__sub">While traveling, ZonTel global Data Sim will automatically link up with our partners across the world and provide you with an unparalleled browsing experience, hassle-free.</span>
+                            <span class="main__feature__sub">While traveling, ZonTel Global Data Sim will automatically link up with our partners across the world and provide you with an unparalleled browsing experience, hassle-free.</span>
                         </div>
                         <div class="col-md-4 col-sm-12 mb-5 mb-md-0">
                             <img src="{{asset('img/gb-2.svg')}}">
