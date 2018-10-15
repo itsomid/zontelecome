@@ -79,6 +79,16 @@ class SquarupController extends Controller
                 "currency" => "CAD"
             ]
         ];
+
+        //Fake Tax
+        $item_total_price = 0;
+        foreach ($cart_item as $item)
+        {
+            $item_total_price = $item_total_price + $item->product->price;
+        }
+        $fakeTax = $this->calculateFakeTax($item_total_price,$setting->tax_fee,$setting->delivery_fee);
+
+        
         array_push($list_item, $shipping);
         if ($agent == "mobile")
             $redirect_url = route('mobile/payment/result', ['order_uid' => $payment->order->uid]);
@@ -95,7 +105,7 @@ class SquarupController extends Controller
                     "taxes" => [
                         [
                             "name" => "State Sales Tax",
-                            "percentage" => (string)$setting->tax_fee
+                            "percentage" => (string)$fakeTax
                         ]
                     ],
                     "discounts" => [
@@ -128,5 +138,9 @@ class SquarupController extends Controller
         }
         //$json = json_encode($square);
         return $square;
+    }
+    function calculateFakeTax($items_total, $taxPercent, $shipping)
+    {
+        return (int)(ceil(($taxPercent - (($items_total+$shipping)*$taxPercent - $items_total*$taxPercent)/($items_total+$shipping))*10000))/10000;
     }
 }
