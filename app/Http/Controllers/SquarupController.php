@@ -82,7 +82,6 @@ class SquarupController extends Controller
 
         //Fake Tax
         $item_total_price = 0;
-
         foreach ($cart_item as $item)
         {
             $item_total_price = $item_total_price + ($item->product->price * $item->quantity);
@@ -129,7 +128,7 @@ class SquarupController extends Controller
                     "taxes" => [
                         [
                             "name" => "State Sales Tax",
-                            "percentage" => (string)$fakeTax
+                            "percentage" => (string)number_format($fakeTax,3)
                         ]
                     ]
                 ],
