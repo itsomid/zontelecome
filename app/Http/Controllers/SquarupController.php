@@ -14,7 +14,7 @@ class SquarupController extends Controller
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
-        $orderArray = $this->square_json($payment, $agent);
+         $orderArray = $this->square_json($payment, $agent);
 
 
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
@@ -82,9 +82,10 @@ class SquarupController extends Controller
 
         //Fake Tax
         $item_total_price = 0;
+
         foreach ($cart_item as $item)
         {
-            $item_total_price = $item_total_price + $item->product->price;
+            $item_total_price = $item_total_price + ($item->product->price * $item->quantity);
         }
         $fakeTax = $this->calculateFakeTax($item_total_price,$setting->tax_fee,$setting->delivery_fee);
 
@@ -141,6 +142,8 @@ class SquarupController extends Controller
     }
     function calculateFakeTax($items_total, $taxPercent, $shipping)
     {
-        return (int)(ceil(($taxPercent - (($items_total+$shipping)*$taxPercent - $items_total*$taxPercent)/($items_total+$shipping))*10000))/10000;
+
+        $realTax = $items_total * ($taxPercent/100);
+        return $fakeTax = ($realTax / ($items_total + $shipping ))*100;
     }
 }
