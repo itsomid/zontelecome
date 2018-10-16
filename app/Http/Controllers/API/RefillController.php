@@ -93,6 +93,9 @@ class RefillController extends Controller
            return $plan = Product::whereRelatedProduct('1')->get()->makeVisible('id');
 
         }
+        elseif ($info->data[0]->hardware_model->prefix == "KF"){
+            return $plan = Product::whereRelatedProduct('2')->get()->makeVisible('id');
+        }
          return abort(404);
     }
 
