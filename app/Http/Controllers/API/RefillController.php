@@ -38,9 +38,19 @@ class RefillController extends Controller
             return abort(404);
 
         if ($info->data[0]->hardware_model->prefix == "KF") {
-            $image_url = $product_name->main_image_url;
-            $product_title = $product_name->title;
+            $product = Product::whereSlug("zonfi-global-modem")->first();
+            $image_url = $product->main_image_url;
+            $product_title = $product->title;
+            $product_slug = $product->slug;
+
         }
+        if ($info->data[0]->hardware_model->prefix == "KH") {
+            $product = Product::whereSlug("zonfi-v2-global-modem")->first();
+            $image_url = $product->main_image_url;
+            $product_title = $product->title;
+            $product_slug = $product->slug;
+        }
+
         $device_info = array(
             'uuid' => $info->data[0]->uuid,
             'product_id' => $info->data[0]->product_id,
