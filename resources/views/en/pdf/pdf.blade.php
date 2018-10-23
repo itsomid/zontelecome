@@ -107,7 +107,7 @@
     </div>
     <div style="margin-top: 380px; margin-left: 450px">
 
-        <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->merge('/public/img/logo.png', .3)->size(200)->generate('https://zontelecom.ca/order/track')) !!}">
+        <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->merge('/public/img/logo-3.jpg', .1)->size(200)->generate('https://zontelecom.ca/order/track')) !!}">
     </div>
 
     <p style="text-align: right; padding-top: -40px">Scan me to return to the order track</p>

@@ -16,6 +16,15 @@ Route::get('/','HomeViewController@index')->name('website/home');
 Route::get('/contact','HomeViewController@contact')->name('website/contact');
 
 Route::get('/product/{slug}', 'ProductController@getProduct')->name('website/product');
+Route::get('/spark',function (){
+    Mail::send('en.emails.test', [], function ($message) {
+        $message
+            ->from('from@yourdomain.com', 'Your Name')
+      ->to('to@otherdomain.com', 'Receiver Name')
+      ->subject('From SparkPost with');
+  });
+});
+
 
 Route::group(['prefix'=>'refill'],function (){
     Route::get('/', 'RefillController@index')->name('website/refill');
