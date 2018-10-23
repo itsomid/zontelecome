@@ -21,7 +21,14 @@ class PdfController extends Controller
         $pdf->loadView('en.pdf.pdf',compact('image','order_uid','cart'));
 
         $file_name = "OrderDetails-$order_uid.pdf";
-
+        $path = storage_path('pdf/' . $file_name);
+        \Mail::send('en.emails.test', function ($message) use ($cart,$path) {
+            $message
+                ->from('info@zontelecom.ca', 'Zontelecom')
+                ->to($cart->c_mail, $cart->c_name)
+                ->subject('Your Order Has Been Success')
+                ->attachData($path);
+        });
 
         $pdf->save($file_path . $file_name);
     }
