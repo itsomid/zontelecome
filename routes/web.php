@@ -19,8 +19,8 @@ Route::get('/product/{slug}', 'ProductController@getProduct')->name('website/pro
 Route::get('/spark',function (){
     Mail::send('en.emails.test', [], function ($message) {
         $message
-            ->from('from@yourdomain.com', 'Your Name')
-      ->to('to@otherdomain.com', 'Receiver Name')
+            ->from('info@zontelecom.ca', 'Your Name')
+      ->to('o.shabani@hotmail.com', 'Receiver Name')
       ->subject('From SparkPost with');
   });
 });
