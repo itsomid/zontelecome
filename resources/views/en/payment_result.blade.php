@@ -8,7 +8,7 @@
     <div class="main-body fifth-color bg__track d-flex flex-column justify-content-center align-items-center bg__done ">
         <section class="w-100" >
             <img src="/img/flesh.svg" class="bg__flesh img-fluid">
-            <div class="container text-center sec__bg__half sixth-color" style="background-size: 35%">
+            <div class="container text-center sec__bg__half sixth-color">
                 <div class="row align-items-center pt-5 pb-5">
                     <div class="col-lg-4 col-sm-12">
                         <img src="/img/modem-g-b.svg">
@@ -19,7 +19,7 @@
                             <p class="success__title__1 w-100 ">Please keep <span style="font-family: BloggerSans-Bold;">this number</span>
                                 for tracking your order</p>
                             @if(!empty($order->c_mail))
-                                <div class="success__title__1 w-100">Your Product Email</div>
+                                <div class="success__title__1 w-100">Your Product Email:</div>
                                 <div class="success__title__1 w-100">{{$order->c_mail}}</div>
                             @else
                                 <p class="success__title__1 w-100">Your Product Email</p>
@@ -32,10 +32,11 @@
                             <div class="col-lg-6 col-md-12 col-sm-12 text-md-center">
                                 <span class="success__box">{{$order_uid}}</span>
                             </div>
-                            <div class="col-lg-6 col-md-12 col-sm-12 text-md-center">
-                                <button class="btn btn__find"><i class="fa fa-arrow-down"
-                                                                 style="padding-right: 5px"></i>Download
-                                </button>
+                            <div class="col-lg-6 col-md-12 col-sm-12 text-md-center align-self-center">
+                                <a href="{{route('pdf/get',['file_name'=>$order_uid])}}" class="btn btn__find">
+                                    <i class="fa fa-arrow-down" style="padding-right: 5px"></i>Download
+                                </a>
+
                             </div>
                         </div>
 

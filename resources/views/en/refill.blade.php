@@ -9,7 +9,7 @@
         <section class="w-100">
             <form action="{{route('website/refill/balance')}}" method="POST">
                 {{csrf_field()}}
-            <div class="container text-center sec__bg__half sixth-color" style="background-size: 50%">
+            <div class="container text-center sixth-color">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6">
 

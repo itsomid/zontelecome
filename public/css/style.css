@@ -164,14 +164,15 @@ body {
 }
 
 .sec__bg {
-    background-image: url("/img/z.svg");
+    background: repeating-linear-gradient( 45deg, #3c3c3c, #3c3c3c 10px, #2F2F2F 7px, #2F2F2F 14px );
     background-repeat: repeat;
 }
 
 .sec__bg__half {
-    background-image: url("/img/z.svg");
+    background: repeating-linear-gradient( 45deg, #3c3c3c, #3c3c3c 10px, #2F2F2F 7px, #2F2F2F 14px );
     background-repeat: repeat-y;
-    background-size: 50%;
+    background-size: 35%;
+
 }
 
 .logo {
@@ -669,7 +670,7 @@ body {
 .success__box {
     border: 2px dashed #FFCC00;
     border-radius: 4px;
-    padding: 50px 40px 15px 40px;
+    padding: 15px 40px 15px 40px;
     font-size: 48px;
     font-family: 'Dosis', sans-serif;
     color: white;
@@ -1095,6 +1096,7 @@ body {
 .sim__feature {
     font-size: 64px;
     color: #181818;
+    font-weight: 600;
 }
 
 .img__step {
@@ -1240,6 +1242,10 @@ body {
 
     .nav-item:first-child {
         display: none;
+    }
+    .nav-item{
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
     .shopping__cart__res {
@@ -1445,6 +1451,7 @@ body {
         float: none;
         position: relative;
         display: block !important;
+        text-align: center;
     }
 
     .responsive_home li:first-child {
@@ -1453,7 +1460,7 @@ body {
 
     .responsive_home {
         display: block;
-        margin-top: 203px;
+        margin-top: 206px;
         text-align: right;
         background-color: #181818;
     }
@@ -1569,6 +1576,7 @@ body {
     .flex-container {
         flex-wrap: nowrap;
         flex-direction: column;
+        background: none !important;
         /*margin-bottom: 20px !important;*/
         justify-content: space-around !important;
     }

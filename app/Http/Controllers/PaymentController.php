@@ -10,7 +10,12 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
+    private $pdf_creator;
 
+    public function __construct()
+    {
+        $this->pdf_creator = new PdfController();
+    }
     public function createPaymentForProduct(Request $request)
     {
 
@@ -165,6 +170,9 @@ class PaymentController extends Controller
         $payment->setPaid();
 
         session()->forget('cart.item');
+
+        $this->pdf_creator->pdfCreator($order_uid);
+
         return view('en.payment_result', ['order_uid' => $order_uid,'order'=>$order]);
     }
 

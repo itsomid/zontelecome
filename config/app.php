@@ -164,6 +164,8 @@ return [
         Atnic\Inspinia\Providers\AppServiceProvider::class,
         Zarinpal\Laravel\ZarinpalServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        LaravelQRCode\Providers\QRCodeServiceProvider::class,
 
     ],
 
@@ -217,6 +219,9 @@ return [
         'Zarinpal' => Zarinpal\Laravel\Facade\Zarinpal::class,
         'ZarinpalC' => \App\Http\Controllers\ZarinPalController::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'QRCode' => LaravelQRCode\Facades\QRCode::class,
+
 
 
 

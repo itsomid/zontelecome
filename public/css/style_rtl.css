@@ -297,15 +297,13 @@ footer{
     background-size: 130%;
 }
 .sec__bg {
-    background-image: url("/img/z.svg");
-    background-repeat: repeat;
+    background: repeating-linear-gradient( 45deg, #3c3c3c, #3c3c3c 10px, #2F2F2F 7px, #2F2F2F 14px );
+
 }
 
 .sec__bg__half {
-    background-image: url("/img/z.svg");
-    background-repeat: repeat-y;
-    background-position: right;
-    background-size: 50%;
+    background: repeating-linear-gradient( 45deg, #3c3c3c, #3c3c3c 10px, #2F2F2F 7px, #2F2F2F 14px );
+
 }
 
 .logo {
@@ -798,9 +796,9 @@ footer{
 .success__box {
     border: 2px dashed #FFCC00;
     border-radius: 4px;
-    padding: 50px 40px 15px 40px;
+    padding: 15px 40px 15px 40px;
     font-size: 48px;
-    font-family: BloggerSans-medium;
+    font-family: 'Dosis', sans-serif;
     color: white;
 }
 

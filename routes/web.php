@@ -17,7 +17,6 @@ Route::get('/contact','HomeViewController@contact')->name('website/contact');
 
 Route::get('/product/{slug}', 'ProductController@getProduct')->name('website/product');
 
-
 Route::group(['prefix'=>'refill'],function (){
     Route::get('/', 'RefillController@index')->name('website/refill');
     Route::get('/balance', 'RefillController@refillBalance')->name('website/refill/balance');
@@ -58,8 +57,13 @@ Route::group(['prefix' => 'bank'], function () {
     Route::get('/redirect/{token}', '\ZarinpalC@redirectToBank')->name('bank/redirect');
     Route::get('/pay/result/{result}/{order_uid}', 'PaymentController@zarinPalWebResult')->name('website/bank/result');
 
-
-
+});
+Route::group(['prefix'=>'pdf'],function (){
+    Route::get('/1',function (){
+       return view('en.pdf.pdf');
+    });
+    Route::post('/create','PdfController@pdfCreator')->name('pdf/create');
+    Route::get('/{file_name}','PdfController@getPdf')->name('pdf/get');
 });
 
 

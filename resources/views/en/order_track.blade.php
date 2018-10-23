@@ -8,7 +8,7 @@
     <div class="main-body fifth-color d-flex justify-content-center align-items-center pt-0 bg__tracking">
 
         <section class="w-100 ">
-            <div class="container text-center sec__bg__half sixth-color" style="background-size: 50%">
+            <div class="container text-center sixth-color">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6">
                         <p class="refill_title mt-5 mb-5">Please enter your <span

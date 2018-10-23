@@ -46,6 +46,7 @@ class SquarupController extends Controller
             exit();
         }
 // Redirect the customer to Square Checkout
+
         if ($agent == "mobile")
             return ['redirect_url' => $checkoutUrl];
         else
