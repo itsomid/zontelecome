@@ -35,9 +35,9 @@ class RefillController extends Controller
         ////Get Last Refill
 
 
-       return $last_refill = Cart::whereDeviceId($device_id)->orderBy('created_at', 'desc')->first();
+        $last_refill = Cart::whereDeviceId($device_id)->orderBy('created_at', 'desc')->first();
         if (empty($last_refill))
-            return abort(404);
+            $last_refill = "";
 
         if ($info->data[0]->hardware_model->prefix == "KF") {
             $product = Product::whereSlug("zonfi-global-modem")->first();
@@ -52,18 +52,34 @@ class RefillController extends Controller
             $product_title = $product->title;
             $product_slug = $product->slug;
         }
+        if (empty($last_refill)){
+            $device_info = array(
+                'uuid' => $info->data[0]->uuid,
+                'product_id' => $info->data[0]->product_id,
+                'product_title' => $product_title,
+                'usage_unit' => "MB",
+                'allowance_usage' => $info->data[0]->allowance_balance,
+                'balance' => $balance,
+                'image_url' => $image_url,
+                'last_refill_date' => "",
+                'last_refill' => ""
+            );
+        }
+        else{
+            $device_info = array(
+                'uuid' => $info->data[0]->uuid,
+                'product_id' => $info->data[0]->product_id,
+                'product_title' => $product_title,
+                'usage_unit' => "MB",
+                'allowance_usage' => $info->data[0]->allowance_balance,
+                'balance' => $balance,
+                'image_url' => $image_url,
+                'last_refill_date' => $last_refill->order->created_at->toDateTimeString(),
+                'last_refill' => $last_refill->order->created_at->diffForHumans(Carbon::now())
+            );
+        }
 
-        $device_info = array(
-            'uuid' => $info->data[0]->uuid,
-            'product_id' => $info->data[0]->product_id,
-            'product_title' => $product_title,
-            'usage_unit' => "MB",
-            'allowance_usage' => $info->data[0]->allowance_balance,
-            'balance' => $balance,
-            'image_url' => $image_url,
-            'last_refill_date' => $last_refill->order->created_at->toDateTimeString(),
-            'last_refill' => $last_refill->order->created_at->diffForHumans(Carbon::now())
-        );
+
 
         return response()->json($device_info);
     }
