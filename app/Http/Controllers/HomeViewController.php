@@ -19,4 +19,9 @@ class HomeViewController extends Controller
         return view(config('app.locale').'.contact');
     }
 
+    public function privacy()
+    {
+        return view(config('app.locale').'.privacy');
+    }
+
 }

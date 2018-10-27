@@ -10,9 +10,12 @@
             <div class="scrolling-box">
                 @foreach($products as $key=>$product)
                     <section class="flex-container" id="{{$key+1}}"
-                    @if($product->slug == "zontel-eu-simcard" || $product->slug == "zontel-global-simcard")
+                    @if($product->slug == "zontel-global-simcard")
                         style="background: url('/img/world-wide-simcard-black.svg') no-repeat; background-position: center"
-                            @endif>
+                            @elseif($product->slug == "zontel-eu-simcard")
+                             style="background: url('/img/world-wide-simcard-black.svg') no-repeat; background-position: center"
+                                @endif
+                    >
                         <div class="flex-item-1">
                             <p class="product_title">{{$product->title}}</p>
                             <p class="Product_subtitle">

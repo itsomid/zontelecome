@@ -512,7 +512,7 @@ body {
     color: #121212 !important;
     background: #FFCC00;
     border-radius: 58px;
-    padding: 20px 30px 10px 30px;
+    padding: 10px 30px 10px 30px;
     /*min-width: 340px;*/
 }
 
@@ -522,7 +522,7 @@ body {
     color: #121212 !important;
     background: #FFCC00;
     border-radius: 58px;
-    padding: 20px 30px 6px 30px;
+    padding: 10px 30px 10px 30px;
     min-width: 340px;
 }
 
@@ -1107,7 +1107,9 @@ body {
 .navigator {
     font-size: 80px !important;
 }
-
+.circle_zebra{
+    max-width: 450px;
+}
 @media screen and  (min-width: 576px) {
     .wid_mr_l div:nth-child(2) {
         margin-left: 0px;
@@ -1196,7 +1198,7 @@ body {
     .main_p {
         position: absolute;
         width: 480px;
-        left: 50%;
+        left: 40%;
         top: 2%;
     }
 }
@@ -1790,7 +1792,8 @@ body {
     }
 
     .circle_zebra {
-        width: 500px;
+        width: 400px;
+        margin-left: 50px;
     }
 
     .main_product_refill {
@@ -2017,6 +2020,11 @@ body {
     .main_product_refill {
         left: 22%;
         top: 0px;
+    }
+}
+@media (min-width: 991px) and (max-width: 1500px) {
+    .main_p{
+        left: 20% !important;
     }
 }
 

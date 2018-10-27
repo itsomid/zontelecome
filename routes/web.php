@@ -14,6 +14,7 @@ Auth::routes();
 
 Route::get('/','HomeViewController@index')->name('website/home');
 Route::get('/contact','HomeViewController@contact')->name('website/contact');
+Route::get('/privacy','HomeViewController@privacy');
 
 Route::get('/product/{slug}', 'ProductController@getProduct')->name('website/product');
 Route::get('/spark',function (){

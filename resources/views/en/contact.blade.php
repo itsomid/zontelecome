@@ -23,16 +23,14 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-8 mb-5 mt-5">
                         <p class="contact__text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                            ZonTelecom is a leading mobile data provider, serving the burgeoning demand for seamless internet connectivity among international travelers. We offer an array of innovative products and services ranging from global mobile data SIM cards to mobile WiFi hotspots.
                         </p>
-                        <p class="contact__text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-                        </p>
+
                         <div class="mb-5 mt-5">
                             <a class="btn btn__contact__email"><img src="/img/email.png" width="40"> support@zontelecom.ca</a>
                         </div>
                         <div class="mb-5 mt-5">
-                        <a class="btn btn__contact__phone"><img src="/img/phone.png" width="40" class="mr-5"> +1 98 921 8762</a>
+                        <a class="btn btn__contact__phone"><img src="/img/phone.png" width="40" class="mr-5"> +16049999199</a>
                         </div>
                     </div>
                 </div>
