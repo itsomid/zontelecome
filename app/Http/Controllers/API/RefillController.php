@@ -29,10 +29,11 @@ class RefillController extends Controller
             return abort(404);
 
         $balance = $info->data[0]->allowance_balance - $info->data[0]->usage->product;
-        $product_id = Cart::whereDeviceId($device_id)->first()->product_id;
-        $product_name = Product::whereId(Product::whereId($product_id)->first()->related_product)->first();
+//        $product_id = Cart::whereDeviceId($device_id)->first()->product_id;
+//        $product_name = Product::whereId(Product::whereId($product_id)->first()->related_product)->first();
 
         ////Get Last Refill
+
         $last_refill = Cart::whereDeviceId($device_id)->orderBy('created_at', 'desc')->first();
         if (empty($last_refill))
             return abort(404);

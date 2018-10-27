@@ -22,12 +22,13 @@ class PdfController extends Controller
 
         $file_name = "OrderDetails-$order_uid.pdf";
         $path = storage_path('pdf/' . $file_name);
-        \Mail::send('en.emails.test', function ($message) use ($cart,$path) {
+
+        \Mail::send('en.emails.test', [],function ($message) use ($cart,$path) {
             $message
                 ->from('info@zontelecom.ca', 'Zontelecom')
                 ->to($cart->c_mail, $cart->c_name)
                 ->subject('Your Order Has Been Success')
-                ->attachData($path);
+                ->attachData($path,'Order Invoice');
         });
 
         $pdf->save($file_path . $file_name);
