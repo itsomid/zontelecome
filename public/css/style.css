@@ -584,7 +584,7 @@ body {
 }
 
 .product_price {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Copse', sans-serif;
     font-weight: 500;
     font-size: 40px;
     color: #FFCC00;
@@ -794,7 +794,7 @@ body {
 }
 
 .cart_item_text span {
-    font-family: 'Dosis', serif;
+    font-family: 'Copse', serif;
     font-weight: 200;
     font-size: 36px;
     color: #949494;
@@ -822,7 +822,7 @@ body {
 }
 
 .cart_item_price h3 {
-    font-family: 'Dosis', serif;
+    font-family: 'Copse', serif;
     font-weight: 500;
     font-size: 36px;
     color: #FFCC00;
@@ -872,7 +872,7 @@ body {
 }
 
 .cart_item_final span:nth-child(2) {
-    font-family: 'Dosis', serif;
+    font-family: 'Copse', serif;
     font-weight: bold;
     font-size: 36px;
     color: #454545;
@@ -880,13 +880,13 @@ body {
 
 .cart_item_table td {
     padding: 2px;
-    font-family: 'Dosis', serif;
     font-weight: normal;
     font-size: 20px;
     color: #949494;
 }
 
 .cart_item_table td:nth-child(2) {
+    font-family: 'Copse', serif;
     text-align: right;
 }
 
