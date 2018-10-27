@@ -34,7 +34,8 @@ class RefillController extends Controller
 
         ////Get Last Refill
 
-        $last_refill = Cart::whereDeviceId($device_id)->orderBy('created_at', 'desc')->first();
+
+       return $last_refill = Cart::whereDeviceId($device_id)->orderBy('created_at', 'desc')->first();
         if (empty($last_refill))
             return abort(404);
 
