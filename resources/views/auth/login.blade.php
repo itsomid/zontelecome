@@ -8,7 +8,7 @@
                 <img src="img/logo-2.svg" width="50%" alt="">
             </h1>
         </div>
-      <h3 style="font-family: BloggerSans-Medium;font-size: 16px;color: #6B6E70;">Welcome to Zonetelecom Admin</h3>
+      <h3 style="font-family: BloggerSans-Medium;font-size: 16px;color: #6B6E70;">Welcome to Zontelecom Admin</h3>
 
 
       <form class="m-t" role="form" method="POST" action="{{ route('login') }}">
@@ -29,11 +29,7 @@
             </span>
         @endif
        </div>
-       <div class="form-group">
-         <div class="checkbox i-checks">
-           <label> <input type="checkbox" name="remember" value="1" {{ old('remember') ? 'checked' : '' }}><i></i> Agree the terms and policy </label>
-         </div>
-       </div>
+
           <div class="text-center">
        <button type="submit" class="btn__ btn__primary m-b">Login</button>
           </div>

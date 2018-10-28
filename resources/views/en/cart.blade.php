@@ -113,25 +113,25 @@
                                 <div class="form-group row">
                                     <label for="txt_name" class="col-sm-3 col-form-label">Full Name</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="c_name" name="c_name">
+                                        <input type="text" class="form-control" id="c_name" name="c_name" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="txt_email" class="col-sm-3 col-form-label">Email</label>
                                     <div class="col-sm-9">
-                                        <input type="email" class="form-control" id="c_mail" name="c_mail">
+                                        <input type="email" class="form-control" id="c_mail" name="c_mail" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="address" class="col-sm-3 col-form-label">Address</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="c_address" name="c_address">
+                                        <input type="text" class="form-control" id="c_address" name="c_address" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="city" class="col-sm-3 col-form-label">City</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="c_city" name="c_city" >
+                                        <input type="text" class="form-control" id="c_city" name="c_city" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -410,11 +410,11 @@
                                 <div class="form-group row">
                                     <label for="c_state" class="col-sm-3 col-form-label">State</label>
                                     <div class="col-sm-3">
-                                        <input type="text" class="form-control" id="c_state" name="c_state">
+                                        <input type="text" class="form-control" id="c_state" name="c_state" required>
                                     </div>
                                     <label for="c_zipcode" class="col-sm-2 col-form-label text-center text-md-right pr-0 pl-0">Zip Code</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="c_zipcode" name="c_zipcode">
+                                        <input type="text" class="form-control" id="c_zipcode" name="c_zipcode" required>
                                     </div>
                                 </div>
 

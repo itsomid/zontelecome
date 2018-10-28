@@ -71,6 +71,7 @@ body {
     padding-right: 150px;
     padding-left: 150px;
     z-index: 3;
+    background-color: rgba(36,36,36,0.95);
 }
 
 .flex-container-main {
@@ -430,21 +431,21 @@ body {
     padding: 9px 20px 9px 20px;
     box-shadow: 2px 3px #949494;
     border: none;
-
 }
-
 .btn__light {
     font-family: 'Dosis', sans-serif;
     font-weight: bold;
     font-size: 14px;
     background-color: #C2C2C2;
     color: #949494 !important;
-    padding: 8px 0px 8px 0px;
+    padding: 8px 0;
     min-width: 125px;
     border: 2px solid #979797;
     border-radius: 20px;
     box-shadow: 1px 2px #949494;
-
+}
+.btn__light.menu {
+    color: black !important;
 }
 
 .btn__product {
@@ -524,6 +525,7 @@ body {
     border-radius: 58px;
     padding: 10px 30px 10px 30px;
     min-width: 340px;
+    text-align: left;
 }
 
 .btn__footer {
@@ -1078,10 +1080,19 @@ body {
     font-size: 18px;
 }
 
-.helvetica {
-    font-family: Helvetica;
+.helvetica_top {
+    font-family: 'Helvetica',sans-serif;
     font-size: 48px;
     color: #000000;
+    padding-bottom: 25px;
+
+}
+.helvetica_bottom {
+    font-family: 'Helvetica',sans-serif;
+    font-size: 48px;
+    color: #000000;
+    padding-top: 25px;
+
 }
 
 .other_product_text {
@@ -1155,6 +1166,7 @@ body {
         background: url('/img/world-wide-black.svg') no-repeat;
         background-position: center;
         z-index: -1;
+        background-size: 450px;
     }
 
     .flex-item-2-inner {
@@ -1312,7 +1324,6 @@ body {
     }
 
     .bg__other {
-
         background-size: 90%;
         background-position: 45% 0%;
     }
@@ -1402,6 +1413,8 @@ body {
         font-weight: normal;
         line-height: 25px;
         font-size: 19px;
+        text-align: left;
+        padding: 0 20px;
     }
 
     .product_feature li {
@@ -1771,8 +1784,11 @@ body {
     }
 
     .bg__other__circle {
-        background-position: 20% 7%;
-        background-size: 300px;
+        background-position: 11% 2%;
+        background-size: 116px;
+    }
+    .bg__other{
+        height: 120px !important;
     }
 
 }
@@ -1813,6 +1829,7 @@ body {
         display: block;
         padding: 30px;
     }
+
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {

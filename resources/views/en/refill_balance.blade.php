@@ -82,7 +82,7 @@
                             @foreach($refill_history as $item)
                                 <tr>
                                     <td>Refilled for <strong>{{$item->product->title}}</strong></td>
-                                    <td>{{number_format($item->product->price,2)}}$</td>
+                                    <td>${{number_format($item->product->price,2)}}</td>
                                     <td>invoice: {{substr($item->order->payment['reference'], -11)}}</td>
                                     <td>{{$item->created_at->format('F,d,Y')}}</td>
                                 </tr>

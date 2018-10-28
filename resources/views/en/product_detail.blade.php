@@ -37,8 +37,10 @@
             <div class="flex-item-main-3">
                 @if($product->slug == "zonfi-v2-global-modem" || $product->slug == "zonfi-global-modem")
                     <img src="{{url('img/world-wide-modem.svg')}}">
-                @elseif($product->slug == "zontel-eu-simcard" ||$product->slug == "zontel-global-simcard")
-                    <img src="{{url('img/world-wide-simcard.svg')}}">
+                @elseif($product->slug == "zontel-eu-simcard" )
+                    <img src="{{url('img/euro-wide-simcard.svg')}}" data-max_width="530">
+                @elseif($product->slug == "zontel-global-simcard")
+                    <img src="{{url('img/world-wide-simcard.svg')}}" data-max_width="530">
                 @endif
             </div>
         </section>
@@ -73,11 +75,11 @@
         <section class="flex-container-main justify-content-center sec__padding second-color always__online__bg">
             <div class="container text-center d-flex flex-column flex-sm-row justify-content-center align-items-center">
                 @if($product->slug == "zonfi-global-modem")
-                    <div class="col-md-4 helvetica">Power Bank</div>
+                    <div class="col-md-4 helvetica_top ">Power Bank</div>
                     <div class="col-md-4">
                         <img src="{{asset('img/powerbank.svg')}}">
                     </div>
-                    <div class="col-md-4 helvetica">WIFI 4G LTE</div>
+                    <div class="col-md-4 helvetica_bottom">WIFI 4G LTE</div>
                 @elseif($product->slug == "zonfi-v2-global-modem")
                     <p class="sim__feature">Your Internet Solution in 110 Countries…</p>
                 @elseif($product->slug == "zontel-eu-simcard")
@@ -212,8 +214,7 @@
                         <div class="col-md-4 col-sm-12 mb-5 mb-md-0">
                             <img src="{{asset('img/gb-2.svg')}}">
                             <p class="title__color main__feature__title">Simple and Transparent</p>
-                            <span class="main__feature__sub">ZonFi is Sim-Free, requires no setup, and  with a push of a button you are moments away from getting connected to the internet and the worldwide web.
-                        You will only pay for what you use, contract free, and will incur no overage charges.</span>
+                            <span class="main__feature__sub">ZonTel Simcards require no complicated setup, and with a simple APN adjustment you are moments away from getting connected to the internet across the globe. You will only pay for what you use, contract free, and will incur no overage charges.</span>
                         </div>
                         <div class="col-md-4 col-sm-12">
                             <img src="{{asset('img/gb-3.svg')}}">
@@ -237,8 +238,7 @@
                         <div class="col-md-4 col-sm-12 mb-5">
                             <img src="{{asset('img/gb-2.svg')}}">
                             <p class="title__color main__feature__title">Simple and Transparent</p>
-                            <span class="main__feature__sub">ZonFi is Sim-Free, requires no setup, and  with a push of a button you are moments away from getting connected to the internet and the worldwide web.
-                        You will only pay for what you use, contract free, and will incur no overage charges.</span>
+                            <span class="main__feature__sub">ZonTel Simcards require no complicated setup, and with a simple APN adjustment you are moments away from getting connected to the internet across the EU. You will only pay for what you use, contract free, and will incur no overage charges.</span>
                         </div>
                         <div class="col-md-4 col-sm-12">
                             <img src="{{asset('img/gb-3.svg')}}">

@@ -11,7 +11,7 @@
             <div class="container text-center sec__bg__half sixth-color">
                 <div class="row align-items-center pt-5 pb-5">
                     <div class="col-lg-4 col-sm-12">
-                        <img src="/img/modem-g-b.svg">
+                        <img src="/img/invoice.png" style="width: 350px">
                     </div>
                     <div class="col-lg-8 col-sm-12 text-lg-left text-md-center pl-5">
                         <div class="row pb-4">

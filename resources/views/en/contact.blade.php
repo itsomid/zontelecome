@@ -30,7 +30,7 @@
                             <a class="btn btn__contact__email"><img src="/img/email.png" width="40"> support@zontelecom.ca</a>
                         </div>
                         <div class="mb-5 mt-5">
-                        <a class="btn btn__contact__phone"><img src="/img/phone.png" width="40" class="mr-5"> +16049999199</a>
+                        <a class="btn btn__contact__phone"><img src="/img/phone.png" width="40" class="mr-4"> +16049999199</a>
                         </div>
                     </div>
                 </div>

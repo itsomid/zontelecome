@@ -13,7 +13,7 @@
                     @if($product->slug == "zontel-global-simcard")
                         style="background: url('/img/world-wide-simcard-black.svg') no-repeat; background-position: center"
                             @elseif($product->slug == "zontel-eu-simcard")
-                             style="background: url('/img/world-wide-simcard-black.svg') no-repeat; background-position: center"
+                             style="background: url('/img/euro-wide-simcard-black.svg') no-repeat; background-position: center"
                                 @endif
                     >
                         <div class="flex-item-1">
