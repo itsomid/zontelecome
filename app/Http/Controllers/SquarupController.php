@@ -31,7 +31,6 @@ class SquarupController extends Controller
                 $orderArray
             );
 
-
             // Grab the redirect url and checkout ID sent back
             $checkoutUrl = $apiResponse['checkout']['checkout_page_url'];
             $checkoutID = $apiResponse['checkout']['id'];
@@ -66,7 +65,7 @@ class SquarupController extends Controller
             $redirect_url = route('website/payment/result', ['order_uid' => $payment->order->uid]);
 
         if ($cart_item[0]->product->type == "virtual") {
-            $list_item = [
+            $list_item[0] = [
                 "name" => $cart_item[0]->product->title,
                 "quantity" => (string)$cart_item[0]->quantity,
                 "base_price_money" => [
@@ -90,6 +89,7 @@ class SquarupController extends Controller
 
                 "redirect_url" => $redirect_url,
             ];
+
         } else {
             $setting = \DB::table('setting')->first();
             foreach ($cart_item as $key => $item) {
@@ -121,10 +121,6 @@ class SquarupController extends Controller
 
 
             array_push($list_item, $shipping);
-            if ($agent == "mobile")
-                $redirect_url = route('mobile/payment/result', ['order_uid' => $payment->order->uid]);
-            else
-                $redirect_url = route('website/payment/result', ['order_uid' => $payment->order->uid]);
 
             if ($setting->discount > 0) {
                 $square = [
@@ -136,7 +132,7 @@ class SquarupController extends Controller
                         "taxes" => [
                             [
                                 "name" => "State Sales Tax",
-                                "percentage" => (string)$fakeTax
+                                "percentage" => (string)number_format($fakeTax,3)
                             ]
                         ],
                         "discounts" => [
