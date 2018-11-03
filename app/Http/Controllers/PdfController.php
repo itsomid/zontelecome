@@ -11,7 +11,7 @@ class PdfController extends Controller
     public function pdfCreator($order_uid)
     {
 
-        return $cart = Order::with('products')->whereId(Order::realId($order_uid))->first();
+        $cart = Order::with('products')->whereId(Order::realId($order_uid))->first();
         $file_path = storage_path() . '/pdf/';
         $pdf = \App::make('dompdf.wrapper');
         $pdf->setPaper('A4', 'Vertical');
@@ -22,14 +22,16 @@ class PdfController extends Controller
 
         $file_name = "OrderDetails-$order_uid.pdf";
         $path = storage_path('pdf/' . $file_name);
+        if ($cart->products[0]->type != "virtual"){
+            \Mail::send('en.emails.test', [],function ($message) use ($cart,$path) {
+                $message
+                    ->from('info@zontelecom.ca', 'Zontelecom')
+                    ->to($cart->c_mail, $cart->c_name)
+                    ->subject('Your Order Has Been Success')
+                    ->attachData($path,'Order Invoice');
+            });
+        }
 
-        \Mail::send('en.emails.test', [],function ($message) use ($cart,$path) {
-            $message
-                ->from('info@zontelecom.ca', 'Zontelecom')
-                ->to($cart->c_mail, $cart->c_name)
-                ->subject('Your Order Has Been Success')
-                ->attachData($path,'Order Invoice');
-        });
 
         $pdf->save($file_path . $file_name);
     }

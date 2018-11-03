@@ -98,7 +98,7 @@ class PaymentController extends Controller
     public function createPaymentForData(Request $request)
     {
 
-         $package_id = $request->input('package_id');
+        $package_id = $request->input('package_id');
         $device_id = $request->input('device_id');
         $package = Product::whereId($package_id)->first();
         $total_price = $package->price;
