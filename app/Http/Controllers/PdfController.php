@@ -22,7 +22,9 @@ class PdfController extends Controller
 
         $file_name = "OrderDetails-$order_uid.pdf";
         $path = storage_path('pdf/' . $file_name);
+
         if ($cart->products[0]->type != "virtual"){
+
             \Mail::send('en.emails.test', [],function ($message) use ($cart,$path) {
                 $message
                     ->from('info@zontelecom.ca', 'Zontelecom')

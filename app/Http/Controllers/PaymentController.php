@@ -168,7 +168,7 @@ class PaymentController extends Controller
 
         session()->forget('cart.item');
 
-        return $this->pdf_creator->pdfCreator($order_uid);
+         $this->pdf_creator->pdfCreator($order_uid);
 
 
         return view('en.payment_result', ['order_uid' => $order_uid,'order'=>$order]);
