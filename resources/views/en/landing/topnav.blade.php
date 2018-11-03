@@ -215,7 +215,115 @@
 
             });
         }
-        else {
+        else if($(window).width() < 1500 && $(window).width() > 1200)
+        {
+
+            $('.addbtn').click(function () {
+                window.location.href = 'order/cart';
+                var cart = $('.shopping__cart');
+                var imgtodrag = $(this).parent().parent().parent().find('.main_product').eq(0);
+                console.log(imgtodrag);
+                if (imgtodrag) {
+                    var imgclone = imgtodrag.clone()
+                        .offset({
+                            top: imgtodrag.offset().top + 200,
+                            left: imgtodrag.offset().left + 200
+                        })
+                        .css({
+                            'opacity': '1',
+                            'position': 'absolute',
+                            'height': '150px',
+                            'width': '150px',
+                            'z-index': '100'
+                        })
+                        .appendTo($('body'))
+                        .animate({
+                            'top': cart.offset().top + 10,
+                            'left': cart.offset().left + 10,
+                            'width': 110,
+                            'height': 110
+                        }, 1000);
+                    imgclone.animate({
+                        'width': 0,
+                        'height': 0
+                    }, function () {
+                        $(this).detach()
+                    });
+                }
+                var name = $(this).attr('id');
+
+                $.ajax({
+                    url: "{{route('website/order/cart/item')}}",
+                    type: "POST",
+                    data: {
+                        name: name,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    },
+                    success: function (data) {
+
+                        $('.nav-item span').text(data);
+                    }
+                });
+
+            });
+            $('.addbtn_detail').click(function () {
+                window.location.href = '../order/cart';
+                {{--var cart = $('.shopping__cart');--}}
+                {{--var imgtodrag = $(this).parent().parent().parent().find('.main_p').eq(0);--}}
+
+                {{--if (imgtodrag) {--}}
+                    {{--var imgclone = imgtodrag.clone()--}}
+                        {{--.offset({--}}
+                            {{--top: imgtodrag.offset().top + 200,--}}
+                            {{--left: imgtodrag.offset().left + 200--}}
+                        {{--})--}}
+                        {{--.css({--}}
+                            {{--'opacity': '0.7',--}}
+                            {{--'position': 'absolute',--}}
+                            {{--'height': '150px',--}}
+                            {{--'width': '150px',--}}
+                            {{--'z-index': '100'--}}
+                        {{--})--}}
+                        {{--.appendTo($('body'))--}}
+                        {{--.animate({--}}
+                            {{--'top': cart.offset().top + 10,--}}
+                            {{--'right': cart.offset().left + 10,--}}
+                            {{--'width': 110,--}}
+                            {{--'height': 110--}}
+                        {{--}, 1000);--}}
+
+
+                    {{--imgclone.animate({--}}
+                        {{--'width': 0,--}}
+                        {{--'height': 0--}}
+                    {{--}, function () {--}}
+                        {{--$(this).detach()--}}
+                    {{--});--}}
+                {{--}--}}
+
+                var name = $(this).attr('id');
+                $.ajax({
+                    url: "{{route('website/order/cart/item')}}",
+                    type: "POST",
+                    data: {
+                        name: name,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    },
+                    success: function (data) {
+
+                        $('.nav-item span').text(data);
+                    }
+                });
+
+            });
+        }
+        else{
             $('.addbtn').click(function () {
                 var cart = $('.shopping__cart');
                 var imgtodrag = $(this).parent().parent().parent().find('.main_product').eq(0);
@@ -328,8 +436,8 @@
         }
 
 
-    })
-    ;
+
+    });
 
     function myFunction() {
         var x = document.getElementById("myTopnav");

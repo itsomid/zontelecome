@@ -7,7 +7,7 @@
     @include('en.landing.topnav')
     <div class="main-body fifth-color bg__enjoy">
 
-        <section class="flex-container-main  justify-content-center sec__padding  pt-0">
+        <section class="flex-container-main  justify-content-center sec__padding">
             <div class="container text-center text-lg-left">
                 <div class="row mb-md-3">
                     <p class="cart_title_1">1. Check your shopping list:</p>

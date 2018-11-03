@@ -14,7 +14,7 @@ class SquarupController extends Controller
 //
 // HELPER FUNCTION: Repackage the order information as an array
 
-         $orderArray = $this->square_json($payment, $agent);
+        $orderArray = $this->square_json($payment, $agent);
 
 
 // CONFIG FUNCTION: Create a Square Checkout API client if needed
@@ -59,91 +59,123 @@ class SquarupController extends Controller
 
 
         $cart_item = Cart::with('product')->where('order_id', $payment->order_id)->get();
-        $setting = \DB::table('setting')->first();
 
-        foreach ($cart_item as $key => $item) {
-            $list_item[$key] = [
-                "name" => $item->product->title,
-                "quantity" => (string)$item->quantity,
-                "base_price_money" => [
-                    "amount" => $item->product->price * 100,
-                    "currency" => "CAD"
-                ]
-
-            ];
-        }
-        $shipping = [
-            "name" => "Shipping fee",
-            "quantity" => "1",
-            "base_price_money" => [
-                "amount" => $setting->delivery_fee * 100,
-                "currency" => "CAD"
-            ]
-        ];
-
-        //Fake Tax
-        $item_total_price = 0;
-        foreach ($cart_item as $item)
-        {
-            $item_total_price = $item_total_price + ($item->product->price * $item->quantity);
-        }
-        $fakeTax = $this->calculateFakeTax($item_total_price,$setting->tax_fee,$setting->delivery_fee);
-
-
-        array_push($list_item, $shipping);
         if ($agent == "mobile")
             $redirect_url = route('mobile/payment/result', ['order_uid' => $payment->order->uid]);
         else
             $redirect_url = route('website/payment/result', ['order_uid' => $payment->order->uid]);
 
-        if ($setting->discount > 0){
+        if ($cart_item[0]->product->type == "virtual") {
+            $list_item = [
+                "name" => $cart_item[0]->product->title,
+                "quantity" => (string)$cart_item[0]->quantity,
+                "base_price_money" => [
+                    "amount" => $cart_item[0]->product->price * 100,
+                    "currency" => "CAD"
+                ]
+
+            ];
             $square = [
                 "idempotency_key" => uniqid(),
                 "order" => [
                     "reference_id" => (string)$cart_item[0]->uid,
                     "line_items" => $list_item,
-
                     "taxes" => [
                         [
                             "name" => "State Sales Tax",
-                            "percentage" => (string)$fakeTax
+                            "percentage" => "0"
+                        ]
+                    ]
+                ],
+
+                "redirect_url" => $redirect_url,
+            ];
+        } else {
+            $setting = \DB::table('setting')->first();
+            foreach ($cart_item as $key => $item) {
+                $list_item[$key] = [
+                    "name" => $item->product->title,
+                    "quantity" => (string)$item->quantity,
+                    "base_price_money" => [
+                        "amount" => $item->product->price * 100,
+                        "currency" => "CAD"
+                    ]
+
+                ];
+            }
+            $shipping = [
+                "name" => "Shipping fee",
+                "quantity" => "1",
+                "base_price_money" => [
+                    "amount" => $setting->delivery_fee * 100,
+                    "currency" => "CAD"
+                ]
+            ];
+
+            //Fake Tax
+            $item_total_price = 0;
+            foreach ($cart_item as $item) {
+                $item_total_price = $item_total_price + ($item->product->price * $item->quantity);
+            }
+            $fakeTax = $this->calculateFakeTax($item_total_price, $setting->tax_fee, $setting->delivery_fee);
+
+
+            array_push($list_item, $shipping);
+            if ($agent == "mobile")
+                $redirect_url = route('mobile/payment/result', ['order_uid' => $payment->order->uid]);
+            else
+                $redirect_url = route('website/payment/result', ['order_uid' => $payment->order->uid]);
+
+            if ($setting->discount > 0) {
+                $square = [
+                    "idempotency_key" => uniqid(),
+                    "order" => [
+                        "reference_id" => (string)$cart_item[0]->uid,
+                        "line_items" => $list_item,
+
+                        "taxes" => [
+                            [
+                                "name" => "State Sales Tax",
+                                "percentage" => (string)$fakeTax
+                            ]
+                        ],
+                        "discounts" => [
+                            [
+                                "name" => "Opening Deals $setting->discount% OFF",
+                                "percentage" => (string)$setting->discount
+                            ],
                         ]
                     ],
-                    "discounts" => [
-                        [
-                            "name" => "Opening Deals $setting->discount% OFF",
-                            "percentage" => (string)$setting->discount
-                        ],
-                    ]
-                ],
 
-                "redirect_url" => $redirect_url,
-            ];
-        }
-        else{
-            $square = [
-                "idempotency_key" => uniqid(),
-                "order" => [
-                    "reference_id" => (string)$cart_item[0]->uid,
-                    "line_items" => $list_item,
-                    "taxes" => [
-                        [
-                            "name" => "State Sales Tax",
-                            "percentage" => (string)number_format($fakeTax,3)
+                    "redirect_url" => $redirect_url,
+                ];
+            } else {
+                $square = [
+                    "idempotency_key" => uniqid(),
+                    "order" => [
+                        "reference_id" => (string)$cart_item[0]->uid,
+                        "line_items" => $list_item,
+                        "taxes" => [
+                            [
+                                "name" => "State Sales Tax",
+                                "percentage" => (string)number_format($fakeTax, 3)
+                            ]
                         ]
-                    ]
-                ],
+                    ],
 
-                "redirect_url" => $redirect_url,
-            ];
+                    "redirect_url" => $redirect_url,
+                ];
+            }
         }
+
         //$json = json_encode($square);
         return $square;
     }
+
     function calculateFakeTax($items_total, $taxPercent, $shipping)
     {
 
-        $realTax = $items_total * ($taxPercent/100);
-        return $fakeTax = ($realTax / ($items_total + $shipping ))*100;
+        $realTax = $items_total * ($taxPercent / 100);
+        return $fakeTax = ($realTax / ($items_total + $shipping)) * 100;
     }
 }
