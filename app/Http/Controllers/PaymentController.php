@@ -109,9 +109,9 @@ class PaymentController extends Controller
         $order->status = "initializing";
         $order->delivery_fee = 0;
         $order->discount = 0;
-        $final_price = $this->finalPrice($total_price, 0, 0);
-        $order->total_price = $final_price;
-        $order->tax = $this->taxCalculate($total_price);
+
+        $order->total_price = $total_price;
+        $order->tax = 0;
 
         if ($order->save()) {
             $insertedId = $order->id;
@@ -129,7 +129,7 @@ class PaymentController extends Controller
         $payment->status = "initializing";
         $pay_method = \DB::table('setting')->first()->pay_method;
         if (!$pay_method) {
-            $payment->amount = $final_price;
+            $payment->amount = $total_price;
             $payment->via = "squerup";
             $payment->setDetails(['scheme' => 'ZonTelecom']);
             $payment->save();
@@ -168,7 +168,7 @@ class PaymentController extends Controller
 
         session()->forget('cart.item');
 
-         $this->pdf_creator->pdfCreator($order_uid);
+        $this->pdf_creator->pdfCreator($order_uid);
 
 
         return view('en.payment_result', ['order_uid' => $order_uid,'order'=>$order]);

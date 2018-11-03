@@ -59,7 +59,7 @@
         <table align="center">
             <tbody>
             <tr align="left">
-                <td style=" font-weight:600;">Order Number</td>
+                <td style=" font-weight:600; width: 300px;">Order Number</td>
                 <td><strong>{{$order_uid}}</strong></td>
             </tr>
             <tr align="left">
@@ -92,15 +92,15 @@
             @endforeach
             <tr align="left">
                 <td style=" font-weight:600;">Tax</td>
-                <td>{{$cart->tax_price}}$</td>
+                <td>{{number_format($cart->tax_price,2)}}$</td>
             </tr>
             <tr align="left">
                 <td style=" font-weight:600;">Shipment</td>
-                <td>{{$cart->delivery_fee}}$</td>
+                <td>{{number_format($cart->delivery_fee,2)}}$</td>
             </tr>
             <tr align="left">
                 <td style=" font-weight:600;">Total Amount</td>
-                <td>{{$cart->final_price}}$</td>
+                <td>{{number_format($cart->final_price,2)}}$</td>
             </tr>
             </tbody>
         </table>
