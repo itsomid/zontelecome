@@ -11,7 +11,7 @@ class PdfController extends Controller
     public function pdfCreator($order_uid)
     {
 
-         $cart = Order::with('products')->whereId(Order::realId($order_uid))->first();
+        return $cart = Order::with('products')->whereId(Order::realId($order_uid))->first();
         $file_path = storage_path() . '/pdf/';
         $pdf = \App::make('dompdf.wrapper');
         $pdf->setPaper('A4', 'Vertical');

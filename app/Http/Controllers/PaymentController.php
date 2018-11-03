@@ -28,9 +28,6 @@ class PaymentController extends Controller
         foreach ($cart_items as $item) {
             $total_price += Product::whereSlug($item)->first()->price;
         }
-//        $cart_item = array_count_values($cart_items);
-//        return $cart_item['zonefi-global-modem'];
-
 
         $order = new Order;
         $order->by_admin = false;

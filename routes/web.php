@@ -20,8 +20,8 @@ Route::get('/product/{slug}', 'ProductController@getProduct')->name('website/pro
 Route::get('/spark',function (){
     Mail::send('en.emails.test', [], function ($message) {
         $message
-            ->from('info@zontelecom.ca', 'Your Name')
-      ->to('o.shabani@hotmail.com', 'Receiver Name')
+            ->from('info@zontelecom.ca')
+      ->to('o.shabani@hotmail.com')
       ->subject('From SparkPost with');
   });
 });
