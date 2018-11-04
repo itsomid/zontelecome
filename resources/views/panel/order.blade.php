@@ -47,6 +47,7 @@
                         <thead>
                         <tr>
 
+                            {{--<th data-toggle="true">Order Num</th>--}}
                             <th data-toggle="true">Order ID</th>
                             <th>Customer Name</th>
                             <th>Email</th>
@@ -63,6 +64,7 @@
                         <tbody>
                         @foreach($orders as $order)
                             <tr>
+{{--                                <td>{{$order->id}}</td>--}}
                                 <td>{{$order->uid}}</td>
                                 <td>{{$order->c_name}}</td>
                                 <td>{{$order->c_mail}}</td>
@@ -133,24 +135,32 @@
                                                 <tr>
                                                     <td><strong>Total :</strong></td>
                                                     <td id="total_price_lb">
-                                                        ${{number_format((float)$order->total_price, 2, '.', ',')}}
+                                                        ${{number_format((float)$order->total_price - $order->tax_price - $order->delivery_fee, 2, '.', ',')}}
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td><strong>Taxes :</strong></td>
                                                     <td id="total_price_lb">
-                                                        ${{number_format((float)$tax, 2, '.', ',')}}</td>
+                                                        ${{number_format((float)$order->tax, 2, '.', ',')}}</td>
                                                 </tr>
+                                                @if($order->products[0]->type == "physical")
+                                                    <tr>
+                                                        <td><strong>Shipping :</strong></td>
+                                                        <td id="total_price_lb">${{number_format($order->delivery_fee,2)}}</td>
+                                                    </tr>
+                                                @endif
                                                 <tr>
                                                     <td><strong>Discount :</strong></td>
                                                     <td id="total_price_lb">$0.00</td>
                                                 </tr>
+
                                                 <tr>
                                                     <td><strong>Final Price :</strong></td>
                                                     <td>
-                                                        ${{number_format((float)$order->total_price + $tax, 2, '.', ',')}}</td>
+                                                        ${{number_format((float)$order->total_price + $order->tax_fee, 2, '.', ',')}}</td>
 
                                                 </tr>
+
 
                                                 </tbody>
                                             </table>

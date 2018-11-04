@@ -15,10 +15,10 @@ class OrderController extends Controller
 
     public function index()
     {
-        $orders = Order::with('products')->get();
-        $tax = \DB::table('setting')->first()->tax_fee;
+         $orders = Order::with('products')->get();
 
-        return view('panel.order',['orders'=>$orders,'tax'=>$tax]);
+
+        return view('panel.order',['orders'=>$orders]);
     }
 
     public function getOrder($uid)

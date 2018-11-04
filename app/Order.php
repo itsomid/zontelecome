@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
  */
 class Order extends Model
 {
-    protected $hidden = ['id'];
+    protected $hidden = ['id','tax'];
     protected $appends = ['uid','total_quantity','tax_price','final_price'];
 
     public static function realId($uid) {
@@ -79,13 +79,11 @@ class Order extends Model
 
     public function getFinalPriceAttribute()
     {
-
-        $tax = $this->total_price * ($this->tax/100);
-        return (float)number_format($this->total_price + $tax + $this->delivery_fee - $this->discount,'2');
+        return (float)number_format($this->total_price + $this->delivery_fee - $this->discount,'2');
     }
 
     public function getTaxPriceAttribute()
     {
-        return $this->total_price * ($this->tax/100);
+        return $this->tax;
     }
 }
