@@ -193,7 +193,6 @@
     <!-- FooTable -->
     <script src="/js/plugins/footable/footable.all.min.js"></script>
 
-
     <script>
         $(document).ready(function () {
             $('.btn__table').click(function () {

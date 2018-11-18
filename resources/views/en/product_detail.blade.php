@@ -232,7 +232,7 @@
                     <div class="row justify-content-center ">
                         <div class="col-md-4 col-sm-12 mb-5 ">
                             <img src="{{asset('/img/gb-1.svg')}}">
-                            <p class="title__color main__feature__title">Access to 500 Wireless Carriers</p>
+                            <p class="title__color main__feature__title">Access to Over 60 Carriers Across Europe</p>
                             <span class="main__feature__sub">While traveling, ZonFi will automatically link up with our partners across the European Union and provide you with an unparalleled browsing experience, hassle-free.</span>
                         </div>
                         <div class="col-md-4 col-sm-12 mb-5">
