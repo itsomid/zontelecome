@@ -80,6 +80,7 @@ Route::group(['prefix'=>'pdf'],function (){
 
 //panel
 Route::group(['prefix' => 'panel', 'middleware' => ['auth']], function () {
+    Route::get('logout', 'Auth\LoginController@logout')->name('panel/logout');
     Route::get('/', 'Panel\DashboardController@index')->name('panel');
     Route::group(['prefix' => 'product'], function() {
         Route::get('/', 'Panel\ProductController@index')->name('panel/product');

@@ -7,10 +7,8 @@
 
 
             <li>
-                <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-                <a href="" >
+
+                <a href="{{route('panel/logout')}}" >
                     <i class="fa fa-sign-out"></i>Logout
                 </a>
             </li>
