@@ -123,8 +123,8 @@
                                                         <td>{{$product->pivot->quantity}}</td>
                                                         <td>{{$product->pivot->description}}</td>
                                                         <td>{{$product->price}}$</td>
-                                                        <td>{{number_format((float)$product->pivot->quantity * $product->price, 2, '.', ',')}}
-                                                            $
+                                                        <td>
+                                                            {{number_format((float)$product->pivot->quantity * $product->price, 2, '.', ',')}}$
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -135,18 +135,18 @@
                                                 <tr>
                                                     <td><strong>Total :</strong></td>
                                                     <td id="total_price_lb">
-                                                        ${{number_format((float)$order->total_price - $order->tax_price - $order->delivery_fee, 2, '.', ',')}}
+                                                        {{number_format((float)$order->total_price - $order->tax_price - $order->delivery_fee, 2, '.', ',')}}$
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td><strong>Taxes :</strong></td>
                                                     <td id="total_price_lb">
-                                                        ${{number_format((float)$order->tax, 2, '.', ',')}}</td>
+                                                       {{number_format((float)$order->tax, 2, '.', ',')}}$</td>
                                                 </tr>
                                                 @if($order->products[0]->type == "physical")
                                                     <tr>
                                                         <td><strong>Shipping :</strong></td>
-                                                        <td id="total_price_lb">${{number_format($order->delivery_fee,2)}}</td>
+                                                        <td id="total_price_lb">{{number_format($order->delivery_fee,2)}}$</td>
                                                     </tr>
                                                 @endif
                                                 <tr>
@@ -157,7 +157,7 @@
                                                 <tr>
                                                     <td><strong>Final Price :</strong></td>
                                                     <td>
-                                                        ${{number_format((float)$order->total_price + $order->tax_fee, 2, '.', ',')}}</td>
+                                                        {{number_format((float)$order->total_price + $order->tax_fee, 2, '.', ',')}}$</td>
 
                                                 </tr>
 

@@ -139,6 +139,7 @@
                                                                name="rp_price[{{$related_product->id}}]" type="text"
                                                                class="form-control" value="{{$related_product->price}}"
                                                                required>
+
                                                     </td>
                                                     <td width="5%" style="vertical-align: middle;">
                                                         <div class="onoffswitch">

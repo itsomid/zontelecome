@@ -20,7 +20,7 @@
                         <span class="pull-right text-right">
                             All sales: {{$all_order}}
                             <br>
-                            <p style=" font-size: 30px;">$ {{number_format((float)$income,2,'.',',')}}</p>
+                            <p style=" font-size: 30px;">{{number_format((float)$income,2,'.',',')}}$</p>
                         </span>
                             <h1 class="m-b-xs">Orders</h1>
                             <div>
@@ -68,7 +68,7 @@
                             <span style="font-size: 16px">Annual</span>
                         </div>
                         <div class="ibox-content">
-                            <h1>$ {{number_format((float)$annual_income[0]->total,2,'.',',')}}</h1>
+                            <h1>{{number_format((float)$annual_income[0]->total,2,'.',',')}}$</h1>
                         </div>
                     </div>
                 </div>

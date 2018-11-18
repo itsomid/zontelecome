@@ -421,26 +421,26 @@
                                         <tr>
                                             <td><strong>Total</strong></td>
                                             <td>
-                                                <strong>$ {{number_format((float)$order->total_price - $order->tax - $order->delivery_fee  + $order->discount , 2, '.', ',')}}</strong>
+                                                <strong>{{number_format((float)$order->total_price - $order->tax - $order->delivery_fee  + $order->discount , 2, '.', ',')}}$</strong>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td><strong>Taxes</strong></td>
-                                            <td><strong>$ {{number_format($order->tax,2)}}</strong></td>
+                                            <td><strong>{{number_format($order->tax,2)}}$</strong></td>
                                         </tr>
                                         <tr>
                                             <td><strong>Delivery fee</strong></td>
-                                            <td><strong>$ {{number_format($order->delivery_fee,2)}}</strong></td>
+                                            <td><strong>{{number_format($order->delivery_fee,2)}}$</strong></td>
                                         </tr>
                                         <tr>
                                             <td><strong>Discount</strong></td>
-                                            <td><strong>$ {{number_format($order->discount,2)}}</strong></td>
+                                            <td><strong>{{number_format($order->discount,2)}}$</strong></td>
                                         </tr>
 
                                         <tr>
                                             <td><strong>Final Price</strong></td>
                                             <td>
-                                                <strong>$ {{number_format((float)$order->total_price, 2, '.', ',')}}</strong>
+                                                <strong> {{number_format((float)$order->total_price, 2, '.', ',')}}$</strong>
                                             </td>
                                         </tr>
                                         </tbody>
