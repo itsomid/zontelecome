@@ -566,7 +566,7 @@ class OrderTableSeeder extends Seeder
                 ],
                 [
                     'quantity' => 1,
-                    'product_id' => '4',
+                    'product_id' => '6',
                     'order_id' => '8',
                     'device_id' => 'KF022496',
                     'description' => 'خرید دیتا',
