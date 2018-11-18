@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         User::create(array(
             'name'     => 'Chris Sevilleja',
             'email'    => 'admin@zontelecom.com',
-            'password' => Hash::make('12345'),
+            'password' => Hash::make('Zon#135!'),
         ));
     }
 }
